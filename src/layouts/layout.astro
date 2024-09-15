@@ -1,22 +1,26 @@
 ---
-import Navbar from '../components/navbar.astro';
-import Footer from '../components/footer.astro';
+import Navbar from "../components/navbar.astro";
+import Footer from "../components/footer.astro";
 const { title } = Astro.props;
 ---
+
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <link rel="icon" type="image/webp" href="/quackhost.webp" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="QuackHost - Your go-to resource for powerful Minecraft hosting.">
-    <meta property="og:image" content="/quackhost.webp">
-    <meta property="og:title" content={title}>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Your go-to resource for powerful Minecraft hosting."
+    />
+    <meta property="og:image" content="/quackhost.webp" />
+    <meta property="og:title" content={title} />
     <title>QuackHost {title}</title>
   </head>
   <body>
     <div class="max-w-screen-2xl mx-auto p-3 px-6 xl:px-24">
       <Navbar />
-        <slot />
+      <slot />
       <Footer />
     </div>
   </body>
