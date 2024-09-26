@@ -18,6 +18,13 @@ const { title } = Astro.props;
     <title>QuackHost {title}</title>
   </head>
   <body>
+    <head>
+      <link rel="preconnect" href="https://fonts.bunny.net" />
+      <link
+        href="https://fonts.bunny.net/css?family=inter:400,500,700"
+        rel="stylesheet"
+      />
+    </head>
     <div class="max-w-screen-2xl mx-auto p-3 px-6 xl:px-24">
       <Navbar />
       <slot />
