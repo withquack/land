@@ -1,22 +1,33 @@
 ---
-
+import { Image } from "astro:assets";
 ---
 
-<div class="grid grid-cols-5 mb-16 gap-8 py-32 items-center">
-  <div class="col-span-5 md:col-span-2">
+<div class="grid grid-cols-7 mb-16 gap-8 py-32 items-center">
+  <div
+    class="col-span-2 text-gray-200 hidden md:block hover:transition hover:transition-700 hover:ease-in-out hover:brightness-105 hover:skew-y-1 duration-300"
+  >
+    <Image
+      src="/public/index/minecraft-goose.gif"
+      alt="Minecraft Goose"
+      width="500"
+      height="500"
+      loading="eager"
+    />
+  </div>
+  <div class="col-span-5 md:col-span-4">
     <h1
       class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-black sm:text-5xl lg:text-6xl"
     >
       <span
         class="underline underline-offset-3 decoration-8 decoration-blue-400"
       >
-        Geese 'mzing
+        Geese'mzing
       </span>
     </h1>
     <h1
       class="mb-6 text-4xl ease-in-out font-extrabold font-inter leading-none tracking-tight text-black sm:text-5xl lg:text-6xl"
     >
-      Minecraft Hosting
+      Minecraft hosting
     </h1>
 
     <div
@@ -39,17 +50,5 @@
         </a>
       </div>
     </div>
-  </div>
-
-  <div
-    class="col-span-3 text-gray-200 hidden md:block hover:transition hover:transition-700 hover:ease-in-out hover:brightness-105 hover:skew-y-1 duration-300"
-  >
-    <img
-      src="/index/minecraft-goose.gif"
-      class=""
-      alt="Minecraft Goose"
-      width=""
-      height=""
-    />
   </div>
 </div>
