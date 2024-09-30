@@ -1,14 +1,13 @@
 ---
-import { Image } from "astro:assets";
-import minecraftGoose from "/src/public/index/minecraft-goose.gif";
+import minecraftGoose from "/public/index/minecraft-goose.gif";
 ---
 
 <div class="grid grid-cols-7 mb-16 gap-8 py-32 items-center">
   <div
     class="col-span-2 text-gray-200 hidden md:block hover:transition hover:transition-700 hover:ease-in-out hover:brightness-105 hover:skew-y-1 duration-300"
   >
-    <Image
-      src={minecraftGoose}
+    <img
+      src="/public/index/minecraft-goose.gif"
       alt="Minecraft Goose"
       width="500"
       height="500"
