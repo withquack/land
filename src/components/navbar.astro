@@ -3,24 +3,22 @@
 ---
 
 <nav x-data="{ isOpen: false }">
-  <div
-    class="flex flex-wrap my-1 items-center justify-between text-md font-base"
-  >
+  <div class="flex flex-wrap my-1 items-center justify-between text-md">
     <a href="/" class="flex items-center">
       <img src="/quackhost.webp" alt="GooseQuack" class="w-10 h-10 mr-2" />
       <span
-        class="self-center text-2xl font-medium tracking-tight hidden sm:block"
+        class="self-center text-2xl tracking-tight hidden sm:block font-semibold"
       >
         QuackHost
       </span>
     </a>
 
     <div
-      class="items-center justify-between hidden w-full lg:flex md:w-auto md:order-1"
+      class="items-center justify-between hidden w-full lg:flex md:w-auto md:order-1 font-normal"
       id="navbar-cta"
     >
       <ul
-        class="flex flex-col text-md font-medium border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
+        class="flex flex-col text-md border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
       >
         <li>
           <a
@@ -50,11 +48,11 @@
       </ul>
     </div>
 
-    <div class="flex items-center md:order-2">
+    <div class="flex items-center md:order-2 font-medium">
       <div class="relative">
         <button
           @click="isOpen = !isOpen"
-          class="text-white bg-black hover:bg-gray-900 font-medium rounded-md text-md px-5 py-2.5 md:px-6 md:py-2.5 mr-1 md:mr-2 transition-colors sm:hidden"
+          class="text-white bg-black hover:bg-gray-900 rounded-md text-md px-5 py-2.5 md:px-6 md:py-2.5 mr-1 md:mr-2 transition-colors sm:hidden"
         >
           Sign In
         </button>
@@ -84,13 +82,13 @@
       <div class="hidden sm:flex">
         <a
           href="https://client-portal.quack.host"
-          class="text-black bg-zinc-100 hover:bg-zinc-50 font-medium rounded-md text-md px-5 py-2.5 md:px-6 md:py-2.5 mr-1 md:mr-2 transition-colors"
+          class="text-black bg-zinc-100 hover:bg-zinc-50 rounded-md text-md px-5 py-2.5 md:px-6 md:py-2.5 mr-1 md:mr-2 transition-colors"
         >
           Client Portal
         </a>
         <a
           href="https://plane.quack.host"
-          class="text-white bg-black hover:bg-gray-900 font-medium rounded-md text-md px-5 py-2.5 md:px-5 md:py-2.5 transition-colors"
+          class="text-white bg-black hover:bg-gray-900 rounded-md text-md px-5 py-2.5 md:px-5 md:py-2.5 transition-colors"
         >
           QuackPlane
         </a>
