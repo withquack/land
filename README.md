@@ -1,4 +1,4 @@
-Built with [Alpine][Alpine], [Astro][Astro], and [Tailwind CSS][Tailwind CSS].
+Built with [Alpine], [Astro], and [Tailwind CSS].
 
 [Alpine]: https://alpinejs.dev/
 [Astro]: https://astro.build
