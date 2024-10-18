@@ -1,5 +1,5 @@
 ---
-
+import "../../scripts/minecraft-goose.js";
 ---
 
 <div class="grid grid-cols-7 mb-16 gap-8 py-32 items-center">
@@ -12,6 +12,7 @@
       muted
       preload="auto"
       playsinline
+      id="minecraft-goose"
       src="../index/minecraft-goose.webm"
       width="557"
       height="338"
@@ -56,3 +57,10 @@
     </div>
   </div>
 </div>
+
+<script>
+  import { handleVideoPlayback } from "../../scripts/minecraft-goose.js";
+
+  // This ensures the script runs after the DOM is fully loaded
+  document.addEventListener("DOMContentLoaded", handleVideoPlayback);
+</script>
