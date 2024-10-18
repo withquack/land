@@ -1,5 +1,6 @@
-Built with [Alpine], [Astro], and [Tailwind CSS].
+Built with [Alpine.js], [Astro], and [Tailwind CSS]. Hosted on [Cloudflare Pages].
 
-[Alpine]: https://alpinejs.dev/
+[Alpine.js]: https://alpinejs.dev
 [Astro]: https://astro.build
-[Tailwind CSS]: https://tailwindcss.com/
+[Tailwind CSS]: https://tailwindcss.com
+[Cloudflare Pages]: https://pages.cloudflare.com
