@@ -21,7 +21,7 @@
 
       <!-- Desktop navigation -->
       <nav
-        class="hidden sm:flex items-center ml-3"
+        class="hidden md:flex items-center ml-3"
         role="navigation"
         aria-label="Main navigation"
       >
@@ -91,16 +91,17 @@
         '#user-dropdown [role="menuitem"]'
       );
       dropdownItems.forEach((item, index) => {
-        item.tabIndex = index === currentDropdownIndex ? 0 : -1;
+        const htmlItem = item as HTMLElement;
+        htmlItem.tabIndex = index === currentDropdownIndex ? 0 : -1;
         if (index === currentDropdownIndex) {
-          item.focus();
+          htmlItem.focus();
         }
       });
     }
 
-    function navigateDropdown(direction) {
+    function navigateDropdown(direction: string) {
       const dropdown = document.getElementById("user-dropdown");
-      if (dropdown.style.display === "none") return;
+      if (!dropdown || dropdown.style.display === "none") return;
 
       const dropdownItems = document.querySelectorAll(
         '#user-dropdown [role="menuitem"]'
@@ -130,7 +131,10 @@
       // L = toggle login dropdown
       if (key === "l" && !e.ctrlKey && !e.metaKey && !e.altKey) {
         e.preventDefault();
-        document.querySelector('[aria-label="User menu"]').click();
+        const userMenuBtn = document.querySelector(
+          '[aria-label="User menu"]'
+        ) as HTMLElement;
+        if (userMenuBtn) userMenuBtn.click();
         return;
       }
 
@@ -181,14 +185,16 @@
         const dropdownItems = document.querySelectorAll(
           '#user-dropdown [role="menuitem"]'
         );
-        dropdownItems[currentDropdownIndex].click();
+        const targetItem = dropdownItems[currentDropdownIndex] as HTMLElement;
+        if (targetItem) targetItem.click();
         return;
       }
     });
 
     // Reset dropdown index when menu opens
     document.addEventListener("click", (e) => {
-      if (e.target.closest('[aria-label="User menu"]')) {
+      const target = e.target as HTMLElement;
+      if (target && target.closest('[aria-label="User menu"]')) {
         setTimeout(() => {
           currentDropdownIndex = 0;
           updateDropdownFocus();
