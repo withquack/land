@@ -85,6 +85,16 @@
   <script>
     // Dropdown navigation state
     let currentDropdownIndex = 0;
+    let isKeyboardUser = false;
+
+    // Detect if user is navigating with keyboard
+    document.addEventListener("keydown", () => {
+      isKeyboardUser = true;
+    });
+
+    document.addEventListener("mousedown", () => {
+      isKeyboardUser = false;
+    });
 
     function updateDropdownFocus() {
       const dropdownItems = document.querySelectorAll(
@@ -93,7 +103,8 @@
       dropdownItems.forEach((item, index) => {
         const htmlItem = item as HTMLElement;
         htmlItem.tabIndex = index === currentDropdownIndex ? 0 : -1;
-        if (index === currentDropdownIndex) {
+        // Only focus if user is using keyboard
+        if (index === currentDropdownIndex && isKeyboardUser) {
           htmlItem.focus();
         }
       });
