@@ -1,18 +1,430 @@
 ---
 import Layout from "../layouts/layout.astro";
-import SectionA from "../components/index/section-a.astro";
-import SectionB from "../components/index/section-b.astro";
-import SectionC from "../components/index/section-c.astro";
-import SectionD from "../components/index/section-d.astro";
-import SectionE from "../components/index/section-e.astro";
-import SectionF from "../components/index/section-f.astro";
 ---
 
 <Layout title="/ Hello World!">
-  <SectionA />
-  <SectionB />
-  <SectionC />
-  <SectionD />
-  <SectionE />
-  <SectionF />
+  <!-- Hero Section -->
+  <div class="grid grid-cols-7 mb-16 gap-8 py-32 items-center">
+    <div
+      class="col-span-0 lg:col-span-3 text-gray-200 hidden lg:block hover:transition hover:transition-700 hover:ease-in-out hover:brightness-105 hover:skew-y-1 duration-300"
+    >
+      <video
+        autoplay
+        loop
+        muted
+        preload="auto"
+        playsinline
+        id="minecraft-goose"
+        src="../index/minecraft-goose.webm"
+        width="557"
+        height="338"
+      >
+      </video>
+    </div>
+    <div class="col-span-7 lg:col-span-4 font-bold">
+      <h1
+        class="mb-4 text-4xl leading-none tracking-tight text-black sm:text-5xl lg:text-6xl"
+      >
+        <span
+          class="underline underline-offset-3 decoration-8 decoration-blue-400"
+        >
+          Geese' mzing
+        </span>
+      </h1>
+      <h1
+        class="mb-6 text-4xl ease-in-out leading-none tracking-tight text-black sm:text-5xl lg:text-6xl"
+      >
+        Premium Game Servers
+      </h1>
+
+      <div
+        class="flex flex-col w-fit space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 mt-6 font-normal"
+      >
+        <div class="flex bg-black">
+          <a
+            href="/pricing"
+            class="min-w-52 sm:min-w-0 text-white bg-zinc-950 hover:bg-zinc-900 text-md px-5 py-2.5 sm:px-5 md:py-2.5 -translate-y-0 translate-x-0 hover:-translate-y-1 hover:translate-x-1 transition-transform duration-300 ease-in-out"
+          >
+            Launch your server
+          </a>
+        </div>
+        <div class="flex bg-zinc-100">
+          <a
+            href="/quackplane"
+            class="min-w-52 sm:min-w-0 text-black bg-zinc-100 hover:bg-zinc-50 text-md px-5 py-2.5 sm:px-5 md:py-2.5 -translate-y-0 translate-x-0 hover:-translate-y-1 hover:translate-x-1 transition-transform duration-300 ease-in-out"
+          >
+            Discover QuackPlane
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="mb-4 sm:mb-8 md:mb-16 lg:mb-32" aria-label="Product Features">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-x-8 lg:gap-y-16 xl:gap-y-32"
+    >
+      <div>
+        <h2
+          class="text-2xl flex font-semibold mb-2 underline decoration-4 decoration-sky-500"
+        >
+          Powerful
+          <img
+            src="/index/doodles/joy leap 2.svg"
+            class="-ml-1 transition duration-300 ease-in-out hover:-translate-y-1"
+            alt="joy leap"
+            width="36"
+            height="36"
+          />
+        </h2>
+        <p class="text-gray-600 font-normal">
+          High-performance infrastructure running the latest hardware. Dedicated
+          resources ensure your servers run smoothly, even with tons of mods and
+          plugins.
+        </p>
+      </div>
+
+      <div>
+        <h2
+          class="text-2xl flex font-semibold mb-2 underline decoration-4 decoration-blue-500"
+        >
+          Reliable
+          <img
+            src="/index/doodles/rocking chair.svg"
+            class="ml-1"
+            alt="rocking chair"
+            width="36"
+            height="36"
+          />
+        </h2>
+        <p class="text-gray-600 font-normal">
+          Terrabit-scale DDoS protection keeps your server online during
+          attacks. Check our live <a
+            href="/service-status"
+            class="text-blue-600 hover:underline">service status</a
+          > to see our track record.
+        </p>
+      </div>
+
+      <div>
+        <h2
+          class="text-2xl flex font-semibold mb-2 underline decoration-4 decoration-green-500"
+        >
+          Scalable
+          <img
+            src="/index/doodles/cycle.svg"
+            class="ml-1 transition duration-300 ease-in-out hover:animate-spin"
+            alt="cycle"
+            width="36"
+            height="36"
+          />
+        </h2>
+        <p class="text-gray-600 font-normal">
+          Easily upgrade or downgrade your plan as your community grows or
+          shrinks. Scale your resources up and down as needed without losing
+          your data.
+        </p>
+      </div>
+
+      <div>
+        <h2
+          class="text-2xl flex font-semibold mb-2 underline decoration-4 decoration-emerald-500"
+        >
+          Transparent
+          <img
+            src="/index/doodles/tree.svg"
+            class="ml-1 transition duration-700 ease-in-out hover:scale-110"
+            alt="tree"
+            width="36"
+            height="36"
+            loading="lazy"
+          />
+        </h2>
+        <p class="text-gray-600 font-normal">
+          Complete visibility into pricing, resource usage, and server
+          performance. No hidden fees, no surprise charges - just honest,
+          straightforward hosting with clear billing.
+        </p>
+      </div>
+
+      <div class="col-span-1 sm:col-span-2">
+        <h2
+          class="text-2xl flex font-semibold mb-2 underline decoration-4 decoration-indigo-500"
+        >
+          Secured by off-site backups
+          <img
+            src="/index/doodles/rain.svg"
+            class="ml-1 hidden sm:block transition duration-300 ease-in-out hover:translate-x-1 hover:-translate-y-1"
+            alt="rain"
+            width="36"
+            height="36"
+            loading="lazy"
+          />
+          <img
+            src="/index/doodles/rain.svg"
+            class="ml-1 sm:hidden block transition duration-300 ease-in-out hover:translate-x-1 hover:-translate-y-1"
+            alt="rain"
+            width="72"
+            height="72"
+            loading="lazy"
+          />
+        </h2>
+        <p class="text-gray-600 font-normal">
+          Schedule automatic backups or take your own backups manually. The key
+          advantage: all backups are stored off-site, protecting your worlds
+          even if our datacenter goes down. Your creations are always safe.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- QuackPlane Section -->
+  <div
+    class="mb-4 sm:mb-8 md:mb-16 lg:mb-32"
+    aria-label="Powered by QuackPlane"
+  >
+    <div
+      class="grid grid-cols-1 sm:grid-cols-5 gap-6 sm:gap-y-28 transition-all"
+    >
+      <div class="col-span-3">
+        <img
+          src="/index/quackplane.webp"
+          class="w-full h-auto"
+          alt="Quack Panel"
+          width="1253"
+          height="1016"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="col-span-2">
+        <h2
+          class="text-3xl flex font-medium mb-6 underline decoration-4 decoration-lime-300"
+        >
+          Powered by QuackPlane
+          <img
+            src="/index/doodles/diamond sparkle.svg"
+            class="hidden sm:block"
+            alt="diamond sparkle"
+            width="36"
+            height="36"
+            loading="lazy"
+          />
+          <img
+            src="/index/doodles/jinn.svg"
+            class="hidden sm:block"
+            alt="jinn"
+            width="36"
+            height="36"
+            loading="lazy"
+          />
+          <img
+            src="/index/doodles/diamond sparkle.svg"
+            class="sm:hidden block"
+            alt="diamond sparkle"
+            width="72"
+            height="72"
+            loading="lazy"
+          />
+          <img
+            src="/index/doodles/jinn.svg"
+            class="sm:hidden block"
+            alt="jinn"
+            width="72"
+            height="72"
+            loading="lazy"
+          />
+        </h2>
+
+        <p class="text-gray-600 font-normal mb-8 leading-relaxed text-lg">
+          Built on Pterodactyl - the industry standard game server management
+          platform. Reliable, proven, and trusted by thousands of hosting
+          providers worldwide.
+        </p>
+
+        <div class="space-y-6">
+          <div class="flex items-start space-x-4">
+            <div class="mt-1">
+              <img
+                src="/index/doodles/browser.svg"
+                alt="web interface"
+                width="48"
+                height="48"
+              />
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-2 text-lg">
+                Manage your worlds from anywhere
+              </h3>
+              <p class="text-gray-600">
+                Web-based control panel lets you restart servers, monitor player
+                activity, and manage your worlds from any device. No software to
+                install.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="mt-1">
+              <img
+                src="/index/doodles/upload.svg"
+                alt="file management"
+                width="48"
+                height="48"
+              />
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-2 text-lg">
+                Easy file & mod management
+              </h3>
+              <p class="text-gray-600">
+                Upload mods, plugins, and resource packs with drag & drop.
+                Built-in text editor lets you tweak configs without downloading
+                files.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="mt-1">
+              <img
+                src="/index/doodles/graph.svg"
+                alt="monitoring"
+                width="48"
+                height="48"
+              />
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-2 text-lg">
+                Live server monitoring
+              </h3>
+              <p class="text-gray-600">
+                View live console output and chat with players directly from the
+                panel, with real-time RAM usage and CPU stats.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="mt-1">
+              <img
+                src="/index/doodles/hand holding.svg"
+                alt="team management"
+                width="48"
+                height="48"
+              />
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-2 text-lg">
+                Create your own staff team
+              </h3>
+              <p class="text-gray-600">
+                Give your friends and moderators access to restart the server,
+                manage files, or monitor players - all without sharing your main
+                login.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="mt-1">
+              <img
+                src="/index/doodles/magic wand.svg"
+                alt="backups"
+                width="48"
+                height="48"
+              />
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-2 text-lg">
+                Instant server restoration
+              </h3>
+              <p class="text-gray-600">
+                Someone griefed your server. Roll back your entire server to any
+                previous backup with one click. Everything gets restored -
+                worlds, configs, mods, the lot.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="">
+    <h2 class="text-2xl sm:flex font-semibold mb-2 items-center mb-16">
+      <img
+        src="/index/doodles/chat.svg"
+        loading="lazy"
+        class=""
+        alt="text"
+        width="62"
+        height="62"
+      />
+      <span class="underline decoration-4 decoration-emerald-200"
+        >Questions?</span
+      >
+      <img
+        src="/index/doodles/owl.svg"
+        loading="lazy"
+        class=""
+        alt="text"
+        width="62"
+        height="62"
+      />
+      <span class="underline decoration-4 decoration-indigo-200"
+        >We've got answers.</span
+      >
+    </h2>
+    <h1
+      class="text-xl flex font-semibold ml-6 mb-2 items-center underline decoration-2 decoration-stone-200"
+    >
+      Question one
+    </h1>
+    <p class="text-gray-600 font-normal ml-8 mb-8">
+      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+      fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
+      sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+      amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+      incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+    </p>
+    <h1
+      class="text-xl flex font-semibold ml-6 mb-2 items-center underline decoration-2 decoration-stone-200"
+    >
+      Question two
+    </h1>
+    <p class="text-gray-600 font-normal ml-8 mb-8">
+      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+      fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
+      sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+      amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+      incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+    </p>
+    <h1
+      class="text-xl flex font-semibold ml-6 mb-2 items-center underline decoration-2 decoration-stone-200"
+    >
+      Question three
+    </h1>
+    <p class="text-gray-600 font-normal ml-8 mb-8">
+      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+      fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
+      sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+      amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+      incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+    </p>
+    <h1
+      class="text-xl flex font-semibold ml-6 mb-2 items-center underline decoration-2 decoration-stone-200"
+    >
+      Question four
+    </h1>
+    <p class="text-gray-600 font-normal ml-8 mb-8">
+      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+      fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
+      sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+      amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+      incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+    </p>
+  </div>
 </Layout>
