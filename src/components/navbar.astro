@@ -1,8 +1,4 @@
----
-
----
-
-<nav x-data="{ userMenuOpen: false }" id="navbar">
+<nav x-data="{ userMenuOpen: false, mobileMenuOpen: false }" id="navbar">
   <div class="relative">
     <a
       href="#main-content"
@@ -17,6 +13,20 @@
         <a href="/" id="nav-home" class="flex items-center">
           <img src="/mascot-min.png" alt="QuackHost Mascot" class="w-10 h-10" />
         </a>
+
+        <button
+          @click="mobileMenuOpen = !mobileMenuOpen"
+          class="md:hidden ml-2 p-2 text-gray-900 hover:bg-gray-200"
+          aria-label="Menu"
+          :aria-expanded="mobileMenuOpen"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
       </div>
 
       <!-- Desktop navigation -->
@@ -79,6 +89,32 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div
+      x-show="mobileMenuOpen"
+      @click.away="mobileMenuOpen = false"
+      class="absolute top-12 left-0 right-0 bg-white shadow-lg z-50 md:hidden"
+      style="display: none;"
+    >
+      <nav>
+        <a
+          href="/pricing"
+          class="block px-4 py-3 text-sm text-gray-900 hover:bg-gray-100"
+          >Pricing</a
+        >
+        <a
+          href="/guides-&-tutorials"
+          class="block px-4 py-3 text-sm text-gray-900 hover:bg-gray-100 border-t border-gray-200"
+          >Guides & Tutorials</a
+        >
+        <a
+          href="/games"
+          class="block px-4 py-3 text-sm text-gray-900 hover:bg-gray-100 border-t border-gray-200"
+          >Games</a
+        >
+      </nav>
     </div>
   </div>
 
