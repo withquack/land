@@ -1,20 +1,21 @@
 <nav x-data="{ userMenuOpen: false, mobileMenuOpen: false }" id="navbar">
   <div class="relative">
     <div class="flex items-center h-12">
+      <!-- Mobile menu button - LEFT of logo -->
+      <button
+        @click="mobileMenuOpen = !mobileMenuOpen"
+        class="md:hidden p-2 text-gray-900 hover:bg-gray-200 mr-2"
+        aria-label="Menu"
+        :aria-expanded="mobileMenuOpen"
+      >
+        <img src="/navbar/menu.svg" alt="Menu" class="w-6 h-6" />
+      </button>
+
       <!-- Logo -->
       <div class="flex">
         <a href="/" id="nav-home" class="flex items-center">
           <img src="/mascot.svg" alt="QuackHost Mascot" class="w-10 h-10" />
         </a>
-
-        <button
-          @click="mobileMenuOpen = !mobileMenuOpen"
-          class="md:hidden ml-2 p-2 text-gray-900 hover:bg-gray-200"
-          aria-label="Menu"
-          :aria-expanded="mobileMenuOpen"
-        >
-          <img src="/navbar/menu.svg" alt="Menu" class="w-6 h-6" />
-        </button>
       </div>
 
       <!-- Desktop navigation -->
@@ -206,6 +207,7 @@
       // Arrow keys for dropdown navigation
       const dropdown = document.getElementById("user-dropdown");
       if (
+        dropdown &&
         dropdown.style.display !== "none" &&
         ["arrowdown", "arrowup"].includes(key)
       ) {
@@ -215,7 +217,7 @@
       }
 
       // Enter to activate focused dropdown item
-      if (dropdown.style.display !== "none" && key === "enter") {
+      if (dropdown && dropdown.style.display !== "none" && key === "enter") {
         e.preventDefault();
         const dropdownItems = document.querySelectorAll(
           '#user-dropdown [role="menuitem"]'
