@@ -13,6 +13,7 @@
     "@astrojs/alpinejs": "^0.4.0",
     "@astrojs/check": "^0.5.5",
     "@astrojs/tailwind": "^5.1.0",
+    "@fontsource/ibm-plex-sans": "^5.2.6",
     "@types/alpinejs": "^3.13.6",
     "alpinejs": "^3.13.5",
     "astro": "^4.4.4",

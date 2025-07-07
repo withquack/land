@@ -14,6 +14,9 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.1.0
     version: 5.1.0(astro@4.13.3)(tailwindcss@3.4.9)
+  '@fontsource/ibm-plex-sans':
+    specifier: ^5.2.6
+    version: 5.2.6
   '@types/alpinejs':
     specifier: ^3.13.6
     version: 3.13.10
@@ -630,6 +633,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource/ibm-plex-sans@5.2.6:
+    resolution: {integrity: sha512-yclktpagJncROwdWHHEfPsrIfoo3uiIeDFchvmjNmTW/YMBfLYWJnUv19EAqPNhGizdtmcH9FjzOR2094Z2uPg==}
+    dev: false
 
   /@img/sharp-darwin-arm64@0.33.4:
     resolution: {integrity: sha512-p0suNqXufJs9t3RqLBO6vvrgr5OhgbWp76s5gTRvdmxmuv9E1rcaqGUsl3l4mKVmXPkTkTErXediAui4x+8PSA==}
