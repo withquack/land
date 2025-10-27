@@ -1,10 +1,10 @@
 <nav x-data="{ userMenuOpen: false, mobileMenuOpen: false }" id="navbar">
-  <div class="relative">
+  <div class="relative text-gray-10">
     <div class="flex items-center">
       <!-- Mobile menu button - LEFT of logo -->
       <button
         @click="mobileMenuOpen = !mobileMenuOpen"
-        class="md:hidden flex items-center justify-center h-12 p-3 text-zinc-900 hover:text-black hover:bg-gray-200"
+        class="sm:hidden flex items-center justify-center h-12 p-3 hover:text-gray hover:bg-gray-90"
         aria-label="Menu"
         :aria-expanded="mobileMenuOpen"
       >
@@ -12,35 +12,35 @@
       </button>
 
       <!-- Logo -->
-      <div class="flex hover:bg-gray-200 px-3 py-[6px]">
+      <div class="flex hover:bg-gray-90 px-3 py-[6px]">
         <a href="/" id="nav-home" class="flex items-center">
           <img src="/mascot.svg" alt="QuackHost Mascot" class="h-9" />
-          <p class="ml-3 text-zinc-900 hover:text-black">QuackHost</p>
+          <p class="ml-3 hover:text-gray">QuackHost</p>
         </a>
       </div>
 
       <!-- Desktop navigation -->
       <nav
-        class="hidden md:flex items-center"
+        class="hidden sm:flex items-center"
         role="navigation"
         aria-label="Main navigation"
       >
         <a
           href="/pricing"
           id="nav-pricing"
-          class="text-zinc-900 hover:text-black hover:bg-gray-200 flex items-center h-12 p-3"
+          class="hover:text-gray hover:bg-gray-90 flex items-center h-12 p-3"
           >Pricing</a
         >
         <a
           href="/guides-&-tutorials"
           id="nav-guides"
-          class="text-zinc-900 hover:text-black hover:bg-gray-200 flex items-center h-12 p-3"
+          class="hover:text-gray hover:bg-gray-90 flex items-center h-12 p-3"
           >Guides & Tutorials</a
         >
         <a
           href="/games"
           id="nav-games"
-          class="text-zinc-900 hover:text-black hover:bg-gray-200 flex items-center h-12 p-3"
+          class="hover:text-gray hover:bg-gray-90 flex items-center h-12 p-3"
           >Games</a
         >
       </nav>
@@ -50,7 +50,8 @@
         <div class="relative">
           <button
             @click="userMenuOpen = !userMenuOpen"
-            class="flex items-center justify-center h-12 p-3 text-zinc-900 hover:text-black hover:bg-gray-200"
+            class="flex items-center justify-center h-12 p-3 hover:text-gray"
+            :class="{ 'bg-gray-90 hover:bg-gray-80': userMenuOpen, 'hover:bg-gray-90': !userMenuOpen }"
             aria-label="User menu"
             :aria-expanded="userMenuOpen"
             aria-haspopup="true"
@@ -62,20 +63,20 @@
             x-show="userMenuOpen"
             @click.away="userMenuOpen = false"
             id="user-dropdown"
-            class="absolute right-0 mt-0 w-64 bg-white shadow-md z-20"
+            class="absolute right-0 mt-0 w-64 bg-gray-90 shadow-md z-20"
             role="menu"
             style="display: none;"
           >
             <a
               href="https://client.quack.host"
               role="menuitem"
-              class="block p-3 text-zinc-900 hover:text-black hover:bg-gray-100"
+              class="block p-3 hover:text-gray hover:bg-gray-80"
               tabindex="-1">Client Portal</a
             >
             <a
               href="https://plane.quack.host"
               role="menuitem"
-              class="block p-3 text-zinc-900 hover:text-black hover:bg-gray-100 border-t border-gray-200"
+              class="block p-3 hover:text-gray hover:bg-gray-80"
               tabindex="-1">QuackPlane</a
             >
           </div>
@@ -87,23 +88,19 @@
     <div
       x-show="mobileMenuOpen"
       @click.away="mobileMenuOpen = false"
-      class="absolute top-12 left-0 right-0 bg-white w-64 z-50 shadow-md md:hidden"
+      class="absolute top-12 left-0 right-0 bg-gray-90 w-64 z-50 shadow-md sm:hidden"
       style="display: none;"
     >
       <nav>
-        <a
-          href="/pricing"
-          class="block p-3 text-zinc-900 hover:text-black hover:bg-gray-100"
+        <a href="/pricing" class="block p-3 hover:text-gray hover:bg-gray-80"
           >Pricing</a
         >
         <a
           href="/guides-&-tutorials"
-          class="block p-3 text-zinc-900 hover:text-black hover:bg-gray-100 border-t border-gray-200"
+          class="block p-3 hover:text-gray hover:bg-gray-80"
           >Guides & Tutorials</a
         >
-        <a
-          href="/games"
-          class="block p-3 text-zinc-900 hover:text-black hover:bg-gray-100 border-t border-gray-200"
+        <a href="/games" class="block p-3 hover:text-gray hover:bg-gray-80"
           >Games</a
         >
       </nav>
