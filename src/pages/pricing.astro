@@ -2,10 +2,494 @@
 import Layout from "../layouts/layout.astro";
 ---
 
-<Layout title="/ Pricing">
-  <div class="mb-32 mt-32">
-    <p class="text-2xl font-semibold xl:text-4xl">Pricing</p>
+<Layout
+  title="/ Pricing"
+  description="Transparent, honest pricing for game server hosting. No hidden fees, no surprise charges, no contracts. Choose the perfect plan for your community and scale anytime."
+>
+  <!-- Header Section -->
+  <section class="mb-16 lg:mb-20 text-center">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">
+      <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">
+        Transparent pricing.
+      </span>
+      <br />
+      <span class="text-white">No surprises.</span>
+    </h1>
+    <p class="text-lg lg:text-xl text-cool-gray-30 leading-relaxed max-w-3xl mx-auto">
+      What you see is what you pay. No hidden fees, no setup charges, no contracts. Scale up or down anytime - billing is prorated to the second.
+    </p>
+  </section>
+
+  <!-- Trust Badges -->
+  <div class="mb-12 flex flex-wrap justify-center gap-6 text-sm text-cool-gray-40">
+    <div class="flex items-center gap-2">
+      <svg class="w-5 h-5 text-green-40" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+      </svg>
+      <span>No contracts</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <svg class="w-5 h-5 text-green-40" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+      </svg>
+      <span>Cancel anytime</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <svg class="w-5 h-5 text-green-40" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+      </svg>
+      <span>Prorated billing</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <svg class="w-5 h-5 text-green-40" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+      </svg>
+      <span>30-day money-back guarantee</span>
+    </div>
   </div>
 
-  <div class="h-96 rounded-md bg-gray-200"></div>
+  <!-- Pricing Tiers -->
+  <section class="mb-20 lg:mb-32" aria-label="Pricing plans">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+
+      <!-- Starter Plan -->
+      <article class="bg-cool-gray-90 bg-opacity-50 border border-cool-gray-70 rounded-lg p-8 flex flex-col hover:border-cool-gray-60 transition-colors">
+        <div class="mb-6">
+          <h2 class="text-2xl font-semibold mb-2 text-white">Starter</h2>
+          <p class="text-cool-gray-40 text-sm">Perfect for small communities</p>
+        </div>
+
+        <div class="mb-6">
+          <div class="flex items-baseline gap-2">
+            <span class="text-4xl font-semibold text-white">$5</span>
+            <span class="text-cool-gray-40">/month</span>
+          </div>
+        </div>
+
+        <ul class="space-y-3 mb-8 flex-grow">
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span><strong class="text-white">2 GB RAM</strong></span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Up to 10 players</span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>20 GB SSD storage</span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>DDoS protection</span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Off-site backups</span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>QuackPlane access</span>
+          </li>
+        </ul>
+
+        <a
+          href="https://client.quack.host"
+          class="inline-flex justify-center items-center px-6 py-3 text-base font-semibold text-white border-2 border-cool-gray-60 hover:border-cool-gray-40 hover:bg-cool-gray-80 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-cool-gray-60"
+        >
+          Get started
+        </a>
+      </article>
+
+      <!-- Growth Plan (POPULAR) -->
+      <article class="bg-cool-gray-90 bg-opacity-50 border-2 border-[#FF9C20] rounded-lg p-8 flex flex-col relative shadow-xl shadow-[#FF9C20]/10">
+        <div class="absolute top-0 right-0 bg-[#FF9C20] text-black text-xs font-semibold px-3 py-1 rounded-bl-lg">
+          POPULAR
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-2xl font-semibold mb-2 text-white">Growth</h2>
+          <p class="text-cool-gray-40 text-sm">Most popular choice</p>
+        </div>
+
+        <div class="mb-6">
+          <div class="flex items-baseline gap-2">
+            <span class="text-4xl font-semibold text-white">$12</span>
+            <span class="text-cool-gray-40">/month</span>
+          </div>
+        </div>
+
+        <ul class="space-y-3 mb-8 flex-grow">
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span><strong class="text-white">4 GB RAM</strong></span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Up to 25 players</span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>50 GB SSD storage</span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>DDoS protection</span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Off-site backups</span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>QuackPlane access</span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Priority support</span>
+          </li>
+        </ul>
+
+        <a
+          href="https://client.quack.host"
+          class="inline-flex justify-center items-center px-6 py-3 text-base font-semibold text-black bg-[#FF9C20] hover:bg-[#FF8D00] transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-[#FF9C20] focus:ring-opacity-50"
+        >
+          Get started
+        </a>
+      </article>
+
+      <!-- Pro Plan -->
+      <article class="bg-cool-gray-90 bg-opacity-50 border border-cool-gray-70 rounded-lg p-8 flex flex-col hover:border-cool-gray-60 transition-colors">
+        <div class="mb-6">
+          <h2 class="text-2xl font-semibold mb-2 text-white">Pro</h2>
+          <p class="text-cool-gray-40 text-sm">For established servers</p>
+        </div>
+
+        <div class="mb-6">
+          <div class="flex items-baseline gap-2">
+            <span class="text-4xl font-semibold text-white">$24</span>
+            <span class="text-cool-gray-40">/month</span>
+          </div>
+        </div>
+
+        <ul class="space-y-3 mb-8 flex-grow">
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span><strong class="text-white">8 GB RAM</strong></span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Up to 50 players</span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>100 GB SSD storage</span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>DDoS protection</span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Off-site backups</span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>QuackPlane access</span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Priority support</span>
+          </li>
+        </ul>
+
+        <a
+          href="https://client.quack.host"
+          class="inline-flex justify-center items-center px-6 py-3 text-base font-semibold text-white border-2 border-cool-gray-60 hover:border-cool-gray-40 hover:bg-cool-gray-80 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-cool-gray-60"
+        >
+          Get started
+        </a>
+      </article>
+
+      <!-- Enterprise Plan -->
+      <article class="bg-cool-gray-90 bg-opacity-50 border border-cool-gray-70 rounded-lg p-8 flex flex-col hover:border-cool-gray-60 transition-colors">
+        <div class="mb-6">
+          <h2 class="text-2xl font-semibold mb-2 text-white">Enterprise</h2>
+          <p class="text-cool-gray-40 text-sm">Maximum performance</p>
+        </div>
+
+        <div class="mb-6">
+          <div class="flex items-baseline gap-2">
+            <span class="text-4xl font-semibold text-white">$48</span>
+            <span class="text-cool-gray-40">/month</span>
+          </div>
+        </div>
+
+        <ul class="space-y-3 mb-8 flex-grow">
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span><strong class="text-white">16 GB RAM</strong></span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Up to 100+ players</span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>200 GB SSD storage</span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>DDoS protection</span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Off-site backups</span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>QuackPlane access</span>
+          </li>
+          <li class="flex items-start gap-2 text-cool-gray-30">
+            <svg class="w-5 h-5 text-green-40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>24/7 priority support</span>
+          </li>
+        </ul>
+
+        <a
+          href="https://client.quack.host"
+          class="inline-flex justify-center items-center px-6 py-3 text-base font-semibold text-white border-2 border-cool-gray-60 hover:border-cool-gray-40 hover:bg-cool-gray-80 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-cool-gray-60"
+        >
+          Get started
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <!-- What's Included Section -->
+  <section class="mb-20 lg:mb-32 py-12 px-6 lg:px-12 bg-cool-gray-90 bg-opacity-30 rounded-lg border border-cool-gray-80" aria-labelledby="included-heading">
+    <h2 id="included-heading" class="text-3xl lg:text-4xl font-semibold mb-12 text-center">
+      <span class="text-transparent bg-gradient-to-r from-cyan-40 to-blue-40 bg-clip-text">
+        Every plan includes
+      </span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0 w-12 h-12 bg-green-90 rounded-lg flex items-center justify-center">
+          <svg class="w-6 h-6 text-green-40" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2 text-white">Terrabit DDoS Protection</h3>
+          <p class="text-cool-gray-30 text-sm">Enterprise-grade protection keeps your server online during attacks.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0 w-12 h-12 bg-purple-90 rounded-lg flex items-center justify-center">
+          <svg class="w-6 h-6 text-purple-40" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M7 9a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H9a2 2 0 01-2-2V9z"></path>
+            <path d="M5 3a2 2 0 00-2 2v6a2 2 0 002 2V5h8a2 2 0 00-2-2H5z"></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2 text-white">Off-Site Backups</h3>
+          <p class="text-cool-gray-30 text-sm">Your worlds survive even if our datacenter doesn't.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0 w-12 h-12 bg-blue-90 rounded-lg flex items-center justify-center">
+          <svg class="w-6 h-6 text-blue-40" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M13 7H7v6h6V7z"></path>
+            <path fill-rule="evenodd" d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1H9v1a1 1 0 11-2 0v-1H5a2 2 0 01-2-2v-2H2a1 1 0 110-2h1V9H2a1 1 0 010-2h1V5a2 2 0 012-2h2V2zM5 5h10v10H5V5z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2 text-white">Latest Hardware</h3>
+          <p class="text-cool-gray-30 text-sm">Ryzen 9 processors and NVMe SSDs for maximum performance.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0 w-12 h-12 bg-cyan-90 rounded-lg flex items-center justify-center">
+          <svg class="w-6 h-6 text-cyan-40" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2 text-white">Instant Setup</h3>
+          <p class="text-cool-gray-30 text-sm">Server provisioned and online in under 2 minutes.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0 w-12 h-12 bg-teal-90 rounded-lg flex items-center justify-center">
+          <svg class="w-6 h-6 text-teal-40" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2 text-white">24/7 Uptime Monitoring</h3>
+          <p class="text-cool-gray-30 text-sm">We watch your server so you don't have to.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0 w-12 h-12 bg-magenta-90 rounded-lg flex items-center justify-center">
+          <svg class="w-6 h-6 text-magenta-40" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"></path>
+            <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2 text-white">Expert Support</h3>
+          <p class="text-cool-gray-30 text-sm">Real humans who actually know game servers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="mb-20 lg:mb-32" aria-labelledby="faq-heading">
+    <h2 id="faq-heading" class="text-3xl lg:text-4xl font-semibold mb-8 text-center">
+      Common questions
+    </h2>
+
+    <div class="max-w-3xl mx-auto space-y-6">
+      <details class="group bg-cool-gray-90 bg-opacity-30 border border-cool-gray-70 rounded-lg p-6">
+        <summary class="text-lg font-semibold text-white cursor-pointer list-none flex justify-between items-center">
+          <span>Can I switch plans anytime?</span>
+          <svg class="w-5 h-5 text-cool-gray-40 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </summary>
+        <p class="mt-4 text-cool-gray-30 leading-relaxed">
+          Yes. Upgrade or downgrade anytime - changes take effect immediately and billing is prorated to the second. No penalties, no questions asked.
+        </p>
+      </details>
+
+      <details class="group bg-cool-gray-90 bg-opacity-30 border border-cool-gray-70 rounded-lg p-6">
+        <summary class="text-lg font-semibold text-white cursor-pointer list-none flex justify-between items-center">
+          <span>Do you offer refunds?</span>
+          <svg class="w-5 h-5 text-cool-gray-40 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </summary>
+        <p class="mt-4 text-cool-gray-30 leading-relaxed">
+          Absolutely. We offer a 30-day money-back guarantee, no questions asked. If you're not satisfied, we'll refund you fully.
+        </p>
+      </details>
+
+      <details class="group bg-cool-gray-90 bg-opacity-30 border border-cool-gray-70 rounded-lg p-6">
+        <summary class="text-lg font-semibold text-white cursor-pointer list-none flex justify-between items-center">
+          <span>Are there any hidden fees?</span>
+          <svg class="w-5 h-5 text-cool-gray-40 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </summary>
+        <p class="mt-4 text-cool-gray-30 leading-relaxed">
+          None. The price you see is the price you pay. No setup fees, no hidden charges, no surprise bills. DDoS protection, backups, and QuackPlane access all included.
+        </p>
+      </details>
+
+      <details class="group bg-cool-gray-90 bg-opacity-30 border border-cool-gray-70 rounded-lg p-6">
+        <summary class="text-lg font-semibold text-white cursor-pointer list-none flex justify-between items-center">
+          <span>What payment methods do you accept?</span>
+          <svg class="w-5 h-5 text-cool-gray-40 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </summary>
+        <p class="mt-4 text-cool-gray-30 leading-relaxed">
+          We accept all major credit cards (Visa, Mastercard, Amex), PayPal, and various digital payment methods. All transactions are secured and encrypted.
+        </p>
+      </details>
+
+      <details class="group bg-cool-gray-90 bg-opacity-30 border border-cool-gray-70 rounded-lg p-6">
+        <summary class="text-lg font-semibold text-white cursor-pointer list-none flex justify-between items-center">
+          <span>Can I host multiple servers?</span>
+          <svg class="w-5 h-5 text-cool-gray-40 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </summary>
+        <p class="mt-4 text-cool-gray-30 leading-relaxed">
+          Yes! Each plan is for one game server, but you can purchase multiple plans to host as many servers as you need. All managed from one QuackPlane account.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="text-center py-16 px-6 bg-gradient-to-r from-cool-gray-90 to-cool-gray-80 rounded-lg border border-cool-gray-70" aria-labelledby="cta-heading">
+    <h2 id="cta-heading" class="text-3xl lg:text-4xl font-semibold mb-4">
+      <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">
+        Ready to get started?
+      </span>
+    </h2>
+    <p class="text-lg text-cool-gray-30 mb-8 max-w-2xl mx-auto">
+      Choose your plan and launch your server in under 2 minutes. No contracts, cancel anytime.
+    </p>
+    <a
+      href="https://client.quack.host"
+      class="inline-flex justify-center items-center px-8 py-4 text-lg font-semibold text-black bg-[#FF9C20] hover:bg-[#FF8D00] transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-[#FF9C20] focus:ring-opacity-50"
+    >
+      Launch your server now
+    </a>
+  </section>
 </Layout>

@@ -2,269 +2,301 @@
 import Layout from "../layouts/layout.astro";
 ---
 
-<Layout title="/ Unbetable Game Servers">
+<Layout
+  title="/ Unbeatable Game Servers"
+  description="Lightning-fast game server hosting with DDoS protection, off-site backups, and QuackPlane - the modern control panel. Launch your Minecraft server in under 2 minutes. No hidden fees, no contracts, just honest hosting."
+>
   <!-- Hero Section -->
-  <div class="grid grid-cols-1 lg:grid-cols-7 mb-16 gap-8 pb-4 items-center">
+  <section class="grid grid-cols-1 lg:grid-cols-7 mb-20 lg:mb-32 gap-8 lg:gap-12 pb-4 items-center" aria-labelledby="hero-heading">
     <div
       class="col-span-1 lg:col-span-4 order-1 lg:order-1 text-white flex flex-col justify-between h-full"
     >
-      <div class="text-5xl md:text-7xl">
+      <div class="space-y-4">
         <h1
-          class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"
+          id="hero-heading"
+          class="text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight"
         >
-          Your server &
+          <span
+            class="block text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"
+          >
+            Your server&nbsp;&
+          </span>
+          <span
+            class="block text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"
+          >
+            Our obsession.
+          </span>
         </h1>
-        <h1
-          class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"
-        >
-          Our obsession.
-        </h1>
+        <p class="text-lg lg:text-xl text-cool-gray-30 leading-relaxed max-w-2xl">
+          Lightning-fast game servers with DDoS protection, off-site backups, and QuackPlane - the control panel that works everywhere. Launch in under 2 minutes.
+        </p>
       </div>
 
-      <div class="flex flex-col sm:flex-row mt-8 text-base">
-        <div class="mr-8">
-          <a
-            href="/pricing"
-            class="inline-flex justify-start items-center w-64 p-3 text-black bg-[#FF9C20] hover:bg-[#CC6600] transition-colors duration-200"
-          >
-            Launch your server
-          </a>
-        </div>
-        <div class="">
-          <a
-            href="/quackplane"
-            class="inline-flex items-center mt-4 sm:mt-0 w-64 p-3 text-white hover:text-black border border-[#FF9C20] hover:bg-[#FF8D00] transition-colors duration-200"
-          >
-            Discover QuackPlane
-          </a>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8" role="group" aria-label="Primary actions">
+        <a
+          href="/pricing"
+          class="group inline-flex justify-center items-center px-6 py-4 text-base lg:text-lg font-semibold text-black bg-[#FF9C20] hover:bg-[#FF8D00] focus:bg-[#FF8D00] transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-[#FF9C20] focus:ring-opacity-50"
+        >
+          <span>Launch your server</span>
+          <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+        <a
+          href="/quackplane"
+          class="group inline-flex justify-center items-center px-6 py-4 text-base lg:text-lg font-semibold text-white border-2 border-[#FF9C20] hover:bg-[#FF9C20] hover:bg-opacity-10 focus:bg-[#FF9C20] focus:bg-opacity-10 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-[#FF9C20] focus:ring-opacity-50"
+        >
+          <span>Discover QuackPlane</span>
+        </a>
+      </div>
+
+      <!-- Trust Signals -->
+      <div class="mt-8 pt-8 border-t border-cool-gray-80">
+        <div class="flex flex-wrap gap-6 text-sm text-cool-gray-40">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-green-40" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Ready in 2 minutes</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-green-40" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>No contracts, cancel anytime</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-green-40" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>100% transparent pricing</span>
+          </div>
         </div>
       </div>
     </div>
+
     <div
       class="col-span-1 lg:col-span-3 order-2 lg:order-2 text-cool-gray-30 flex justify-center lg:justify-end items-center"
     >
       <img
-        src="https://w7.pngwing.com/pngs/227/144/png-transparent-minecraft-illustration-minecraft-pocket-edition-minecraft-story-mode-xbox-360-wii-u-minecraft-game-video-game-mojang.png"
-        alt="Minecraft"
-        class="max-w-full h-auto"
+        src="/index/minecraft-hero.png"
+        alt="Minecraft server hosting with QuackHost"
+        class="max-w-full h-auto drop-shadow-2xl"
+        width="500"
+        height="500"
+        loading="eager"
+        fetchpriority="high"
       />
     </div>
-  </div>
+  </section>
 
   <!-- Features Section -->
-  <div class="mb-16 lg:mb-32" aria-label="Product Features">
+  <section class="mb-20 lg:mb-32" aria-labelledby="features-heading">
+    <h2 id="features-heading" class="sr-only">Why choose QuackHost</h2>
     <div
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-x-12 lg:gap-y-16"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-x-16 lg:gap-y-20"
     >
-      <div>
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
-          <span class="underline decoration-4 decoration-cyan-50">Powerful</span
-          >
+      <!-- Feature 1: Powerful -->
+      <article class="group">
+        <h3 class="text-xl lg:text-2xl font-semibold mb-4 flex items-center">
+          <span class="underline decoration-4 decoration-cyan-50 underline-offset-4">Powerful</span>
           <img
             src="/index/doodles/joy leap 2.svg"
-            class="ml-2 transition duration-300 ease-out hover:-translate-y-1"
+            class="ml-3 transition duration-300 ease-out group-hover:-translate-y-2"
             alt=""
             width="34"
             height="34"
+            aria-hidden="true"
           />
-        </h2>
-        <p class="text-cool-gray-40 leading-relaxed">
-          High-performance infrastructure running the latest hardware. Dedicated
-          resources ensure your servers run smoothly, even with tons of mods and
-          plugins.
+        </h3>
+        <p class="text-cool-gray-30 leading-relaxed text-base lg:text-lg">
+          High-performance infrastructure with latest-gen hardware and dedicated resources. Run hundreds of mods and plugins without lag - your players won't know the difference between 10 or 100.
         </p>
-      </div>
+      </article>
 
-      <div>
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
-          <span class="underline decoration-4 decoration-blue-50">Reliable</span
-          >
+      <!-- Feature 2: Reliable -->
+      <article class="group">
+        <h3 class="text-xl lg:text-2xl font-semibold mb-4 flex items-center">
+          <span class="underline decoration-4 decoration-blue-50 underline-offset-4">Reliable</span>
           <img
             src="/index/doodles/rocking chair.svg"
-            class="ml-2"
+            class="ml-3 transition duration-300 ease-out group-hover:scale-110"
             alt=""
             width="34"
             height="34"
+            aria-hidden="true"
           />
-        </h2>
-        <p class="text-cool-gray-40 leading-relaxed">
-          Terrabit-scale DDoS protection keeps your server online during
-          attacks. Check our live <a
+        </h3>
+        <p class="text-cool-gray-30 leading-relaxed text-base lg:text-lg">
+          Terrabit-scale DDoS protection keeps griefers out and your community online. Don't take our word for it - check our <a
             href="/service-status"
-            class="text-blue-40 underline decoration-2 decoration-blue-40 hover:decoration-blue-50 transition-colors"
-            >service status</a
-          > to see our track record.
+            class="text-blue-40 underline decoration-2 decoration-blue-40 hover:text-blue-30 hover:decoration-blue-30 transition-colors font-medium"
+            >live service status</a>.
         </p>
-      </div>
+      </article>
 
-      <div>
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
-          <span class="underline decoration-4 decoration-green-50"
-            >Scalable</span
-          >
+      <!-- Feature 3: Scalable -->
+      <article class="group">
+        <h3 class="text-xl lg:text-2xl font-semibold mb-4 flex items-center">
+          <span class="underline decoration-4 decoration-green-50 underline-offset-4">Scalable</span>
           <img
             src="/index/doodles/cycle.svg"
-            class="ml-2 transition duration-300 ease-out hover:animate-spin"
+            class="ml-3 transition duration-300 ease-out group-hover:rotate-180"
             alt=""
             width="34"
             height="34"
+            aria-hidden="true"
           />
-        </h2>
-        <p class="text-cool-gray-40 leading-relaxed">
-          Easily upgrade or downgrade your plan as your community grows or
-          shrinks. Scale your resources up and down as needed without losing
-          your data.
+        </h3>
+        <p class="text-cool-gray-30 leading-relaxed text-base lg:text-lg">
+          Community growing? Scale up instantly. Quiet season? Scale down. Change plans anytime without losing your worlds, configs, or sanity. Zero downtime, zero data loss.
         </p>
-      </div>
+      </article>
 
-      <div>
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
-          <span class="underline decoration-4 decoration-teal-50"
-            >Transparent</span
-          >
+      <!-- Feature 4: Transparent -->
+      <article class="group">
+        <h3 class="text-xl lg:text-2xl font-semibold mb-4 flex items-center">
+          <span class="underline decoration-4 decoration-teal-50 underline-offset-4">Transparent</span>
           <img
             src="/index/doodles/tree.svg"
-            class="ml-2 transition duration-700 ease-out hover:scale-110"
+            class="ml-3 transition duration-700 ease-out group-hover:scale-125"
             alt=""
             width="34"
             height="34"
             loading="lazy"
+            aria-hidden="true"
           />
-        </h2>
-        <p class="text-cool-gray-40 leading-relaxed">
-          Complete visibility into pricing, resource usage, and server
-          performance. No hidden fees, no surprise charges - just honest,
-          straightforward hosting with clear billing.
+        </h3>
+        <p class="text-cool-gray-30 leading-relaxed text-base lg:text-lg">
+          See exactly what you're paying for - pricing, resource usage, and server performance all visible at a glance. No hidden fees. No surprise charges. No fine print. Just honest hosting.
         </p>
-      </div>
+      </article>
 
-      <div class="sm:col-span-2">
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
-          <span class="underline decoration-4 decoration-purple-50"
-            >Secured by off-site backups</span
-          >
+      <!-- Feature 5: Backups -->
+      <article class="sm:col-span-2 group">
+        <h3 class="text-xl lg:text-2xl font-semibold mb-4 flex items-center">
+          <span class="underline decoration-4 decoration-purple-50 underline-offset-4">Protected by off-site backups</span>
           <img
             src="/index/doodles/rain.svg"
-            class="ml-2 transition duration-300 ease-out hover:translate-x-1 hover:-translate-y-1"
+            class="ml-3 transition duration-300 ease-out group-hover:translate-x-2 group-hover:-translate-y-2"
             alt=""
             width="34"
             height="34"
             loading="lazy"
+            aria-hidden="true"
           />
-        </h2>
-        <p class="text-cool-gray-40 leading-relaxed">
-          Schedule automatic backups or take your own backups manually. The key
-          advantage: all backups are stored off-site, protecting your worlds
-          even if our datacenter goes down. Your creations are always safe.
+        </h3>
+        <p class="text-cool-gray-30 leading-relaxed text-base lg:text-lg">
+          Automatic or manual backups - your choice. The difference? We store them off-site, meaning even if our entire datacenter vanishes, your months of creative work survive. One-click restoration when disaster strikes.
         </p>
-      </div>
+      </article>
     </div>
-  </div>
+  </section>
 
   <!-- QuackPlane Section -->
-  <div class="mb-16 lg:mb-32" aria-label="Powered by QuackPlane">
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+  <section class="mb-20 lg:mb-32 py-12 lg:py-20 px-6 lg:px-12 bg-cool-gray-90 bg-opacity-30 rounded-lg border border-cool-gray-80" aria-labelledby="quackplane-heading">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
       <div class="lg:col-span-3">
         <img
           src="/index/quackplane.webp"
-          class="w-full"
-          alt="QuackPlane Control Plane Interface"
+          class="w-full rounded-lg shadow-2xl border border-cool-gray-70"
+          alt="QuackPlane Control Panel Interface - Manage your game servers from anywhere"
           width="1253"
           height="1016"
           loading="lazy"
         />
       </div>
 
-      <div class="lg:col-span-2 space-y-12">
+      <div class="lg:col-span-2 space-y-10">
         <div>
-          <h3 class="text-2xl font-semibold mb-4 flex items-center">
-            <span class="underline decoration-4 decoration-teal-50"
-              >Create your own staff team</span
-            >
+          <h2 id="quackplane-heading" class="text-3xl lg:text-4xl font-semibold mb-4 text-transparent bg-gradient-to-r from-cyan-40 to-blue-40 bg-clip-text">
+            Powered by QuackPlane
+          </h2>
+          <p class="text-cool-gray-30 text-lg leading-relaxed">
+            The control panel that doesn't get in your way. Manage everything from your phone, tablet, or desktop.
+          </p>
+        </div>
+
+        <article class="group">
+          <h3 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
+            <span class="underline decoration-4 decoration-teal-50 underline-offset-4">Build your staff team</span>
             <img
               src="/index/doodles/hand holding.svg"
               alt=""
               width="34"
               height="34"
-              class="ml-2 transition duration-300 ease-out hover:scale-110"
+              class="ml-3 transition duration-300 ease-out group-hover:scale-110"
+              aria-hidden="true"
             />
           </h3>
-          <p class="text-cool-gray-40 leading-relaxed">
-            Give your friends and moderators access to restart the server,
-            manage files, or monitor players - all without sharing your main
-            login.
+          <p class="text-cool-gray-30 leading-relaxed">
+            Grant friends and moderators specific permissions - restart servers, manage files, monitor players. No password sharing, no security nightmares.
           </p>
-        </div>
+        </article>
 
-        <div>
-          <h3 class="text-2xl font-semibold mb-4 flex items-center">
-            <span class="underline decoration-4 decoration-cyan-50"
-              >Manage from anywhere</span
-            >
+        <article class="group">
+          <h3 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
+            <span class="underline decoration-4 decoration-cyan-50 underline-offset-4">Manage from anywhere</span>
             <img
               src="/index/doodles/wizard.svg"
               alt=""
               width="34"
               height="34"
-              class="ml-2"
+              class="ml-3 transition duration-300 ease-out group-hover:-translate-y-1"
+              aria-hidden="true"
             />
           </h3>
-          <p class="text-cool-gray-40 leading-relaxed">
-            Web-based control plane lets you restart servers, monitor player
-            activity, and manage your worlds from any device. No software to
-            install.
+          <p class="text-cool-gray-30 leading-relaxed">
+            Web-based control panel works on every device. Restart crashed servers from your phone. Monitor player activity from your tablet. No apps to install, no compatibility issues.
           </p>
-        </div>
+        </article>
 
-        <div>
-          <h3 class="text-2xl font-semibold mb-4 flex items-center">
-            <span class="underline decoration-4 decoration-purple-50"
-              >One-click restoration</span
-            >
+        <article class="group">
+          <h3 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
+            <span class="underline decoration-4 decoration-purple-50 underline-offset-4">One-click restoration</span>
             <img
               src="/index/doodles/magic wand.svg"
               alt=""
               width="34"
               height="34"
-              class="ml-2 transition duration-300 ease-out hover:translate-x-1 hover:-translate-y-1"
+              class="ml-3 transition duration-300 ease-out group-hover:translate-x-2 group-hover:-translate-y-2"
+              aria-hidden="true"
             />
           </h3>
-          <p class="text-cool-gray-40 leading-relaxed">
-            Someone griefed your server. Roll back your entire server to any
-            previous backup with one click. Everything gets restored - worlds,
-            configs, mods, the lot.
+          <p class="text-cool-gray-30 leading-relaxed">
+            Griefer destroyed your build? Roll back to any backup with literally one click. Worlds, configs, mods - everything restored to exactly how it was.
           </p>
-        </div>
+        </article>
 
-        <div>
-          <h3 class="text-2xl font-semibold mb-4 flex items-center">
-            <span class="underline decoration-4 decoration-blue-50"
-              >Easy file management</span
-            >
+        <article class="group">
+          <h3 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
+            <span class="underline decoration-4 decoration-blue-50 underline-offset-4">Drag & drop file management</span>
             <img
               src="/index/doodles/upload.svg"
               alt=""
               width="34"
               height="34"
-              class="ml-2"
+              class="ml-3 transition duration-300 ease-out group-hover:-translate-y-1"
+              aria-hidden="true"
             />
           </h3>
-          <p class="text-cool-gray-40 leading-relaxed">
-            Upload mods, plugins, and resource packs with drag & drop. Built-in
-            text editor lets you tweak configs without downloading files.
+          <p class="text-cool-gray-30 leading-relaxed">
+            Upload mods, plugins, and resource packs by dragging them onto your browser. Edit configs in our built-in text editor. No FTP clients, no command line required.
           </p>
-        </div>
+        </article>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- FAQ Section -->
-  <div
-    class="mb-16 lg:mb-32"
+  <section
+    class="mb-20 lg:mb-32"
     x-data="{ open: [false, false, false, false, false, false], focusedIndex: 0 }"
+    aria-labelledby="faq-heading"
   >
     <h2
-      class="text-2xl lg:text-3xl font-semibold mb-8 flex items-center gap-2 flex-wrap"
+      id="faq-heading"
+      class="text-3xl lg:text-4xl font-semibold mb-12 flex items-center gap-3 flex-wrap"
     >
       <img
         src="/index/doodles/chat.svg"
@@ -273,8 +305,9 @@ import Layout from "../layouts/layout.astro";
         width="48"
         height="48"
         class="sm:w-[62px] sm:h-[62px]"
+        aria-hidden="true"
       />
-      <span class="underline decoration-4 decoration-teal-40">Questions?</span>
+      <span class="underline decoration-4 decoration-teal-40 underline-offset-4">Questions?</span>
       <img
         src="/index/doodles/owl.svg"
         loading="lazy"
@@ -282,13 +315,12 @@ import Layout from "../layouts/layout.astro";
         width="48"
         height="48"
         class="sm:w-[62px] sm:h-[62px]"
+        aria-hidden="true"
       />
-      <span class="underline decoration-4 decoration-purple-40"
-        >We've got answers.</span
-      >
+      <span class="underline decoration-4 decoration-purple-40 underline-offset-4">We've got answers.</span>
     </h2>
 
-    <div>
+    <div class="space-y-2">
       <!-- Question 1 -->
       <div class="border-b border-cool-gray-70">
         <button
@@ -299,11 +331,11 @@ import Layout from "../layouts/layout.astro";
           @keydown.space.prevent="open[0] = !open[0]"
           @focus="focusedIndex = 0"
           id="question-0"
-          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          class="w-full flex justify-between items-center py-6 px-4 text-left hover:bg-cool-gray-90 hover:bg-opacity-50 focus:bg-cool-gray-90 focus:bg-opacity-50 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors rounded"
           :aria-expanded="open[0]"
           aria-controls="content-0"
         >
-          <span class="text-base sm:text-lg font-semibold pr-4"
+          <span class="text-base sm:text-lg lg:text-xl font-semibold pr-4"
             >How quickly can I get my server online?</span
           >
           <img
@@ -313,22 +345,23 @@ import Layout from "../layouts/layout.astro";
             height="24"
             class="transform transition-transform duration-200 ease-out flex-shrink-0"
             :class="{ 'rotate-180': open[0] }"
+            aria-hidden="true"
           />
         </button>
         <div
           x-show="open[0]"
-          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter="transition-all ease-out duration-200"
           x-transition:enter-start="transform -translate-y-2 opacity-0"
           x-transition:enter-end="transform translate-y-0 opacity-100"
+          x-transition:leave="transition-all ease-in duration-150"
+          x-transition:leave-start="transform translate-y-0 opacity-100"
+          x-transition:leave-end="transform -translate-y-2 opacity-0"
           x-cloak
           id="content-0"
           class="overflow-hidden"
         >
-          <p class="text-white leading-relaxed pb-5 pr-12">
-            Your server is ready in under 2 minutes! Once you complete payment,
-            our system automatically provisions your server and sends you the
-            login details. No waiting around - you can start building your world
-            immediately.
+          <p class="text-cool-gray-20 text-base lg:text-lg leading-relaxed pb-6 px-4 pr-12">
+            Under 2 minutes from payment to play. Our automated system provisions your server instantly, configures DDoS protection, sets up backups, and sends you login credentials. No approval queues, no manual setup, no waiting around.
           </p>
         </div>
       </div>
@@ -343,12 +376,12 @@ import Layout from "../layouts/layout.astro";
           @keydown.space.prevent="open[1] = !open[1]"
           @focus="focusedIndex = 1"
           id="question-1"
-          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          class="w-full flex justify-between items-center py-6 px-4 text-left hover:bg-cool-gray-90 hover:bg-opacity-50 focus:bg-cool-gray-90 focus:bg-opacity-50 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors rounded"
           :aria-expanded="open[1]"
           aria-controls="content-1"
         >
-          <span class="text-base sm:text-lg font-semibold pr-4"
-            >Can I upgrade or downgrade my plan anytime?</span
+          <span class="text-base sm:text-lg lg:text-xl font-semibold pr-4"
+            >Can I change plans anytime?</span
           >
           <img
             src="/index/chevron-down.svg"
@@ -357,22 +390,23 @@ import Layout from "../layouts/layout.astro";
             height="24"
             class="transform transition-transform duration-200 ease-out flex-shrink-0"
             :class="{ 'rotate-180': open[1] }"
+            aria-hidden="true"
           />
         </button>
         <div
           x-show="open[1]"
-          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter="transition-all ease-out duration-200"
           x-transition:enter-start="transform -translate-y-2 opacity-0"
           x-transition:enter-end="transform translate-y-0 opacity-100"
+          x-transition:leave="transition-all ease-in duration-150"
+          x-transition:leave-start="transform translate-y-0 opacity-100"
+          x-transition:leave-end="transform -translate-y-2 opacity-0"
           x-cloak
           id="content-1"
           class="overflow-hidden"
         >
-          <p class="text-white leading-relaxed pb-5 pr-12">
-            Absolutely! Scale up when your community grows or scale down during
-            quieter periods. Changes take effect immediately and billing is
-            prorated - you only pay for what you use. No contracts, no
-            penalties, just flexibility.
+          <p class="text-cool-gray-20 text-base lg:text-lg leading-relaxed pb-6 px-4 pr-12">
+            Absolutely. Upgrade when your community explodes, downgrade during quiet periods. Changes take effect immediately, billing is prorated to the second. No contracts binding you, no penalties for switching, just flexibility.
           </p>
         </div>
       </div>
@@ -387,12 +421,12 @@ import Layout from "../layouts/layout.astro";
           @keydown.space.prevent="open[2] = !open[2]"
           @focus="focusedIndex = 2"
           id="question-2"
-          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          class="w-full flex justify-between items-center py-6 px-4 text-left hover:bg-cool-gray-90 hover:bg-opacity-50 focus:bg-cool-gray-90 focus:bg-opacity-50 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors rounded"
           :aria-expanded="open[2]"
           aria-controls="content-2"
         >
-          <span class="text-base sm:text-lg font-semibold pr-4"
-            >What happens if my server gets griefed?</span
+          <span class="text-base sm:text-lg lg:text-xl font-semibold pr-4"
+            >What if my server gets griefed?</span
           >
           <img
             src="/index/chevron-down.svg"
@@ -401,23 +435,23 @@ import Layout from "../layouts/layout.astro";
             height="24"
             class="transform transition-transform duration-200 ease-out flex-shrink-0"
             :class="{ 'rotate-180': open[2] }"
+            aria-hidden="true"
           />
         </button>
         <div
           x-show="open[2]"
-          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter="transition-all ease-out duration-200"
           x-transition:enter-start="transform -translate-y-2 opacity-0"
           x-transition:enter-end="transform translate-y-0 opacity-100"
+          x-transition:leave="transition-all ease-in duration-150"
+          x-transition:leave-start="transform translate-y-0 opacity-100"
+          x-transition:leave-end="transform -translate-y-2 opacity-0"
           x-cloak
           id="content-2"
           class="overflow-hidden"
         >
-          <p class="text-white leading-relaxed pb-5 pr-12">
-            No panic needed! Schedule automatic backups or take your own backups
-            manually. The key advantage: all backups are stored off-site,
-            protecting your worlds even if our datacenter goes down. One click
-            in QuackPlane and your world rolls back to before the damage
-            happened. Your creations are always safe.
+          <p class="text-cool-gray-20 text-base lg:text-lg leading-relaxed pb-6 px-4 pr-12">
+            One click in QuackPlane rolls your entire server back to any previous backup. Worlds, configs, mods, plugins - everything restored to exactly how it was before the griefing. All backups stored off-site, so even datacenter failures can't touch your creations.
           </p>
         </div>
       </div>
@@ -432,12 +466,12 @@ import Layout from "../layouts/layout.astro";
           @keydown.space.prevent="open[3] = !open[3]"
           @focus="focusedIndex = 3"
           id="question-3"
-          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          class="w-full flex justify-between items-center py-6 px-4 text-left hover:bg-cool-gray-90 hover:bg-opacity-50 focus:bg-cool-gray-90 focus:bg-opacity-50 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors rounded"
           :aria-expanded="open[3]"
           aria-controls="content-3"
         >
-          <span class="text-base sm:text-lg font-semibold pr-4"
-            >Do you provide DDoS protection?</span
+          <span class="text-base sm:text-lg lg:text-xl font-semibold pr-4"
+            >How does DDoS protection work?</span
           >
           <img
             src="/index/chevron-down.svg"
@@ -446,22 +480,23 @@ import Layout from "../layouts/layout.astro";
             height="24"
             class="transform transition-transform duration-200 ease-out flex-shrink-0"
             :class="{ 'rotate-180': open[3] }"
+            aria-hidden="true"
           />
         </button>
         <div
           x-show="open[3]"
-          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter="transition-all ease-out duration-200"
           x-transition:enter-start="transform -translate-y-2 opacity-0"
           x-transition:enter-end="transform translate-y-0 opacity-100"
+          x-transition:leave="transition-all ease-in duration-150"
+          x-transition:leave-start="transform translate-y-0 opacity-100"
+          x-transition:leave-end="transform -translate-y-2 opacity-0"
           x-cloak
           id="content-3"
           class="overflow-hidden"
         >
-          <p class="text-white leading-relaxed pb-5 pr-12">
-            Yes! Every server comes with terrabit-scale DDoS protection at no
-            extra cost. Whether someone's trying to knock your server offline or
-            you're dealing with a massive influx of players, our network keeps
-            you online and playable.
+          <p class="text-cool-gray-20 text-base lg:text-lg leading-relaxed pb-6 px-4 pr-12">
+            Every server gets terrabit-scale DDoS protection automatically - no extra fees, no configuration required. Attack traffic gets filtered before it reaches your server. Your players stay connected while attackers waste their time and money.
           </p>
         </div>
       </div>
@@ -476,12 +511,12 @@ import Layout from "../layouts/layout.astro";
           @keydown.space.prevent="open[4] = !open[4]"
           @focus="focusedIndex = 4"
           id="question-4"
-          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          class="w-full flex justify-between items-center py-6 px-4 text-left hover:bg-cool-gray-90 hover:bg-opacity-50 focus:bg-cool-gray-90 focus:bg-opacity-50 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors rounded"
           :aria-expanded="open[4]"
           aria-controls="content-4"
         >
-          <span class="text-base sm:text-lg font-semibold pr-4"
-            >Can I transfer my server to QuackHost?</span
+          <span class="text-base sm:text-lg lg:text-xl font-semibold pr-4"
+            >Can I migrate my existing server?</span
           >
           <img
             src="/index/chevron-down.svg"
@@ -490,22 +525,23 @@ import Layout from "../layouts/layout.astro";
             height="24"
             class="transform transition-transform duration-200 ease-out flex-shrink-0"
             :class="{ 'rotate-180': open[4] }"
+            aria-hidden="true"
           />
         </button>
         <div
           x-show="open[4]"
-          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter="transition-all ease-out duration-200"
           x-transition:enter-start="transform -translate-y-2 opacity-0"
           x-transition:enter-end="transform translate-y-0 opacity-100"
+          x-transition:leave="transition-all ease-in duration-150"
+          x-transition:leave-start="transform translate-y-0 opacity-100"
+          x-transition:leave-end="transform -translate-y-2 opacity-0"
           x-cloak
           id="content-4"
           class="overflow-hidden"
         >
-          <p class="text-white leading-relaxed pb-5 pr-12">
-            Yes! We'll help you migrate your server to QuackHost for free. Just
-            upload your world files, plugins, and configs through QuackPlane's
-            file manager. Our support team can also assist with the transfer to
-            make sure everything works perfectly on our platform.
+          <p class="text-cool-gray-20 text-base lg:text-lg leading-relaxed pb-6 px-4 pr-12">
+            Yes - and we'll help you do it free. Drag your world files, plugins, and configs into QuackPlane's file manager. Need help? Our support team can handle the migration for you and verify everything works perfectly.
           </p>
         </div>
       </div>
@@ -520,12 +556,12 @@ import Layout from "../layouts/layout.astro";
           @keydown.space.prevent="open[5] = !open[5]"
           @focus="focusedIndex = 5"
           id="question-5"
-          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          class="w-full flex justify-between items-center py-6 px-4 text-left hover:bg-cool-gray-90 hover:bg-opacity-50 focus:bg-cool-gray-90 focus:bg-opacity-50 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors rounded"
           :aria-expanded="open[5]"
           aria-controls="content-5"
         >
-          <span class="text-base sm:text-lg font-semibold pr-4"
-            >What payment methods do you accept?</span
+          <span class="text-base sm:text-lg lg:text-xl font-semibold pr-4"
+            >What payment methods work?</span
           >
           <img
             src="/index/chevron-down.svg"
@@ -534,27 +570,52 @@ import Layout from "../layouts/layout.astro";
             height="24"
             class="transform transition-transform duration-200 ease-out flex-shrink-0"
             :class="{ 'rotate-180': open[5] }"
+            aria-hidden="true"
           />
         </button>
         <div
           x-show="open[5]"
-          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter="transition-all ease-out duration-200"
           x-transition:enter-start="transform -translate-y-2 opacity-0"
           x-transition:enter-end="transform translate-y-0 opacity-100"
+          x-transition:leave="transition-all ease-in duration-150"
+          x-transition:leave-start="transform translate-y-0 opacity-100"
+          x-transition:leave-end="transform -translate-y-2 opacity-0"
           x-cloak
           id="content-5"
           class="overflow-hidden"
         >
-          <p class="text-white leading-relaxed pb-5 pr-12">
-            We accept all major credit cards, PayPal, and various digital
-            payment methods. Billing is monthly with no long-term contracts
-            required. You can update your payment method anytime through the
-            client portal.
+          <p class="text-cool-gray-20 text-base lg:text-lg leading-relaxed pb-6 px-4 pr-12">
+            All major credit cards, PayPal, and various digital payment methods. Monthly billing, no long-term contracts. Update your payment method anytime through the client portal.
           </p>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="mb-20 text-center py-16 px-6 bg-gradient-to-r from-cool-gray-90 to-cool-gray-80 rounded-lg border border-cool-gray-70" aria-labelledby="cta-heading">
+    <h2 id="cta-heading" class="text-3xl lg:text-4xl font-semibold mb-4 text-white">
+      Ready to launch your server?
+    </h2>
+    <p class="text-lg lg:text-xl text-cool-gray-30 mb-8 max-w-2xl mx-auto">
+      Join thousands of server owners who've made the switch. No hidden fees, no contracts, just powerful hosting.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="/pricing"
+        class="inline-flex justify-center items-center px-8 py-4 text-lg font-semibold text-black bg-[#FF9C20] hover:bg-[#FF8D00] transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-[#FF9C20] focus:ring-opacity-50"
+      >
+        View pricing
+      </a>
+      <a
+        href="/service-status"
+        class="inline-flex justify-center items-center px-8 py-4 text-lg font-semibold text-white border-2 border-cool-gray-60 hover:border-cool-gray-40 hover:bg-cool-gray-80 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-cool-gray-60"
+      >
+        Check our uptime
+      </a>
+    </div>
+  </section>
 
   <style>
     /* Hide Alpine.js content on initial page load */

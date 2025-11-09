@@ -1,0 +1,12 @@
+# QuackHost - Robots.txt
+# We welcome good bots!
+
+User-agent: *
+Allow: /
+
+# Disallow admin/client areas
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://quack.host/sitemap-index.xml

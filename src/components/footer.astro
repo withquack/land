@@ -2,12 +2,61 @@
 
 ---
 
-<a
-  class="mt-8 mb-1 flex place-content-center"
-  x-data="{ currentYear: new Date().getFullYear() }"
->
-  <img src="/mascot.svg" loading="lazy" alt="GooseQuack" class="w-6 h-6 mr-2" />
-  <p class="">
-    © 2023-<span x-text="currentYear"></span> QuackHost. All Rights Reserved.
-  </p>
-</a>
+<footer class="mt-20 pt-12 pb-8 border-t border-cool-gray-80" role="contentinfo">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+    <!-- Company Info -->
+    <div>
+      <div class="flex items-center mb-4">
+        <img src="/mascot.svg" loading="lazy" alt="QuackHost" class="w-8 h-8 mr-2" />
+        <span class="text-lg font-semibold">QuackHost</span>
+      </div>
+      <p class="text-cool-gray-40 text-sm leading-relaxed">
+        Honest, powerful game server hosting with no cookies, no tracking bloat, and no hidden fees.
+      </p>
+    </div>
+
+    <!-- Products -->
+    <div>
+      <h3 class="text-white font-semibold mb-4">Products</h3>
+      <nav aria-label="Product links">
+        <ul class="space-y-2 text-sm">
+          <li><a href="/pricing" class="text-cool-gray-40 hover:text-white transition-colors">Pricing</a></li>
+          <li><a href="/games" class="text-cool-gray-40 hover:text-white transition-colors">Supported Games</a></li>
+          <li><a href="/quackplane" class="text-cool-gray-40 hover:text-white transition-colors">QuackPlane</a></li>
+          <li><a href="/service-status" class="text-cool-gray-40 hover:text-white transition-colors">Service Status</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Resources -->
+    <div>
+      <h3 class="text-white font-semibold mb-4">Resources</h3>
+      <nav aria-label="Resource links">
+        <ul class="space-y-2 text-sm">
+          <li><a href="/guides-&-tutorials" class="text-cool-gray-40 hover:text-white transition-colors">Guides & Tutorials</a></li>
+          <li><a href="https://client.quack.host" class="text-cool-gray-40 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Client Portal</a></li>
+          <li><a href="https://plane.quack.host" class="text-cool-gray-40 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">QuackPlane Login</a></li>
+          <li><a href="/discord-flock" class="text-cool-gray-40 hover:text-white transition-colors">Discord Community</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Legal -->
+    <div>
+      <h3 class="text-white font-semibold mb-4">Legal</h3>
+      <nav aria-label="Legal links">
+        <ul class="space-y-2 text-sm">
+          <li><a href="/privacy-policy" class="text-cool-gray-40 hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="/terms-of-service" class="text-cool-gray-40 hover:text-white transition-colors">Terms of Service</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="pt-8 border-t border-cool-gray-80">
+    <p class="text-center text-cool-gray-40 text-sm" x-data="{ currentYear: new Date().getFullYear() }">
+      © 2023-<span x-text="currentYear"></span> QuackHost. All Rights Reserved. Built with privacy, powered by honesty.
+    </p>
+  </div>
+</footer>
