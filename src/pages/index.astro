@@ -2,40 +2,107 @@
 import Layout from "../layouts/layout.astro";
 ---
 
-<Layout title="/ Unbetable Game Servers">
+<Layout title="/ Unbeatable Game Servers">
   <!-- Hero Section -->
   <div class="grid grid-cols-1 lg:grid-cols-7 mb-16 gap-8 pb-4 items-center">
     <div
       class="col-span-1 lg:col-span-4 order-1 lg:order-1 text-white flex flex-col justify-between h-full"
     >
-      <div class="text-5xl md:text-7xl">
-        <h1
-          class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"
-        >
-          Your server &
+      <!-- Pre-launch Badge -->
+      <div class="mb-4">
+        <span class="inline-flex items-center px-4 py-2 text-sm font-semibold text-[#FF9C20] border-2 border-[#FF9C20] bg-[#FF9C20]/10 backdrop-blur">
+          🚀 Launching Soon - Join the Waitlist
+        </span>
+      </div>
+
+      <div class="text-4xl md:text-6xl lg:text-7xl mb-4">
+        <h1 class="text-white mb-2">
+          Minecraft hosting that
         </h1>
         <h1
           class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"
         >
-          Our obsession.
+          actually works
         </h1>
       </div>
 
-      <div class="flex flex-col sm:flex-row mt-8 text-base">
-        <div class="mr-8">
-          <a
-            href="/pricing"
-            class="inline-flex justify-start items-center w-64 p-3 text-black bg-[#FF9C20] hover:bg-[#CC6600] transition-colors duration-200"
-          >
-            Launch your server
-          </a>
+      <p class="text-lg md:text-xl text-cool-gray-30 mb-8 max-w-2xl leading-relaxed">
+        Get your server online in under 2 minutes. Terrabit DDoS protection, off-site backups, and zero headaches. Built by gamers who got tired of oversold hosts.
+      </p>
+
+      <!-- Social Proof -->
+      <div class="mb-8">
+        <div class="flex items-center gap-2 text-cool-gray-40 mb-4">
+          <div class="flex -space-x-2">
+            <div class="w-8 h-8 rounded-full bg-gradient-to-r from-cyan-50 to-blue-50 border-2 border-gray-100"></div>
+            <div class="w-8 h-8 rounded-full bg-gradient-to-r from-purple-50 to-magenta-50 border-2 border-gray-100"></div>
+            <div class="w-8 h-8 rounded-full bg-gradient-to-r from-teal-50 to-green-50 border-2 border-gray-100"></div>
+            <div class="w-8 h-8 rounded-full bg-gradient-to-r from-orange-50 to-red-50 border-2 border-gray-100"></div>
+          </div>
+          <span class="text-sm font-semibold">Join 500+ server owners on the waitlist</span>
         </div>
-        <div class="">
-          <a
-            href="/quackplane"
-            class="inline-flex items-center mt-4 sm:mt-0 w-64 p-3 text-white hover:text-black border border-[#FF9C20] hover:bg-[#FF8D00] transition-colors duration-200"
+      </div>
+
+      <!-- Waitlist Form -->
+      <div class="max-w-md">
+        <form
+          id="waitlist-form"
+          class="flex flex-col sm:flex-row gap-3"
+          x-data="{ email: '', submitted: false, error: '' }"
+          @submit.prevent="if (!email.includes('@')) { error = 'Please enter a valid email'; return; } submitted = true; error = ''; if (window.umami) { umami.track('waitlist-signup', { email: email }); }"
+        >
+          <div class="flex-1">
+            <input
+              type="email"
+              x-model="email"
+              placeholder="your@email.com"
+              required
+              class="w-full px-4 py-3 bg-gray-90 border-2 border-gray-70 text-white placeholder-cool-gray-50 focus:border-[#FF9C20] focus:outline-none transition-colors"
+              :class="{ 'border-red-50': error }"
+            />
+            <p x-show="error" x-text="error" class="text-red-50 text-sm mt-1"></p>
+          </div>
+          <button
+            type="submit"
+            x-show="!submitted"
+            class="px-6 py-3 text-black font-semibold bg-[#FF9C20] hover:bg-[#FF8D00] transition-colors duration-200 whitespace-nowrap"
           >
-            Discover QuackPlane
+            Get Early Access
+          </button>
+          <div
+            x-show="submitted"
+            class="px-6 py-3 text-green-40 font-semibold bg-green-90 border-2 border-green-50 whitespace-nowrap"
+          >
+            ✓ You're on the list!
+          </div>
+        </form>
+
+        <!-- Trust Elements -->
+        <div class="mt-4 flex flex-col sm:flex-row sm:items-center gap-3 text-sm text-cool-gray-40">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-green-50" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Early bird pricing: 30% off</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-blue-50" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>No credit card required</span>
+          </div>
+        </div>
+
+        <!-- Alternative CTA -->
+        <div class="mt-6">
+          <a
+            href="#features"
+            class="inline-flex items-center text-cool-gray-40 hover:text-[#FF9C20] transition-colors"
+          >
+            See what makes us different
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
           </a>
         </div>
       </div>
@@ -45,20 +112,31 @@ import Layout from "../layouts/layout.astro";
     >
       <img
         src="https://w7.pngwing.com/pngs/227/144/png-transparent-minecraft-illustration-minecraft-pocket-edition-minecraft-story-mode-xbox-360-wii-u-minecraft-game-video-game-mojang.png"
-        alt="Minecraft"
+        alt="Minecraft Server Hosting"
         class="max-w-full h-auto"
+        loading="eager"
       />
     </div>
   </div>
 
   <!-- Features Section -->
-  <div class="mb-16 lg:mb-32" aria-label="Product Features">
+  <div id="features" class="mb-16 lg:mb-32" aria-label="Product Features">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-semibold text-white mb-4">
+        Everything you need. <span class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">Nothing you don't.</span>
+      </h2>
+      <p class="text-lg text-cool-gray-40 max-w-2xl mx-auto">
+        Stop fighting with your hosting provider. We built the service we wished existed.
+      </p>
+    </div>
+
     <div
       class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-x-12 lg:gap-y-16"
     >
       <div>
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
-          <span class="underline decoration-4 decoration-cyan-50">Powerful</span
+        <h3 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
+          <span class="underline decoration-4 decoration-cyan-50">No lag, ever</span
           >
           <img
             src="/index/doodles/joy leap 2.svg"
@@ -67,17 +145,15 @@ import Layout from "../layouts/layout.astro";
             width="34"
             height="34"
           />
-        </h2>
+        </h3>
         <p class="text-cool-gray-40 leading-relaxed">
-          High-performance infrastructure running the latest hardware. Dedicated
-          resources ensure your servers run smoothly, even with tons of mods and
-          plugins.
+          Latest-gen hardware with dedicated resources. Your server runs at peak performance even with 100+ plugins installed. No "noisy neighbors" stealing your CPU.
         </p>
       </div>
 
       <div>
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
-          <span class="underline decoration-4 decoration-blue-50">Reliable</span
+        <h3 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
+          <span class="underline decoration-4 decoration-blue-50">99.9% uptime guarantee</span
           >
           <img
             src="/index/doodles/rocking chair.svg"
@@ -86,21 +162,20 @@ import Layout from "../layouts/layout.astro";
             width="34"
             height="34"
           />
-        </h2>
+        </h3>
         <p class="text-cool-gray-40 leading-relaxed">
-          Terrabit-scale DDoS protection keeps your server online during
-          attacks. Check our live <a
+          Terrabit-scale DDoS protection included. Your players stay connected even during massive attacks. Check our live <a
             href="/service-status"
             class="text-blue-40 underline decoration-2 decoration-blue-40 hover:decoration-blue-50 transition-colors"
-            >service status</a
-          > to see our track record.
+            >uptime dashboard</a
+          >.
         </p>
       </div>
 
       <div>
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
+        <h3 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
           <span class="underline decoration-4 decoration-green-50"
-            >Scalable</span
+            >Grow without limits</span
           >
           <img
             src="/index/doodles/cycle.svg"
@@ -109,18 +184,16 @@ import Layout from "../layouts/layout.astro";
             width="34"
             height="34"
           />
-        </h2>
+        </h3>
         <p class="text-cool-gray-40 leading-relaxed">
-          Easily upgrade or downgrade your plan as your community grows or
-          shrinks. Scale your resources up and down as needed without losing
-          your data.
+          Start small, scale big. Upgrade your plan with one click as your community grows. Downgrade anytime if things slow down. You only pay for what you actually use.
         </p>
       </div>
 
       <div>
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
+        <h3 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
           <span class="underline decoration-4 decoration-teal-50"
-            >Transparent</span
+            >No surprise bills</span
           >
           <img
             src="/index/doodles/tree.svg"
@@ -130,18 +203,16 @@ import Layout from "../layouts/layout.astro";
             height="34"
             loading="lazy"
           />
-        </h2>
+        </h3>
         <p class="text-cool-gray-40 leading-relaxed">
-          Complete visibility into pricing, resource usage, and server
-          performance. No hidden fees, no surprise charges - just honest,
-          straightforward hosting with clear billing.
+          See exactly what you're paying for. Real-time resource usage dashboard, clear monthly billing, zero hidden fees. We show you everything, always.
         </p>
       </div>
 
       <div class="sm:col-span-2">
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
+        <h3 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
           <span class="underline decoration-4 decoration-purple-50"
-            >Secured by off-site backups</span
+            >Sleep easy with automatic backups</span
           >
           <img
             src="/index/doodles/rain.svg"
@@ -151,23 +222,59 @@ import Layout from "../layouts/layout.astro";
             height="34"
             loading="lazy"
           />
-        </h2>
+        </h3>
         <p class="text-cool-gray-40 leading-relaxed">
-          Schedule automatic backups or take your own backups manually. The key
-          advantage: all backups are stored off-site, protecting your worlds
-          even if our datacenter goes down. Your creations are always safe.
+          Your worlds are backed up off-site automatically. Server gets griefed? Click one button to restore everything to 5 minutes ago. Even if our datacenter burns down, your creations survive.
         </p>
+      </div>
+    </div>
+
+    <!-- Trust Indicators -->
+    <div class="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div class="flex flex-col items-center">
+        <div class="text-3xl md:text-4xl font-bold text-transparent gradient bg-gradient-to-r from-cyan-50 to-blue-50 bg-clip-text mb-2">
+          &lt;2min
+        </div>
+        <p class="text-sm text-cool-gray-40">Setup time</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="text-3xl md:text-4xl font-bold text-transparent gradient bg-gradient-to-r from-green-50 to-teal-50 bg-clip-text mb-2">
+          99.9%
+        </div>
+        <p class="text-sm text-cool-gray-40">Uptime SLA</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="text-3xl md:text-4xl font-bold text-transparent gradient bg-gradient-to-r from-purple-50 to-magenta-50 bg-clip-text mb-2">
+          24/7
+        </div>
+        <p class="text-sm text-cool-gray-40">DDoS protection</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="text-3xl md:text-4xl font-bold text-transparent gradient bg-gradient-to-r from-orange-50 to-red-50 bg-clip-text mb-2">
+          0
+        </div>
+        <p class="text-sm text-cool-gray-40">Hidden fees</p>
       </div>
     </div>
   </div>
 
   <!-- QuackPlane Section -->
   <div class="mb-16 lg:mb-32" aria-label="Powered by QuackPlane">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-semibold text-white mb-4">
+        Control everything from <span class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">your browser</span>
+      </h2>
+      <p class="text-lg text-cool-gray-40 max-w-2xl mx-auto">
+        Meet QuackPlane: the control panel that doesn't suck.
+      </p>
+    </div>
+
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
       <div class="lg:col-span-3">
         <img
           src="/index/quackplane.webp"
-          class="w-full"
+          class="w-full border-2 border-gray-70"
           alt="QuackPlane Control Plane Interface"
           width="1253"
           height="1016"
@@ -175,11 +282,11 @@ import Layout from "../layouts/layout.astro";
         />
       </div>
 
-      <div class="lg:col-span-2 space-y-12">
+      <div class="lg:col-span-2 space-y-10">
         <div>
-          <h3 class="text-2xl font-semibold mb-4 flex items-center">
+          <h3 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
             <span class="underline decoration-4 decoration-teal-50"
-              >Create your own staff team</span
+              >Add your staff team</span
             >
             <img
               src="/index/doodles/hand holding.svg"
@@ -190,16 +297,14 @@ import Layout from "../layouts/layout.astro";
             />
           </h3>
           <p class="text-cool-gray-40 leading-relaxed">
-            Give your friends and moderators access to restart the server,
-            manage files, or monitor players - all without sharing your main
-            login.
+            Let your moderators restart the server and manage files without giving them your password. Set permissions per person.
           </p>
         </div>
 
         <div>
-          <h3 class="text-2xl font-semibold mb-4 flex items-center">
+          <h3 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
             <span class="underline decoration-4 decoration-cyan-50"
-              >Manage from anywhere</span
+              >Control from your phone</span
             >
             <img
               src="/index/doodles/wizard.svg"
@@ -210,16 +315,14 @@ import Layout from "../layouts/layout.astro";
             />
           </h3>
           <p class="text-cool-gray-40 leading-relaxed">
-            Web-based control plane lets you restart servers, monitor player
-            activity, and manage your worlds from any device. No software to
-            install.
+            Restart your server from the beach. Monitor player count from bed. Everything works on mobile.
           </p>
         </div>
 
         <div>
-          <h3 class="text-2xl font-semibold mb-4 flex items-center">
+          <h3 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
             <span class="underline decoration-4 decoration-purple-50"
-              >One-click restoration</span
+              >Undo griefing instantly</span
             >
             <img
               src="/index/doodles/magic wand.svg"
@@ -230,16 +333,14 @@ import Layout from "../layouts/layout.astro";
             />
           </h3>
           <p class="text-cool-gray-40 leading-relaxed">
-            Someone griefed your server. Roll back your entire server to any
-            previous backup with one click. Everything gets restored - worlds,
-            configs, mods, the lot.
+            Griefer destroyed your spawn? One click restores your entire server to 5 minutes ago. Worlds, configs, plugins - everything.
           </p>
         </div>
 
         <div>
-          <h3 class="text-2xl font-semibold mb-4 flex items-center">
+          <h3 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
             <span class="underline decoration-4 decoration-blue-50"
-              >Easy file management</span
+              >Drag & drop file uploads</span
             >
             <img
               src="/index/doodles/upload.svg"
@@ -250,10 +351,59 @@ import Layout from "../layouts/layout.astro";
             />
           </h3>
           <p class="text-cool-gray-40 leading-relaxed">
-            Upload mods, plugins, and resource packs with drag & drop. Built-in
-            text editor lets you tweak configs without downloading files.
+            Add mods by dragging files into your browser. Edit configs with the built-in text editor. No FTP clients needed.
           </p>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mid-page CTA -->
+  <div class="mb-16 lg:mb-32">
+    <div class="bg-gradient-to-r from-gray-90 to-gray-95 border-2 border-gray-70 p-8 lg:p-12 text-center">
+      <h2 class="text-2xl md:text-3xl font-semibold text-white mb-4">
+        Ready to stop fighting with your host?
+      </h2>
+      <p class="text-lg text-cool-gray-40 mb-8 max-w-2xl mx-auto">
+        Join the waitlist and get <span class="text-[#FF9C20] font-semibold">30% off</span> your first 3 months when we launch.
+      </p>
+
+      <!-- Duplicate waitlist form for mid-page conversion -->
+      <div class="max-w-md mx-auto">
+        <form
+          id="waitlist-form-2"
+          class="flex flex-col sm:flex-row gap-3"
+          x-data="{ email: '', submitted: false, error: '' }"
+          @submit.prevent="if (!email.includes('@')) { error = 'Please enter a valid email'; return; } submitted = true; error = ''; if (window.umami) { umami.track('waitlist-signup-midpage', { email: email }); }"
+        >
+          <div class="flex-1">
+            <input
+              type="email"
+              x-model="email"
+              placeholder="your@email.com"
+              required
+              class="w-full px-4 py-3 bg-gray-100 border-2 border-gray-70 text-white placeholder-cool-gray-50 focus:border-[#FF9C20] focus:outline-none transition-colors"
+              :class="{ 'border-red-50': error }"
+            />
+            <p x-show="error" x-text="error" class="text-red-50 text-sm mt-1"></p>
+          </div>
+          <button
+            type="submit"
+            x-show="!submitted"
+            class="px-6 py-3 text-black font-semibold bg-[#FF9C20] hover:bg-[#FF8D00] transition-colors duration-200 whitespace-nowrap"
+          >
+            Claim my discount
+          </button>
+          <div
+            x-show="submitted"
+            class="px-6 py-3 text-green-40 font-semibold bg-green-90 border-2 border-green-50 whitespace-nowrap"
+          >
+            ✓ Discount saved!
+          </div>
+        </form>
+        <p class="text-sm text-cool-gray-50 mt-3">
+          Limited to first 100 signups • Launch: Q1 2025
+        </p>
       </div>
     </div>
   </div>
@@ -261,39 +411,44 @@ import Layout from "../layouts/layout.astro";
   <!-- FAQ Section -->
   <div
     class="mb-16 lg:mb-32"
-    x-data="{ open: [false, false, false, false, false, false], focusedIndex: 0 }"
+    x-data="{ open: [false, false, false, false, false, false, false, false, false], focusedIndex: 0 }"
   >
-    <h2
-      class="text-2xl lg:text-3xl font-semibold mb-8 flex items-center gap-2 flex-wrap"
-    >
-      <img
-        src="/index/doodles/chat.svg"
-        loading="lazy"
-        alt=""
-        width="48"
-        height="48"
-        class="sm:w-[62px] sm:h-[62px]"
-      />
-      <span class="underline decoration-4 decoration-teal-40">Questions?</span>
-      <img
-        src="/index/doodles/owl.svg"
-        loading="lazy"
-        alt=""
-        width="48"
-        height="48"
-        class="sm:w-[62px] sm:h-[62px]"
-      />
-      <span class="underline decoration-4 decoration-purple-40"
-        >We've got answers.</span
+    <div class="text-center mb-12">
+      <h2
+        class="text-2xl lg:text-3xl font-semibold mb-4 flex items-center gap-2 flex-wrap justify-center"
       >
-    </h2>
+        <img
+          src="/index/doodles/chat.svg"
+          loading="lazy"
+          alt=""
+          width="48"
+          height="48"
+          class="sm:w-[62px] sm:h-[62px]"
+        />
+        <span class="underline decoration-4 decoration-teal-40">Questions?</span>
+        <img
+          src="/index/doodles/owl.svg"
+          loading="lazy"
+          alt=""
+          width="48"
+          height="48"
+          class="sm:w-[62px] sm:h-[62px]"
+        />
+        <span class="underline decoration-4 decoration-purple-40"
+          >We've got answers.</span
+        >
+      </h2>
+      <p class="text-lg text-cool-gray-40">
+        Everything you need to know about joining the waitlist.
+      </p>
+    </div>
 
     <div>
-      <!-- Question 1 -->
+      <!-- Question 1 - Pre-launch specific -->
       <div class="border-b border-cool-gray-70">
         <button
           @click="open[0] = !open[0]"
-          @keydown.down.prevent="focusedIndex = Math.min(5, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
+          @keydown.down.prevent="focusedIndex = Math.min(8, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
           @keydown.up.prevent="focusedIndex = Math.max(0, focusedIndex - 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
           @keydown.enter.prevent="open[0] = !open[0]"
           @keydown.space.prevent="open[0] = !open[0]"
@@ -304,7 +459,7 @@ import Layout from "../layouts/layout.astro";
           aria-controls="content-0"
         >
           <span class="text-base sm:text-lg font-semibold pr-4"
-            >How quickly can I get my server online?</span
+            >When does QuackHost launch?</span
           >
           <img
             src="/index/chevron-down.svg"
@@ -325,10 +480,7 @@ import Layout from "../layouts/layout.astro";
           class="overflow-hidden"
         >
           <p class="text-white leading-relaxed pb-5 pr-12">
-            Your server is ready in under 2 minutes! Once you complete payment,
-            our system automatically provisions your server and sends you the
-            login details. No waiting around - you can start building your world
-            immediately.
+            We're launching in Q1 2025! Join the waitlist now to get early access and lock in 30% off your first 3 months. We'll email you 48 hours before launch with your exclusive signup link.
           </p>
         </div>
       </div>
@@ -337,7 +489,7 @@ import Layout from "../layouts/layout.astro";
       <div class="border-b border-cool-gray-70">
         <button
           @click="open[1] = !open[1]"
-          @keydown.down.prevent="focusedIndex = Math.min(5, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
+          @keydown.down.prevent="focusedIndex = Math.min(8, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
           @keydown.up.prevent="focusedIndex = Math.max(0, focusedIndex - 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
           @keydown.enter.prevent="open[1] = !open[1]"
           @keydown.space.prevent="open[1] = !open[1]"
@@ -348,7 +500,7 @@ import Layout from "../layouts/layout.astro";
           aria-controls="content-1"
         >
           <span class="text-base sm:text-lg font-semibold pr-4"
-            >Can I upgrade or downgrade my plan anytime?</span
+            >What do I get for joining the waitlist?</span
           >
           <img
             src="/index/chevron-down.svg"
@@ -369,10 +521,7 @@ import Layout from "../layouts/layout.astro";
           class="overflow-hidden"
         >
           <p class="text-white leading-relaxed pb-5 pr-12">
-            Absolutely! Scale up when your community grows or scale down during
-            quieter periods. Changes take effect immediately and billing is
-            prorated - you only pay for what you use. No contracts, no
-            penalties, just flexibility.
+            Early bird pricing: 30% off your first 3 months. Priority access to new features. First pick of server locations. Plus, you'll be supporting a hosting company built by actual gamers, not a corporation trying to squeeze pennies.
           </p>
         </div>
       </div>
@@ -381,7 +530,7 @@ import Layout from "../layouts/layout.astro";
       <div class="border-b border-cool-gray-70">
         <button
           @click="open[2] = !open[2]"
-          @keydown.down.prevent="focusedIndex = Math.min(5, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
+          @keydown.down.prevent="focusedIndex = Math.min(8, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
           @keydown.up.prevent="focusedIndex = Math.max(0, focusedIndex - 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
           @keydown.enter.prevent="open[2] = !open[2]"
           @keydown.space.prevent="open[2] = !open[2]"
@@ -392,7 +541,7 @@ import Layout from "../layouts/layout.astro";
           aria-controls="content-2"
         >
           <span class="text-base sm:text-lg font-semibold pr-4"
-            >What happens if my server gets griefed?</span
+            >Is there a free trial?</span
           >
           <img
             src="/index/chevron-down.svg"
@@ -413,11 +562,7 @@ import Layout from "../layouts/layout.astro";
           class="overflow-hidden"
         >
           <p class="text-white leading-relaxed pb-5 pr-12">
-            No panic needed! Schedule automatic backups or take your own backups
-            manually. The key advantage: all backups are stored off-site,
-            protecting your worlds even if our datacenter goes down. One click
-            in QuackPlane and your world rolls back to before the damage
-            happened. Your creations are always safe.
+            Waitlist members get a 7-day free trial when we launch. No credit card required to start. If you're not happy, cancel before day 7 and pay nothing. If you love it (you will), your 30% discount kicks in automatically.
           </p>
         </div>
       </div>
@@ -426,7 +571,7 @@ import Layout from "../layouts/layout.astro";
       <div class="border-b border-cool-gray-70">
         <button
           @click="open[3] = !open[3]"
-          @keydown.down.prevent="focusedIndex = Math.min(5, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
+          @keydown.down.prevent="focusedIndex = Math.min(8, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
           @keydown.up.prevent="focusedIndex = Math.max(0, focusedIndex - 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
           @keydown.enter.prevent="open[3] = !open[3]"
           @keydown.space.prevent="open[3] = !open[3]"
@@ -437,7 +582,7 @@ import Layout from "../layouts/layout.astro";
           aria-controls="content-3"
         >
           <span class="text-base sm:text-lg font-semibold pr-4"
-            >Do you provide DDoS protection?</span
+            >How quickly can I get my server online after launch?</span
           >
           <img
             src="/index/chevron-down.svg"
@@ -458,10 +603,7 @@ import Layout from "../layouts/layout.astro";
           class="overflow-hidden"
         >
           <p class="text-white leading-relaxed pb-5 pr-12">
-            Yes! Every server comes with terrabit-scale DDoS protection at no
-            extra cost. Whether someone's trying to knock your server offline or
-            you're dealing with a massive influx of players, our network keeps
-            you online and playable.
+            Under 2 minutes from signup to playing. Our automated provisioning creates your server, installs Minecraft, and sends you the IP address. No tickets, no waiting for support, no manual setup. Just click and play.
           </p>
         </div>
       </div>
@@ -470,7 +612,7 @@ import Layout from "../layouts/layout.astro";
       <div class="border-b border-cool-gray-70">
         <button
           @click="open[4] = !open[4]"
-          @keydown.down.prevent="focusedIndex = Math.min(5, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
+          @keydown.down.prevent="focusedIndex = Math.min(8, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
           @keydown.up.prevent="focusedIndex = Math.max(0, focusedIndex - 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
           @keydown.enter.prevent="open[4] = !open[4]"
           @keydown.space.prevent="open[4] = !open[4]"
@@ -481,7 +623,7 @@ import Layout from "../layouts/layout.astro";
           aria-controls="content-4"
         >
           <span class="text-base sm:text-lg font-semibold pr-4"
-            >Can I transfer my server to QuackHost?</span
+            >Can I transfer my existing server to QuackHost?</span
           >
           <img
             src="/index/chevron-down.svg"
@@ -502,10 +644,7 @@ import Layout from "../layouts/layout.astro";
           class="overflow-hidden"
         >
           <p class="text-white leading-relaxed pb-5 pr-12">
-            Yes! We'll help you migrate your server to QuackHost for free. Just
-            upload your world files, plugins, and configs through QuackPlane's
-            file manager. Our support team can also assist with the transfer to
-            make sure everything works perfectly on our platform.
+            Absolutely. Free migration included for waitlist members. Upload your world files via QuackPlane's drag-and-drop interface, or our team will handle the entire transfer for you. We'll make sure your plugins, mods, and configs work perfectly before going live.
           </p>
         </div>
       </div>
@@ -514,7 +653,7 @@ import Layout from "../layouts/layout.astro";
       <div class="border-b border-cool-gray-70">
         <button
           @click="open[5] = !open[5]"
-          @keydown.down.prevent="focusedIndex = Math.min(5, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
+          @keydown.down.prevent="focusedIndex = Math.min(8, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
           @keydown.up.prevent="focusedIndex = Math.max(0, focusedIndex - 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
           @keydown.enter.prevent="open[5] = !open[5]"
           @keydown.space.prevent="open[5] = !open[5]"
@@ -525,7 +664,7 @@ import Layout from "../layouts/layout.astro";
           aria-controls="content-5"
         >
           <span class="text-base sm:text-lg font-semibold pr-4"
-            >What payment methods do you accept?</span
+            >What if my server gets griefed or hacked?</span
           >
           <img
             src="/index/chevron-down.svg"
@@ -546,11 +685,199 @@ import Layout from "../layouts/layout.astro";
           class="overflow-hidden"
         >
           <p class="text-white leading-relaxed pb-5 pr-12">
-            We accept all major credit cards, PayPal, and various digital
-            payment methods. Billing is monthly with no long-term contracts
-            required. You can update your payment method anytime through the
-            client portal.
+            One-click restore to any previous backup. All backups are stored off-site, so even if our datacenter explodes, your world is safe. Automatic backups run every 6 hours, or take manual backups anytime. Your months of building won't disappear.
           </p>
+        </div>
+      </div>
+
+      <!-- Question 7 -->
+      <div class="border-b border-cool-gray-70">
+        <button
+          @click="open[6] = !open[6]"
+          @keydown.down.prevent="focusedIndex = Math.min(8, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
+          @keydown.up.prevent="focusedIndex = Math.max(0, focusedIndex - 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
+          @keydown.enter.prevent="open[6] = !open[6]"
+          @keydown.space.prevent="open[6] = !open[6]"
+          @focus="focusedIndex = 6"
+          id="question-6"
+          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          :aria-expanded="open[6]"
+          aria-controls="content-6"
+        >
+          <span class="text-base sm:text-lg font-semibold pr-4"
+            >Can I cancel anytime?</span
+          >
+          <img
+            src="/index/chevron-down.svg"
+            alt=""
+            width="24"
+            height="24"
+            class="transform transition-transform duration-200 ease-out flex-shrink-0"
+            :class="{ 'rotate-180': open[6] }"
+          />
+        </button>
+        <div
+          x-show="open[6]"
+          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter-start="transform -translate-y-2 opacity-0"
+          x-transition:enter-end="transform translate-y-0 opacity-100"
+          x-cloak
+          id="content-6"
+          class="overflow-hidden"
+        >
+          <p class="text-white leading-relaxed pb-5 pr-12">
+            Yes. No contracts, no cancellation fees, no "talk to retention" nonsense. Click the cancel button, download your world files, done. We're confident you'll love the service, so we don't need to trap you.
+          </p>
+        </div>
+      </div>
+
+      <!-- Question 8 -->
+      <div class="border-b border-cool-gray-70">
+        <button
+          @click="open[7] = !open[7]"
+          @keydown.down.prevent="focusedIndex = Math.min(8, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
+          @keydown.up.prevent="focusedIndex = Math.max(0, focusedIndex - 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
+          @keydown.enter.prevent="open[7] = !open[7]"
+          @keydown.space.prevent="open[7] = !open[7]"
+          @focus="focusedIndex = 7"
+          id="question-7"
+          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          :aria-expanded="open[7]"
+          aria-controls="content-7"
+        >
+          <span class="text-base sm:text-lg font-semibold pr-4"
+            >Why should I trust a new hosting company?</span
+          >
+          <img
+            src="/index/chevron-down.svg"
+            alt=""
+            width="24"
+            height="24"
+            class="transform transition-transform duration-200 ease-out flex-shrink-0"
+            :class="{ 'rotate-180': open[7] }"
+          />
+        </button>
+        <div
+          x-show="open[7]"
+          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter-start="transform -translate-y-2 opacity-0"
+          x-transition:enter-end="transform translate-y-0 opacity-100"
+          x-cloak
+          id="content-7"
+          class="overflow-hidden"
+        >
+          <p class="text-white leading-relaxed pb-5 pr-12">
+            Fair question. We're gamers who got fed up with oversold servers and support tickets that take 3 days to answer. Check our live uptime dashboard (we're not hiding anything). Try the 7-day free trial. Download your backups anytime. We built this because existing hosts suck, not to make a quick buck.
+          </p>
+        </div>
+      </div>
+
+      <!-- Question 9 -->
+      <div class="border-b border-cool-gray-70">
+        <button
+          @click="open[8] = !open[8]"
+          @keydown.down.prevent="focusedIndex = Math.min(8, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
+          @keydown.up.prevent="focusedIndex = Math.max(0, focusedIndex - 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
+          @keydown.enter.prevent="open[8] = !open[8]"
+          @keydown.space.prevent="open[8] = !open[8]"
+          @focus="focusedIndex = 8"
+          id="question-8"
+          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          :aria-expanded="open[8]"
+          aria-controls="content-8"
+        >
+          <span class="text-base sm:text-lg font-semibold pr-4"
+            >What payment methods will you accept?</span
+          >
+          <img
+            src="/index/chevron-down.svg"
+            alt=""
+            width="24"
+            height="24"
+            class="transform transition-transform duration-200 ease-out flex-shrink-0"
+            :class="{ 'rotate-180': open[8] }"
+          />
+        </button>
+        <div
+          x-show="open[8]"
+          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter-start="transform -translate-y-2 opacity-0"
+          x-transition:enter-end="transform translate-y-0 opacity-100"
+          x-cloak
+          id="content-8"
+          class="overflow-hidden"
+        >
+          <p class="text-white leading-relaxed pb-5 pr-12">
+            Credit cards, PayPal, and all major digital payment methods. Monthly billing, no long-term contracts. Update your payment method anytime through the client portal. And remember: 7-day free trial means no payment required to test drive.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Final CTA Section -->
+  <div class="mb-16 lg:mb-32">
+    <div class="text-center bg-gradient-to-b from-gray-100 to-gray-90 border-2 border-[#FF9C20] p-12 lg:p-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-6">
+        Stop settling for <span class="text-transparent gradient bg-gradient-to-r from-red-50 to-orange-50 bg-clip-text line-through">bad hosting</span>
+      </h2>
+      <p class="text-xl text-cool-gray-30 mb-8 max-w-2xl mx-auto">
+        Join 500+ server owners who are done with lag, downtime, and support tickets that go nowhere.
+      </p>
+
+      <!-- Final waitlist form -->
+      <div class="max-w-md mx-auto mb-6">
+        <form
+          id="waitlist-form-3"
+          class="flex flex-col sm:flex-row gap-3"
+          x-data="{ email: '', submitted: false, error: '' }"
+          @submit.prevent="if (!email.includes('@')) { error = 'Please enter a valid email'; return; } submitted = true; error = ''; if (window.umami) { umami.track('waitlist-signup-final', { email: email }); }"
+        >
+          <div class="flex-1">
+            <input
+              type="email"
+              x-model="email"
+              placeholder="your@email.com"
+              required
+              class="w-full px-4 py-3 bg-gray-100 border-2 border-gray-70 text-white placeholder-cool-gray-50 focus:border-[#FF9C20] focus:outline-none transition-colors"
+              :class="{ 'border-red-50': error }"
+            />
+            <p x-show="error" x-text="error" class="text-red-50 text-sm mt-1"></p>
+          </div>
+          <button
+            type="submit"
+            x-show="!submitted"
+            class="px-8 py-3 text-black text-lg font-semibold bg-[#FF9C20] hover:bg-[#FF8D00] transition-colors duration-200 whitespace-nowrap"
+          >
+            Join the waitlist
+          </button>
+          <div
+            x-show="submitted"
+            class="px-8 py-3 text-green-40 text-lg font-semibold bg-green-90 border-2 border-green-50 whitespace-nowrap"
+          >
+            ✓ Welcome aboard!
+          </div>
+        </form>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-6 text-sm text-cool-gray-40">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-green-50" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+          <span>7-day free trial</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-green-50" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+          <span>30% early bird discount</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-green-50" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+          <span>Cancel anytime</span>
         </div>
       </div>
     </div>

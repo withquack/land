@@ -2,12 +2,73 @@
 
 ---
 
-<a
-  class="mt-8 mb-1 flex place-content-center"
-  x-data="{ currentYear: new Date().getFullYear() }"
->
-  <img src="/mascot.svg" loading="lazy" alt="GooseQuack" class="w-6 h-6 mr-2" />
-  <p class="">
-    © 2023-<span x-text="currentYear"></span> QuackHost. All Rights Reserved.
-  </p>
-</a>
+<footer class="mt-16 border-t border-gray-70 pt-12 pb-8">
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Footer Content Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <!-- Brand Column -->
+      <div class="md:col-span-2">
+        <div class="flex items-center mb-4">
+          <img src="/mascot.svg" loading="lazy" alt="QuackHost" class="w-8 h-8 mr-3" />
+          <span class="text-xl font-semibold text-white">QuackHost</span>
+        </div>
+        <p class="text-cool-gray-40 text-sm leading-relaxed max-w-sm mb-4">
+          Minecraft hosting built by gamers who got tired of oversold servers and terrible support. Launching Q1 2025.
+        </p>
+        <!-- Trust Badges -->
+        <div class="flex flex-wrap gap-3 text-xs text-cool-gray-50">
+          <div class="flex items-center gap-1">
+            <svg class="w-4 h-4 text-blue-50" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>DDoS Protected</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <svg class="w-4 h-4 text-green-50" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>99.9% Uptime SLA</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <svg class="w-4 h-4 text-purple-50" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Encrypted Backups</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-sm font-semibold text-white mb-3 uppercase tracking-wide">Product</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#features" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors">Features</a></li>
+          <li><a href="/pricing" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors">Pricing</a></li>
+          <li><a href="/service-status" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors">Uptime Status</a></li>
+          <li><a href="/quackplane" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors">QuackPlane</a></li>
+        </ul>
+      </div>
+
+      <!-- Support Links -->
+      <div>
+        <h3 class="text-sm font-semibold text-white mb-3 uppercase tracking-wide">Support</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/guides-&-tutorials" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors">Guides & Tutorials</a></li>
+          <li><a href="/discord-flock" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors">Discord Community</a></li>
+          <li><a href="mailto:support@quack.host" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors">Contact Support</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-gray-70 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="flex items-center text-sm text-cool-gray-50" x-data="{ currentYear: new Date().getFullYear() }">
+        © 2023-<span x-text="currentYear"></span> QuackHost. All Rights Reserved.
+      </div>
+      <div class="flex gap-4 text-sm">
+        <a href="/privacy-policy" class="text-cool-gray-50 hover:text-[#FF9C20] transition-colors">Privacy</a>
+        <a href="/terms-of-service" class="text-cool-gray-50 hover:text-[#FF9C20] transition-colors">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
