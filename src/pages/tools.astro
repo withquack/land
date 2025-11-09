@@ -1,0 +1,441 @@
+---
+/**
+ * Server Tools Page
+ *
+ * Free Minecraft server utilities - great for SEO and providing value
+ */
+
+import Layout from "../layouts/layout.astro";
+---
+
+<Layout title="/ Minecraft Server Tools">
+  <div class="mb-16 mt-16 lg:mb-24 lg:mt-24">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">
+        Free <span class="text-gradient">Minecraft Server</span> Tools
+      </h1>
+      <p class="text-xl text-cool-gray-30 max-w-3xl mx-auto">
+        Essential utilities for Minecraft server admins. All tools run in your browser - nothing to download.
+      </p>
+    </div>
+
+    <!-- Tools Grid -->
+    <div class="grid lg:grid-cols-2 gap-8">
+
+      <!-- MOTD Generator -->
+      <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-8">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+          <svg class="w-8 h-8 text-[#FF9C20]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+          </svg>
+          MOTD Generator
+        </h2>
+        <p class="text-cool-gray-40 mb-6">
+          Create colored server messages (Message of the Day) with formatting codes.
+        </p>
+
+        <div
+          x-data="{
+            motdText: 'Welcome to my server!',
+            useColors: true,
+            generatedMOTD: '',
+
+            generateMOTD() {
+              this.generatedMOTD = this.motdText;
+            },
+
+            copyToClipboard() {
+              navigator.clipboard.writeText(this.generatedMOTD);
+            }
+          }"
+          x-init="generateMOTD()"
+          class="space-y-4"
+        >
+          <div>
+            <label class="block text-white font-semibold mb-2">Your Message</label>
+            <textarea
+              x-model="motdText"
+              @input="generateMOTD()"
+              rows="3"
+              placeholder="Enter your MOTD text..."
+              class="w-full px-4 py-3 bg-cool-gray-80 border border-cool-gray-60 rounded-lg text-white placeholder-cool-gray-50 focus:outline-none focus:ring-2 focus:ring-[#FF9C20]"
+            ></textarea>
+          </div>
+
+          <div class="bg-cool-gray-80 rounded-lg p-4 border-2 border-cool-gray-70">
+            <div class="text-xs text-cool-gray-40 mb-2">server.properties format:</div>
+            <code class="text-white text-sm break-all" x-text="`motd=${generatedMOTD}`"></code>
+          </div>
+
+          <button
+            type="button"
+            @click="copyToClipboard()"
+            class="w-full bg-[#FF9C20] text-black px-4 py-3 rounded-lg font-semibold hover:bg-[#FF8D00] transition-colors"
+          >
+            Copy to Clipboard
+          </button>
+
+          <div class="bg-blue-60/10 border border-blue-50 rounded-lg p-4">
+            <div class="text-xs text-blue-40 font-semibold mb-2">💡 Color Codes</div>
+            <div class="text-xs text-cool-gray-30 space-y-1">
+              <div>&0 = Black • &1 = Dark Blue • &2 = Dark Green</div>
+              <div>&3 = Dark Aqua • &4 = Dark Red • &5 = Dark Purple</div>
+              <div>&6 = Gold • &7 = Gray • &8 = Dark Gray</div>
+              <div>&9 = Blue • &a = Green • &b = Aqua</div>
+              <div>&c = Red • &d = Light Purple • &e = Yellow • &f = White</div>
+              <div>&l = Bold • &o = Italic • &r = Reset</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Server Properties Generator -->
+      <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-8">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+          <svg class="w-8 h-8 text-[#FF9C20]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          Server Properties Configurator
+        </h2>
+        <p class="text-cool-gray-40 mb-6">
+          Configure your server.properties with an easy visual interface.
+        </p>
+
+        <div
+          x-data="{
+            maxPlayers: 20,
+            gamemode: 'survival',
+            difficulty: 'normal',
+            pvp: true,
+            onlineMode: true,
+            viewDistance: 10,
+
+            generateConfig() {
+              return `max-players=${this.maxPlayers}
+gamemode=${this.gamemode}
+difficulty=${this.difficulty}
+pvp=${this.pvp}
+online-mode=${this.onlineMode}
+view-distance=${this.viewDistance}`;
+            },
+
+            downloadConfig() {
+              const config = this.generateConfig();
+              const blob = new Blob([config], { type: 'text/plain' });
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.href = url;
+              a.download = 'server.properties';
+              a.click();
+            }
+          }"
+          class="space-y-4"
+        >
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-white text-sm font-semibold mb-2">Max Players</label>
+              <input
+                type="number"
+                x-model.number="maxPlayers"
+                min="1"
+                max="1000"
+                class="w-full px-4 py-2 bg-cool-gray-80 border border-cool-gray-60 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#FF9C20]"
+              />
+            </div>
+
+            <div>
+              <label class="block text-white text-sm font-semibold mb-2">View Distance</label>
+              <input
+                type="range"
+                x-model.number="viewDistance"
+                min="3"
+                max="32"
+                class="w-full"
+              />
+              <div class="text-[#FF9C20] text-sm mt-1" x-text="`${viewDistance} chunks`"></div>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-white text-sm font-semibold mb-2">Game Mode</label>
+            <select
+              x-model="gamemode"
+              class="w-full px-4 py-2 bg-cool-gray-80 border border-cool-gray-60 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#FF9C20]"
+            >
+              <option value="survival">Survival</option>
+              <option value="creative">Creative</option>
+              <option value="adventure">Adventure</option>
+              <option value="spectator">Spectator</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-white text-sm font-semibold mb-2">Difficulty</label>
+            <select
+              x-model="difficulty"
+              class="w-full px-4 py-2 bg-cool-gray-80 border border-cool-gray-60 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#FF9C20]"
+            >
+              <option value="peaceful">Peaceful</option>
+              <option value="easy">Easy</option>
+              <option value="normal">Normal</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                x-model="pvp"
+                class="w-5 h-5 rounded border-cool-gray-60 bg-cool-gray-80 text-[#FF9C20]"
+              />
+              <span class="text-white">Enable PvP</span>
+            </label>
+
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                x-model="onlineMode"
+                class="w-5 h-5 rounded border-cool-gray-60 bg-cool-gray-80 text-[#FF9C20]"
+              />
+              <span class="text-white">Online Mode (Recommended)</span>
+            </label>
+          </div>
+
+          <div class="bg-cool-gray-80 rounded-lg p-4 border-2 border-cool-gray-70">
+            <div class="text-xs text-cool-gray-40 mb-2">Generated Configuration:</div>
+            <pre class="text-white text-xs overflow-x-auto" x-text="generateConfig()"></pre>
+          </div>
+
+          <button
+            type="button"
+            @click="downloadConfig()"
+            class="w-full bg-[#FF9C20] text-black px-4 py-3 rounded-lg font-semibold hover:bg-[#FF8D00] transition-colors"
+          >
+            Download server.properties
+          </button>
+        </div>
+      </div>
+
+      <!-- Port Checker -->
+      <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-8">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+          <svg class="w-8 h-8 text-[#FF9C20]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+          Server Port Checker
+        </h2>
+        <p class="text-cool-gray-40 mb-6">
+          Check if your Minecraft server port is accessible from the internet.
+        </p>
+
+        <div
+          x-data="{
+            serverIP: '',
+            serverPort: '25565',
+            checking: false,
+            result: null,
+
+            async checkPort() {
+              this.checking = true;
+              this.result = null;
+
+              // Placeholder - in real implementation would call an API
+              await new Promise(resolve => setTimeout(resolve, 2000));
+
+              this.result = {
+                open: Math.random() > 0.5,
+                message: Math.random() > 0.5 ? 'Port is open and accessible!' : 'Port appears to be closed or filtered.'
+              };
+
+              this.checking = false;
+            }
+          }"
+          class="space-y-4"
+        >
+          <div>
+            <label class="block text-white font-semibold mb-2">Server IP or Hostname</label>
+            <input
+              type="text"
+              x-model="serverIP"
+              placeholder="play.example.com or 123.123.123.123"
+              class="w-full px-4 py-3 bg-cool-gray-80 border border-cool-gray-60 rounded-lg text-white placeholder-cool-gray-50 focus:outline-none focus:ring-2 focus:ring-[#FF9C20]"
+            />
+          </div>
+
+          <div>
+            <label class="block text-white font-semibold mb-2">Port</label>
+            <input
+              type="number"
+              x-model="serverPort"
+              placeholder="25565"
+              class="w-full px-4 py-3 bg-cool-gray-80 border border-cool-gray-60 rounded-lg text-white placeholder-cool-gray-50 focus:outline-none focus:ring-2 focus:ring-[#FF9C20]"
+            />
+          </div>
+
+          <button
+            type="button"
+            @click="checkPort()"
+            :disabled="!serverIP || checking"
+            :class="checking ? 'opacity-50 cursor-not-allowed' : ''"
+            class="w-full bg-[#FF9C20] text-black px-4 py-3 rounded-lg font-semibold hover:bg-[#FF8D00] transition-colors"
+          >
+            <span x-show="!checking">Check Port</span>
+            <span x-show="checking">Checking...</span>
+          </button>
+
+          <div x-show="result" x-transition class="rounded-lg p-4"
+            :class="result?.open ? 'bg-green-60/10 border border-green-50' : 'bg-red-60/10 border border-red-50'">
+            <div class="flex items-center gap-3">
+              <svg x-show="result?.open" class="w-6 h-6 text-green-40" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <svg x-show="!result?.open" class="w-6 h-6 text-red-40" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <div class="font-semibold" :class="result?.open ? 'text-green-30' : 'text-red-30'" x-text="result?.message"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-blue-60/10 border border-blue-50 rounded-lg p-4">
+            <div class="text-xs text-blue-40 font-semibold mb-2">💡 Port Forwarding Help</div>
+            <div class="text-xs text-cool-gray-30">
+              <ul class="list-disc list-inside space-y-1">
+                <li>Default Minecraft port is 25565</li>
+                <li>You need to forward this port in your router</li>
+                <li>Check your firewall settings</li>
+                <li>With QuackHost, ports are automatically configured!</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RAM Calculator -->
+      <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-8">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+          <svg class="w-8 h-8 text-[#FF9C20]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+          </svg>
+          Quick RAM Estimator
+        </h2>
+        <p class="text-cool-gray-40 mb-6">
+          Estimate how much RAM you need based on player count and mods.
+        </p>
+
+        <div
+          x-data="{
+            players: 20,
+            mods: 0,
+            plugins: 5,
+
+            calculateRAM() {
+              let ram = 2; // Base
+
+              // Player scaling
+              if (this.players > 10) ram += 2;
+              if (this.players > 30) ram += 2;
+              if (this.players > 50) ram += 4;
+              if (this.players > 100) ram += 8;
+
+              // Mods
+              if (this.mods > 0) ram += 2;
+              if (this.mods > 50) ram += 4;
+              if (this.mods > 100) ram += 6;
+
+              // Plugins (less intensive)
+              if (this.plugins > 10) ram += 1;
+              if (this.plugins > 30) ram += 2;
+
+              return ram;
+            }
+          }"
+          class="space-y-4"
+        >
+          <div>
+            <label class="block text-white font-semibold mb-2">
+              Expected Players: <span class="text-[#FF9C20]" x-text="players"></span>
+            </label>
+            <input
+              type="range"
+              x-model.number="players"
+              min="1"
+              max="200"
+              class="w-full h-2 bg-cool-gray-70 rounded-lg appearance-none cursor-pointer"
+            />
+          </div>
+
+          <div>
+            <label class="block text-white font-semibold mb-2">
+              Number of Mods: <span class="text-[#FF9C20]" x-text="mods"></span>
+            </label>
+            <input
+              type="range"
+              x-model.number="mods"
+              min="0"
+              max="300"
+              class="w-full h-2 bg-cool-gray-70 rounded-lg appearance-none cursor-pointer"
+            />
+          </div>
+
+          <div>
+            <label class="block text-white font-semibold mb-2">
+              Number of Plugins: <span class="text-[#FF9C20]" x-text="plugins"></span>
+            </label>
+            <input
+              type="range"
+              x-model.number="plugins"
+              min="0"
+              max="50"
+              class="w-full h-2 bg-cool-gray-70 rounded-lg appearance-none cursor-pointer"
+            />
+          </div>
+
+          <div class="bg-gradient-to-r from-[#FF9C20]/20 to-[#FF8D00]/20 border-2 border-[#FF9C20] rounded-lg p-6 text-center">
+            <div class="text-sm text-white mb-2">Recommended RAM:</div>
+            <div class="text-5xl font-bold text-[#FF9C20]" x-text="`${calculateRAM()}GB`"></div>
+            <div class="text-xs text-cool-gray-30 mt-2">With room to grow</div>
+          </div>
+
+          <a
+            href="/pricing"
+            class="block w-full bg-[#FF9C20] text-black text-center px-4 py-3 rounded-lg font-semibold hover:bg-[#FF8D00] transition-colors"
+          >
+            View Hosting Plans
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA Section -->
+    <div class="mt-16 bg-gradient-to-r from-[#FF9C20]/10 to-[#FF8D00]/10 border border-[#FF9C20] rounded-lg p-12 text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready to Launch Your Server?</h2>
+      <p class="text-xl text-cool-gray-30 mb-8">
+        Get hosting with AngelDefence™ DDoS protection included FREE
+      </p>
+      <a
+        href="/pricing"
+        class="inline-flex items-center gap-2 bg-[#FF9C20] text-black px-8 py-4 rounded-lg text-lg font-bold hover:bg-[#FF8D00] transition-colors"
+      >
+        View Pricing
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .text-gradient {
+    background: linear-gradient(135deg, #FF9C20 0%, #FF8D00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>

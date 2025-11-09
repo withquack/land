@@ -1,11 +1,518 @@
 ---
+/**
+ * QuackHost Pricing Page
+ *
+ * The most sophisticated pricing page in gaming hosting.
+ * Optimized for conversion with interactive calculators, transparent pricing,
+ * and emphasis on AngelDefence™ DDoS protection.
+ */
+
 import Layout from "../layouts/layout.astro";
+import AngelDefenceBadge from "../components/angel-defence-badge.astro";
+import RAMCalculator from "../components/ram-calculator.astro";
+import StorageHelper from "../components/storage-helper.astro";
+import LocationMap from "../components/location-map.astro";
+
+import {
+  PRICING_TIERS,
+  ADD_ONS,
+  LAUNCH_CONFIG,
+  ANGEL_DEFENCE,
+  formatPrice,
+  calculateAnnualSavings,
+  DISCOUNTS,
+} from "../config/pricing";
 ---
 
 <Layout title="/ Pricing">
-  <div class="mb-32 mt-32">
-    <p class="text-2xl font-semibold xl:text-4xl">Pricing</p>
-  </div>
+  <div class="mb-16 mt-16 lg:mb-24 lg:mt-24">
+    <!-- Pre-Launch Banner -->
+    {LAUNCH_CONFIG.status === 'pre-launch' && (
+      <div class="mb-12 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] rounded-lg p-6 text-center">
+        <div class="text-2xl lg:text-3xl font-bold text-black mb-2">
+          🚀 Launch Pricing - Lock In Forever
+        </div>
+        <div class="text-black/80 text-lg">
+          Be among the first. Early adopters get {Math.round(DISCOUNTS.earlyAdopter * 100)}% off - locked in for life.
+          Launching {LAUNCH_CONFIG.launchDate}
+        </div>
+      </div>
+    )}
 
-  <div class="h-96 rounded-md bg-gray-200"></div>
+    <!-- AngelDefence Hero Section -->
+    <div class="text-center mb-16">
+      <div class="flex justify-center mb-6">
+        <AngelDefenceBadge size="hero" showTagline={true} />
+      </div>
+
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-semibold mb-6">
+        Gaming Servers <span class="text-gradient">Protected</span> by AngelDefence™
+      </h1>
+
+      <p class="text-xl lg:text-2xl text-cool-gray-30 max-w-4xl mx-auto mb-4">
+        {ANGEL_DEFENCE.subTagline}
+      </p>
+
+      <p class="text-lg text-cool-gray-40 max-w-3xl mx-auto">
+        {ANGEL_DEFENCE.description}
+      </p>
+
+      <!-- Key AngelDefence Benefits -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 max-w-5xl mx-auto">
+        {ANGEL_DEFENCE.keyPoints.map((point) => (
+          <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-4 text-left">
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#FF9C20] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-cool-gray-20 text-sm">{point}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Pricing Tiers -->
+    <div class="mb-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-5xl font-semibold mb-4">
+          Simple, <span class="text-gradient">Transparent</span> Pricing
+        </h2>
+        <p class="text-xl text-cool-gray-30">
+          No setup fees. No hidden costs. Cancel anytime.
+        </p>
+
+        <!-- Billing Toggle (Future: monthly vs annual) -->
+        <div class="mt-6 inline-flex items-center gap-3 bg-cool-gray-90 p-1 rounded-lg">
+          <span class="text-cool-gray-40 text-sm px-3">Monthly billing</span>
+          <span class="text-cool-gray-60">|</span>
+          <span class="text-cool-gray-30 text-sm px-3 font-semibold">
+            Save 15% with annual billing
+          </span>
+        </div>
+      </div>
+
+      <!-- Tier Cards Grid -->
+      <div class="grid lg:grid-cols-3 gap-8 mb-12">
+        {PRICING_TIERS.filter(tier => tier.id !== 'enterprise').map((tier) => (
+          <div
+            class:list={[
+              "bg-cool-gray-90 rounded-lg p-8 border-2 transition-all duration-300 hover:scale-105",
+              tier.recommended ? "border-[#FF9C20] shadow-xl shadow-[#FF9C20]/20" : "border-cool-gray-70 hover:border-cool-gray-60"
+            ]}
+          >
+            {/* Recommended Badge */}
+            {tier.recommended && (
+              <div class="bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black text-sm font-bold px-4 py-1 rounded-full inline-block mb-4">
+                ⭐ Most Popular
+              </div>
+            )}
+
+            {/* Tier Name */}
+            <h3 class="text-2xl font-bold text-white mb-2">{tier.name}</h3>
+
+            {/* Use Case */}
+            <p class="text-cool-gray-40 text-sm mb-4">{tier.useCase}</p>
+
+            {/* Pricing */}
+            <div class="mb-6">
+              {tier.basePrice === null ? (
+                <div>
+                  <div class="text-4xl font-bold text-[#FF9C20]">Contact Us</div>
+                  <div class="text-cool-gray-40 text-sm mt-1">Custom pricing</div>
+                </div>
+              ) : (
+                <div>
+                  <div class="text-5xl font-bold text-white">
+                    {formatPrice(tier.monthlyPrice || 0)}
+                    <span class="text-xl text-cool-gray-40">/mo</span>
+                  </div>
+                  {LAUNCH_CONFIG.status === 'pre-launch' && (
+                    <div class="text-sm text-[#FF9C20] mt-1 font-semibold">
+                      Launch pricing - lock in forever!
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+
+            {/* Specs Highlight */}
+            <div class="bg-cool-gray-80 rounded-lg p-4 mb-6">
+              <div class="grid grid-cols-2 gap-3 text-center">
+                <div>
+                  <div class="text-2xl font-bold text-[#FF9C20]">{tier.ram}</div>
+                  <div class="text-xs text-cool-gray-40">RAM</div>
+                </div>
+                <div>
+                  <div class="text-2xl font-bold text-[#FF9C20]">{tier.storage}</div>
+                  <div class="text-xs text-cool-gray-40">Storage</div>
+                </div>
+              </div>
+              <div class="mt-3 text-center">
+                <div class="text-sm text-cool-gray-30">{tier.playerCount}</div>
+              </div>
+            </div>
+
+            {/* AngelDefence Badge */}
+            <div class="mb-6 py-4 border-y border-cool-gray-70">
+              <AngelDefenceBadge size="small" variant="inline" />
+              <div class="text-xs text-cool-gray-40 mt-2">
+                Included with every plan
+              </div>
+            </div>
+
+            {/* Features List */}
+            <ul class="space-y-3 mb-8">
+              {tier.features.map((feature) => (
+                <li class="flex items-start gap-2 text-sm text-cool-gray-30">
+                  <svg class="w-5 h-5 text-green-50 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* CTA Button */}
+            {LAUNCH_CONFIG.status === 'pre-launch' ? (
+              <a
+                href="#waitlist"
+                class="block w-full text-center py-4 px-6 rounded-lg font-semibold transition-all duration-200"
+                class:list={[
+                  tier.recommended
+                    ? "bg-[#FF9C20] text-black hover:bg-[#FF8D00] shadow-lg hover:shadow-xl"
+                    : "bg-cool-gray-80 text-white border-2 border-cool-gray-60 hover:border-[#FF9C20]"
+                ]}
+              >
+                Join Waitlist
+              </a>
+            ) : (
+              <a
+                href={tier.basePrice === null ? "/contact" : "/signup"}
+                class="block w-full text-center py-4 px-6 rounded-lg font-semibold transition-all duration-200"
+                class:list={[
+                  tier.recommended
+                    ? "bg-[#FF9C20] text-black hover:bg-[#FF8D00] shadow-lg hover:shadow-xl"
+                    : "bg-cool-gray-80 text-white border-2 border-cool-gray-60 hover:border-[#FF9C20]"
+                ]}
+              >
+                {tier.basePrice === null ? "Contact Sales" : "Get Started"}
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Enterprise Tier - Full Width */}
+      {PRICING_TIERS.filter(tier => tier.id === 'enterprise').map((tier) => (
+        <div class="bg-gradient-to-r from-cool-gray-90 to-cool-gray-80 rounded-lg p-8 border-2 border-purple-50">
+          <div class="grid lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <div class="bg-gradient-to-r from-purple-50 to-magenta-50 text-black text-sm font-bold px-4 py-1 rounded-full inline-block mb-4">
+                Enterprise
+              </div>
+              <h3 class="text-3xl font-bold text-white mb-4">{tier.name}</h3>
+              <p class="text-cool-gray-30 text-lg mb-6">{tier.useCase}</p>
+
+              <div class="grid sm:grid-cols-3 gap-4 mb-6">
+                <div>
+                  <div class="text-2xl font-bold text-purple-40">{tier.ram}</div>
+                  <div class="text-xs text-cool-gray-40">Custom RAM</div>
+                </div>
+                <div>
+                  <div class="text-2xl font-bold text-purple-40">{tier.storage}</div>
+                  <div class="text-xs text-cool-gray-40">Custom Storage</div>
+                </div>
+                <div>
+                  <div class="text-2xl font-bold text-purple-40">{tier.playerCount}</div>
+                  <div class="text-xs text-cool-gray-40">Players</div>
+                </div>
+              </div>
+
+              <a
+                href="#contact-sales"
+                class="inline-flex items-center gap-2 bg-purple-50 text-black px-8 py-4 rounded-lg font-semibold hover:bg-purple-40 transition-colors"
+              >
+                Contact Sales
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+
+            <div>
+              <ul class="grid sm:grid-cols-2 gap-3">
+                {tier.features.map((feature) => (
+                  <li class="flex items-start gap-2 text-sm text-cool-gray-30">
+                    <svg class="w-5 h-5 text-purple-50 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Interactive Configuration Section -->
+    <div class="mb-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-5xl font-semibold mb-4">
+          Find Your <span class="text-gradient">Perfect</span> Configuration
+        </h2>
+        <p class="text-xl text-cool-gray-30">
+          Use our interactive tools to determine exactly what you need
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 mb-8">
+        <!-- RAM Calculator -->
+        <RAMCalculator />
+
+        <!-- Storage Helper -->
+        <StorageHelper />
+      </div>
+
+      <!-- Location Map - Full Width -->
+      <LocationMap />
+    </div>
+
+    <!-- Add-Ons & Extras -->
+    <div class="mb-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-5xl font-semibold mb-4">
+          Customize Your <span class="text-gradient">Setup</span>
+        </h2>
+        <p class="text-xl text-cool-gray-30">
+          Enhance your server with optional add-ons
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {ADD_ONS.map((addon) => (
+          <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6 hover:border-[#FF9C20] transition-colors">
+            <h3 class="text-xl font-semibold text-white mb-2">{addon.name}</h3>
+            <p class="text-cool-gray-40 text-sm mb-4">{addon.description}</p>
+
+            <div class="flex items-baseline gap-2">
+              <span class="text-2xl font-bold text-[#FF9C20]">
+                {addon.price === null ? 'TBD' : formatPrice(addon.price)}
+              </span>
+              <span class="text-cool-gray-40 text-sm">/{addon.unit}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Trust & Guarantees Section -->
+    <div class="mb-20">
+      <div class="bg-gradient-to-r from-green-60/10 to-teal-60/10 border border-green-50 rounded-lg p-8">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl lg:text-4xl font-semibold mb-4 text-white">
+            Launch with Confidence
+          </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="text-center">
+            <div class="text-5xl mb-3">✅</div>
+            <div class="font-semibold text-white mb-2">99.9% Uptime SLA</div>
+            <div class="text-sm text-cool-gray-30">We guarantee reliability</div>
+          </div>
+
+          <div class="text-center">
+            <div class="text-5xl mb-3">🔒</div>
+            <div class="font-semibold text-white mb-2">No Setup Fees</div>
+            <div class="text-sm text-cool-gray-30">Others charge $5-$15</div>
+          </div>
+
+          <div class="text-center">
+            <div class="text-5xl mb-3">⚡</div>
+            <div class="font-semibold text-white mb-2">Instant Setup</div>
+            <div class="text-sm text-cool-gray-30">Online in under 2 minutes</div>
+          </div>
+
+          <div class="text-center">
+            <div class="text-5xl mb-3">💝</div>
+            <div class="font-semibold text-white mb-2">Price Lock Guarantee</div>
+            <div class="text-sm text-cool-gray-30">Launch pricing locked forever</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Waitlist Section (Pre-Launch) -->
+    {LAUNCH_CONFIG.status === 'pre-launch' && (
+      <div id="waitlist" class="mb-20 scroll-mt-24">
+        <div class="bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] rounded-lg p-12 text-center">
+          <h2 class="text-4xl lg:text-5xl font-bold text-black mb-4">
+            Join the Waitlist
+          </h2>
+          <p class="text-xl text-black/80 mb-8 max-w-2xl mx-auto">
+            Be among the first to experience AngelDefence™ protection. Early adopters get {Math.round(DISCOUNTS.earlyAdopter * 100)}% off forever.
+          </p>
+
+          <!-- Waitlist Form Placeholder -->
+          <div class="max-w-md mx-auto bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-black/20">
+            <div class="text-black/80 mb-6">
+              Waitlist form will be integrated here with your email service provider
+            </div>
+
+            <form class="space-y-4">
+              <input
+                type="email"
+                placeholder="your@email.com"
+                required
+                class="w-full px-4 py-3 rounded-lg bg-white text-black placeholder-black/50 focus:outline-none focus:ring-2 focus:ring-black"
+              />
+
+              <select
+                required
+                class="w-full px-4 py-3 rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-black"
+              >
+                <option value="">Interested in...</option>
+                <option value="starter">Starter Plan</option>
+                <option value="community">Community Plan</option>
+                <option value="popular">Popular Plan</option>
+                <option value="network">Network Plan</option>
+                <option value="enterprise">Enterprise Plan</option>
+              </select>
+
+              <button
+                type="submit"
+                class="w-full bg-black text-white px-8 py-4 rounded-lg font-bold hover:bg-black/80 transition-colors"
+              >
+                Reserve My Spot
+              </button>
+            </form>
+
+            <div class="mt-4 text-xs text-black/60">
+              No spam. Unsubscribe anytime. Priority access when we launch.
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+
+    <!-- Pricing FAQ -->
+    <div class="mb-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-5xl font-semibold mb-4">
+          Pricing <span class="text-gradient">Questions</span>
+        </h2>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-4"
+        x-data="{ openFaq: null }">
+
+        {[
+          {
+            q: "What's included with AngelDefence™?",
+            a: "AngelDefence™ is our enterprise-grade DDoS protection system, included FREE with every plan. It provides multi-gigabit scrubbing capacity, automatic threat detection, and real-time mitigation. Unlike competitors who charge extra, it's always-on and protects your server at the network level with zero performance impact."
+          },
+          {
+            q: "Can I upgrade or downgrade my plan?",
+            a: "Absolutely! You can change your plan anytime. Upgrades take effect immediately, and downgrades apply at your next billing cycle. All changes are prorated - you only pay for what you use."
+          },
+          {
+            q: "What payment methods do you accept?",
+            a: "We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and various digital payment methods. All payments are processed securely through industry-standard payment processors."
+          },
+          {
+            q: "Is there a free trial?",
+            a: LAUNCH_CONFIG.freeTrial.enabled ? `Yes! We offer a ${LAUNCH_CONFIG.freeTrial.days}-day free trial. ${LAUNCH_CONFIG.freeTrial.creditCardRequired ? 'A credit card is required but you won\'t be charged until the trial ends.' : 'No credit card required - just sign up and start building.'}` : "Free trial details will be announced at launch."
+          },
+          {
+            q: "What happens if I exceed my resource limits?",
+            a: "We'll notify you before you hit any limits. You can upgrade instantly through QuackPlane, or we'll help you optimize your server. We never surprise you with overage charges - everything is transparent and in your control."
+          },
+          {
+            q: "Do you offer refunds?",
+            a: "Yes! We offer a 30-day money-back guarantee on all annual plans. For monthly plans, you can cancel anytime - no questions asked, no cancellation fees."
+          },
+          {
+            q: "What's the early adopter pricing lock?",
+            a: "If you join during our launch period, your pricing is locked in forever. Even if we raise prices later (which we plan to do after launch), you'll always pay your original rate as long as you keep your account active."
+          },
+          {
+            q: "Can I host multiple servers?",
+            a: `Yes! Each plan is for one server. If you need multiple servers, you get ${Math.round(DISCOUNTS.multiServer3Plus * 100)}% off for 3+ servers or ${Math.round(DISCOUNTS.multiServer5Plus * 100)}% off for 5+ servers. Contact us for multi-server setups.`
+          }
+        ].map((faq, index) => (
+          <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg overflow-hidden">
+            <button
+              type="button"
+              @click={`openFaq = openFaq === ${index} ? null : ${index}`}
+              :aria-expanded={`openFaq === ${index}`}
+              class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-cool-gray-80 transition-colors"
+            >
+              <span class="text-lg font-semibold text-white pr-4">{faq.q}</span>
+              <svg
+                :class={`openFaq === ${index} ? 'rotate-180' : ''`}
+                class="w-6 h-6 text-[#FF9C20] transition-transform flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            <div
+              x-show={`openFaq === ${index}`}
+              x-collapse
+              class="px-6 pb-5"
+            >
+              <p class="text-cool-gray-30">{faq.a}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="text-center">
+      <h2 class="text-3xl lg:text-5xl font-bold mb-6">
+        Ready to Launch Your Server?
+      </h2>
+      <p class="text-xl text-cool-gray-30 mb-8">
+        Protected by AngelDefence™. Online in under 2 minutes.
+      </p>
+
+      {LAUNCH_CONFIG.status === 'pre-launch' ? (
+        <a
+          href="#waitlist"
+          class="inline-flex items-center gap-3 bg-[#FF9C20] text-black px-12 py-5 rounded-lg text-xl font-bold hover:bg-[#FF8D00] transition-colors shadow-xl hover:shadow-2xl"
+        >
+          Join the Waitlist
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      ) : (
+        <a
+          href="/signup"
+          class="inline-flex items-center gap-3 bg-[#FF9C20] text-black px-12 py-5 rounded-lg text-xl font-bold hover:bg-[#FF8D00] transition-colors shadow-xl hover:shadow-2xl"
+        >
+          Get Started Now
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      )}
+    </div>
+  </div>
 </Layout>
+
+<style>
+  .text-gradient {
+    background: linear-gradient(135deg, #FF9C20 0%, #FF8D00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>

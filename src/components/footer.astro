@@ -1,13 +1,169 @@
 ---
+/**
+ * Enhanced Footer Component
+ *
+ * Comprehensive footer with navigation, tools, legal links, and company info
+ */
 
+import { LAUNCH_CONFIG } from "../config/pricing";
 ---
 
-<a
-  class="mt-8 mb-1 flex place-content-center"
-  x-data="{ currentYear: new Date().getFullYear() }"
->
-  <img src="/mascot.svg" loading="lazy" alt="GooseQuack" class="w-6 h-6 mr-2" />
-  <p class="">
-    © 2023-<span x-text="currentYear"></span> QuackHost. All Rights Reserved.
-  </p>
-</a>
+<footer class="mt-24 border-t border-cool-gray-80 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Main Footer Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+      <!-- Company Info -->
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <img src="/mascot.svg" alt="QuackHost" class="w-8 h-8" />
+          <span class="text-xl font-bold text-white">QuackHost</span>
+        </div>
+        <p class="text-cool-gray-40 text-sm mb-4">
+          Gaming server hosting protected by AngelDefence™. Your server stays online when others don't.
+        </p>
+        {LAUNCH_CONFIG.status === 'pre-launch' && (
+          <div class="inline-block bg-[#FF9C20]/10 border border-[#FF9C20] text-[#FF9C20] px-3 py-1 rounded-full text-xs font-semibold">
+            Launching {LAUNCH_CONFIG.launchDate}
+          </div>
+        )}
+      </div>
+
+      <!-- Product Links -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Product</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="/pricing" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors">
+              Pricing
+            </a>
+          </li>
+          <li>
+            <a href="/quackplane" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors">
+              QuackPlane Control Panel
+            </a>
+          </li>
+          <li>
+            <a href="/games" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors">
+              Supported Games
+            </a>
+          </li>
+          <li>
+            <a href="/service-status" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors">
+              Service Status
+            </a>
+          </li>
+          <li>
+            <a href="https://plane.quack.host" target="_blank" rel="noopener noreferrer" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors inline-flex items-center gap-1">
+              QuackPlane Login
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Resources</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="/guides-&-tutorials-b" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors">
+              Guides & Tutorials
+            </a>
+          </li>
+          <li>
+            <a href="/tools" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors">
+              Server Tools
+            </a>
+          </li>
+          <li>
+            <a href="/learn-more" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors">
+              Learn More
+            </a>
+          </li>
+          <li>
+            <a href="https://discord.gg/asMbYVQkWA" target="_blank" rel="noopener noreferrer" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors inline-flex items-center gap-1">
+              Discord Community
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://client.quack.host" target="_blank" rel="noopener noreferrer" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors inline-flex items-center gap-1">
+              Client Portal
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Company & Legal -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Company</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="/#about" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors">
+              About Us
+            </a>
+          </li>
+          <li>
+            <a href="/privacy-policy" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors">
+              Privacy Policy
+            </a>
+          </li>
+          <li>
+            <a href="/terms-of-service" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors">
+              Terms of Service
+            </a>
+          </li>
+          <li>
+            <a href="mailto:support@quack.host" class="text-cool-gray-40 hover:text-[#FF9C20] transition-colors">
+              Contact Support
+            </a>
+          </li>
+        </ul>
+
+        <!-- AngelDefence Badge -->
+        <div class="mt-6 p-3 bg-cool-gray-90 rounded-lg border border-cool-gray-70">
+          <div class="flex items-center gap-2 mb-1">
+            <img src="/angel-defence-shield.svg" alt="AngelDefence" class="w-5 h-6" />
+            <span class="text-[#FF9C20] font-semibold text-xs">AngelDefence™</span>
+          </div>
+          <p class="text-cool-gray-40 text-xs">
+            DDoS protection included with every server
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 border-t border-cool-gray-80">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-cool-gray-40">
+        <div class="flex items-center gap-2"
+          x-data="{ currentYear: new Date().getFullYear() }">
+          <img src="/mascot.svg" alt="QuackHost Mascot" class="w-6 h-6" />
+          <span>
+            © 2023-<span x-text="currentYear"></span> QuackHost. All Rights Reserved.
+          </span>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <span class="text-xs">Built with ❤️ for gamers</span>
+        </div>
+      </div>
+
+      {/* Privacy & Performance Notice */}
+      <div class="mt-6 text-center">
+        <p class="text-xs text-cool-gray-50">
+          🔒 Privacy-first analytics • No tracking cookies •
+          <a href="https://umami.is" target="_blank" rel="noopener noreferrer" class="underline hover:text-[#FF9C20] transition-colors">Powered by Umami</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

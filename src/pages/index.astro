@@ -1,8 +1,24 @@
 ---
 import Layout from "../layouts/layout.astro";
+import AngelDefenceBadge from "../components/angel-defence-badge.astro";
+import { LAUNCH_CONFIG } from "../config/pricing";
 ---
 
-<Layout title="/ Unbetable Game Servers">
+<Layout title="/ Unbeatable Game Servers">
+  <!-- Pre-Launch Banner -->
+  {LAUNCH_CONFIG.status === 'pre-launch' && (
+    <div class="mb-8 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] rounded-lg p-4 text-center">
+      <div class="text-lg lg:text-xl font-bold text-black">
+        🚀 Launching {LAUNCH_CONFIG.launchDate} • Early Adopter Pricing - Lock In Forever
+      </div>
+    </div>
+  )}
+
+  <!-- AngelDefence Hero Banner -->
+  <div class="mb-12">
+    <AngelDefenceBadge size="large" variant="banner" showTagline={true} />
+  </div>
+
   <!-- Hero Section -->
   <div class="grid grid-cols-1 lg:grid-cols-7 mb-16 gap-8 pb-4 items-center">
     <div
@@ -44,9 +60,12 @@ import Layout from "../layouts/layout.astro";
       class="col-span-1 lg:col-span-3 order-2 lg:order-2 text-cool-gray-30 flex justify-center lg:justify-end items-center"
     >
       <img
-        src="https://w7.pngwing.com/pngs/227/144/png-transparent-minecraft-illustration-minecraft-pocket-edition-minecraft-story-mode-xbox-360-wii-u-minecraft-game-video-game-mojang.png"
-        alt="Minecraft"
+        src="/minecraft-hero.svg"
+        alt="Minecraft Server Hosting"
         class="max-w-full h-auto"
+        width="400"
+        height="400"
+        loading="eager"
       />
     </div>
   </div>
@@ -77,19 +96,18 @@ import Layout from "../layouts/layout.astro";
 
       <div>
         <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
-          <span class="underline decoration-4 decoration-blue-50">Reliable</span
+          <span class="underline decoration-4 decoration-blue-50">Protected by AngelDefence™</span
           >
           <img
-            src="/index/doodles/rocking chair.svg"
-            class="ml-2"
-            alt=""
+            src="/angel-defence-shield.svg"
+            class="ml-2 w-8 h-10"
+            alt="AngelDefence Shield"
             width="34"
-            height="34"
+            height="40"
           />
         </h2>
         <p class="text-cool-gray-40 leading-relaxed">
-          Terrabit-scale DDoS protection keeps your server online during
-          attacks. Check our live <a
+          Your server stays online when others don't. Network-level DDoS protection stops attacks before they reach your server - included FREE with every plan. Check our live <a
             href="/service-status"
             class="text-blue-40 underline decoration-2 decoration-blue-40 hover:decoration-blue-50 transition-colors"
             >service status</a

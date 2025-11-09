@@ -1,0 +1,116 @@
+---
+/**
+ * AngelDefence™ Badge Component
+ *
+ * Displays the AngelDefence protection badge with shield icon
+ * Can be used in different sizes: 'small', 'medium', 'large'
+ */
+
+interface Props {
+  size?: 'small' | 'medium' | 'large' | 'hero';
+  variant?: 'default' | 'inline' | 'banner';
+  showTagline?: boolean;
+  animate?: boolean;
+}
+
+const {
+  size = 'medium',
+  variant = 'default',
+  showTagline = false,
+  animate = true
+} = Astro.props;
+
+const sizeClasses = {
+  small: {
+    container: 'text-sm',
+    icon: 'w-5 h-6',
+    text: 'text-xs',
+  },
+  medium: {
+    container: 'text-base',
+    icon: 'w-8 h-10',
+    text: 'text-sm',
+  },
+  large: {
+    container: 'text-xl',
+    icon: 'w-12 h-14',
+    text: 'text-base',
+  },
+  hero: {
+    container: 'text-2xl lg:text-4xl',
+    icon: 'w-16 h-20 lg:w-24 lg:h-28',
+    text: 'text-lg lg:text-xl',
+  },
+};
+
+const classes = sizeClasses[size];
+---
+
+{variant === 'banner' ? (
+  <!-- Full-width banner variant -->
+  <div class="w-full bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] py-3 px-4 text-center">
+    <div class="flex items-center justify-center gap-3">
+      <img
+        src="/angel-defence-shield.svg"
+        alt="AngelDefence Shield"
+        class={`${classes.icon} ${animate ? 'animate-pulse-slow' : ''}`}
+      />
+      <div class="text-left">
+        <div class="font-semibold text-black flex items-center gap-2">
+          <span>Protected by AngelDefence™</span>
+        </div>
+        {showTagline && (
+          <div class="text-xs text-black/80">
+            DDoS protection that never sleeps
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+) : variant === 'inline' ? (
+  <!-- Inline variant (for pricing cards, etc) -->
+  <div class="inline-flex items-center gap-2">
+    <img
+      src="/angel-defence-shield.svg"
+      alt="AngelDefence Shield"
+      class={classes.icon}
+    />
+    <span class="font-semibold text-[#FF9C20]">
+      AngelDefence™
+    </span>
+  </div>
+) : (
+  <!-- Default card variant -->
+  <div class={`flex flex-col items-center text-center gap-2 ${classes.container}`}>
+    <img
+      src="/angel-defence-shield.svg"
+      alt="AngelDefence Shield"
+      class={`${classes.icon} ${animate ? 'hover:scale-110 transition-transform duration-300' : ''}`}
+    />
+    <div>
+      <div class="font-semibold text-[#FF9C20]">
+        AngelDefence™
+      </div>
+      {showTagline && (
+        <div class={`text-cool-gray-30 ${classes.text} mt-1`}>
+          DDoS protection that never sleeps
+        </div>
+      )}
+    </div>
+  </div>
+)}
+
+<style>
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+</style>

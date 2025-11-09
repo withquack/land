@@ -1,0 +1,226 @@
+---
+/**
+ * Interactive RAM Calculator Component
+ *
+ * Helps users determine how much RAM they need based on:
+ * - Player count
+ * - Server type (vanilla, modded, etc.)
+ * - Plugin usage
+ */
+
+import { RAM_GUIDANCE } from '../config/pricing';
+---
+
+<div
+  class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6"
+  x-data="{
+    playerCount: 10,
+    serverType: 'vanilla',
+    hasPlugins: false,
+    recommendation: null,
+
+    calculateRAM() {
+      let baseRAM = 2;
+
+      // Base RAM by player count
+      if (this.playerCount <= 10) baseRAM = 2;
+      else if (this.playerCount <= 20) baseRAM = 4;
+      else if (this.playerCount <= 30) baseRAM = 6;
+      else if (this.playerCount <= 50) baseRAM = 8;
+      else if (this.playerCount <= 70) baseRAM = 12;
+      else if (this.playerCount <= 100) baseRAM = 16;
+      else if (this.playerCount <= 150) baseRAM = 24;
+      else baseRAM = 32;
+
+      // Multipliers for server type
+      if (this.serverType === 'light-mods') baseRAM = Math.max(baseRAM, baseRAM * 1.5);
+      if (this.serverType === 'heavy-mods') baseRAM = Math.max(baseRAM, baseRAM * 2);
+      if (this.serverType === 'network') baseRAM = Math.max(baseRAM, baseRAM * 1.8);
+
+      // Additional RAM for plugins
+      if (this.hasPlugins && this.serverType === 'vanilla') {
+        baseRAM += 2;
+      }
+
+      // Round to nearest available RAM tier
+      const ramOptions = [2, 4, 6, 8, 12, 16, 24, 32];
+      const recommendedRAM = ramOptions.find(ram => ram >= baseRAM) || 32;
+
+      this.recommendation = recommendedRAM;
+
+      // Emit event for other components
+      this.$dispatch('ram-selected', { ram: recommendedRAM });
+    }
+  }"
+  x-init="calculateRAM()"
+  @change="calculateRAM()"
+>
+  <h3 class="text-2xl font-semibold mb-4 text-white">
+    How much RAM do I need?
+  </h3>
+
+  <p class="text-cool-gray-30 mb-6">
+    Answer a few questions and we'll recommend the perfect server size for you.
+  </p>
+
+  <!-- Player Count Slider -->
+  <div class="mb-6">
+    <label class="block text-white font-semibold mb-2">
+      How many players will you have?
+      <span class="text-[#FF9C20] font-bold ml-2" x-text="playerCount"></span>
+    </label>
+
+    <input
+      type="range"
+      min="1"
+      max="200"
+      step="1"
+      x-model="playerCount"
+      class="w-full h-2 bg-cool-gray-70 rounded-lg appearance-none cursor-pointer slider"
+    />
+
+    <div class="flex justify-between text-xs text-cool-gray-40 mt-1">
+      <span>1</span>
+      <span>50</span>
+      <span>100</span>
+      <span>150</span>
+      <span>200+</span>
+    </div>
+  </div>
+
+  <!-- Server Type Selection -->
+  <div class="mb-6">
+    <label class="block text-white font-semibold mb-3">
+      What type of server?
+    </label>
+
+    <div class="grid grid-cols-2 gap-3">
+      <button
+        type="button"
+        @click="serverType = 'vanilla'"
+        :class="serverType === 'vanilla' ? 'bg-[#FF9C20] text-black border-[#FF9C20]' : 'bg-cool-gray-80 text-white border-cool-gray-60 hover:border-cool-gray-50'"
+        class="p-3 rounded-lg border-2 transition-all duration-200 text-left"
+      >
+        <div class="font-semibold">Vanilla</div>
+        <div class="text-xs opacity-80">Standard Minecraft</div>
+      </button>
+
+      <button
+        type="button"
+        @click="serverType = 'light-mods'"
+        :class="serverType === 'light-mods' ? 'bg-[#FF9C20] text-black border-[#FF9C20]' : 'bg-cool-gray-80 text-white border-cool-gray-60 hover:border-cool-gray-50'"
+        class="p-3 rounded-lg border-2 transition-all duration-200 text-left"
+      >
+        <div class="font-semibold">Light Mods</div>
+        <div class="text-xs opacity-80">20-50 mods</div>
+      </button>
+
+      <button
+        type="button"
+        @click="serverType = 'heavy-mods'"
+        :class="serverType === 'heavy-mods' ? 'bg-[#FF9C20] text-black border-[#FF9C20]' : 'bg-cool-gray-80 text-white border-cool-gray-60 hover:border-cool-gray-50'"
+        class="p-3 rounded-lg border-2 transition-all duration-200 text-left"
+      >
+        <div class="font-semibold">Heavy Mods</div>
+        <div class="text-xs opacity-80">100+ mods</div>
+      </button>
+
+      <button
+        type="button"
+        @click="serverType = 'network'"
+        :class="serverType === 'network' ? 'bg-[#FF9C20] text-black border-[#FF9C20]' : 'bg-cool-gray-80 text-white border-cool-gray-60 hover:border-cool-gray-50'"
+        class="p-3 rounded-lg border-2 transition-all duration-200 text-left"
+      >
+        <div class="font-semibold">Network</div>
+        <div class="text-xs opacity-80">BungeeCord/Velocity</div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Plugin Usage -->
+  <div class="mb-6">
+    <label class="flex items-center gap-3 cursor-pointer">
+      <input
+        type="checkbox"
+        x-model="hasPlugins"
+        class="w-5 h-5 rounded border-cool-gray-60 bg-cool-gray-80 text-[#FF9C20] focus:ring-2 focus:ring-[#FF9C20] focus:ring-offset-0"
+      />
+      <span class="text-white">
+        I'll be using plugins (Bukkit/Spigot/Paper)
+      </span>
+    </label>
+  </div>
+
+  <!-- Recommendation Result -->
+  <div
+    class="bg-gradient-to-r from-[#FF9C20]/20 to-[#FF8D00]/20 border-2 border-[#FF9C20] rounded-lg p-5"
+    x-show="recommendation"
+    x-transition
+  >
+    <div class="flex items-center gap-4">
+      <div class="text-5xl font-bold text-[#FF9C20]" x-text="`${recommendation}GB`"></div>
+      <div class="flex-1">
+        <div class="text-white font-semibold text-lg">Recommended RAM</div>
+        <div class="text-cool-gray-30 text-sm mt-1">
+          Perfect for your needs with room to grow
+        </div>
+      </div>
+    </div>
+
+    <!-- Detailed Guidance -->
+    <template x-for="guide in $root.ramGuidance" :key="guide.ram">
+      <div x-show="guide.ram === `${recommendation}GB`" class="mt-4 pt-4 border-t border-[#FF9C20]/30">
+        <div class="text-white font-semibold mb-2" x-text="guide.useCase"></div>
+        <div class="text-cool-gray-30 text-sm mb-3" x-text="guide.description"></div>
+        <div class="text-xs text-cool-gray-40">
+          <strong class="text-white">Examples:</strong>
+          <ul class="list-disc list-inside mt-1 space-y-1">
+            <template x-for="example in guide.examples" :key="example">
+              <li x-text="example"></li>
+            </template>
+          </ul>
+        </div>
+      </div>
+    </template>
+  </div>
+</div>
+
+<script define:vars={{ ramGuidance: RAM_GUIDANCE }}>
+  // Make RAM guidance data available to Alpine
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('ramGuidance', () => ramGuidance);
+  });
+</script>
+
+<style>
+  /* Custom slider styling */
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #FF9C20;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255, 156, 32, 0.5);
+  }
+
+  .slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #FF9C20;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(255, 156, 32, 0.5);
+  }
+
+  .slider::-webkit-slider-thumb:hover {
+    background: #FF8D00;
+    box-shadow: 0 4px 12px rgba(255, 156, 32, 0.7);
+  }
+
+  .slider::-moz-range-thumb:hover {
+    background: #FF8D00;
+    box-shadow: 0 4px 12px rgba(255, 156, 32, 0.7);
+  }
+</style>

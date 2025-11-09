@@ -1,0 +1,175 @@
+---
+/**
+ * Storage Helper Component
+ *
+ * Helps users understand storage requirements and what uses storage
+ */
+
+import { STORAGE_GUIDANCE } from '../config/pricing';
+---
+
+<div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6">
+  <h3 class="text-2xl font-semibold mb-4 text-white flex items-center gap-3">
+    <svg class="w-8 h-8 text-[#FF9C20]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z" />
+    </svg>
+    Understanding Storage
+  </h3>
+
+  <p class="text-cool-gray-30 mb-6">
+    Your storage holds everything: world saves, backups, plugins, and logs. Here's what you can fit:
+  </p>
+
+  <!-- Storage Tiers -->
+  <div class="space-y-4">
+    {STORAGE_GUIDANCE.map((guide, index) => (
+      <div
+        class="bg-cool-gray-80 rounded-lg p-4 border-l-4 transition-all duration-200 hover:bg-cool-gray-70"
+        class:list={[
+          index === 0 && 'border-cyan-50',
+          index === 1 && 'border-blue-50',
+          index === 2 && 'border-[#FF9C20]',
+          index === 3 && 'border-purple-50',
+          index === 4 && 'border-magenta-50',
+        ]}
+      >
+        <div class="flex items-start justify-between mb-3">
+          <div class="text-xl font-bold text-white">{guide.storage}</div>
+          <div class="text-xs text-cool-gray-40 bg-cool-gray-90 px-2 py-1 rounded">
+            NVMe SSD
+          </div>
+        </div>
+
+        <p class="text-cool-gray-30 text-sm mb-3">
+          {guide.description}
+        </p>
+
+        <div class="grid grid-cols-2 gap-2">
+          {guide.holds.map((item) => (
+            <div class="flex items-start gap-2 text-xs text-cool-gray-40">
+              <svg class="w-4 h-4 text-[#FF9C20] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Storage Tips -->
+  <div class="mt-6 bg-blue-60/10 border border-blue-50 rounded-lg p-4">
+    <div class="flex items-start gap-3">
+      <svg class="w-6 h-6 text-blue-40 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+      </svg>
+      <div class="flex-1">
+        <div class="text-white font-semibold mb-2">💡 Storage Tips</div>
+        <ul class="text-sm text-cool-gray-30 space-y-1 list-disc list-inside">
+          <li>Automatic backups are compressed to save space</li>
+          <li>Old backups auto-delete after retention period</li>
+          <li>Logs rotate automatically to prevent bloat</li>
+          <li>You can upgrade storage anytime as you grow</li>
+          <li>All storage is high-performance NVMe SSD</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Storage Calculator -->
+  <div class="mt-6 bg-cool-gray-80 rounded-lg p-4">
+    <h4 class="text-white font-semibold mb-3">Quick Storage Calculator</h4>
+
+    <div
+      class="space-y-3"
+      x-data="{
+        worlds: 3,
+        backups: 20,
+        modded: false,
+
+        calculateStorage() {
+          let total = 0;
+
+          // Average world size
+          total += this.worlds * (this.modded ? 2 : 1); // 1-2GB per world
+
+          // Backups (compressed)
+          total += this.backups * 0.5; // ~500MB per backup
+
+          // Base (plugins, configs, logs)
+          total += this.modded ? 5 : 2;
+
+          return Math.ceil(total);
+        }
+      }"
+    >
+      <div>
+        <label class="block text-sm text-cool-gray-30 mb-1">
+          Number of world saves: <span class="text-[#FF9C20] font-semibold" x-text="worlds"></span>
+        </label>
+        <input
+          type="range"
+          min="1"
+          max="20"
+          x-model="worlds"
+          class="w-full h-2 bg-cool-gray-70 rounded-lg appearance-none cursor-pointer slider"
+        />
+      </div>
+
+      <div>
+        <label class="block text-sm text-cool-gray-30 mb-1">
+          Backup retention: <span class="text-[#FF9C20] font-semibold" x-text="backups"></span> backups
+        </label>
+        <input
+          type="range"
+          min="5"
+          max="100"
+          step="5"
+          x-model="backups"
+          class="w-full h-2 bg-cool-gray-70 rounded-lg appearance-none cursor-pointer slider"
+        />
+      </div>
+
+      <label class="flex items-center gap-2 cursor-pointer">
+        <input
+          type="checkbox"
+          x-model="modded"
+          class="w-4 h-4 rounded border-cool-gray-60 bg-cool-gray-90 text-[#FF9C20]"
+        />
+        <span class="text-sm text-cool-gray-30">Modded server (larger world files)</span>
+      </label>
+
+      <div class="mt-4 pt-4 border-t border-cool-gray-70">
+        <div class="flex items-center justify-between">
+          <span class="text-cool-gray-30">Estimated storage needed:</span>
+          <span class="text-2xl font-bold text-[#FF9C20]" x-text="`~${calculateStorage()}GB`"></span>
+        </div>
+        <p class="text-xs text-cool-gray-40 mt-2">
+          Recommendation: Choose the next size up for breathing room
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Custom slider styling */
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #FF9C20;
+    cursor: pointer;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #FF9C20;
+    cursor: pointer;
+    border: none;
+  }
+</style>
