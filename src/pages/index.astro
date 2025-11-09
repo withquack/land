@@ -28,27 +28,48 @@ import { LAUNCH_CONFIG } from "../config/pricing";
         <h1
           class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text font-semibold"
         >
-          Your server &
+          Level Up
         </h1>
         <h1
           class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text font-semibold"
         >
-          Our obsession.
+          Your Server Game
         </h1>
       </div>
 
-      <div class="flex flex-col sm:flex-row mt-12 text-base gap-4">
+      <p class="text-cool-gray-30 text-lg md:text-xl mt-6 max-w-2xl">
+        Join <span class="text-[#FF9C20] font-semibold">10,000+ gamers</span> running lag-free servers with zero downtime. Your players deserve better.
+      </p>
+
+      <!-- Gaming Stats Bar -->
+      <div class="grid grid-cols-3 gap-4 mt-8 p-4 bg-cool-gray-90/50 border-l-4 border-[#FF9C20] backdrop-blur-sm">
+        <div>
+          <div class="text-2xl md:text-3xl font-bold text-[#FF9C20]">99.9%</div>
+          <div class="text-xs text-cool-gray-40 uppercase tracking-wider">Uptime</div>
+        </div>
+        <div>
+          <div class="text-2xl md:text-3xl font-bold text-[#FF9C20]">&lt;2min</div>
+          <div class="text-xs text-cool-gray-40 uppercase tracking-wider">Deploy Time</div>
+        </div>
+        <div>
+          <div class="text-2xl md:text-3xl font-bold text-[#FF9C20]">24/7</div>
+          <div class="text-xs text-cool-gray-40 uppercase tracking-wider">Support</div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row mt-8 text-base gap-4">
         <a
           href="/pricing"
-          class="inline-flex justify-center items-center px-8 py-4 text-black bg-[#FF9C20] hover:bg-[#FF8D00] hover:shadow-lg hover:shadow-[#FF9C20]/20 transition-all duration-200 font-semibold border-b-2 border-[#FF8D00]"
+          class="group relative inline-flex justify-center items-center px-8 py-4 text-black bg-[#FF9C20] hover:bg-[#FF8D00] hover:shadow-lg hover:shadow-[#FF9C20]/20 transition-all duration-200 font-semibold border-b-4 border-[#CC6600] overflow-hidden"
         >
-          Launch your server
+          <span class="relative z-10">🚀 Start Your Server</span>
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
         </a>
         <a
           href="/quackplane"
-          class="inline-flex justify-center items-center px-8 py-4 text-white hover:text-black border-2 border-[#FF9C20] hover:bg-[#FF9C20] hover:shadow-lg hover:shadow-[#FF9C20]/20 transition-all duration-200 font-semibold"
+          class="group relative inline-flex justify-center items-center px-8 py-4 text-white hover:text-black border-2 border-[#FF9C20] hover:bg-[#FF9C20] hover:shadow-lg hover:shadow-[#FF9C20]/20 transition-all duration-200 font-semibold"
         >
-          Discover QuackPlane
+          <span class="relative z-10">⚡ See Control Panel</span>
         </a>
       </div>
     </div>
@@ -68,204 +89,220 @@ import { LAUNCH_CONFIG } from "../config/pricing";
 
   <!-- Features Section -->
   <div class="mb-24 lg:mb-32" aria-label="Product Features">
+    <h2 class="text-3xl lg:text-4xl font-bold mb-16 text-center">
+      <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">Server Perks</span>
+      <span class="text-white"> Unlocked</span>
+    </h2>
+
     <div
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-x-16 lg:gap-y-20"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12"
     >
-      <div class="group">
+      <div class="group relative p-6 bg-cool-gray-90/30 border-2 border-cool-gray-80 hover:border-[#FF9C20] transition-all duration-300 backdrop-blur-sm">
+        <!-- Achievement Badge -->
+        <div class="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-cyan-50 to-cyan-60 flex items-center justify-center font-bold text-black text-sm transform rotate-12 group-hover:rotate-0 transition-transform duration-300">
+          💎
+        </div>
+
         <h2 class="text-xl lg:text-2xl font-semibold mb-4 flex items-center">
-          <span class="underline decoration-4 decoration-cyan-50">Powerful</span
-          >
+          <span class="text-cyan-50">Max Performance</span>
           <img
             src="/index/doodles/joy leap 2.svg"
-            class="ml-3 transition duration-200 ease-out hover:-translate-y-1"
+            class="ml-3 transition duration-200 ease-out group-hover:-translate-y-1"
             alt=""
             width="32"
             height="32"
           />
         </h2>
-        <p class="text-cool-gray-40 leading-relaxed text-base">
-          High-performance infrastructure running the latest hardware. Dedicated
-          resources ensure your servers run smoothly, even with tons of mods and
-          plugins.
+        <p class="text-cool-gray-40 leading-relaxed text-base mb-4">
+          Latest-gen hardware with dedicated resources. Your server runs smooth even with heavy modpacks and 100+ players online.
         </p>
+        <div class="flex items-center gap-2 text-xs text-cool-gray-50">
+          <div class="w-full bg-cool-gray-80 h-2">
+            <div class="bg-gradient-to-r from-cyan-60 to-cyan-40 h-full w-[95%]"></div>
+          </div>
+          <span>95%</span>
+        </div>
       </div>
 
-      <div class="group">
+      <div class="group relative p-6 bg-cool-gray-90/30 border-2 border-cool-gray-80 hover:border-[#FF9C20] transition-all duration-300 backdrop-blur-sm">
+        <!-- Achievement Badge -->
+        <div class="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-blue-50 to-blue-60 flex items-center justify-center font-bold text-black text-sm transform rotate-12 group-hover:rotate-0 transition-transform duration-300">
+          🛡️
+        </div>
+
         <h2 class="text-xl lg:text-2xl font-semibold mb-4 flex items-center">
-          <span class="underline decoration-4 decoration-blue-50">Protected by AngelDefence™</span
-          >
+          <span class="text-blue-50">AngelDefence™</span>
           <img
             src="/angel-defence-shield.svg"
-            class="ml-3 w-8 h-10"
+            class="ml-3 w-8 h-10 group-hover:scale-110 transition-transform duration-300"
             alt="AngelDefence Shield"
             width="32"
             height="40"
           />
         </h2>
-        <p class="text-cool-gray-40 leading-relaxed text-base">
-          Your server stays online when others don't. Network-level DDoS protection stops attacks before they reach your server - included FREE with every plan. Check our live <a
+        <p class="text-cool-gray-40 leading-relaxed text-base mb-4">
+          Terrabit-scale DDoS protection keeps you online during attacks. While other servers go down, yours stays up. Check our <a
             href="/service-status"
-            class="text-blue-40 underline decoration-2 decoration-blue-40 hover:decoration-blue-50 transition-colors"
-            >service status</a
-          > to see our track record.
+            class="text-blue-40 hover:text-blue-30 transition-colors font-semibold"
+            >99.9% uptime</a>.
         </p>
+        <div class="flex items-center gap-2 text-xs text-cool-gray-50">
+          <div class="w-full bg-cool-gray-80 h-2">
+            <div class="bg-gradient-to-r from-blue-60 to-blue-40 h-full w-[99%]"></div>
+          </div>
+          <span>99%</span>
+        </div>
       </div>
 
-      <div class="group">
+      <div class="group relative p-6 bg-cool-gray-90/30 border-2 border-cool-gray-80 hover:border-[#FF9C20] transition-all duration-300 backdrop-blur-sm">
+        <!-- Achievement Badge -->
+        <div class="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-green-50 to-green-60 flex items-center justify-center font-bold text-black text-sm transform rotate-12 group-hover:rotate-0 transition-transform duration-300">
+          📈
+        </div>
+
         <h2 class="text-xl lg:text-2xl font-semibold mb-4 flex items-center">
-          <span class="underline decoration-4 decoration-green-50"
-            >Scalable</span
-          >
+          <span class="text-green-50">Instant Scaling</span>
           <img
             src="/index/doodles/cycle.svg"
-            class="ml-3 transition duration-200 ease-out hover:animate-spin"
+            class="ml-3 transition duration-200 ease-out group-hover:animate-spin"
             alt=""
             width="32"
             height="32"
           />
         </h2>
-        <p class="text-cool-gray-40 leading-relaxed text-base">
-          Easily upgrade or downgrade your plan as your community grows or
-          shrinks. Scale your resources up and down as needed without losing
-          your data.
+        <p class="text-cool-gray-40 leading-relaxed text-base mb-4">
+          Community blowing up? Scale to 100 players in one click. Quiet season? Scale down. No data loss, no contracts, instant changes.
         </p>
+        <div class="flex items-center gap-2 text-xs text-cool-gray-50">
+          <div class="w-full bg-cool-gray-80 h-2">
+            <div class="bg-gradient-to-r from-green-60 to-green-40 h-full w-[88%]"></div>
+          </div>
+          <span>88%</span>
+        </div>
       </div>
 
-      <div class="group">
+      <div class="group relative p-6 bg-cool-gray-90/30 border-2 border-cool-gray-80 hover:border-[#FF9C20] transition-all duration-300 backdrop-blur-sm">
+        <!-- Achievement Badge -->
+        <div class="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-teal-50 to-teal-60 flex items-center justify-center font-bold text-black text-sm transform rotate-12 group-hover:rotate-0 transition-transform duration-300">
+          💰
+        </div>
+
         <h2 class="text-xl lg:text-2xl font-semibold mb-4 flex items-center">
-          <span class="underline decoration-4 decoration-teal-50"
-            >Transparent</span
-          >
+          <span class="text-teal-50">No BS Pricing</span>
           <img
             src="/index/doodles/tree.svg"
-            class="ml-3 transition duration-200 ease-out hover:scale-110"
+            class="ml-3 transition duration-200 ease-out group-hover:scale-110"
             alt=""
             width="32"
             height="32"
             loading="lazy"
           />
         </h2>
-        <p class="text-cool-gray-40 leading-relaxed text-base">
-          Complete visibility into pricing, resource usage, and server
-          performance. No hidden fees, no surprise charges - just honest,
-          straightforward hosting with clear billing.
+        <p class="text-cool-gray-40 leading-relaxed text-base mb-4">
+          See exactly what you pay. Monitor CPU, RAM, storage in real-time. No surprise bills, no hidden fees. What you see is what you pay.
         </p>
+        <div class="flex items-center gap-2 text-xs text-cool-gray-50">
+          <div class="w-full bg-cool-gray-80 h-2">
+            <div class="bg-gradient-to-r from-teal-60 to-teal-40 h-full w-full"></div>
+          </div>
+          <span>100%</span>
+        </div>
       </div>
 
-      <div class="sm:col-span-2 group">
+      <div class="sm:col-span-2 lg:col-span-1 group relative p-6 bg-cool-gray-90/30 border-2 border-cool-gray-80 hover:border-[#FF9C20] transition-all duration-300 backdrop-blur-sm">
+        <!-- Achievement Badge -->
+        <div class="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-purple-50 to-purple-60 flex items-center justify-center font-bold text-black text-sm transform rotate-12 group-hover:rotate-0 transition-transform duration-300">
+          💾
+        </div>
+
         <h2 class="text-xl lg:text-2xl font-semibold mb-4 flex items-center">
-          <span class="underline decoration-4 decoration-purple-50"
-            >Secured by off-site backups</span
-          >
+          <span class="text-purple-50">Grief-Proof Backups</span>
           <img
             src="/index/doodles/rain.svg"
-            class="ml-3 transition duration-200 ease-out hover:translate-x-1 hover:-translate-y-1"
+            class="ml-3 transition duration-200 ease-out group-hover:translate-x-1 group-hover:-translate-y-1"
             alt=""
             width="32"
             height="32"
             loading="lazy"
           />
         </h2>
-        <p class="text-cool-gray-40 leading-relaxed text-base">
-          Schedule automatic backups or take your own backups manually. The key
-          advantage: all backups are stored off-site, protecting your worlds
-          even if our datacenter goes down. Your creations are always safe.
+        <p class="text-cool-gray-40 leading-relaxed text-base mb-4">
+          Auto-backups every hour. Griefer destroyed spawn? One-click rollback. All backups stored off-site. Your world is immortal.
         </p>
+        <div class="flex items-center gap-2 text-xs text-cool-gray-50">
+          <div class="w-full bg-cool-gray-80 h-2">
+            <div class="bg-gradient-to-r from-purple-60 to-purple-40 h-full w-full"></div>
+          </div>
+          <span>100%</span>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- QuackPlane Section -->
   <div class="mb-24 lg:mb-32" aria-label="Powered by QuackPlane">
+    <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-center">
+      <span class="text-white">Your </span>
+      <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">Command Center</span>
+    </h2>
+    <p class="text-center text-cool-gray-40 mb-16 max-w-2xl mx-auto">
+      QuackPlane control panel. Manage everything without touching a terminal. Built for gamers, not sysadmins.
+    </p>
+
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-16 items-center">
-      <div class="lg:col-span-3">
+      <div class="lg:col-span-3 relative group">
+        <div class="absolute -inset-1 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] opacity-0 group-hover:opacity-20 blur transition-opacity duration-300"></div>
         <img
           src="/index/quackplane.webp"
-          class="w-full border-2 border-cool-gray-80 hover:border-[#FF9C20] transition-all duration-200"
+          class="relative w-full border-2 border-cool-gray-80 group-hover:border-[#FF9C20] transition-all duration-200"
           alt="QuackPlane Control Plane Interface"
           width="1253"
           height="1016"
           loading="lazy"
         />
+        <div class="absolute top-4 right-4 px-3 py-1 bg-[#FF9C20] text-black text-xs font-bold uppercase tracking-wider">
+          Live Demo
+        </div>
       </div>
 
-      <div class="lg:col-span-2 space-y-16">
-        <div>
-          <h3 class="text-2xl font-semibold mb-4 flex items-center">
-            <span class="underline decoration-4 decoration-teal-50"
-              >Create your own staff team</span
-            >
-            <img
-              src="/index/doodles/hand holding.svg"
-              alt=""
-              width="32"
-              height="32"
-              class="ml-3 transition duration-200 ease-out hover:scale-110"
-            />
+      <div class="lg:col-span-2 space-y-12">
+        <div class="p-4 border-l-4 border-teal-50 bg-cool-gray-90/30">
+          <h3 class="text-xl font-semibold mb-3 flex items-center text-teal-50">
+            <span class="mr-2">🤝</span>
+            <span>Invite Your Squad</span>
           </h3>
           <p class="text-cool-gray-40 leading-relaxed text-base">
-            Give your friends and moderators access to restart the server,
-            manage files, or monitor players - all without sharing your main
-            login.
+            Give mods and admins their own logins. Set permissions. They can restart, manage files, monitor players. You keep control.
           </p>
         </div>
 
-        <div>
-          <h3 class="text-2xl font-semibold mb-4 flex items-center">
-            <span class="underline decoration-4 decoration-cyan-50"
-              >Manage from anywhere</span
-            >
-            <img
-              src="/index/doodles/wizard.svg"
-              alt=""
-              width="32"
-              height="32"
-              class="ml-3 transition duration-200 ease-out hover:scale-110"
-            />
+        <div class="p-4 border-l-4 border-cyan-50 bg-cool-gray-90/30">
+          <h3 class="text-xl font-semibold mb-3 flex items-center text-cyan-50">
+            <span class="mr-2">📱</span>
+            <span>Manage From Phone</span>
           </h3>
           <p class="text-cool-gray-40 leading-relaxed text-base">
-            Web-based control plane lets you restart servers, monitor player
-            activity, and manage your worlds from any device. No software to
-            install.
+            Web-based dashboard. Works on phone, tablet, laptop. Restart server from bed. Monitor players from beach. Zero downloads required.
           </p>
         </div>
 
-        <div>
-          <h3 class="text-2xl font-semibold mb-4 flex items-center">
-            <span class="underline decoration-4 decoration-purple-50"
-              >One-click restoration</span
-            >
-            <img
-              src="/index/doodles/magic wand.svg"
-              alt=""
-              width="32"
-              height="32"
-              class="ml-3 transition duration-200 ease-out hover:translate-x-1 hover:-translate-y-1"
-            />
+        <div class="p-4 border-l-4 border-purple-50 bg-cool-gray-90/30">
+          <h3 class="text-xl font-semibold mb-3 flex items-center text-purple-50">
+            <span class="mr-2">⏮️</span>
+            <span>Time-Travel Backups</span>
           </h3>
           <p class="text-cool-gray-40 leading-relaxed text-base">
-            Someone griefed your server. Roll back your entire server to any
-            previous backup with one click. Everything gets restored - worlds,
-            configs, mods, the lot.
+            Griefer destroyed spawn at 3pm? Rollback to 2:59pm. One click. Entire server restored. Worlds, configs, mods, everything. Like it never happened.
           </p>
         </div>
 
-        <div>
-          <h3 class="text-2xl font-semibold mb-4 flex items-center">
-            <span class="underline decoration-4 decoration-blue-50"
-              >Easy file management</span
-            >
-            <img
-              src="/index/doodles/upload.svg"
-              alt=""
-              width="32"
-              height="32"
-              class="ml-3 transition duration-200 ease-out hover:scale-110"
-            />
+        <div class="p-4 border-l-4 border-blue-50 bg-cool-gray-90/30">
+          <h3 class="text-xl font-semibold mb-3 flex items-center text-blue-50">
+            <span class="mr-2">📦</span>
+            <span>Drag & Drop Mods</span>
           </h3>
           <p class="text-cool-gray-40 leading-relaxed text-base">
-            Upload mods, plugins, and resource packs with drag & drop. Built-in
-            text editor lets you tweak configs without downloading files.
+            Drag mods into browser. Done. Edit configs directly in-browser. No FTP, no downloads, no terminal. Just works.
           </p>
         </div>
       </div>
@@ -278,29 +315,14 @@ import { LAUNCH_CONFIG } from "../config/pricing";
     x-data="{ open: [false, false, false, false, false, false], focusedIndex: 0 }"
   >
     <h2
-      class="text-2xl lg:text-3xl font-semibold mb-12 flex items-center gap-3 flex-wrap tracking-tight"
+      class="text-3xl lg:text-4xl font-bold mb-4 text-center"
     >
-      <img
-        src="/index/doodles/chat.svg"
-        loading="lazy"
-        alt=""
-        width="48"
-        height="48"
-        class="sm:w-[56px] sm:h-[56px]"
-      />
-      <span class="underline decoration-4 decoration-teal-40">Questions?</span>
-      <img
-        src="/index/doodles/owl.svg"
-        loading="lazy"
-        alt=""
-        width="48"
-        height="48"
-        class="sm:w-[56px] sm:h-[56px]"
-      />
-      <span class="underline decoration-4 decoration-purple-40"
-        >We've got answers.</span
-      >
+      <span class="text-white">Got </span>
+      <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">Questions?</span>
     </h2>
+    <p class="text-center text-cool-gray-40 mb-16 max-w-2xl mx-auto">
+      We've hosted 10,000+ servers. Here's what gamers ask us.
+    </p>
 
     <div>
       <!-- Question 1 -->
