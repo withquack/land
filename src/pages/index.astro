@@ -7,7 +7,7 @@ import { LAUNCH_CONFIG } from "../config/pricing";
 <Layout title="/ Unbeatable Game Servers">
   <!-- Pre-Launch Banner -->
   {LAUNCH_CONFIG.status === 'pre-launch' && (
-    <div class="mb-8 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] rounded-lg p-4 text-center">
+    <div class="mb-8 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] p-4 text-center border-l-4 border-[#FF8D00]">
       <div class="text-lg lg:text-xl font-bold text-black">
         🚀 Launching {LAUNCH_CONFIG.launchDate} • Early Adopter Pricing - Lock In Forever
       </div>
@@ -15,45 +15,41 @@ import { LAUNCH_CONFIG } from "../config/pricing";
   )}
 
   <!-- AngelDefence Hero Banner -->
-  <div class="mb-12">
+  <div class="mb-16">
     <AngelDefenceBadge size="large" variant="banner" showTagline={true} />
   </div>
 
   <!-- Hero Section -->
-  <div class="grid grid-cols-1 lg:grid-cols-7 mb-16 gap-8 pb-4 items-center">
+  <div class="grid grid-cols-1 lg:grid-cols-7 mb-24 gap-8 items-center">
     <div
       class="col-span-1 lg:col-span-4 order-1 lg:order-1 text-white flex flex-col justify-between h-full"
     >
-      <div class="text-5xl md:text-7xl">
+      <div class="text-5xl md:text-7xl leading-tight tracking-tight">
         <h1
-          class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"
+          class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text font-semibold"
         >
           Your server &
         </h1>
         <h1
-          class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"
+          class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text font-semibold"
         >
           Our obsession.
         </h1>
       </div>
 
-      <div class="flex flex-col sm:flex-row mt-8 text-base">
-        <div class="mr-8">
-          <a
-            href="/pricing"
-            class="inline-flex justify-start items-center w-64 p-3 text-black bg-[#FF9C20] hover:bg-[#CC6600] transition-colors duration-200"
-          >
-            Launch your server
-          </a>
-        </div>
-        <div class="">
-          <a
-            href="/quackplane"
-            class="inline-flex items-center mt-4 sm:mt-0 w-64 p-3 text-white hover:text-black border border-[#FF9C20] hover:bg-[#FF8D00] transition-colors duration-200"
-          >
-            Discover QuackPlane
-          </a>
-        </div>
+      <div class="flex flex-col sm:flex-row mt-12 text-base gap-4">
+        <a
+          href="/pricing"
+          class="inline-flex justify-center items-center px-8 py-4 text-black bg-[#FF9C20] hover:bg-[#FF8D00] hover:shadow-lg hover:shadow-[#FF9C20]/20 transition-all duration-200 font-semibold border-b-2 border-[#FF8D00]"
+        >
+          Launch your server
+        </a>
+        <a
+          href="/quackplane"
+          class="inline-flex justify-center items-center px-8 py-4 text-white hover:text-black border-2 border-[#FF9C20] hover:bg-[#FF9C20] hover:shadow-lg hover:shadow-[#FF9C20]/20 transition-all duration-200 font-semibold"
+        >
+          Discover QuackPlane
+        </a>
       </div>
     </div>
     <div
@@ -71,42 +67,42 @@ import { LAUNCH_CONFIG } from "../config/pricing";
   </div>
 
   <!-- Features Section -->
-  <div class="mb-16 lg:mb-32" aria-label="Product Features">
+  <div class="mb-24 lg:mb-32" aria-label="Product Features">
     <div
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-x-12 lg:gap-y-16"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-x-16 lg:gap-y-20"
     >
-      <div>
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
+      <div class="group">
+        <h2 class="text-xl lg:text-2xl font-semibold mb-4 flex items-center">
           <span class="underline decoration-4 decoration-cyan-50">Powerful</span
           >
           <img
             src="/index/doodles/joy leap 2.svg"
-            class="ml-2 transition duration-300 ease-out hover:-translate-y-1"
+            class="ml-3 transition duration-200 ease-out hover:-translate-y-1"
             alt=""
-            width="34"
-            height="34"
+            width="32"
+            height="32"
           />
         </h2>
-        <p class="text-cool-gray-40 leading-relaxed">
+        <p class="text-cool-gray-40 leading-relaxed text-base">
           High-performance infrastructure running the latest hardware. Dedicated
           resources ensure your servers run smoothly, even with tons of mods and
           plugins.
         </p>
       </div>
 
-      <div>
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
+      <div class="group">
+        <h2 class="text-xl lg:text-2xl font-semibold mb-4 flex items-center">
           <span class="underline decoration-4 decoration-blue-50">Protected by AngelDefence™</span
           >
           <img
             src="/angel-defence-shield.svg"
-            class="ml-2 w-8 h-10"
+            class="ml-3 w-8 h-10"
             alt="AngelDefence Shield"
-            width="34"
+            width="32"
             height="40"
           />
         </h2>
-        <p class="text-cool-gray-40 leading-relaxed">
+        <p class="text-cool-gray-40 leading-relaxed text-base">
           Your server stays online when others don't. Network-level DDoS protection stops attacks before they reach your server - included FREE with every plan. Check our live <a
             href="/service-status"
             class="text-blue-40 underline decoration-2 decoration-blue-40 hover:decoration-blue-50 transition-colors"
@@ -115,62 +111,62 @@ import { LAUNCH_CONFIG } from "../config/pricing";
         </p>
       </div>
 
-      <div>
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
+      <div class="group">
+        <h2 class="text-xl lg:text-2xl font-semibold mb-4 flex items-center">
           <span class="underline decoration-4 decoration-green-50"
             >Scalable</span
           >
           <img
             src="/index/doodles/cycle.svg"
-            class="ml-2 transition duration-300 ease-out hover:animate-spin"
+            class="ml-3 transition duration-200 ease-out hover:animate-spin"
             alt=""
-            width="34"
-            height="34"
+            width="32"
+            height="32"
           />
         </h2>
-        <p class="text-cool-gray-40 leading-relaxed">
+        <p class="text-cool-gray-40 leading-relaxed text-base">
           Easily upgrade or downgrade your plan as your community grows or
           shrinks. Scale your resources up and down as needed without losing
           your data.
         </p>
       </div>
 
-      <div>
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
+      <div class="group">
+        <h2 class="text-xl lg:text-2xl font-semibold mb-4 flex items-center">
           <span class="underline decoration-4 decoration-teal-50"
             >Transparent</span
           >
           <img
             src="/index/doodles/tree.svg"
-            class="ml-2 transition duration-700 ease-out hover:scale-110"
+            class="ml-3 transition duration-200 ease-out hover:scale-110"
             alt=""
-            width="34"
-            height="34"
+            width="32"
+            height="32"
             loading="lazy"
           />
         </h2>
-        <p class="text-cool-gray-40 leading-relaxed">
+        <p class="text-cool-gray-40 leading-relaxed text-base">
           Complete visibility into pricing, resource usage, and server
           performance. No hidden fees, no surprise charges - just honest,
           straightforward hosting with clear billing.
         </p>
       </div>
 
-      <div class="sm:col-span-2">
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
+      <div class="sm:col-span-2 group">
+        <h2 class="text-xl lg:text-2xl font-semibold mb-4 flex items-center">
           <span class="underline decoration-4 decoration-purple-50"
             >Secured by off-site backups</span
           >
           <img
             src="/index/doodles/rain.svg"
-            class="ml-2 transition duration-300 ease-out hover:translate-x-1 hover:-translate-y-1"
+            class="ml-3 transition duration-200 ease-out hover:translate-x-1 hover:-translate-y-1"
             alt=""
-            width="34"
-            height="34"
+            width="32"
+            height="32"
             loading="lazy"
           />
         </h2>
-        <p class="text-cool-gray-40 leading-relaxed">
+        <p class="text-cool-gray-40 leading-relaxed text-base">
           Schedule automatic backups or take your own backups manually. The key
           advantage: all backups are stored off-site, protecting your worlds
           even if our datacenter goes down. Your creations are always safe.
@@ -180,12 +176,12 @@ import { LAUNCH_CONFIG } from "../config/pricing";
   </div>
 
   <!-- QuackPlane Section -->
-  <div class="mb-16 lg:mb-32" aria-label="Powered by QuackPlane">
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+  <div class="mb-24 lg:mb-32" aria-label="Powered by QuackPlane">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-16 items-center">
       <div class="lg:col-span-3">
         <img
           src="/index/quackplane.webp"
-          class="w-full"
+          class="w-full border-2 border-cool-gray-80 hover:border-[#FF9C20] transition-all duration-200"
           alt="QuackPlane Control Plane Interface"
           width="1253"
           height="1016"
@@ -193,7 +189,7 @@ import { LAUNCH_CONFIG } from "../config/pricing";
         />
       </div>
 
-      <div class="lg:col-span-2 space-y-12">
+      <div class="lg:col-span-2 space-y-16">
         <div>
           <h3 class="text-2xl font-semibold mb-4 flex items-center">
             <span class="underline decoration-4 decoration-teal-50"
@@ -202,12 +198,12 @@ import { LAUNCH_CONFIG } from "../config/pricing";
             <img
               src="/index/doodles/hand holding.svg"
               alt=""
-              width="34"
-              height="34"
-              class="ml-2 transition duration-300 ease-out hover:scale-110"
+              width="32"
+              height="32"
+              class="ml-3 transition duration-200 ease-out hover:scale-110"
             />
           </h3>
-          <p class="text-cool-gray-40 leading-relaxed">
+          <p class="text-cool-gray-40 leading-relaxed text-base">
             Give your friends and moderators access to restart the server,
             manage files, or monitor players - all without sharing your main
             login.
@@ -222,12 +218,12 @@ import { LAUNCH_CONFIG } from "../config/pricing";
             <img
               src="/index/doodles/wizard.svg"
               alt=""
-              width="34"
-              height="34"
-              class="ml-2"
+              width="32"
+              height="32"
+              class="ml-3 transition duration-200 ease-out hover:scale-110"
             />
           </h3>
-          <p class="text-cool-gray-40 leading-relaxed">
+          <p class="text-cool-gray-40 leading-relaxed text-base">
             Web-based control plane lets you restart servers, monitor player
             activity, and manage your worlds from any device. No software to
             install.
@@ -242,12 +238,12 @@ import { LAUNCH_CONFIG } from "../config/pricing";
             <img
               src="/index/doodles/magic wand.svg"
               alt=""
-              width="34"
-              height="34"
-              class="ml-2 transition duration-300 ease-out hover:translate-x-1 hover:-translate-y-1"
+              width="32"
+              height="32"
+              class="ml-3 transition duration-200 ease-out hover:translate-x-1 hover:-translate-y-1"
             />
           </h3>
-          <p class="text-cool-gray-40 leading-relaxed">
+          <p class="text-cool-gray-40 leading-relaxed text-base">
             Someone griefed your server. Roll back your entire server to any
             previous backup with one click. Everything gets restored - worlds,
             configs, mods, the lot.
@@ -262,12 +258,12 @@ import { LAUNCH_CONFIG } from "../config/pricing";
             <img
               src="/index/doodles/upload.svg"
               alt=""
-              width="34"
-              height="34"
-              class="ml-2"
+              width="32"
+              height="32"
+              class="ml-3 transition duration-200 ease-out hover:scale-110"
             />
           </h3>
-          <p class="text-cool-gray-40 leading-relaxed">
+          <p class="text-cool-gray-40 leading-relaxed text-base">
             Upload mods, plugins, and resource packs with drag & drop. Built-in
             text editor lets you tweak configs without downloading files.
           </p>
@@ -278,11 +274,11 @@ import { LAUNCH_CONFIG } from "../config/pricing";
 
   <!-- FAQ Section -->
   <div
-    class="mb-16 lg:mb-32"
+    class="mb-24 lg:mb-32"
     x-data="{ open: [false, false, false, false, false, false], focusedIndex: 0 }"
   >
     <h2
-      class="text-2xl lg:text-3xl font-semibold mb-8 flex items-center gap-2 flex-wrap"
+      class="text-2xl lg:text-3xl font-semibold mb-12 flex items-center gap-3 flex-wrap tracking-tight"
     >
       <img
         src="/index/doodles/chat.svg"
@@ -290,7 +286,7 @@ import { LAUNCH_CONFIG } from "../config/pricing";
         alt=""
         width="48"
         height="48"
-        class="sm:w-[62px] sm:h-[62px]"
+        class="sm:w-[56px] sm:h-[56px]"
       />
       <span class="underline decoration-4 decoration-teal-40">Questions?</span>
       <img
@@ -299,7 +295,7 @@ import { LAUNCH_CONFIG } from "../config/pricing";
         alt=""
         width="48"
         height="48"
-        class="sm:w-[62px] sm:h-[62px]"
+        class="sm:w-[56px] sm:h-[56px]"
       />
       <span class="underline decoration-4 decoration-purple-40"
         >We've got answers.</span
@@ -308,7 +304,7 @@ import { LAUNCH_CONFIG } from "../config/pricing";
 
     <div>
       <!-- Question 1 -->
-      <div class="border-b border-cool-gray-70">
+      <div class="border-b-2 border-cool-gray-80">
         <button
           @click="open[0] = !open[0]"
           @keydown.down.prevent="focusedIndex = Math.min(5, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
@@ -317,7 +313,7 @@ import { LAUNCH_CONFIG } from "../config/pricing";
           @keydown.space.prevent="open[0] = !open[0]"
           @focus="focusedIndex = 0"
           id="question-0"
-          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          class="w-full flex justify-between items-center py-6 px-4 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-all duration-200"
           :aria-expanded="open[0]"
           aria-controls="content-0"
         >
@@ -335,14 +331,14 @@ import { LAUNCH_CONFIG } from "../config/pricing";
         </button>
         <div
           x-show="open[0]"
-          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter="transition-all ease-out duration-200"
           x-transition:enter-start="transform -translate-y-2 opacity-0"
           x-transition:enter-end="transform translate-y-0 opacity-100"
           x-cloak
           id="content-0"
           class="overflow-hidden"
         >
-          <p class="text-white leading-relaxed pb-5 pr-12">
+          <p class="text-cool-gray-30 leading-relaxed pb-6 px-4 text-base">
             Your server is ready in under 2 minutes! Once you complete payment,
             our system automatically provisions your server and sends you the
             login details. No waiting around - you can start building your world
@@ -352,7 +348,7 @@ import { LAUNCH_CONFIG } from "../config/pricing";
       </div>
 
       <!-- Question 2 -->
-      <div class="border-b border-cool-gray-70">
+      <div class="border-b-2 border-cool-gray-80">
         <button
           @click="open[1] = !open[1]"
           @keydown.down.prevent="focusedIndex = Math.min(5, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
@@ -361,7 +357,7 @@ import { LAUNCH_CONFIG } from "../config/pricing";
           @keydown.space.prevent="open[1] = !open[1]"
           @focus="focusedIndex = 1"
           id="question-1"
-          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          class="w-full flex justify-between items-center py-6 px-4 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-all duration-200"
           :aria-expanded="open[1]"
           aria-controls="content-1"
         >
@@ -379,14 +375,14 @@ import { LAUNCH_CONFIG } from "../config/pricing";
         </button>
         <div
           x-show="open[1]"
-          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter="transition-all ease-out duration-200"
           x-transition:enter-start="transform -translate-y-2 opacity-0"
           x-transition:enter-end="transform translate-y-0 opacity-100"
           x-cloak
           id="content-1"
           class="overflow-hidden"
         >
-          <p class="text-white leading-relaxed pb-5 pr-12">
+          <p class="text-cool-gray-30 leading-relaxed pb-6 px-4 text-base">
             Absolutely! Scale up when your community grows or scale down during
             quieter periods. Changes take effect immediately and billing is
             prorated - you only pay for what you use. No contracts, no
@@ -396,7 +392,7 @@ import { LAUNCH_CONFIG } from "../config/pricing";
       </div>
 
       <!-- Question 3 -->
-      <div class="border-b border-cool-gray-70">
+      <div class="border-b-2 border-cool-gray-80">
         <button
           @click="open[2] = !open[2]"
           @keydown.down.prevent="focusedIndex = Math.min(5, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
@@ -405,7 +401,7 @@ import { LAUNCH_CONFIG } from "../config/pricing";
           @keydown.space.prevent="open[2] = !open[2]"
           @focus="focusedIndex = 2"
           id="question-2"
-          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          class="w-full flex justify-between items-center py-6 px-4 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-all duration-200"
           :aria-expanded="open[2]"
           aria-controls="content-2"
         >
@@ -423,14 +419,14 @@ import { LAUNCH_CONFIG } from "../config/pricing";
         </button>
         <div
           x-show="open[2]"
-          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter="transition-all ease-out duration-200"
           x-transition:enter-start="transform -translate-y-2 opacity-0"
           x-transition:enter-end="transform translate-y-0 opacity-100"
           x-cloak
           id="content-2"
           class="overflow-hidden"
         >
-          <p class="text-white leading-relaxed pb-5 pr-12">
+          <p class="text-cool-gray-30 leading-relaxed pb-6 px-4 text-base">
             No panic needed! Schedule automatic backups or take your own backups
             manually. The key advantage: all backups are stored off-site,
             protecting your worlds even if our datacenter goes down. One click
@@ -441,7 +437,7 @@ import { LAUNCH_CONFIG } from "../config/pricing";
       </div>
 
       <!-- Question 4 -->
-      <div class="border-b border-cool-gray-70">
+      <div class="border-b-2 border-cool-gray-80">
         <button
           @click="open[3] = !open[3]"
           @keydown.down.prevent="focusedIndex = Math.min(5, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
@@ -450,7 +446,7 @@ import { LAUNCH_CONFIG } from "../config/pricing";
           @keydown.space.prevent="open[3] = !open[3]"
           @focus="focusedIndex = 3"
           id="question-3"
-          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          class="w-full flex justify-between items-center py-6 px-4 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-all duration-200"
           :aria-expanded="open[3]"
           aria-controls="content-3"
         >
@@ -468,14 +464,14 @@ import { LAUNCH_CONFIG } from "../config/pricing";
         </button>
         <div
           x-show="open[3]"
-          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter="transition-all ease-out duration-200"
           x-transition:enter-start="transform -translate-y-2 opacity-0"
           x-transition:enter-end="transform translate-y-0 opacity-100"
           x-cloak
           id="content-3"
           class="overflow-hidden"
         >
-          <p class="text-white leading-relaxed pb-5 pr-12">
+          <p class="text-cool-gray-30 leading-relaxed pb-6 px-4 text-base">
             Yes! Every server comes with terrabit-scale DDoS protection at no
             extra cost. Whether someone's trying to knock your server offline or
             you're dealing with a massive influx of players, our network keeps
@@ -485,7 +481,7 @@ import { LAUNCH_CONFIG } from "../config/pricing";
       </div>
 
       <!-- Question 5 -->
-      <div class="border-b border-cool-gray-70">
+      <div class="border-b-2 border-cool-gray-80">
         <button
           @click="open[4] = !open[4]"
           @keydown.down.prevent="focusedIndex = Math.min(5, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
@@ -494,7 +490,7 @@ import { LAUNCH_CONFIG } from "../config/pricing";
           @keydown.space.prevent="open[4] = !open[4]"
           @focus="focusedIndex = 4"
           id="question-4"
-          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          class="w-full flex justify-between items-center py-6 px-4 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-all duration-200"
           :aria-expanded="open[4]"
           aria-controls="content-4"
         >
@@ -512,14 +508,14 @@ import { LAUNCH_CONFIG } from "../config/pricing";
         </button>
         <div
           x-show="open[4]"
-          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter="transition-all ease-out duration-200"
           x-transition:enter-start="transform -translate-y-2 opacity-0"
           x-transition:enter-end="transform translate-y-0 opacity-100"
           x-cloak
           id="content-4"
           class="overflow-hidden"
         >
-          <p class="text-white leading-relaxed pb-5 pr-12">
+          <p class="text-cool-gray-30 leading-relaxed pb-6 px-4 text-base">
             Yes! We'll help you migrate your server to QuackHost for free. Just
             upload your world files, plugins, and configs through QuackPlane's
             file manager. Our support team can also assist with the transfer to
@@ -529,7 +525,7 @@ import { LAUNCH_CONFIG } from "../config/pricing";
       </div>
 
       <!-- Question 6 -->
-      <div class="border-b border-cool-gray-70">
+      <div class="border-b-2 border-cool-gray-80">
         <button
           @click="open[5] = !open[5]"
           @keydown.down.prevent="focusedIndex = Math.min(5, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
@@ -538,7 +534,7 @@ import { LAUNCH_CONFIG } from "../config/pricing";
           @keydown.space.prevent="open[5] = !open[5]"
           @focus="focusedIndex = 5"
           id="question-5"
-          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          class="w-full flex justify-between items-center py-6 px-4 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-all duration-200"
           :aria-expanded="open[5]"
           aria-controls="content-5"
         >
@@ -556,14 +552,14 @@ import { LAUNCH_CONFIG } from "../config/pricing";
         </button>
         <div
           x-show="open[5]"
-          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter="transition-all ease-out duration-200"
           x-transition:enter-start="transform -translate-y-2 opacity-0"
           x-transition:enter-end="transform translate-y-0 opacity-100"
           x-cloak
           id="content-5"
           class="overflow-hidden"
         >
-          <p class="text-white leading-relaxed pb-5 pr-12">
+          <p class="text-cool-gray-30 leading-relaxed pb-6 px-4 text-base">
             We accept all major credit cards, PayPal, and various digital
             payment methods. Billing is monthly with no long-term contracts
             required. You can update your payment method anytime through the

@@ -26,8 +26,11 @@ const { title } = Astro.props;
       src="https://cloud.umami.is/script.js"
       data-website-id="fc5105a9-1cbe-4a51-81ab-38f5e10c3053"></script>
   </head>
-  <body class="bg-gray-100 text-white">
-    <div class="mx-auto max-w-[1536px]">
+  <body class="bg-gray-100 text-white relative">
+    <!-- Subtle gradient overlay -->
+    <div class="fixed inset-0 bg-gradient-to-b from-[#FF9C20]/5 via-transparent to-transparent pointer-events-none"></div>
+
+    <div class="mx-auto max-w-[1536px] relative z-10">
       <Navbar />
       <div class="mx-4 mt-2">
         <slot />

@@ -48,12 +48,13 @@ const classes = sizeClasses[size];
 
 {variant === 'banner' ? (
   <!-- Full-width banner variant -->
-  <div class="w-full bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] py-3 px-4 text-center">
+  <div class="w-full bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] py-3 px-4 text-center border-l-4 border-[#FF8D00]">
     <div class="flex items-center justify-center gap-3">
       <img
         src="/angel-defence-shield.svg"
         alt="AngelDefence Shield"
         class={`${classes.icon} ${animate ? 'animate-pulse-slow' : ''}`}
+        loading="eager"
       />
       <div class="text-left">
         <div class="font-semibold text-black flex items-center gap-2">

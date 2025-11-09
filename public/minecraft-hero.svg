@@ -33,11 +33,19 @@
   <!-- Diamond Ore Block (highlight) -->
   <g transform="translate(160, 180)">
     <rect x="0" y="0" width="80" height="80" fill="#7E7E7E"/>
-    <!-- Diamond sparkles -->
-    <rect x="20" y="15" width="12" height="12" fill="#00FFFF" opacity="0.9"/>
-    <rect x="45" y="25" width="15" height="15" fill="#00E5FF" opacity="0.8"/>
-    <rect x="15" y="50" width="10" height="10" fill="#00D4FF" opacity="0.9"/>
-    <rect x="55" y="55" width="13" height="13" fill="#00FFFF" opacity="0.85"/>
+    <!-- Diamond sparkles with subtle pulse -->
+    <rect x="20" y="15" width="12" height="12" fill="#00FFFF" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="45" y="25" width="15" height="15" fill="#00E5FF" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="15" y="50" width="10" height="10" fill="#00D4FF" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="55" y="55" width="13" height="13" fill="#00FFFF" opacity="0.85">
+      <animate attributeName="opacity" values="0.85;1;0.85" dur="2.2s" repeatCount="indefinite"/>
+    </rect>
   </g>
 
   <!-- Creeper Face (iconic) -->
@@ -59,11 +67,15 @@
     <rect x="45" y="70" width="10" height="15" fill="#000000"/>
   </g>
 
-  <!-- Torch (light source) -->
+  <!-- Torch (light source) with flicker -->
   <g transform="translate(80, 220)">
     <rect x="6" y="15" width="8" height="35" fill="#5D4037"/>
-    <polygon points="10,0 15,8 18,15 2,15 5,8" fill="#FFB300"/>
-    <polygon points="10,0 13,6 15,12 5,12 7,6" fill="#FFC107" opacity="0.8"/>
+    <polygon points="10,0 15,8 18,15 2,15 5,8" fill="#FFB300">
+      <animate attributeName="opacity" values="1;0.8;1;0.9;1" dur="1.5s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="10,0 13,6 15,12 5,12 7,6" fill="#FFC107" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.6;0.8;0.7;0.8" dur="1.5s" repeatCount="indefinite"/>
+    </polygon>
   </g>
 
   <!-- Pickaxe -->
@@ -72,9 +84,43 @@
     <rect x="55" y="-10" width="8" height="60" fill="#8D6E63"/>
   </g>
 
-  <!-- Simple clouds -->
-  <rect x="50" y="40" width="30" height="15" fill="#FFFFFF" opacity="0.7"/>
-  <rect x="60" y="30" width="20" height="15" fill="#FFFFFF" opacity="0.7"/>
-  <rect x="280" y="60" width="40" height="15" fill="#FFFFFF" opacity="0.6"/>
-  <rect x="290" y="50" width="25" height="15" fill="#FFFFFF" opacity="0.6"/>
+  <!-- Simple clouds with animation -->
+  <g class="clouds">
+    <rect x="50" y="40" width="30" height="15" fill="#FFFFFF" opacity="0.7">
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        from="0 0"
+        to="20 0"
+        dur="20s"
+        repeatCount="indefinite"/>
+    </rect>
+    <rect x="60" y="30" width="20" height="15" fill="#FFFFFF" opacity="0.7">
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        from="0 0"
+        to="20 0"
+        dur="20s"
+        repeatCount="indefinite"/>
+    </rect>
+    <rect x="280" y="60" width="40" height="15" fill="#FFFFFF" opacity="0.6">
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        from="0 0"
+        to="-30 0"
+        dur="25s"
+        repeatCount="indefinite"/>
+    </rect>
+    <rect x="290" y="50" width="25" height="15" fill="#FFFFFF" opacity="0.6">
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        from="0 0"
+        to="-30 0"
+        dur="25s"
+        repeatCount="indefinite"/>
+    </rect>
+  </g>
 </svg>

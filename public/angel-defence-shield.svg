@@ -11,23 +11,29 @@
         stroke="#FF8D00"
         stroke-width="2"/>
 
-  <!-- Angel wing - left -->
+  <!-- Angel wing - left with subtle animation -->
   <path d="M70 90 Q50 100 50 120 Q50 130 60 135 Q70 130 75 120 L70 90 Z"
         fill="#FFD700"
-        opacity="0.8"/>
+        opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.95;0.8" dur="3s" repeatCount="indefinite"/>
+  </path>
 
-  <!-- Angel wing - right -->
+  <!-- Angel wing - right with subtle animation -->
   <path d="M130 90 Q150 100 150 120 Q150 130 140 135 Q130 130 125 120 L130 90 Z"
         fill="#FFD700"
-        opacity="0.8"/>
+        opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.95;0.8" dur="3s" repeatCount="indefinite"/>
+  </path>
 
-  <!-- Center checkmark/protection symbol -->
+  <!-- Center checkmark/protection symbol with subtle glow -->
   <path d="M85 110 L95 125 L120 95"
         stroke="#FF9C20"
         stroke-width="8"
         stroke-linecap="round"
         stroke-linejoin="round"
-        fill="none"/>
+        fill="none">
+    <animate attributeName="stroke-width" values="8;9;8" dur="2s" repeatCount="indefinite"/>
+  </path>
 
   <!-- Gradient definition -->
   <defs>
