@@ -6,6 +6,19 @@
 
 ---
 
+## 📚 Detailed Documentation
+
+This is the high-level strategic vision. For detailed implementation plans, see:
+
+- **[Technical Architecture](docs/TECHNICAL_ARCHITECTURE.md)** - Complete system design, microservices, infrastructure
+- **[Competitive Analysis](docs/COMPETITIVE_ANALYSIS.md)** - Market landscape, competitors, positioning
+- **[Phase 1 Roadmap](docs/PHASE_1_ROADMAP.md)** - Week-by-week implementation plan (6 months)
+- **[Financial Model](docs/FINANCIAL_MODEL.md)** - Unit economics, projections, funding strategy
+- **[API Specification](docs/API_SPECIFICATION.md)** - Developer API reference and examples
+- **[Documentation Index](docs/README.md)** - Complete guide to all documents
+
+---
+
 ## Executive Summary
 
 This document explores how QuackHost can achieve 1000x growth across multiple dimensions:
