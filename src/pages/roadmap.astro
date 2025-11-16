@@ -1,0 +1,473 @@
+---
+import Layout from "../layouts/layout.astro";
+---
+
+<Layout title="/ Roadmap">
+  <div class="max-w-6xl mx-auto">
+    <!-- Header -->
+    <div class="mb-16 mt-16 lg:mt-32 text-center">
+      <div class="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-purple-50/20 to-[#FF9C20]/20 border border-purple-50/50 rounded-full">
+        <span class="text-purple-50 font-bold text-sm">PRODUCT ROADMAP</span>
+      </div>
+      <h1 class="text-4xl lg:text-6xl font-bold text-white mb-6">
+        What's <span class="bg-gradient-to-r from-[#FF9C20] to-cyan-50 bg-clip-text text-transparent">Coming Next</span>
+      </h1>
+      <p class="text-xl lg:text-2xl text-cool-gray-20 max-w-3xl mx-auto mb-8">
+        See what we're building, vote on upcoming features, and track our progress. Your feedback shapes QuackHost's future.
+      </p>
+    </div>
+
+    <!-- Feature Voting CTA -->
+    <div class="mb-16 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] rounded-2xl p-8 text-center">
+      <h2 class="text-2xl font-bold text-black mb-4">Have a Feature Request?</h2>
+      <p class="text-gray-90 mb-6 max-w-2xl mx-auto">
+        We prioritize features based on community feedback. Submit your ideas or vote on existing requests.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a
+          href="/discord-flock"
+          class="px-6 py-3 bg-black text-white font-bold rounded-lg hover:bg-gray-90 transition-all"
+        >
+          Share on Discord
+        </a>
+        <a
+          href="/contact"
+          class="px-6 py-3 bg-white text-black font-bold rounded-lg hover:bg-gray-100 transition-all"
+        >
+          Email Your Idea
+        </a>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="mb-20">
+      <!-- Recently Released -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-12 h-12 rounded-full bg-green-50/20 flex items-center justify-center">
+            <svg class="w-6 h-6 text-green-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-white">Recently Released</h2>
+            <p class="text-cool-gray-30">Live now for all customers</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Feature Card -->
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-green-50 rounded-xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <span class="px-3 py-1 bg-green-50/20 text-green-40 text-xs font-bold rounded-full">RELEASED</span>
+                <span class="ml-2 text-cool-gray-40 text-xs">November 2025</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">QuackPlane Mobile App</h3>
+            <p class="text-cool-gray-20 mb-4">
+              Native iOS and Android apps for managing servers on the go. Full feature parity with web version including console access, file management, and real-time monitoring.
+            </p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Mobile</span>
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">iOS</span>
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Android</span>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-green-50 rounded-xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <span class="px-3 py-1 bg-green-50/20 text-green-40 text-xs font-bold rounded-full">RELEASED</span>
+                <span class="ml-2 text-cool-gray-40 text-xs">October 2025</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">One-Click Mod Installer</h3>
+            <p class="text-cool-gray-20 mb-4">
+              Browse and install popular mods directly from QuackPlane. Supports 500+ mods for Minecraft, Rust, ARK, and more with automatic dependency resolution.
+            </p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">QuackPlane</span>
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Mods</span>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-green-50 rounded-xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <span class="px-3 py-1 bg-green-50/20 text-green-40 text-xs font-bold rounded-full">RELEASED</span>
+                <span class="ml-2 text-cool-gray-40 text-xs">September 2025</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Advanced DDoS Protection</h3>
+            <p class="text-cool-gray-20 mb-4">
+              Upgraded to 1.2 Tbps mitigation capacity with ML-powered attack detection. Automatic filtering with &lt;3 second response time and zero false positives.
+            </p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Security</span>
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Infrastructure</span>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-green-50 rounded-xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <span class="px-3 py-1 bg-green-50/20 text-green-40 text-xs font-bold rounded-full">RELEASED</span>
+                <span class="ml-2 text-cool-gray-40 text-xs">August 2025</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Server Scheduling System</h3>
+            <p class="text-cool-gray-20 mb-4">
+              Schedule automatic starts, stops, restarts, and backups. Perfect for managing costs by running servers only when your community is active.
+            </p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Automation</span>
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Cost Savings</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- In Progress -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-12 h-12 rounded-full bg-[#FF9C20]/20 flex items-center justify-center">
+            <svg class="w-6 h-6 text-[#FF9C20]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-white">In Development</h2>
+            <p class="text-cool-gray-30">Currently being built by our team</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-[#FF9C20] rounded-xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <span class="px-3 py-1 bg-[#FF9C20]/20 text-[#FF9C20] text-xs font-bold rounded-full">IN PROGRESS</span>
+                <span class="ml-2 text-cool-gray-40 text-xs">Q1 2026</span>
+              </div>
+              <div class="text-right">
+                <div class="text-2xl font-bold text-[#FF9C20]">75%</div>
+                <div class="text-xs text-cool-gray-40">Complete</div>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Server Cloning & Templates</h3>
+            <p class="text-cool-gray-20 mb-4">
+              Clone existing servers with one click. Save server configurations as templates for rapid deployment. Perfect for dev/staging/prod environments.
+            </p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">DevOps</span>
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Templates</span>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-[#FF9C20] rounded-xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <span class="px-3 py-1 bg-[#FF9C20]/20 text-[#FF9C20] text-xs font-bold rounded-full">IN PROGRESS</span>
+                <span class="ml-2 text-cool-gray-40 text-xs">Q1 2026</span>
+              </div>
+              <div class="text-right">
+                <div class="text-2xl font-bold text-[#FF9C20]">60%</div>
+                <div class="text-xs text-cool-gray-40">Complete</div>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Advanced Analytics Dashboard</h3>
+            <p class="text-cool-gray-20 mb-4">
+              Detailed performance metrics, player analytics, resource utilization graphs, and custom alerts. Export reports in CSV/PDF for analysis.
+            </p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Analytics</span>
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Insights</span>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-[#FF9C20] rounded-xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <span class="px-3 py-1 bg-[#FF9C20]/20 text-[#FF9C20] text-xs font-bold rounded-full">IN PROGRESS</span>
+                <span class="ml-2 text-cool-gray-40 text-xs">Q1 2026</span>
+              </div>
+              <div class="text-right">
+                <div class="text-2xl font-bold text-[#FF9C20]">40%</div>
+                <div class="text-xs text-cool-gray-40">Complete</div>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">API v2 with Webhooks</h3>
+            <p class="text-cool-gray-20 mb-4">
+              Comprehensive REST API with webhook support for automation. Integrate with Discord bots, monitoring tools, and custom dashboards.
+            </p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">API</span>
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Developer</span>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-[#FF9C20] rounded-xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <span class="px-3 py-1 bg-[#FF9C20]/20 text-[#FF9C20] text-xs font-bold rounded-full">IN PROGRESS</span>
+                <span class="ml-2 text-cool-gray-40 text-xs">Q2 2026</span>
+              </div>
+              <div class="text-right">
+                <div class="text-2xl font-bold text-[#FF9C20]">25%</div>
+                <div class="text-xs text-cool-gray-40">Complete</div>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Multi-Server Management</h3>
+            <p class="text-cool-gray-20 mb-4">
+              Manage multiple servers from a unified dashboard. Bulk actions, server groups, and cross-server analytics for large communities.
+            </p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Enterprise</span>
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Management</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Planned -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-12 h-12 rounded-full bg-cyan-50/20 flex items-center justify-center">
+            <svg class="w-6 h-6 text-cyan-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-white">Planned</h2>
+            <p class="text-cool-gray-30">On our roadmap for upcoming quarters</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-cyan-50 rounded-xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <span class="px-3 py-1 bg-cyan-50/20 text-cyan-50 text-xs font-bold rounded-full">PLANNED</span>
+                <span class="ml-2 text-cool-gray-40 text-xs">Q2 2026</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Kubernetes Cluster Support</h3>
+            <p class="text-cool-gray-20 mb-4">
+              Deploy and manage containerized game servers on Kubernetes. Auto-scaling, load balancing, and zero-downtime deployments for large networks.
+            </p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Enterprise</span>
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Kubernetes</span>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-cyan-50 rounded-xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <span class="px-3 py-1 bg-cyan-50/20 text-cyan-50 text-xs font-bold rounded-full">PLANNED</span>
+                <span class="ml-2 text-cool-gray-40 text-xs">Q2 2026</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Plugin Marketplace</h3>
+            <p class="text-cool-gray-20 mb-4">
+              Browse, purchase, and install premium plugins and mods. Automatic updates, ratings, and verified developer program.
+            </p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Marketplace</span>
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Plugins</span>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-cyan-50 rounded-xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <span class="px-3 py-1 bg-cyan-50/20 text-cyan-50 text-xs font-bold rounded-full">PLANNED</span>
+                <span class="ml-2 text-cool-gray-40 text-xs">Q3 2026</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Voice Server Integration</h3>
+            <p class="text-cool-gray-20 mb-4">
+              Integrated voice chat servers (TeamSpeak, Mumble) with your game servers. Single sign-on and unified billing.
+            </p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Voice</span>
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Communication</span>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-cyan-50 rounded-xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <span class="px-3 py-1 bg-cyan-50/20 text-cyan-50 text-xs font-bold rounded-full">PLANNED</span>
+                <span class="ml-2 text-cool-gray-40 text-xs">Q3 2026</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Geographic Load Balancing</h3>
+            <p class="text-cool-gray-20 mb-4">
+              Distribute players across multiple regional servers automatically. Reduce latency and improve player experience globally.
+            </p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Network</span>
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Performance</span>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-cyan-50 rounded-xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <span class="px-3 py-1 bg-cyan-50/20 text-cyan-50 text-xs font-bold rounded-full">PLANNED</span>
+                <span class="ml-2 text-cool-gray-40 text-xs">Q4 2026</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">AI-Powered Optimization</h3>
+            <p class="text-cool-gray-20 mb-4">
+              Machine learning recommendations for server settings, automatic performance tuning, and predictive scaling based on player patterns.
+            </p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">AI</span>
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Optimization</span>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-cyan-50 rounded-xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <span class="px-3 py-1 bg-cyan-50/20 text-cyan-50 text-xs font-bold rounded-full">PLANNED</span>
+                <span class="ml-2 text-cool-gray-40 text-xs">Q4 2026</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">White-Label Hosting Solution</h3>
+            <p class="text-cool-gray-20 mb-4">
+              Reseller program with custom branding, billing integration, and dedicated support. Perfect for communities wanting to offer hosting.
+            </p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Enterprise</span>
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-30 text-xs rounded">Reseller</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Under Consideration -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-12 h-12 rounded-full bg-purple-50/20 flex items-center justify-center">
+            <svg class="w-6 h-6 text-purple-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-white">Under Consideration</h2>
+            <p class="text-cool-gray-30">Features we're evaluating based on demand</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-purple-50 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-white mb-2">Dedicated Hardware</h3>
+            <p class="text-cool-gray-20 text-sm mb-3">
+              Bare metal servers for maximum performance
+            </p>
+            <div class="flex items-center gap-2 text-purple-50 text-sm">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+              </svg>
+              <span>142 votes</span>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-purple-50 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-white mb-2">Game Migration Tool</h3>
+            <p class="text-cool-gray-20 text-sm mb-3">
+              Automated migration from other hosts
+            </p>
+            <div class="flex items-center gap-2 text-purple-50 text-sm">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+              </svg>
+              <span>98 votes</span>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-purple-50 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-white mb-2">Custom Control Panels</h3>
+            <p class="text-cool-gray-20 text-sm mb-3">
+              Alternative panels (Pterodactyl, etc.)
+            </p>
+            <div class="flex items-center gap-2 text-purple-50 text-sm">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+              </svg>
+              <span>87 votes</span>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-purple-50 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-white mb-2">Discord Bot Integration</h3>
+            <p class="text-cool-gray-20 text-sm mb-3">
+              Manage servers via Discord commands
+            </p>
+            <div class="flex items-center gap-2 text-purple-50 text-sm">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+              </svg>
+              <span>76 votes</span>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-purple-50 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-white mb-2">Web Hosting</h3>
+            <p class="text-cool-gray-20 text-sm mb-3">
+              Static sites and databases alongside servers
+            </p>
+            <div class="flex items-center gap-2 text-purple-50 text-sm">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+              </svg>
+              <span>64 votes</span>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-purple-50 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-white mb-2">Server Snapshots</h3>
+            <p class="text-cool-gray-20 text-sm mb-3">
+              Point-in-time snapshots for rollback
+            </p>
+            <div class="flex items-center gap-2 text-purple-50 text-sm">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+              </svg>
+              <span>52 votes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stay Updated CTA -->
+    <div class="mb-20">
+      <div class="bg-gradient-to-r from-purple-50 to-cyan-50 rounded-2xl p-12 lg:p-16 text-center">
+        <h2 class="text-3xl lg:text-5xl font-bold text-black mb-6">
+          Stay in the Loop
+        </h2>
+        <p class="text-xl text-gray-90 mb-8 max-w-2xl mx-auto">
+          Join our Discord community to get early access to new features, participate in beta testing, and shape the future of QuackHost.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a
+            href="/discord-flock"
+            class="px-8 py-4 bg-black text-white font-bold rounded-lg hover:bg-gray-90 transition-all hover:scale-105"
+          >
+            Join Discord Community
+          </a>
+          <a
+            href="/contact"
+            class="px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-100 transition-all hover:scale-105"
+          >
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
