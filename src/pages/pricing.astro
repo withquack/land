@@ -3,9 +3,356 @@ import Layout from "../layouts/layout.astro";
 ---
 
 <Layout title="/ Pricing">
-  <div class="mb-32 mt-32">
-    <p class="text-2xl font-semibold xl:text-4xl">Pricing</p>
+  <!-- Hero Section -->
+  <div class="mb-16 text-center">
+    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+      <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">
+        Transparent pricing.
+      </span>
+      <br/>
+      <span class="text-white">No surprises.</span>
+    </h1>
+    <p class="text-xl text-cool-gray-40 max-w-3xl mx-auto">
+      Pay only for what you use. Scale up or down anytime. Cancel whenever you want.
+    </p>
   </div>
 
-  <div class="h-96 rounded-md bg-gray-200"></div>
+  <!-- Interactive Server Calculator -->
+  <div
+    class="mb-20 p-8 lg:p-12 bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl shadow-2xl"
+    x-data="{
+      playerCount: 20,
+      gameType: 'minecraft-vanilla',
+      get recommendedRAM() {
+        let base = Math.ceil(this.playerCount / 10) * 2;
+        if (this.gameType.includes('modded')) base += 6;
+        else if (this.gameType.includes('plugin')) base += 4;
+        return Math.max(2, Math.min(32, base));
+      },
+      get recommendedStorage() {
+        return this.gameType.includes('modded') ? 20 : 10;
+      },
+      get monthlyPrice() {
+        const ramCost = this.recommendedRAM * 1.50;
+        const storageCost = this.recommendedStorage * 0.10;
+        return (ramCost + storageCost).toFixed(2);
+      }
+    }"
+  >
+    <div class="flex items-center gap-3 mb-8">
+      <img src="/index/doodles/money stack.svg" alt="" class="w-12 h-12" />
+      <h2 class="text-3xl font-bold text-white">Calculate Your Cost</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      <!-- Player Count Slider -->
+      <div>
+        <label class="block text-sm font-semibold mb-3 text-white">Expected Players</label>
+        <input
+          type="range"
+          x-model.number="playerCount"
+          min="1"
+          max="200"
+          class="w-full h-3 bg-gray-80 rounded-lg appearance-none cursor-pointer accent-[#FF9C20]"
+        />
+        <div class="flex justify-between text-sm text-cool-gray-40 mt-2">
+          <span>1</span>
+          <span x-text="playerCount" class="text-[#FF9C20] font-bold text-2xl"></span>
+          <span>200+</span>
+        </div>
+      </div>
+
+      <!-- Game Type Selector -->
+      <div>
+        <label class="block text-sm font-semibold mb-3 text-white">Server Type</label>
+        <select
+          x-model="gameType"
+          class="w-full px-4 py-3 bg-gray-80 border border-gray-70 rounded-lg text-white focus:outline-none focus:border-[#FF9C20] transition-colors"
+        >
+          <option value="minecraft-vanilla">Minecraft Vanilla</option>
+          <option value="minecraft-plugin">Minecraft with Plugins</option>
+          <option value="minecraft-modded">Minecraft Modded</option>
+          <option value="rust">Rust</option>
+          <option value="ark">ARK: Survival Evolved</option>
+          <option value="valheim">Valheim</option>
+          <option value="terraria">Terraria</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Recommendation Results -->
+    <div class="bg-gradient-to-r from-[#FF9C20]/20 via-purple-50/20 to-cyan-50/20 p-8 rounded-xl border-2 border-[#FF9C20]">
+      <h3 class="text-xl font-bold text-white mb-6">Recommended Configuration</h3>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="text-4xl font-bold text-[#FF9C20]" x-text="recommendedRAM + ' GB'"></div>
+          <div class="text-cool-gray-40 text-sm mt-1">RAM</div>
+          <div class="text-cool-gray-60 text-xs mt-1">$1.50/GB</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-cyan-40" x-text="recommendedStorage + ' GB'"></div>
+          <div class="text-cool-gray-40 text-sm mt-1">NVMe Storage</div>
+          <div class="text-cool-gray-60 text-xs mt-1">$0.10/GB</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-green-40">∞</div>
+          <div class="text-cool-gray-40 text-sm mt-1">Bandwidth</div>
+          <div class="text-cool-gray-60 text-xs mt-1">Unlimited</div>
+        </div>
+        <div class="text-center p-4 bg-gradient-to-br from-[#FF9C20] to-[#FF8D00] rounded-lg">
+          <div class="text-4xl font-bold text-black" x-text="'$' + monthlyPrice"></div>
+          <div class="text-black text-sm mt-1 font-semibold">per month</div>
+          <a href="#plans" class="block mt-2 text-xs text-black/80 hover:text-black underline">View plans</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing Tiers -->
+  <div id="plans" class="mb-20">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-5xl font-bold mb-4">
+        <span class="text-white">Choose your</span>
+        <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">plan</span>
+      </h2>
+      <p class="text-xl text-cool-gray-40 max-w-3xl mx-auto">
+        All plans include DDoS protection, automatic backups, and 24/7 support.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Duck Plan -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-2xl border border-gray-80 hover:border-[#FF9C20] transition-all duration-300 hover:shadow-xl">
+        <div class="text-4xl mb-4">🦆</div>
+        <h3 class="text-2xl font-bold text-white mb-2">Duck</h3>
+        <p class="text-cool-gray-40 mb-6">Perfect for testing</p>
+        <div class="mb-6">
+          <span class="text-4xl font-bold text-[#FF9C20]">$3</span>
+          <span class="text-cool-gray-40">/month</span>
+        </div>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center text-cool-gray-20">
+            <svg class="w-5 h-5 text-green-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            2 GB RAM
+          </li>
+          <li class="flex items-center text-cool-gray-20">
+            <svg class="w-5 h-5 text-green-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            10 GB NVMe Storage
+          </li>
+          <li class="flex items-center text-cool-gray-20">
+            <svg class="w-5 h-5 text-green-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Up to 10 players
+          </li>
+          <li class="flex items-center text-cool-gray-20">
+            <svg class="w-5 h-5 text-green-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Daily backups
+          </li>
+        </ul>
+        <a href="#" class="block w-full px-6 py-3 bg-gray-80 hover:bg-gray-70 text-white font-semibold rounded-lg text-center transition-colors">
+          Get Started
+        </a>
+      </div>
+
+      <!-- Goose Plan -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-2xl border border-gray-80 hover:border-cyan-50 transition-all duration-300 hover:shadow-xl">
+        <div class="text-4xl mb-4">🪿</div>
+        <h3 class="text-2xl font-bold text-white mb-2">Goose</h3>
+        <p class="text-cool-gray-40 mb-6">Great for small groups</p>
+        <div class="mb-6">
+          <span class="text-4xl font-bold text-cyan-40">$7.50</span>
+          <span class="text-cool-gray-40">/month</span>
+        </div>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center text-cool-gray-20">
+            <svg class="w-5 h-5 text-green-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            4 GB RAM
+          </li>
+          <li class="flex items-center text-cool-gray-20">
+            <svg class="w-5 h-5 text-green-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            20 GB NVMe Storage
+          </li>
+          <li class="flex items-center text-cool-gray-20">
+            <svg class="w-5 h-5 text-green-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Up to 25 players
+          </li>
+          <li class="flex items-center text-cool-gray-20">
+            <svg class="w-5 h-5 text-green-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Hourly backups
+          </li>
+        </ul>
+        <a href="#" class="block w-full px-6 py-3 bg-gradient-to-r from-cyan-50 to-cyan-60 hover:from-cyan-40 hover:to-cyan-50 text-black font-semibold rounded-lg text-center transition-all">
+          Get Started
+        </a>
+      </div>
+
+      <!-- Swan Plan (Most Popular) -->
+      <div class="relative bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-2xl border-2 border-[#FF9C20] hover:shadow-2xl hover:shadow-[#FF9C20]/50 transition-all duration-300 transform hover:-translate-y-2">
+        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] rounded-full text-black text-xs font-bold">
+          MOST POPULAR
+        </div>
+        <div class="text-4xl mb-4">🦢</div>
+        <h3 class="text-2xl font-bold text-white mb-2">Swan</h3>
+        <p class="text-cool-gray-40 mb-6">Perfect for communities</p>
+        <div class="mb-6">
+          <span class="text-4xl font-bold text-[#FF9C20]">$15</span>
+          <span class="text-cool-gray-40">/month</span>
+        </div>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center text-cool-gray-20">
+            <svg class="w-5 h-5 text-green-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            8 GB RAM
+          </li>
+          <li class="flex items-center text-cool-gray-20">
+            <svg class="w-5 h-5 text-green-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            40 GB NVMe Storage
+          </li>
+          <li class="flex items-center text-cool-gray-20">
+            <svg class="w-5 h-5 text-green-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Up to 60 players
+          </li>
+          <li class="flex items-center text-cool-gray-20">
+            <svg class="w-5 h-5 text-green-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Priority support
+          </li>
+        </ul>
+        <a href="#" class="block w-full px-6 py-3 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] hover:from-[#FF8D00] hover:to-[#CC6600] text-black font-semibold rounded-lg text-center transition-all shadow-lg hover:shadow-xl">
+          Get Started
+        </a>
+      </div>
+
+      <!-- Flock Plan -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-2xl border border-gray-80 hover:border-purple-50 transition-all duration-300 hover:shadow-xl">
+        <div class="text-4xl mb-4">🦆🦆🦆</div>
+        <h3 class="text-2xl font-bold text-white mb-2">Flock</h3>
+        <p class="text-cool-gray-40 mb-6">For large networks</p>
+        <div class="mb-6">
+          <span class="text-4xl font-bold text-purple-40">$30+</span>
+          <span class="text-cool-gray-40">/month</span>
+        </div>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center text-cool-gray-20">
+            <svg class="w-5 h-5 text-green-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            16+ GB RAM
+          </li>
+          <li class="flex items-center text-cool-gray-20">
+            <svg class="w-5 h-5 text-green-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            80+ GB NVMe Storage
+          </li>
+          <li class="flex items-center text-cool-gray-20">
+            <svg class="w-5 h-5 text-green-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            100+ players
+          </li>
+          <li class="flex items-center text-cool-gray-20">
+            <svg class="w-5 h-5 text-green-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Dedicated support
+          </li>
+        </ul>
+        <a href="/discord-flock" class="block w-full px-6 py-3 bg-gradient-to-r from-purple-50 to-purple-60 hover:from-purple-40 hover:to-purple-50 text-black font-semibold rounded-lg text-center transition-all">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="mb-20">
+    <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12">
+      <span class="text-white">Pricing</span>
+      <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"> FAQ</span>
+    </h2>
+
+    <div class="max-w-3xl mx-auto space-y-4" x-data="{ open: null }">
+      <!-- FAQ Item 1 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 rounded-xl border border-gray-80 overflow-hidden">
+        <button
+          @click="open = open === 1 ? null : 1"
+          class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-80 transition-colors"
+        >
+          <span class="font-semibold text-white">Can I upgrade or downgrade my plan?</span>
+          <svg class="w-5 h-5 text-[#FF9C20] transition-transform" :class="{ 'rotate-180': open === 1 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div x-show="open === 1" x-collapse>
+          <div class="p-6 pt-0 text-cool-gray-20">
+            Yes! You can upgrade or downgrade at any time. Changes take effect immediately, and we'll prorate your billing accordingly.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 rounded-xl border border-gray-80 overflow-hidden">
+        <button
+          @click="open = open === 2 ? null : 2"
+          class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-80 transition-colors"
+        >
+          <span class="font-semibold text-white">Do you offer refunds?</span>
+          <svg class="w-5 h-5 text-[#FF9C20] transition-transform" :class="{ 'rotate-180': open === 2 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div x-show="open === 2" x-collapse>
+          <div class="p-6 pt-0 text-cool-gray-20">
+            We offer a 30-day money-back guarantee. If you're not satisfied within the first 30 days, we'll refund your full payment, no questions asked.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 rounded-xl border border-gray-80 overflow-hidden">
+        <button
+          @click="open = open === 3 ? null : 3"
+          class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-80 transition-colors"
+        >
+          <span class="font-semibold text-white">What payment methods do you accept?</span>
+          <svg class="w-5 h-5 text-[#FF9C20] transition-transform" :class="{ 'rotate-180': open === 3 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div x-show="open === 3" x-collapse>
+          <div class="p-6 pt-0 text-cool-gray-20">
+            We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and cryptocurrency payments.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 rounded-xl border border-gray-80 overflow-hidden">
+        <button
+          @click="open = open === 4 ? null : 4"
+          class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-80 transition-colors"
+        >
+          <span class="font-semibold text-white">Are there any hidden fees?</span>
+          <svg class="w-5 h-5 text-[#FF9C20] transition-transform" :class="{ 'rotate-180': open === 4 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div x-show="open === 4" x-collapse>
+          <div class="p-6 pt-0 text-cool-gray-20">
+            No hidden fees, ever. The price you see is the price you pay. All plans include DDoS protection, automatic backups, and 24/7 support at no extra cost.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="text-center bg-gradient-to-br from-gray-90 to-gray-100 p-12 rounded-2xl border-2 border-gray-80">
+    <h2 class="text-3xl font-bold text-white mb-4">Ready to get started?</h2>
+    <p class="text-cool-gray-40 mb-8 max-w-2xl mx-auto">
+      Launch your server in under 2 minutes. No credit card required for trial.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#plans" class="px-8 py-4 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black font-bold rounded-lg hover:shadow-xl transition-all">
+        Choose Your Plan
+      </a>
+      <a href="/discord-flock" class="px-8 py-4 bg-gray-80 hover:bg-gray-70 text-white font-semibold rounded-lg transition-colors">
+        Talk to Sales
+      </a>
+    </div>
+  </div>
+
+  <style>
+    [x-cloak] { display: none !important; }
+  </style>
 </Layout>
