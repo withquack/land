@@ -1,9 +1,631 @@
 ---
 import Layout from "../layouts/layout.astro";
+
+const games = [
+  {
+    name: "Minecraft",
+    tagline: "Java & Bedrock Edition",
+    status: "live",
+    features: [
+      "1000+ mods supported",
+      "Instant plugin installation",
+      "World backups & rollback",
+      "Java & Bedrock crossplay",
+    ],
+    playerCount: "Unlimited",
+    deployTime: "< 2 minutes",
+    icon: "/index/doodles/joy leap 2.svg",
+    color: "green",
+  },
+  {
+    name: "Terraria",
+    tagline: "Adventure awaits in 2D",
+    status: "coming-q1",
+    features: [
+      "Mod loader support (tModLoader)",
+      "Automatic world backups",
+      "Custom world sizes",
+      "Cross-platform multiplayer",
+    ],
+    playerCount: "Up to 255",
+    deployTime: "< 2 minutes",
+    icon: "/index/doodles/tree.svg",
+    color: "teal",
+  },
+  {
+    name: "Valheim",
+    tagline: "Viking survival & building",
+    status: "coming-q1",
+    features: [
+      "BepInEx mod support",
+      "Dedicated server hosting",
+      "World persistence",
+      "10+ player co-op",
+    ],
+    playerCount: "10+",
+    deployTime: "< 2 minutes",
+    icon: "/index/doodles/rocking chair.svg",
+    color: "blue",
+  },
+  {
+    name: "Rust",
+    tagline: "Survival of the fittest",
+    status: "coming-q2",
+    features: [
+      "Oxide/uMod plugin support",
+      "Anti-cheat integration",
+      "Map wipe automation",
+      "High-performance servers",
+    ],
+    playerCount: "200+",
+    deployTime: "< 2 minutes",
+    icon: "/index/doodles/wizard.svg",
+    color: "orange",
+  },
+  {
+    name: "ARK: Survival Evolved",
+    tagline: "Dinosaurs & survival",
+    status: "coming-q2",
+    features: [
+      "All official maps",
+      "Mod support (Steam Workshop)",
+      "Cluster support",
+      "Customizable rates",
+    ],
+    playerCount: "100+",
+    deployTime: "< 5 minutes",
+    icon: "/index/doodles/cycle.svg",
+    color: "purple",
+  },
+  {
+    name: "Counter-Strike 2",
+    tagline: "Competitive FPS",
+    status: "coming-q2",
+    features: [
+      "Custom game modes",
+      "Workshop maps support",
+      "SourceMod plugins",
+      "Anti-cheat built-in",
+    ],
+    playerCount: "64+",
+    deployTime: "< 2 minutes",
+    icon: "/index/doodles/upload.svg",
+    color: "cyan",
+  },
+  {
+    name: "Roblox",
+    tagline: "Private game servers",
+    status: "coming-q3",
+    features: [
+      "VIP server hosting",
+      "Custom game support",
+      "Studio integration",
+      "Developer API access",
+    ],
+    playerCount: "50+",
+    deployTime: "< 1 minute",
+    icon: "/index/doodles/magic wand.svg",
+    color: "magenta",
+  },
+  {
+    name: "Palworld",
+    tagline: "Creature collecting & survival",
+    status: "coming-q3",
+    features: [
+      "Dedicated server support",
+      "Mod framework ready",
+      "Persistent worlds",
+      "32 player co-op",
+    ],
+    playerCount: "32",
+    deployTime: "< 2 minutes",
+    icon: "/index/doodles/hand holding.svg",
+    color: "red",
+  },
+];
+
+function getStatusBadge(status: string) {
+  switch (status) {
+    case "live":
+      return {
+        text: "Live Now",
+        color: "bg-green-50 text-cool-gray-100",
+      };
+    case "coming-q1":
+      return {
+        text: "Coming Q1 2025",
+        color: "bg-cyan-50 text-cool-gray-100",
+      };
+    case "coming-q2":
+      return {
+        text: "Coming Q2 2025",
+        color: "bg-blue-50 text-cool-gray-100",
+      };
+    case "coming-q3":
+      return {
+        text: "Coming Q3 2025",
+        color: "bg-purple-50 text-cool-gray-100",
+      };
+    default:
+      return {
+        text: "Coming Soon",
+        color: "bg-cool-gray-70 text-white",
+      };
+  }
+}
 ---
 
 <Layout title="/ Games">
-  <div class="mb-32 mt-32">
-    <p class="text-2xl font-semibold xl:text-4xl">Games</p>
+  <!-- Hero Section -->
+  <div class="mb-16 lg:mb-20 text-center">
+    <h1
+      class="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"
+    >
+      Beyond Minecraft
+    </h1>
+    <p class="text-xl text-cool-gray-40 max-w-3xl mx-auto mb-8">
+      We're building the <span class="text-white font-semibold"
+        >universal hosting platform</span
+      > for game servers. One control panel. Every game. Launching soon.
+    </p>
   </div>
+
+  <!-- Stats Bar -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 lg:mb-20">
+    <div
+      class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6 text-center"
+    >
+      <div class="text-4xl font-bold text-[#FF9C20] mb-2">8+</div>
+      <div class="text-cool-gray-40">Games Supported</div>
+    </div>
+    <div
+      class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6 text-center"
+    >
+      <div class="text-4xl font-bold text-cyan-50 mb-2">&lt; 2min</div>
+      <div class="text-cool-gray-40">Deploy Time</div>
+    </div>
+    <div
+      class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6 text-center"
+    >
+      <div class="text-4xl font-bold text-green-50 mb-2">1 Panel</div>
+      <div class="text-cool-gray-40">Manage Everything</div>
+    </div>
+  </div>
+
+  <!-- Games Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+    {
+      games.map((game) => {
+        const badge = getStatusBadge(game.status);
+        const isLive = game.status === "live";
+
+        return (
+          <div class="bg-cool-gray-90 border-2 border-cool-gray-70 rounded-lg p-8 flex flex-col hover:border-[#FF9C20] transition-all duration-300 group">
+            {/* Header */}
+            <div class="mb-6">
+              <div class="flex items-center justify-between mb-3">
+                <h2 class="text-2xl font-bold flex items-center gap-2">
+                  <span>{game.name}</span>
+                  <img
+                    src={game.icon}
+                    alt=""
+                    width="28"
+                    height="28"
+                    class="group-hover:scale-110 transition-transform"
+                  />
+                </h2>
+              </div>
+              <p class="text-cool-gray-40 mb-3">{game.tagline}</p>
+              <span class={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${badge.color}`}>
+                {badge.text}
+              </span>
+            </div>
+
+            {/* Features */}
+            <ul class="space-y-3 mb-6 flex-grow">
+              {game.features.map((feature) => (
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-5 h-5 text-green-50 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span class="text-cool-gray-30 text-sm">{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* Specs */}
+            <div class="grid grid-cols-2 gap-4 mb-6 pb-6 border-b border-cool-gray-70">
+              <div>
+                <div class="text-cool-gray-50 text-xs mb-1">Players</div>
+                <div class="text-white font-semibold">{game.playerCount}</div>
+              </div>
+              <div>
+                <div class="text-cool-gray-50 text-xs mb-1">Deploy</div>
+                <div class="text-white font-semibold">{game.deployTime}</div>
+              </div>
+            </div>
+
+            {/* CTA */}
+            {isLive ? (
+              <a
+                href="/pricing"
+                class="block text-center py-3 px-6 bg-[#FF9C20] hover:bg-[#CC6600] text-black rounded-lg transition-all duration-200 font-semibold"
+              >
+                Launch Server
+              </a>
+            ) : (
+              <button
+                class="block w-full text-center py-3 px-6 bg-cool-gray-70 hover:bg-cool-gray-60 text-white rounded-lg transition-all duration-200 font-semibold"
+                onclick="document.getElementById('notify-form').scrollIntoView({ behavior: 'smooth' })"
+              >
+                Notify Me
+              </button>
+            )}
+          </div>
+        );
+      })
+    }
+  </div>
+
+  <!-- Request a Game Section -->
+  <div class="bg-cool-gray-90 border-2 border-cool-gray-70 rounded-lg p-12 mb-20">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4 flex items-center justify-center gap-2">
+        <img
+          src="/index/doodles/chat.svg"
+          alt=""
+          width="40"
+          height="40"
+        />
+        <span class="underline decoration-4 decoration-cyan-50"
+          >Don't see your game?</span
+        >
+      </h2>
+      <p class="text-cool-gray-40 mb-8 text-lg">
+        We're constantly adding new games based on community demand. Let us know
+        what you'd like to host!
+      </p>
+
+      <form
+        action="https://client.quack.host/api/game-requests"
+        method="POST"
+        class="flex flex-col sm:flex-row gap-4"
+      >
+        <input
+          type="text"
+          name="game"
+          placeholder="Enter game name (e.g., 7 Days to Die)"
+          required
+          class="flex-grow px-6 py-4 bg-cool-gray-80 border border-cool-gray-70 rounded-lg text-white placeholder-cool-gray-50 focus:outline-none focus:ring-2 focus:ring-[#FF9C20] focus:border-transparent"
+        />
+        <button
+          type="submit"
+          class="px-8 py-4 bg-[#FF9C20] hover:bg-[#CC6600] text-black rounded-lg font-semibold transition-all duration-200 whitespace-nowrap"
+        >
+          Request Game
+        </button>
+      </form>
+
+      <p class="text-cool-gray-50 text-sm mt-4">
+        Popular requests: V Rising, 7 Days to Die, Project Zomboid, Satisfactory
+      </p>
+    </div>
+  </div>
+
+  <!-- Comparison Table -->
+  <div class="mb-20">
+    <h2 class="text-3xl font-bold mb-10 text-center">
+      <span class="underline decoration-4 decoration-purple-50"
+        >Why Choose QuackHost for Multi-Game Hosting?</span
+      >
+    </h2>
+
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="border-b-2 border-cool-gray-70">
+            <th class="text-left py-4 px-6 text-cool-gray-40 font-semibold"
+              >Feature</th
+            >
+            <th class="text-center py-4 px-6 font-semibold text-[#FF9C20]"
+              >QuackHost</th
+            >
+            <th class="text-center py-4 px-6 text-cool-gray-40 font-semibold"
+              >Traditional Hosts</th
+            >
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-cool-gray-70">
+            <td class="py-4 px-6">One control panel for all games</td>
+            <td class="text-center py-4 px-6">
+              <svg
+                class="w-6 h-6 text-green-50 mx-auto"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </td>
+            <td class="text-center py-4 px-6">
+              <svg
+                class="w-6 h-6 text-red-50 mx-auto"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </td>
+          </tr>
+          <tr class="border-b border-cool-gray-70">
+            <td class="py-4 px-6">Instant server deployment</td>
+            <td class="text-center py-4 px-6 text-green-50 font-semibold"
+              >&lt; 2 min</td
+            >
+            <td class="text-center py-4 px-6 text-cool-gray-40">5-15 min</td>
+          </tr>
+          <tr class="border-b border-cool-gray-70">
+            <td class="py-4 px-6">Free tier available</td>
+            <td class="text-center py-4 px-6">
+              <svg
+                class="w-6 h-6 text-green-50 mx-auto"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </td>
+            <td class="text-center py-4 px-6">
+              <svg
+                class="w-6 h-6 text-red-50 mx-auto"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </td>
+          </tr>
+          <tr class="border-b border-cool-gray-70">
+            <td class="py-4 px-6">Automatic mod support</td>
+            <td class="text-center py-4 px-6">
+              <svg
+                class="w-6 h-6 text-green-50 mx-auto"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </td>
+            <td class="text-center py-4 px-6 text-cool-gray-40">Manual</td>
+          </tr>
+          <tr class="border-b border-cool-gray-70">
+            <td class="py-4 px-6">Off-site backups included</td>
+            <td class="text-center py-4 px-6">
+              <svg
+                class="w-6 h-6 text-green-50 mx-auto"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </td>
+            <td class="text-center py-4 px-6 text-cool-gray-40">Extra cost</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Notify Form -->
+  <div
+    id="notify-form"
+    class="bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] rounded-lg p-12 text-center mb-20"
+  >
+    <h2 class="text-3xl md:text-4xl font-bold text-black mb-4">
+      Get notified when your favorite game launches
+    </h2>
+    <p class="text-xl text-cool-gray-100 mb-8 max-w-2xl mx-auto">
+      Be the first to know when we add support for new games. No spam, just
+      launch notifications.
+    </p>
+
+    <form
+      action="https://client.quack.host/api/notifications/subscribe"
+      method="POST"
+      class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto"
+    >
+      <input
+        type="email"
+        name="email"
+        placeholder="your@email.com"
+        required
+        class="flex-grow px-6 py-4 bg-white text-black rounded-lg focus:outline-none focus:ring-4 focus:ring-black/20"
+      />
+      <button
+        type="submit"
+        class="px-8 py-4 bg-black text-white rounded-lg font-semibold hover:bg-cool-gray-90 transition-all duration-200 text-lg whitespace-nowrap"
+      >
+        Notify Me
+      </button>
+    </form>
+
+    <p class="text-cool-gray-100 text-sm mt-4">
+      Join 2,000+ gamers waiting for new game releases
+    </p>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="mb-20" x-data="{ open: [false, false, false, false] }">
+    <h2 class="text-3xl font-bold mb-10 text-center">
+      <span class="underline decoration-4 decoration-teal-50"
+        >Multi-Game Hosting FAQs</span
+      >
+    </h2>
+
+    <div class="max-w-3xl mx-auto space-y-4">
+      <!-- Question 1 -->
+      <div class="border-b border-cool-gray-70">
+        <button
+          @click="open[0] = !open[0]"
+          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 transition-colors"
+        >
+          <span class="text-lg font-semibold pr-4"
+            >Can I host multiple different games with one account?</span
+          >
+          <svg
+            class="w-6 h-6 transform transition-transform"
+            :class="{ 'rotate-180': open[0] }"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div x-show="open[0]" x-cloak class="pb-5">
+          <p class="text-cool-gray-40 leading-relaxed">
+            Absolutely! QuackPlane is designed to manage all your game servers
+            from one unified control panel. Host Minecraft, Terraria, Rust, and
+            more - all in one place. Switch between games seamlessly without
+            learning different interfaces.
+          </p>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="border-b border-cool-gray-70">
+        <button
+          @click="open[1] = !open[1]"
+          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 transition-colors"
+        >
+          <span class="text-lg font-semibold pr-4"
+            >How do you decide which games to add next?</span
+          >
+          <svg
+            class="w-6 h-6 transform transition-transform"
+            :class="{ 'rotate-180': open[1] }"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div x-show="open[1]" x-cloak class="pb-5">
+          <p class="text-cool-gray-40 leading-relaxed">
+            We prioritize games based on community demand, technical
+            feasibility, and player base size. Use the "Request a Game" form
+            above to vote for your favorites. We review requests monthly and
+            announce new game support on our Discord and social channels.
+          </p>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="border-b border-cool-gray-70">
+        <button
+          @click="open[2] = !open[2]"
+          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 transition-colors"
+        >
+          <span class="text-lg font-semibold pr-4"
+            >Will pricing change for different games?</span
+          >
+          <svg
+            class="w-6 h-6 transform transition-transform"
+            :class="{ 'rotate-180': open[2] }"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div x-show="open[2]" x-cloak class="pb-5">
+          <p class="text-cool-gray-40 leading-relaxed">
+            Our pricing is based on resources (RAM, CPU, storage), not the game
+            type. A 4GB server costs the same whether you're running Minecraft,
+            Terraria, or Rust. This keeps pricing simple, transparent, and fair.
+            Some resource-intensive games may require higher-tier plans.
+          </p>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="border-b border-cool-gray-70">
+        <button
+          @click="open[3] = !open[3]"
+          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 transition-colors"
+        >
+          <span class="text-lg font-semibold pr-4"
+            >Can I migrate my existing server to QuackHost?</span
+          >
+          <svg
+            class="w-6 h-6 transform transition-transform"
+            :class="{ 'rotate-180': open[3] }"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div x-show="open[3]" x-cloak class="pb-5">
+          <p class="text-cool-gray-40 leading-relaxed">
+            Yes! We offer free migration assistance for all supported games.
+            Simply upload your world files, configs, and mods through
+            QuackPlane's file manager, or contact support for hands-on help.
+            We'll make sure everything transfers smoothly with zero downtime.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    [x-cloak] {
+      display: none !important;
+    }
+  </style>
 </Layout>
