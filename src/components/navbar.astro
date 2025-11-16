@@ -1,4 +1,4 @@
-<nav x-data="{ userMenuOpen: false, mobileMenuOpen: false }" id="navbar">
+<nav x-data="{ userMenuOpen: false, mobileMenuOpen: false, productsOpen: false, resourcesOpen: false, companyOpen: false }" id="navbar">
   <div class="relative text-gray-10">
     <div class="flex items-center">
       <!-- Mobile menu button - LEFT of logo -->
@@ -25,24 +25,105 @@
         role="navigation"
         aria-label="Main navigation"
       >
-        <a
-          href="/pricing"
-          id="nav-pricing"
-          class="hover:text-gray hover:bg-gray-90 flex items-center h-12 p-3"
-          >Pricing</a
-        >
-        <a
-          href="/guides-&-tutorials"
-          id="nav-guides"
-          class="hover:text-gray hover:bg-gray-90 flex items-center h-12 p-3"
-          >Guides & Tutorials</a
-        >
-        <a
-          href="/games"
-          id="nav-games"
-          class="hover:text-gray hover:bg-gray-90 flex items-center h-12 p-3"
-          >Games</a
-        >
+        <!-- Products Dropdown -->
+        <div class="relative" @mouseenter="productsOpen = true" @mouseleave="productsOpen = false">
+          <button
+            @click="productsOpen = !productsOpen"
+            class="hover:text-gray hover:bg-gray-90 flex items-center h-12 p-3"
+            :class="{ 'bg-gray-90': productsOpen }"
+            aria-haspopup="true"
+            :aria-expanded="productsOpen"
+          >
+            Products
+            <svg class="w-4 h-4 ml-1" :class="{ 'rotate-180': productsOpen }" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+          <div
+            x-show="productsOpen"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 transform scale-95"
+            x-transition:enter-end="opacity-100 transform scale-100"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 transform scale-100"
+            x-transition:leave-end="opacity-0 transform scale-95"
+            class="absolute left-0 mt-0 w-64 bg-gray-90 shadow-md z-20"
+            style="display: none;"
+          >
+            <a href="/games" class="block p-3 hover:text-gray hover:bg-gray-80">Game Servers</a>
+            <a href="/quackplane" class="block p-3 hover:text-gray hover:bg-gray-80">QuackPlane Panel</a>
+            <a href="/data-centers" class="block p-3 hover:text-gray hover:bg-gray-80">Data Centers</a>
+            <a href="/pricing" class="block p-3 hover:text-gray hover:bg-gray-80">Pricing</a>
+          </div>
+        </div>
+
+        <!-- Resources Dropdown -->
+        <div class="relative" @mouseenter="resourcesOpen = true" @mouseleave="resourcesOpen = false">
+          <button
+            @click="resourcesOpen = !resourcesOpen"
+            class="hover:text-gray hover:bg-gray-90 flex items-center h-12 p-3"
+            :class="{ 'bg-gray-90': resourcesOpen }"
+            aria-haspopup="true"
+            :aria-expanded="resourcesOpen"
+          >
+            Resources
+            <svg class="w-4 h-4 ml-1" :class="{ 'rotate-180': resourcesOpen }" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+          <div
+            x-show="resourcesOpen"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 transform scale-95"
+            x-transition:enter-end="opacity-100 transform scale-100"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 transform scale-100"
+            x-transition:leave-end="opacity-0 transform scale-95"
+            class="absolute left-0 mt-0 w-64 bg-gray-90 shadow-md z-20"
+            style="display: none;"
+          >
+            <a href="/support" class="block p-3 hover:text-gray hover:bg-gray-80">Support Center</a>
+            <a href="/guides-&-tutorials" class="block p-3 hover:text-gray hover:bg-gray-80">Guides & Tutorials</a>
+            <a href="/blog" class="block p-3 hover:text-gray hover:bg-gray-80">Blog</a>
+            <a href="/faq" class="block p-3 hover:text-gray hover:bg-gray-80">FAQ</a>
+            <a href="/learn-more" class="block p-3 hover:text-gray hover:bg-gray-80">Documentation</a>
+            <a href="/service-status" class="block p-3 hover:text-gray hover:bg-gray-80">Service Status</a>
+          </div>
+        </div>
+
+        <!-- Company Dropdown -->
+        <div class="relative" @mouseenter="companyOpen = true" @mouseleave="companyOpen = false">
+          <button
+            @click="companyOpen = !companyOpen"
+            class="hover:text-gray hover:bg-gray-90 flex items-center h-12 p-3"
+            :class="{ 'bg-gray-90': companyOpen }"
+            aria-haspopup="true"
+            :aria-expanded="companyOpen"
+          >
+            Company
+            <svg class="w-4 h-4 ml-1" :class="{ 'rotate-180': companyOpen }" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+          <div
+            x-show="companyOpen"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 transform scale-95"
+            x-transition:enter-end="opacity-100 transform scale-100"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 transform scale-100"
+            x-transition:leave-end="opacity-0 transform scale-95"
+            class="absolute left-0 mt-0 w-64 bg-gray-90 shadow-md z-20"
+            style="display: none;"
+          >
+            <a href="/about" class="block p-3 hover:text-gray hover:bg-gray-80">About Us</a>
+            <a href="/roadmap" class="block p-3 hover:text-gray hover:bg-gray-80">Roadmap</a>
+            <a href="/case-studies" class="block p-3 hover:text-gray hover:bg-gray-80">Case Studies</a>
+            <a href="/affiliates" class="block p-3 hover:text-gray hover:bg-gray-80">Affiliate Program</a>
+            <a href="/discord-flock" class="block p-3 hover:text-gray hover:bg-gray-80">Community</a>
+            <a href="/contact" class="block p-3 hover:text-gray hover:bg-gray-80">Contact</a>
+          </div>
+        </div>
       </nav>
 
       <!-- User icon -->
@@ -88,21 +169,70 @@
     <div
       x-show="mobileMenuOpen"
       @click.away="mobileMenuOpen = false"
-      class="absolute top-12 left-0 right-0 bg-gray-90 w-64 z-50 shadow-md sm:hidden"
+      class="absolute top-12 left-0 right-0 bg-gray-90 w-full max-w-sm z-50 shadow-md sm:hidden"
       style="display: none;"
     >
       <nav>
-        <a href="/pricing" class="block p-3 hover:text-gray hover:bg-gray-80"
-          >Pricing</a
-        >
-        <a
-          href="/guides-&-tutorials"
-          class="block p-3 hover:text-gray hover:bg-gray-80"
-          >Guides & Tutorials</a
-        >
-        <a href="/games" class="block p-3 hover:text-gray hover:bg-gray-80"
-          >Games</a
-        >
+        <!-- Products Section -->
+        <div x-data="{ mobileProductsOpen: false }">
+          <button
+            @click="mobileProductsOpen = !mobileProductsOpen"
+            class="w-full flex items-center justify-between p-3 hover:text-gray hover:bg-gray-80"
+          >
+            <span>Products</span>
+            <svg class="w-4 h-4" :class="{ 'rotate-180': mobileProductsOpen }" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+          <div x-show="mobileProductsOpen" class="bg-gray-80" style="display: none;">
+            <a href="/games" class="block p-3 pl-6 hover:text-gray hover:bg-gray-70">Game Servers</a>
+            <a href="/quackplane" class="block p-3 pl-6 hover:text-gray hover:bg-gray-70">QuackPlane Panel</a>
+            <a href="/data-centers" class="block p-3 pl-6 hover:text-gray hover:bg-gray-70">Data Centers</a>
+            <a href="/pricing" class="block p-3 pl-6 hover:text-gray hover:bg-gray-70">Pricing</a>
+          </div>
+        </div>
+
+        <!-- Resources Section -->
+        <div x-data="{ mobileResourcesOpen: false }">
+          <button
+            @click="mobileResourcesOpen = !mobileResourcesOpen"
+            class="w-full flex items-center justify-between p-3 hover:text-gray hover:bg-gray-80"
+          >
+            <span>Resources</span>
+            <svg class="w-4 h-4" :class="{ 'rotate-180': mobileResourcesOpen }" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+          <div x-show="mobileResourcesOpen" class="bg-gray-80" style="display: none;">
+            <a href="/support" class="block p-3 pl-6 hover:text-gray hover:bg-gray-70">Support Center</a>
+            <a href="/guides-&-tutorials" class="block p-3 pl-6 hover:text-gray hover:bg-gray-70">Guides & Tutorials</a>
+            <a href="/blog" class="block p-3 pl-6 hover:text-gray hover:bg-gray-70">Blog</a>
+            <a href="/faq" class="block p-3 pl-6 hover:text-gray hover:bg-gray-70">FAQ</a>
+            <a href="/learn-more" class="block p-3 pl-6 hover:text-gray hover:bg-gray-70">Documentation</a>
+            <a href="/service-status" class="block p-3 pl-6 hover:text-gray hover:bg-gray-70">Service Status</a>
+          </div>
+        </div>
+
+        <!-- Company Section -->
+        <div x-data="{ mobileCompanyOpen: false }">
+          <button
+            @click="mobileCompanyOpen = !mobileCompanyOpen"
+            class="w-full flex items-center justify-between p-3 hover:text-gray hover:bg-gray-80"
+          >
+            <span>Company</span>
+            <svg class="w-4 h-4" :class="{ 'rotate-180': mobileCompanyOpen }" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+          <div x-show="mobileCompanyOpen" class="bg-gray-80" style="display: none;">
+            <a href="/about" class="block p-3 pl-6 hover:text-gray hover:bg-gray-70">About Us</a>
+            <a href="/roadmap" class="block p-3 pl-6 hover:text-gray hover:bg-gray-70">Roadmap</a>
+            <a href="/case-studies" class="block p-3 pl-6 hover:text-gray hover:bg-gray-70">Case Studies</a>
+            <a href="/affiliates" class="block p-3 pl-6 hover:text-gray hover:bg-gray-70">Affiliate Program</a>
+            <a href="/discord-flock" class="block p-3 pl-6 hover:text-gray hover:bg-gray-70">Community</a>
+            <a href="/contact" class="block p-3 pl-6 hover:text-gray hover:bg-gray-70">Contact</a>
+          </div>
+        </div>
       </nav>
     </div>
   </div>
@@ -185,22 +315,6 @@
       if (key === "q" && !e.ctrlKey && !e.metaKey && !e.altKey) {
         e.preventDefault();
         window.location.href = "https://plane.quack.host";
-        return;
-      }
-
-      // 1, 2, 3 = navigate to menu items
-      if (
-        ["1", "2", "3"].includes(key) &&
-        !e.ctrlKey &&
-        !e.metaKey &&
-        !e.altKey
-      ) {
-        e.preventDefault();
-        const navItems = ["nav-pricing", "nav-guides", "nav-games"];
-        const targetNav = document.getElementById(navItems[parseInt(key) - 1]);
-        if (targetNav) {
-          targetNav.click();
-        }
         return;
       }
 
