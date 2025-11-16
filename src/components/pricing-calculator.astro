@@ -1,0 +1,189 @@
+---
+// Interactive Pricing Calculator Component
+// Helps users estimate costs based on player count
+---
+
+<div
+  class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-8 mb-16"
+  x-data="{
+    players: 20,
+    get ram() {
+      if (this.players <= 10) return 2;
+      if (this.players <= 25) return 4;
+      if (this.players <= 50) return 8;
+      if (this.players <= 100) return 16;
+      return 32;
+    },
+    get price() {
+      const prices = { 2: 5, 4: 10, 8: 20, 16: 40, 32: 80 };
+      return prices[this.ram] || 5;
+    },
+    get recommendation() {
+      if (this.players <= 10) return 'Starter';
+      if (this.players <= 25) return 'Basic';
+      if (this.players <= 50) return 'Pro';
+      if (this.players <= 100) return 'Premium';
+      return 'Enterprise';
+    }
+  }"
+>
+  <div class="flex items-center gap-3 mb-6">
+    <img
+      src="/index/doodles/cycle.svg"
+      alt=""
+      width="40"
+      height="40"
+      class="transition duration-300 ease-out hover:animate-spin"
+    />
+    <h3 class="text-2xl lg:text-3xl font-semibold">
+      <span class="underline decoration-4 decoration-cyan-50">Find Your Perfect Plan</span>
+    </h3>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+    <!-- Left: Controls -->
+    <div>
+      <label for="player-slider" class="block text-lg mb-4">
+        How many players will be online at once?
+      </label>
+
+      <div class="flex items-center gap-4 mb-6">
+        <input
+          id="player-slider"
+          type="range"
+          min="1"
+          max="150"
+          step="1"
+          x-model="players"
+          class="flex-1 h-3 bg-cool-gray-70 rounded-lg appearance-none cursor-pointer accent-[#FF9C20]"
+        />
+        <div class="w-20 text-center">
+          <span class="text-3xl font-bold text-[#FF9C20]" x-text="players"></span>
+        </div>
+      </div>
+
+      <div class="flex gap-2 mb-4">
+        <button
+          @click="players = 10"
+          class="px-4 py-2 bg-cool-gray-80 hover:bg-cool-gray-70 border border-cool-gray-60 rounded transition-colors text-sm"
+        >
+          10 players
+        </button>
+        <button
+          @click="players = 25"
+          class="px-4 py-2 bg-cool-gray-80 hover:bg-cool-gray-70 border border-cool-gray-60 rounded transition-colors text-sm"
+        >
+          25 players
+        </button>
+        <button
+          @click="players = 50"
+          class="px-4 py-2 bg-cool-gray-80 hover:bg-cool-gray-70 border border-cool-gray-60 rounded transition-colors text-sm"
+        >
+          50 players
+        </button>
+        <button
+          @click="players = 100"
+          class="px-4 py-2 bg-cool-gray-80 hover:bg-cool-gray-70 border border-cool-gray-60 rounded transition-colors text-sm"
+        >
+          100 players
+        </button>
+      </div>
+
+      <div class="text-cool-gray-40 text-sm">
+        <p>💡 This is a rough estimate. Actual requirements depend on mods, plugins, and world complexity.</p>
+      </div>
+    </div>
+
+    <!-- Right: Results -->
+    <div class="bg-cool-gray-100 border border-[#FF9C20] rounded-lg p-6">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <div class="text-cool-gray-40 text-sm mb-1">Recommended Plan</div>
+          <div class="text-2xl font-bold text-[#FF9C20]" x-text="recommendation"></div>
+        </div>
+        <div class="text-right">
+          <div class="text-cool-gray-40 text-sm mb-1">Estimated Cost</div>
+          <div class="flex items-baseline gap-1">
+            <span class="text-4xl font-bold" x-text="'$' + price"></span>
+            <span class="text-cool-gray-40">/month</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-cool-gray-70 pt-4 mb-6">
+        <div class="flex justify-between mb-2">
+          <span class="text-cool-gray-40">RAM:</span>
+          <span class="font-semibold" x-text="ram + ' GB'"></span>
+        </div>
+        <div class="flex justify-between mb-2">
+          <span class="text-cool-gray-40">CPU Cores:</span>
+          <span class="font-semibold" x-text="Math.ceil(ram / 4) + ' vCores'"></span>
+        </div>
+        <div class="flex justify-between mb-2">
+          <span class="text-cool-gray-40">NVMe Storage:</span>
+          <span class="font-semibold" x-text="(ram * 10) + ' GB'"></span>
+        </div>
+        <div class="flex justify-between mb-2">
+          <span class="text-cool-gray-40">DDoS Protection:</span>
+          <span class="font-semibold text-green-50">✓ Included</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-cool-gray-40">Automatic Backups:</span>
+          <span class="font-semibold text-green-50">✓ Included</span>
+        </div>
+      </div>
+
+      <a
+        href="/pricing"
+        class="block w-full text-center p-3 bg-[#FF9C20] hover:bg-[#CC6600] text-black font-semibold transition-colors duration-200"
+      >
+        View Full Pricing →
+      </a>
+    </div>
+  </div>
+
+  <div class="mt-6 p-4 bg-cool-gray-80 border border-cool-gray-70 rounded">
+    <div class="flex items-start gap-3">
+      <div class="text-2xl">🦆</div>
+      <div class="flex-1">
+        <div class="font-semibold mb-1">Not sure what you need?</div>
+        <div class="text-cool-gray-40 text-sm">
+          Start with a smaller plan and scale up as your community grows. You can upgrade anytime with zero downtime!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Custom range slider styling */
+  input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: #FF9C20;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  input[type="range"]::-webkit-slider-thumb:hover {
+    background: #CC6600;
+    transform: scale(1.2);
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: #FF9C20;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+  }
+
+  input[type="range"]::-moz-range-thumb:hover {
+    background: #CC6600;
+    transform: scale(1.2);
+  }
+</style>
