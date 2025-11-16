@@ -3,7 +3,509 @@ import Layout from "../layouts/layout.astro";
 ---
 
 <Layout title="/ Games">
-  <div class="mb-32 mt-32">
-    <p class="text-2xl font-semibold xl:text-4xl">Games</p>
+  <!-- Hero Section -->
+  <div class="mb-16">
+    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+      <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">
+        Every Minecraft version. Every modpack.
+      </span>
+    </h1>
+    <p class="text-xl text-cool-gray-40 max-w-3xl">
+      Run any Minecraft server you can imagine. From vanilla survival to heavily modded adventures, QuackHost supports it all.
+    </p>
   </div>
+
+  <!-- Server Types -->
+  <div class="mb-24">
+    <h2 class="text-3xl font-semibold mb-12 text-center">
+      <span class="underline decoration-4 decoration-cyan-50">Choose your flavor</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Vanilla -->
+      <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6 hover:border-green-50 transition-colors">
+        <div class="flex items-center mb-4">
+          <img src="/index/doodles/tree.svg" alt="" width="48" height="48" class="mr-3" />
+          <h3 class="text-2xl font-bold">Vanilla</h3>
+        </div>
+        <p class="text-cool-gray-40 mb-4">
+          Pure Minecraft experience. No mods, no plugins - just you, your friends, and the blocky world.
+        </p>
+        <ul class="space-y-2 text-sm mb-6">
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>Latest Minecraft versions</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>Snapshot support</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>Perfect for beginners</span>
+          </li>
+        </ul>
+        <div class="text-sm">
+          <span class="font-semibold">Recommended:</span> Duck or Goose plan
+        </div>
+      </div>
+
+      <!-- Paper/Spigot -->
+      <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6 hover:border-blue-50 transition-colors">
+        <div class="flex items-center mb-4">
+          <img src="/index/doodles/upload.svg" alt="" width="48" height="48" class="mr-3" />
+          <h3 class="text-2xl font-bold">Paper/Spigot</h3>
+        </div>
+        <p class="text-cool-gray-40 mb-4">
+          Optimized server with plugin support. Add features like economy, grief protection, and mini-games.
+        </p>
+        <ul class="space-y-2 text-sm mb-6">
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>Better performance than vanilla</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>Thousands of plugins</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>Active community support</span>
+          </li>
+        </ul>
+        <div class="text-sm">
+          <span class="font-semibold">Recommended:</span> Goose or Swan plan
+        </div>
+      </div>
+
+      <!-- Forge -->
+      <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6 hover:border-purple-50 transition-colors">
+        <div class="flex items-center mb-4">
+          <img src="/index/doodles/magic wand.svg" alt="" width="48" height="48" class="mr-3" />
+          <h3 class="text-2xl font-bold">Forge</h3>
+        </div>
+        <p class="text-cool-gray-40 mb-4">
+          The classic modding platform. Tech mods, magic mods, exploration mods - build your dream modpack.
+        </p>
+        <ul class="space-y-2 text-sm mb-6">
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>Massive mod ecosystem</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>Works with popular modpacks</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>CurseForge integration</span>
+          </li>
+        </ul>
+        <div class="text-sm">
+          <span class="font-semibold">Recommended:</span> Swan or Flock plan
+        </div>
+      </div>
+
+      <!-- Fabric -->
+      <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6 hover:border-cyan-50 transition-colors">
+        <div class="flex items-center mb-4">
+          <img src="/index/doodles/cycle.svg" alt="" width="48" height="48" class="mr-3" />
+          <h3 class="text-2xl font-bold">Fabric</h3>
+        </div>
+        <p class="text-cool-gray-40 mb-4">
+          Lightweight and modern modding. Quick updates for the latest Minecraft versions.
+        </p>
+        <ul class="space-y-2 text-sm mb-6">
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>Faster than Forge</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>Early snapshot support</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>Modern mod development</span>
+          </li>
+        </ul>
+        <div class="text-sm">
+          <span class="font-semibold">Recommended:</span> Goose or Swan plan
+        </div>
+      </div>
+
+      <!-- Modpacks -->
+      <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6 hover:border-orange-50 transition-colors">
+        <div class="flex items-center mb-4">
+          <img src="/index/doodles/joy leap 2.svg" alt="" width="48" height="48" class="mr-3" />
+          <h3 class="text-2xl font-bold">Modpacks</h3>
+        </div>
+        <p class="text-cool-gray-40 mb-4">
+          Pre-configured mod collections. One-click install for popular packs like All the Mods, SkyFactory, and more.
+        </p>
+        <ul class="space-y-2 text-sm mb-6">
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>FTB, CurseForge, Technic</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>Easy installation</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>Automatic updates</span>
+          </li>
+        </ul>
+        <div class="text-sm">
+          <span class="font-semibold">Recommended:</span> Swan or Flock plan
+        </div>
+      </div>
+
+      <!-- Bedrock -->
+      <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6 hover:border-teal-50 transition-colors">
+        <div class="flex items-center mb-4">
+          <img src="/index/doodles/hand holding.svg" alt="" width="48" height="48" class="mr-3" />
+          <h3 class="text-2xl font-bold">Bedrock</h3>
+        </div>
+        <p class="text-cool-gray-40 mb-4">
+          Cross-play with console and mobile. Let your friends join from any device.
+        </p>
+        <ul class="space-y-2 text-sm mb-6">
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>Xbox, PlayStation, Switch</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>Mobile support (iOS/Android)</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>Behavior packs & add-ons</span>
+          </li>
+        </ul>
+        <div class="text-sm">
+          <span class="font-semibold">Recommended:</span> Duck or Goose plan
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popular Plugins Section -->
+  <div class="mb-24" x-data="{ category: 'essential' }">
+    <h2 class="text-3xl font-semibold mb-8 text-center">
+      <span class="underline decoration-4 decoration-purple-50">Popular plugins & mods</span>
+    </h2>
+
+    <p class="text-center text-cool-gray-40 mb-8 max-w-2xl mx-auto">
+      Not sure where to start? Here are some community favorites we recommend for your server.
+    </p>
+
+    <!-- Category Tabs -->
+    <div class="flex flex-wrap justify-center gap-2 mb-8">
+      <button
+        @click="category = 'essential'"
+        class="px-6 py-3 rounded transition-colors font-semibold"
+        :class="category === 'essential' ? 'bg-[#FF9C20] text-black' : 'bg-cool-gray-80 text-white hover:bg-cool-gray-70'"
+      >
+        Essential
+      </button>
+      <button
+        @click="category = 'gameplay'"
+        class="px-6 py-3 rounded transition-colors font-semibold"
+        :class="category === 'gameplay' ? 'bg-[#FF9C20] text-black' : 'bg-cool-gray-80 text-white hover:bg-cool-gray-70'"
+      >
+        Gameplay
+      </button>
+      <button
+        @click="category = 'admin'"
+        class="px-6 py-3 rounded transition-colors font-semibold"
+        :class="category === 'admin' ? 'bg-[#FF9C20] text-black' : 'bg-cool-gray-80 text-white hover:bg-cool-gray-70'"
+      >
+        Admin Tools
+      </button>
+      <button
+        @click="category = 'mods'"
+        class="px-6 py-3 rounded transition-colors font-semibold"
+        :class="category === 'mods' ? 'bg-[#FF9C20] text-black' : 'bg-cool-gray-80 text-white hover:bg-cool-gray-70'"
+      >
+        Forge/Fabric Mods
+      </button>
+    </div>
+
+    <!-- Essential Plugins -->
+    <div x-show="category === 'essential'" x-cloak>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6">
+          <h3 class="text-xl font-bold mb-2">EssentialsX</h3>
+          <p class="text-sm text-cool-gray-40 mb-3">
+            The Swiss Army knife of Minecraft plugins. Essential commands, economy, teleportation, and more.
+          </p>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-green-50">Free</span>
+            <span class="text-cool-gray-40">100M+ downloads</span>
+          </div>
+        </div>
+
+        <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6">
+          <h3 class="text-xl font-bold mb-2">LuckPerms</h3>
+          <p class="text-sm text-cool-gray-40 mb-3">
+            Powerful permissions manager. Control who can do what on your server with ease.
+          </p>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-green-50">Free</span>
+            <span class="text-cool-gray-40">50M+ downloads</span>
+          </div>
+        </div>
+
+        <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6">
+          <h3 class="text-xl font-bold mb-2">WorldEdit</h3>
+          <p class="text-sm text-cool-gray-40 mb-3">
+            In-game world editor. Build massive structures in seconds with powerful editing commands.
+          </p>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-green-50">Free</span>
+            <span class="text-cool-gray-40">80M+ downloads</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gameplay Plugins -->
+    <div x-show="category === 'gameplay'" x-cloak>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6">
+          <h3 class="text-xl font-bold mb-2">mcMMO</h3>
+          <p class="text-sm text-cool-gray-40 mb-3">
+            RPG skills system. Level up your mining, combat, and other skills for special abilities.
+          </p>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-green-50">Free</span>
+            <span class="text-cool-gray-40">30M+ downloads</span>
+          </div>
+        </div>
+
+        <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6">
+          <h3 class="text-xl font-bold mb-2">Lands</h3>
+          <p class="text-sm text-cool-gray-40 mb-3">
+            Land claiming and protection. Players can claim territory and manage their own nations.
+          </p>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-green-50">Free</span>
+            <span class="text-cool-gray-40">5M+ downloads</span>
+          </div>
+        </div>
+
+        <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6">
+          <h3 class="text-xl font-bold mb-2">Jobs Reborn</h3>
+          <p class="text-sm text-cool-gray-40 mb-3">
+            Job system with economy. Players earn money by doing tasks like mining, building, and farming.
+          </p>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-green-50">Free</span>
+            <span class="text-cool-gray-40">15M+ downloads</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Admin Tools -->
+    <div x-show="category === 'admin'" x-cloak>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6">
+          <h3 class="text-xl font-bold mb-2">CoreProtect</h3>
+          <p class="text-sm text-cool-gray-40 mb-3">
+            Block logging and rollback. See who broke what and roll back grief with a single command.
+          </p>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-green-50">Free</span>
+            <span class="text-cool-gray-40">25M+ downloads</span>
+          </div>
+        </div>
+
+        <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6">
+          <h3 class="text-xl font-bold mb-2">DiscordSRV</h3>
+          <p class="text-sm text-cool-gray-40 mb-3">
+            Discord integration. Connect your Minecraft chat with Discord for seamless communication.
+          </p>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-green-50">Free</span>
+            <span class="text-cool-gray-40">10M+ downloads</span>
+          </div>
+        </div>
+
+        <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6">
+          <h3 class="text-xl font-bold mb-2">Multiverse-Core</h3>
+          <p class="text-sm text-cool-gray-40 mb-3">
+            Multiple worlds manager. Run different worlds with different settings on one server.
+          </p>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-green-50">Free</span>
+            <span class="text-cool-gray-40">20M+ downloads</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mods -->
+    <div x-show="category === 'mods'" x-cloak>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6">
+          <h3 class="text-xl font-bold mb-2">Create</h3>
+          <p class="text-sm text-cool-gray-40 mb-3">
+            Industrial automation with style. Build complex contraptions with gears, belts, and more.
+          </p>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-cyan-50">Forge</span>
+            <span class="text-cool-gray-40">100M+ downloads</span>
+          </div>
+        </div>
+
+        <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6">
+          <h3 class="text-xl font-bold mb-2">Twilight Forest</h3>
+          <p class="text-sm text-cool-gray-40 mb-3">
+            Adventure dimension mod. Explore a magical forest filled with dungeons and bosses.
+          </p>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-cyan-50">Forge</span>
+            <span class="text-cool-gray-40">80M+ downloads</span>
+          </div>
+        </div>
+
+        <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6">
+          <h3 class="text-xl font-bold mb-2">Sodium</h3>
+          <p class="text-sm text-cool-gray-40 mb-3">
+            Performance optimization. Massively boost FPS for you and your players.
+          </p>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-purple-50">Fabric</span>
+            <span class="text-cool-gray-40">70M+ downloads</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Server Guides CTA -->
+  <div class="mb-24 bg-gradient-to-br from-cool-gray-90 to-cool-gray-100 border border-cool-gray-70 rounded-lg p-12">
+    <div class="text-center max-w-3xl mx-auto">
+      <img src="/index/doodles/owl.svg" alt="" width="64" height="64" class="mx-auto mb-6" />
+      <h2 class="text-3xl font-bold mb-4">
+        Need help getting started?
+      </h2>
+      <p class="text-lg text-cool-gray-40 mb-8">
+        Check out our comprehensive guides for setting up different server types, installing plugins, and optimizing performance.
+      </p>
+      <a
+        href="/guides-&-tutorials"
+        class="inline-flex items-center px-8 py-4 bg-[#FF9C20] hover:bg-[#CC6600] text-black rounded font-semibold transition-colors"
+      >
+        Browse Guides
+      </a>
+    </div>
+  </div>
+
+  <!-- Modpack Recommendations -->
+  <div class="mb-24">
+    <h2 class="text-3xl font-semibold mb-8 text-center">
+      <span class="underline decoration-4 decoration-teal-50">Popular modpacks</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-8">
+        <div class="flex items-start justify-between mb-4">
+          <div>
+            <h3 class="text-2xl font-bold mb-2">All the Mods 9</h3>
+            <p class="text-sm text-cool-gray-40">Kitchen sink modpack • Forge</p>
+          </div>
+          <span class="px-3 py-1 bg-purple-50 text-black rounded-full text-sm font-semibold">Expert</span>
+        </div>
+        <p class="text-cool-gray-40 mb-4">
+          Massive modpack with 300+ mods. Tech, magic, adventure - it has everything. Perfect for experienced players.
+        </p>
+        <div class="text-sm">
+          <span class="font-semibold">Recommended RAM:</span> 10-12 GB
+        </div>
+      </div>
+
+      <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-8">
+        <div class="flex items-start justify-between mb-4">
+          <div>
+            <h3 class="text-2xl font-bold mb-2">Create: Above and Beyond</h3>
+            <p class="text-sm text-cool-gray-40">Quest-based • Forge</p>
+          </div>
+          <span class="px-3 py-1 bg-blue-50 text-black rounded-full text-sm font-semibold">Intermediate</span>
+        </div>
+        <p class="text-cool-gray-40 mb-4">
+          Automation-focused pack centered around the Create mod. Build factories and complete challenges.
+        </p>
+        <div class="text-sm">
+          <span class="font-semibold">Recommended RAM:</span> 6-8 GB
+        </div>
+      </div>
+
+      <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-8">
+        <div class="flex items-start justify-between mb-4">
+          <div>
+            <h3 class="text-2xl font-bold mb-2">SkyFactory 4</h3>
+            <p class="text-sm text-cool-gray-40">Skyblock • Forge</p>
+          </div>
+          <span class="px-3 py-1 bg-green-50 text-black rounded-full text-sm font-semibold">Beginner</span>
+        </div>
+        <p class="text-cool-gray-40 mb-4">
+          Start on a single tree and build an entire factory in the sky. Great intro to modded Minecraft.
+        </p>
+        <div class="text-sm">
+          <span class="font-semibold">Recommended RAM:</span> 4-6 GB
+        </div>
+      </div>
+
+      <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-8">
+        <div class="flex items-start justify-between mb-4">
+          <div>
+            <h3 class="text-2xl font-bold mb-2">Better Minecraft</h3>
+            <p class="text-sm text-cool-gray-40">Vanilla+ • Fabric/Forge</p>
+          </div>
+          <span class="px-3 py-1 bg-green-50 text-black rounded-full text-sm font-semibold">Beginner</span>
+        </div>
+        <p class="text-cool-gray-40 mb-4">
+          Enhanced vanilla experience with new biomes, structures, and quality-of-life improvements.
+        </p>
+        <div class="text-sm">
+          <span class="font-semibold">Recommended RAM:</span> 4-6 GB
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="mb-16 text-center bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] rounded-lg p-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-black mb-4">
+      Ready to start your adventure?
+    </h2>
+    <p class="text-lg text-black/80 mb-8 max-w-2xl mx-auto">
+      Launch any type of Minecraft server in under 2 minutes. All server types supported, all on the same great infrastructure.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="/pricing"
+        class="inline-flex justify-center items-center px-8 py-4 bg-black text-white hover:bg-cool-gray-90 transition-colors text-lg font-semibold rounded"
+      >
+        View Pricing
+      </a>
+      <a
+        href="/discord-flock"
+        class="inline-flex justify-center items-center px-8 py-4 bg-white text-black hover:bg-cool-gray-10 transition-colors text-lg font-semibold rounded"
+      >
+        Join Community
+      </a>
+    </div>
+  </div>
+
+  <style>
+    [x-cloak] {
+      display: none !important;
+    }
+  </style>
 </Layout>

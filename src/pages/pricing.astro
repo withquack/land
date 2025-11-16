@@ -3,9 +3,506 @@ import Layout from "../layouts/layout.astro";
 ---
 
 <Layout title="/ Pricing">
-  <div class="mb-32 mt-32">
-    <p class="text-2xl font-semibold xl:text-4xl">Pricing</p>
+  <!-- Hero Section -->
+  <div class="mb-16">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">
+      <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">
+        Transparent pricing.
+      </span>
+    </h1>
+    <p class="text-xl text-cool-gray-40 max-w-3xl">
+      No hidden fees. No surprise charges. Just honest, straightforward hosting with the resources you need.
+    </p>
   </div>
 
-  <div class="h-96 rounded-md bg-gray-200"></div>
+  <!-- Interactive Player Count Calculator -->
+  <div
+    class="mb-16 p-8 bg-gradient-to-br from-cool-gray-90 to-cool-gray-100 border border-cool-gray-70 rounded-lg"
+    x-data="{
+      playerCount: 10,
+      mods: false,
+      plugins: 'light',
+      get recommendedPlan() {
+        if (this.playerCount <= 10 && this.plugins === 'none') return 'Duck';
+        if (this.playerCount <= 20 && this.plugins !== 'heavy') return 'Goose';
+        if (this.playerCount <= 50) return 'Swan';
+        return 'Flock';
+      },
+      get recommendedRAM() {
+        let base = Math.ceil(this.playerCount / 5) * 2;
+        if (this.plugins === 'heavy' || this.mods) base += 4;
+        else if (this.plugins === 'moderate') base += 2;
+        return Math.max(2, Math.min(32, base));
+      },
+      get recommendedPrice() {
+        const ramCost = this.recommendedRAM * 1.5;
+        return ramCost.toFixed(2);
+      }
+    }"
+  >
+    <h2 class="text-2xl font-semibold mb-6 flex items-center">
+      <img
+        src="/index/doodles/wizard.svg"
+        alt=""
+        width="34"
+        height="34"
+        class="mr-2"
+      />
+      <span class="underline decoration-4 decoration-cyan-50">Find your perfect plan</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+      <div>
+        <label class="block text-sm font-medium mb-2">Expected Players</label>
+        <input
+          type="range"
+          x-model.number="playerCount"
+          min="1"
+          max="100"
+          class="w-full h-2 bg-cool-gray-70 rounded-lg appearance-none cursor-pointer accent-[#FF9C20]"
+        />
+        <div class="flex justify-between text-sm text-cool-gray-40 mt-1">
+          <span>1</span>
+          <span x-text="playerCount" class="text-white font-semibold text-lg"></span>
+          <span>100+</span>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-2">Plugin/Mod Load</label>
+        <div class="grid grid-cols-3 gap-2">
+          <button
+            @click="plugins = 'none'"
+            class="px-4 py-2 rounded transition-colors"
+            :class="plugins === 'none' ? 'bg-[#FF9C20] text-black' : 'bg-cool-gray-80 text-white hover:bg-cool-gray-70'"
+          >
+            Vanilla
+          </button>
+          <button
+            @click="plugins = 'light'"
+            class="px-4 py-2 rounded transition-colors"
+            :class="plugins === 'light' ? 'bg-[#FF9C20] text-black' : 'bg-cool-gray-80 text-white hover:bg-cool-gray-70'"
+          >
+            Light
+          </button>
+          <button
+            @click="plugins = 'heavy'"
+            class="px-4 py-2 rounded transition-colors"
+            :class="plugins === 'heavy' ? 'bg-[#FF9C20] text-black' : 'bg-cool-gray-80 text-white hover:bg-cool-gray-70'"
+          >
+            Heavy
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-cool-gray-80 p-6 rounded-lg border border-[#FF9C20]">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+        <div>
+          <p class="text-sm text-cool-gray-40 mb-1">Recommended Plan</p>
+          <p class="text-2xl font-bold text-[#FF9C20]" x-text="recommendedPlan"></p>
+        </div>
+        <div>
+          <p class="text-sm text-cool-gray-40 mb-1">Recommended RAM</p>
+          <p class="text-2xl font-bold" x-text="recommendedRAM + ' GB'"></p>
+        </div>
+        <div>
+          <p class="text-sm text-cool-gray-40 mb-1">Estimated Cost</p>
+          <p class="text-2xl font-bold text-green-50">
+            $<span x-text="recommendedPrice"></span><span class="text-base text-cool-gray-40">/month</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing Tiers -->
+  <div class="mb-16">
+    <h2 class="text-3xl font-semibold mb-8 text-center">Choose your tier</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Duck Plan -->
+      <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6 hover:border-cyan-50 transition-colors">
+        <div class="flex items-center mb-4">
+          <img src="/index/doodles/joy leap 2.svg" alt="" width="40" height="40" class="mr-2" />
+          <h3 class="text-2xl font-bold">Duck</h3>
+        </div>
+        <p class="text-cool-gray-40 mb-4">Perfect for small friend groups</p>
+        <div class="mb-6">
+          <p class="text-3xl font-bold">$3<span class="text-base text-cool-gray-40">/month</span></p>
+          <p class="text-sm text-cool-gray-40">Starting at</p>
+        </div>
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">2-4 GB RAM</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">Up to 10 players</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">Vanilla or light plugins</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">Daily backups</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">DDoS protection</span>
+          </li>
+        </ul>
+        <a
+          href="#"
+          class="block w-full text-center px-4 py-3 bg-cool-gray-80 hover:bg-[#FF9C20] hover:text-black border border-cool-gray-70 rounded transition-colors"
+        >
+          Get Started
+        </a>
+      </div>
+
+      <!-- Goose Plan -->
+      <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6 hover:border-blue-50 transition-colors">
+        <div class="flex items-center mb-4">
+          <img src="/index/doodles/rocking chair.svg" alt="" width="40" height="40" class="mr-2" />
+          <h3 class="text-2xl font-bold">Goose</h3>
+        </div>
+        <p class="text-cool-gray-40 mb-4">Great for growing communities</p>
+        <div class="mb-6">
+          <p class="text-3xl font-bold">$6<span class="text-base text-cool-gray-40">/month</span></p>
+          <p class="text-sm text-cool-gray-40">Starting at</p>
+        </div>
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">4-8 GB RAM</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">Up to 25 players</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">Moderate plugins/mods</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">Hourly backups</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">Priority support</span>
+          </li>
+        </ul>
+        <a
+          href="#"
+          class="block w-full text-center px-4 py-3 bg-cool-gray-80 hover:bg-[#FF9C20] hover:text-black border border-cool-gray-70 rounded transition-colors"
+        >
+          Get Started
+        </a>
+      </div>
+
+      <!-- Swan Plan - Most Popular -->
+      <div class="bg-gradient-to-br from-cool-gray-90 to-cool-gray-80 border-2 border-[#FF9C20] rounded-lg p-6 relative transform scale-105">
+        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#FF9C20] text-black px-4 py-1 rounded-full text-sm font-semibold">
+          Most Popular
+        </div>
+        <div class="flex items-center mb-4">
+          <img src="/index/doodles/cycle.svg" alt="" width="40" height="40" class="mr-2" />
+          <h3 class="text-2xl font-bold">Swan</h3>
+        </div>
+        <p class="text-cool-gray-40 mb-4">For serious server owners</p>
+        <div class="mb-6">
+          <p class="text-3xl font-bold">$12<span class="text-base text-cool-gray-40">/month</span></p>
+          <p class="text-sm text-cool-gray-40">Starting at</p>
+        </div>
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">8-16 GB RAM</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">Up to 50 players</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">Heavy mods/plugins</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">Real-time backups</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">Dedicated support</span>
+          </li>
+        </ul>
+        <a
+          href="#"
+          class="block w-full text-center px-4 py-3 bg-[#FF9C20] hover:bg-[#CC6600] text-black border border-[#FF9C20] rounded transition-colors font-semibold"
+        >
+          Get Started
+        </a>
+      </div>
+
+      <!-- Flock Plan -->
+      <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6 hover:border-purple-50 transition-colors">
+        <div class="flex items-center mb-4">
+          <img src="/index/doodles/tree.svg" alt="" width="40" height="40" class="mr-2" />
+          <h3 class="text-2xl font-bold">Flock</h3>
+        </div>
+        <p class="text-cool-gray-40 mb-4">Network-scale hosting</p>
+        <div class="mb-6">
+          <p class="text-3xl font-bold">Custom</p>
+          <p class="text-sm text-cool-gray-40">Contact us</p>
+        </div>
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">16+ GB RAM</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">100+ players</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">Multi-server networks</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">Custom configurations</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span class="text-sm">White-glove support</span>
+          </li>
+        </ul>
+        <a
+          href="#"
+          class="block w-full text-center px-4 py-3 bg-cool-gray-80 hover:bg-[#FF9C20] hover:text-black border border-cool-gray-70 rounded transition-colors"
+        >
+          Contact Sales
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Resource-based Pricing Breakdown -->
+  <div class="mb-16 bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-8">
+    <h2 class="text-2xl font-semibold mb-6 flex items-center">
+      <img src="/index/doodles/hand holding.svg" alt="" width="34" height="34" class="mr-2" />
+      <span class="underline decoration-4 decoration-teal-50">Pay only for what you use</span>
+    </h2>
+
+    <p class="text-cool-gray-40 mb-6">
+      Our transparent pricing model means you know exactly what you're paying for. Scale up or down anytime - billing adjusts automatically.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-cool-gray-80 p-6 rounded-lg">
+        <h3 class="text-lg font-semibold mb-2">RAM</h3>
+        <p class="text-3xl font-bold text-[#FF9C20] mb-2">$1.50<span class="text-base text-cool-gray-40">/GB</span></p>
+        <p class="text-sm text-cool-gray-40">Per month, billed hourly</p>
+      </div>
+
+      <div class="bg-cool-gray-80 p-6 rounded-lg">
+        <h3 class="text-lg font-semibold mb-2">Storage</h3>
+        <p class="text-3xl font-bold text-[#FF9C20] mb-2">$0.10<span class="text-base text-cool-gray-40">/GB</span></p>
+        <p class="text-sm text-cool-gray-40">First 10GB included free</p>
+      </div>
+
+      <div class="bg-cool-gray-80 p-6 rounded-lg">
+        <h3 class="text-lg font-semibold mb-2">Backups</h3>
+        <p class="text-3xl font-bold text-green-50 mb-2">Free</p>
+        <p class="text-sm text-cool-gray-40">Unlimited off-site backups</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- What's Included -->
+  <div class="mb-16">
+    <h2 class="text-3xl font-semibold mb-8 text-center">
+      <span class="underline decoration-4 decoration-purple-50">Every plan includes</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="flex items-start">
+        <img src="/index/doodles/magic wand.svg" alt="" width="32" height="32" class="mr-3 mt-1" />
+        <div>
+          <h3 class="font-semibold mb-1">Instant Setup</h3>
+          <p class="text-sm text-cool-gray-40">Server ready in under 2 minutes</p>
+        </div>
+      </div>
+
+      <div class="flex items-start">
+        <img src="/index/doodles/rain.svg" alt="" width="32" height="32" class="mr-3 mt-1" />
+        <div>
+          <h3 class="font-semibold mb-1">DDoS Protection</h3>
+          <p class="text-sm text-cool-gray-40">Terrabit-scale included free</p>
+        </div>
+      </div>
+
+      <div class="flex items-start">
+        <img src="/index/doodles/upload.svg" alt="" width="32" height="32" class="mr-3 mt-1" />
+        <div>
+          <h3 class="font-semibold mb-1">QuackPlane Access</h3>
+          <p class="text-sm text-cool-gray-40">Full control panel included</p>
+        </div>
+      </div>
+
+      <div class="flex items-start">
+        <img src="/index/doodles/wizard.svg" alt="" width="32" height="32" class="mr-3 mt-1" />
+        <div>
+          <h3 class="font-semibold mb-1">Free Migration</h3>
+          <p class="text-sm text-cool-gray-40">We'll help you transfer your server</p>
+        </div>
+      </div>
+
+      <div class="flex items-start">
+        <img src="/index/doodles/owl.svg" alt="" width="32" height="32" class="mr-3 mt-1" />
+        <div>
+          <h3 class="font-semibold mb-1">24/7 Support</h3>
+          <p class="text-sm text-cool-gray-40">Real humans, real help</p>
+        </div>
+      </div>
+
+      <div class="flex items-start">
+        <img src="/index/doodles/hand holding.svg" alt="" width="32" height="32" class="mr-3 mt-1" />
+        <div>
+          <h3 class="font-semibold mb-1">No Contracts</h3>
+          <p class="text-sm text-cool-gray-40">Cancel anytime, no penalties</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="mb-16" x-data="{ open: [false, false, false, false] }">
+    <h2 class="text-3xl font-semibold mb-8 text-center">
+      <span class="underline decoration-4 decoration-cyan-50">Pricing questions</span>
+    </h2>
+
+    <div class="max-w-3xl mx-auto">
+      <div class="border-b border-cool-gray-70">
+        <button
+          @click="open[0] = !open[0]"
+          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 transition-colors"
+        >
+          <span class="text-lg font-semibold">How does hourly billing work?</span>
+          <img
+            src="/index/chevron-down.svg"
+            alt=""
+            width="24"
+            height="24"
+            class="transform transition-transform"
+            :class="{ 'rotate-180': open[0] }"
+          />
+        </button>
+        <div x-show="open[0]" x-cloak class="pb-5">
+          <p class="text-cool-gray-40 leading-relaxed">
+            We bill hourly for the resources you use, with a monthly cap at the advertised price. If you upgrade mid-month, you only pay the hourly rate for the upgraded resources. If you downgrade, you get a prorated credit. This means you always pay exactly for what you use.
+          </p>
+        </div>
+      </div>
+
+      <div class="border-b border-cool-gray-70">
+        <button
+          @click="open[1] = !open[1]"
+          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 transition-colors"
+        >
+          <span class="text-lg font-semibold">Are there any hidden fees?</span>
+          <img
+            src="/index/chevron-down.svg"
+            alt=""
+            width="24"
+            height="24"
+            class="transform transition-transform"
+            :class="{ 'rotate-180': open[1] }"
+          />
+        </button>
+        <div x-show="open[1]" x-cloak class="pb-5">
+          <p class="text-cool-gray-40 leading-relaxed">
+            Absolutely not. The price you see is the price you pay. DDoS protection, backups, and QuackPlane access are all included. The only additional cost might be extra storage beyond your plan's included amount, which is clearly listed at $0.10/GB.
+          </p>
+        </div>
+      </div>
+
+      <div class="border-b border-cool-gray-70">
+        <button
+          @click="open[2] = !open[2]"
+          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 transition-colors"
+        >
+          <span class="text-lg font-semibold">Can I pause my server to save money?</span>
+          <img
+            src="/index/chevron-down.svg"
+            alt=""
+            width="24"
+            height="24"
+            class="transform transition-transform"
+            :class="{ 'rotate-180': open[2] }"
+          />
+        </button>
+        <div x-show="open[2]" x-cloak class="pb-5">
+          <p class="text-cool-gray-40 leading-relaxed">
+            Yes! You can pause your server anytime through QuackPlane. When paused, you only pay for storage ($0.10/GB) - no compute charges. Your world stays safe and ready to resume whenever you want. Perfect for seasonal servers or taking breaks.
+          </p>
+        </div>
+      </div>
+
+      <div class="border-b border-cool-gray-70">
+        <button
+          @click="open[3] = !open[3]"
+          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 transition-colors"
+        >
+          <span class="text-lg font-semibold">Do you offer refunds?</span>
+          <img
+            src="/index/chevron-down.svg"
+            alt=""
+            width="24"
+            height="24"
+            class="transform transition-transform"
+            :class="{ 'rotate-180': open[3] }"
+          />
+        </button>
+        <div x-show="open[3]" x-cloak class="pb-5">
+          <p class="text-cool-gray-40 leading-relaxed">
+            We offer a 7-day money-back guarantee, no questions asked. If you're not satisfied within the first week, contact support and we'll issue a full refund. After that, our hourly billing means you can cancel anytime and only pay for the hours you've used.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="mb-16 text-center bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] rounded-lg p-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-black mb-4">
+      Ready to launch your server?
+    </h2>
+    <p class="text-lg text-black/80 mb-8 max-w-2xl mx-auto">
+      Join thousands of server owners who trust QuackHost for their Minecraft hosting. Get started in under 2 minutes.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="#"
+        class="inline-flex justify-center items-center px-8 py-4 bg-black text-white hover:bg-cool-gray-90 transition-colors text-lg font-semibold rounded"
+      >
+        Start Free Trial
+      </a>
+      <a
+        href="/discord-flock"
+        class="inline-flex justify-center items-center px-8 py-4 bg-white text-black hover:bg-cool-gray-10 transition-colors text-lg font-semibold rounded"
+      >
+        Join Discord
+      </a>
+    </div>
+  </div>
+
+  <style>
+    [x-cloak] {
+      display: none !important;
+    }
+  </style>
 </Layout>
