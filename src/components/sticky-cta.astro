@@ -1,0 +1,35 @@
+---
+
+---
+
+<div
+  x-data="{ stickyVisible: false }"
+  @scroll.window="stickyVisible = (window.pageYOffset > 800)"
+  x-show="stickyVisible"
+  x-transition:enter="transition ease-out duration-300"
+  x-transition:enter-start="opacity-0 transform translate-y-full"
+  x-transition:enter-end="opacity-100 transform translate-y-0"
+  x-transition:leave="transition ease-in duration-200"
+  x-transition:leave-start="opacity-100 transform translate-y-0"
+  x-transition:leave-end="opacity-0 transform translate-y-full"
+  class="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-gradient-to-r from-gray-90 to-gray-100 border-t-2 border-[#FF9C20] shadow-2xl"
+  style="display: none;"
+  x-cloak
+>
+  <div class="px-4 py-3 flex items-center gap-3">
+    <div class="flex-1">
+      <p class="text-white font-semibold text-sm">Ready to launch?</p>
+      <p class="text-cool-gray-40 text-xs">Server ready in &lt;2 minutes</p>
+    </div>
+    <a
+      href="/pricing"
+      class="px-6 py-3 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-white font-bold rounded-lg shadow-lg hover:shadow-[#FF9C20]/50 transition-all duration-300 whitespace-nowrap text-sm"
+    >
+      Get Started
+    </a>
+  </div>
+</div>
+
+<style>
+  [x-cloak] { display: none !important; }
+</style>

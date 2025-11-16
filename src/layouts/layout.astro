@@ -3,6 +3,8 @@ import Navbar from "../components/navbar.astro";
 import Footer from "../components/footer.astro";
 import CookieBanner from "../components/cookie-banner.astro";
 import ChatWidget from "../components/chat-widget.astro";
+import AnnouncementBanner from "../components/announcement-banner.astro";
+import StickyCta from "../components/sticky-cta.astro";
 import "@fontsource/ibm-plex-sans/400.css";
 import "@fontsource/ibm-plex-sans/600.css";
 const { title } = Astro.props;
@@ -29,6 +31,7 @@ const { title } = Astro.props;
       data-website-id="fc5105a9-1cbe-4a51-81ab-38f5e10c3053"></script>
   </head>
   <body class="bg-gray-100 text-white">
+    <AnnouncementBanner />
     <div class="mx-auto max-w-[1536px]">
       <Navbar />
       <div class="mx-4 mt-2">
@@ -38,5 +41,6 @@ const { title } = Astro.props;
     </div>
     <CookieBanner />
     <ChatWidget />
+    <StickyCta />
   </body>
 </html>
