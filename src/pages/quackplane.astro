@@ -3,9 +3,512 @@ import Layout from "../layouts/layout.astro";
 ---
 
 <Layout title="/ QuackPlane">
-  <div class="mb-32 mt-32">
-    <p class="text-2xl font-semibold xl:text-4xl">QuackPlane</p>
+  <!-- Hero Section -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 mb-24 gap-12 items-center">
+    <div>
+      <h1 class="text-4xl md:text-6xl font-semibold mb-6">
+        <span
+          class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"
+        >
+          QuackPlane
+        </span>
+      </h1>
+      <p class="text-xl md:text-2xl text-cool-gray-30 mb-6">
+        The control plane that makes game server management simple.
+      </p>
+      <p class="text-cool-gray-40 text-lg mb-8 leading-relaxed">
+        Manage all your game servers from one powerful web interface. No
+        software to install, no command line required. Just powerful tools that
+        work.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a
+          href="https://client.quack.host/register"
+          class="inline-flex justify-center items-center px-8 py-3 bg-[#FF9C20] text-black hover:bg-[#FF8D00] transition-colors duration-200 font-semibold"
+        >
+          Get Started Free
+        </a>
+        <a
+          href="https://plane.quack.host"
+          class="inline-flex justify-center items-center px-8 py-3 border border-[#FF9C20] text-white hover:bg-[#FF8D00] hover:text-black transition-colors duration-200 font-semibold"
+        >
+          View Demo
+        </a>
+      </div>
+    </div>
+    <div>
+      <img
+        src="/index/quackplane.webp"
+        alt="QuackPlane Control Plane Interface"
+        class="w-full border border-cool-gray-70"
+        width="1253"
+        height="1016"
+      />
+    </div>
   </div>
 
-  <div class="h-96 rounded-md bg-gray-200"></div>
+  <!-- Core Features -->
+  <div class="mb-24">
+    <h2 class="text-3xl font-semibold mb-12 flex items-center gap-3">
+      <img src="/index/doodles/wizard.svg" alt="" width="48" height="48" />
+      <span class="underline decoration-4 decoration-cyan-50"
+        >Core features</span
+      >
+    </h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <!-- File Management -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img
+            src="/index/doodles/upload.svg"
+            alt=""
+            width="36"
+            height="36"
+          />
+          <h3 class="text-2xl font-semibold">File Management</h3>
+        </div>
+        <p class="text-cool-gray-40 mb-4 leading-relaxed">
+          Upload mods, plugins, and resource packs with drag & drop. Built-in
+          text editor lets you tweak configs without downloading files. Browse,
+          edit, delete, and organize your server files with ease.
+        </p>
+        <ul class="space-y-2 text-cool-gray-30">
+          <li class="flex items-start">
+            <span class="text-cyan-50 mr-2">•</span>
+            <span>Drag & drop file uploads</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cyan-50 mr-2">•</span>
+            <span>In-browser code editor with syntax highlighting</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cyan-50 mr-2">•</span>
+            <span>Bulk file operations</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cyan-50 mr-2">•</span>
+            <span>File permissions management</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Console Access -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img
+            src="/index/doodles/chat.svg"
+            alt=""
+            width="36"
+            height="36"
+          />
+          <h3 class="text-2xl font-semibold">Real-Time Console</h3>
+        </div>
+        <p class="text-cool-gray-40 mb-4 leading-relaxed">
+          Monitor your server with a live console feed. Execute commands,
+          watch player activity, and troubleshoot issues in real-time. Full
+          command history and search functionality included.
+        </p>
+        <ul class="space-y-2 text-cool-gray-30">
+          <li class="flex items-start">
+            <span class="text-teal-50 mr-2">•</span>
+            <span>Live server console with auto-scroll</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-teal-50 mr-2">•</span>
+            <span>Command history and autocomplete</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-teal-50 mr-2">•</span>
+            <span>Search and filter console output</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-teal-50 mr-2">•</span>
+            <span>Color-coded log levels</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Backup & Restore -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img
+            src="/index/doodles/rain.svg"
+            alt=""
+            width="36"
+            height="36"
+          />
+          <h3 class="text-2xl font-semibold">Backup & Restore</h3>
+        </div>
+        <p class="text-cool-gray-40 mb-4 leading-relaxed">
+          Schedule automatic backups or take manual snapshots anytime. All
+          backups are stored off-site for maximum protection. One-click
+          restoration gets you back online in seconds.
+        </p>
+        <ul class="space-y-2 text-cool-gray-30">
+          <li class="flex items-start">
+            <span class="text-purple-50 mr-2">•</span>
+            <span>Automated backup scheduling</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-50 mr-2">•</span>
+            <span>Off-site storage for disaster recovery</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-50 mr-2">•</span>
+            <span>One-click restore to any backup point</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-50 mr-2">•</span>
+            <span>Download backups to your computer</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Staff Management -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img
+            src="/index/doodles/hand holding.svg"
+            alt=""
+            width="36"
+            height="36"
+          />
+          <h3 class="text-2xl font-semibold">Team Management</h3>
+        </div>
+        <p class="text-cool-gray-40 mb-4 leading-relaxed">
+          Create your own staff team with granular permissions. Give moderators
+          access to restart the server, manage files, or monitor players - all
+          without sharing your main login credentials.
+        </p>
+        <ul class="space-y-2 text-cool-gray-30">
+          <li class="flex items-start">
+            <span class="text-blue-50 mr-2">•</span>
+            <span>Invite team members via email</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-50 mr-2">•</span>
+            <span>Granular permission controls</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-50 mr-2">•</span>
+            <span>Activity logs for accountability</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-50 mr-2">•</span>
+            <span>Role-based access control</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Server Control -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img
+            src="/index/doodles/rocking chair.svg"
+            alt=""
+            width="36"
+            height="36"
+          />
+          <h3 class="text-2xl font-semibold">Server Control</h3>
+        </div>
+        <p class="text-cool-gray-40 mb-4 leading-relaxed">
+          Start, stop, and restart your server with one click. Monitor
+          resource usage, player counts, and server health at a glance.
+          Configure startup parameters and environment variables easily.
+        </p>
+        <ul class="space-y-2 text-cool-gray-30">
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>One-click server controls</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>Real-time resource monitoring</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>Startup parameter configuration</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">•</span>
+            <span>Scheduled restarts</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Resource Monitoring -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img
+            src="/index/doodles/cycle.svg"
+            alt=""
+            width="36"
+            height="36"
+            class="transition duration-300 ease-out hover:animate-spin"
+          />
+          <h3 class="text-2xl font-semibold">Analytics & Monitoring</h3>
+        </div>
+        <p class="text-cool-gray-40 mb-4 leading-relaxed">
+          Track CPU, RAM, disk usage, and network activity in real-time.
+          Historical graphs help you understand usage patterns and optimize
+          performance. Get alerts when resources run low.
+        </p>
+        <ul class="space-y-2 text-cool-gray-30">
+          <li class="flex items-start">
+            <span class="text-yellow-50 mr-2">•</span>
+            <span>Real-time resource graphs</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-yellow-50 mr-2">•</span>
+            <span>30-day historical data</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-yellow-50 mr-2">•</span>
+            <span>Player activity tracking</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-yellow-50 mr-2">•</span>
+            <span>Custom alerts and notifications</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Advanced Features -->
+  <div class="mb-24">
+    <h2 class="text-3xl font-semibold mb-12 flex items-center gap-3">
+      <img src="/index/doodles/magic wand.svg" alt="" width="48" height="48" />
+      <span class="underline decoration-4 decoration-purple-50"
+        >Advanced capabilities</span
+      >
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="border border-cool-gray-70 p-6">
+        <h3 class="text-xl font-semibold mb-3">Database Management</h3>
+        <p class="text-cool-gray-40 text-sm">
+          Create and manage MySQL/PostgreSQL databases for your server plugins
+          directly from QuackPlane.
+        </p>
+      </div>
+
+      <div class="border border-cool-gray-70 p-6">
+        <h3 class="text-xl font-semibold mb-3">Subdomain Management</h3>
+        <p class="text-cool-gray-40 text-sm">
+          Get a free subdomain (yourserver.quack.host) or connect your own
+          custom domain.
+        </p>
+      </div>
+
+      <div class="border border-cool-gray-70 p-6">
+        <h3 class="text-xl font-semibold mb-3">SFTP Access</h3>
+        <p class="text-cool-gray-40 text-sm">
+          Advanced users can connect via SFTP using FileZilla or other FTP
+          clients for bulk file operations.
+        </p>
+      </div>
+
+      <div class="border border-cool-gray-70 p-6">
+        <h3 class="text-xl font-semibold mb-3">Startup Variables</h3>
+        <p class="text-cool-gray-40 text-sm">
+          Configure Java arguments, environment variables, and game-specific
+          settings through an easy interface.
+        </p>
+      </div>
+
+      <div class="border border-cool-gray-70 p-6">
+        <h3 class="text-xl font-semibold mb-3">Port Allocation</h3>
+        <p class="text-cool-gray-40 text-sm">
+          Automatically get additional ports for plugins like Dynmap, or
+          request custom port allocations.
+        </p>
+      </div>
+
+      <div class="border border-cool-gray-70 p-6">
+        <h3 class="text-xl font-semibold mb-3">Two-Factor Auth</h3>
+        <p class="text-cool-gray-40 text-sm">
+          Secure your account with 2FA via authenticator apps for enhanced
+          security.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coming Soon Features -->
+  <div class="mb-24">
+    <h2 class="text-3xl font-semibold mb-8 flex items-center gap-3">
+      <img src="/index/doodles/owl.svg" alt="" width="48" height="48" />
+      <span class="underline decoration-4 decoration-yellow-50"
+        >Coming soon to QuackPlane</span
+      >
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="border border-cool-gray-70 p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span
+            class="inline-block px-3 py-1 text-xs font-semibold bg-cyan-50 text-black"
+            >Q1 2025</span
+          >
+          <h3 class="text-xl font-semibold">API Access</h3>
+        </div>
+        <p class="text-cool-gray-40">
+          Full REST API for automation, custom integrations, and third-party
+          tools. Webhooks for server events.
+        </p>
+      </div>
+
+      <div class="border border-cool-gray-70 p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span
+            class="inline-block px-3 py-1 text-xs font-semibold bg-teal-50 text-black"
+            >Q1 2025</span
+          >
+          <h3 class="text-xl font-semibold">Mobile App</h3>
+        </div>
+        <p class="text-cool-gray-40">
+          Manage your servers from iOS and Android. Get push notifications for
+          server events and player activity.
+        </p>
+      </div>
+
+      <div class="border border-cool-gray-70 p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span
+            class="inline-block px-3 py-1 text-xs font-semibold bg-purple-50 text-black"
+            >Q2 2025</span
+          >
+          <h3 class="text-xl font-semibold">Plugin Marketplace</h3>
+        </div>
+        <p class="text-cool-gray-40">
+          One-click installation of plugins and mods from a curated
+          marketplace. Auto-updates and dependency management.
+        </p>
+      </div>
+
+      <div class="border border-cool-gray-70 p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span
+            class="inline-block px-3 py-1 text-xs font-semibold bg-blue-50 text-black"
+            >Q2 2025</span
+          >
+          <h3 class="text-xl font-semibold">Advanced Analytics</h3>
+        </div>
+        <p class="text-cool-gray-40">
+          Player retention metrics, peak hour analysis, performance insights,
+          and custom reporting dashboards.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison with Competitors -->
+  <div class="mb-24">
+    <h2 class="text-3xl font-semibold mb-8 flex items-center gap-3">
+      <img src="/index/doodles/tree.svg" alt="" width="48" height="48" />
+      <span class="underline decoration-4 decoration-green-50"
+        >Why QuackPlane?</span
+      >
+    </h2>
+
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="border-b-2 border-cool-gray-70">
+            <th class="text-left py-4 px-4 font-semibold">Feature</th>
+            <th class="text-center py-4 px-4 font-semibold text-[#FF9C20]"
+              >QuackPlane</th
+            >
+            <th class="text-center py-4 px-4 font-semibold text-cool-gray-50"
+              >Pterodactyl</th
+            >
+            <th class="text-center py-4 px-4 font-semibold text-cool-gray-50"
+              >Multicraft</th
+            >
+          </tr>
+        </thead>
+        <tbody class="text-cool-gray-30">
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-3 px-4">Modern UI/UX</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+            <td class="text-center py-3 px-4 text-cool-gray-60">Partial</td>
+            <td class="text-center py-3 px-4 text-cool-gray-60">✗</td>
+          </tr>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-3 px-4">File Manager</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+          </tr>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-3 px-4">Built-in Code Editor</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+            <td class="text-center py-3 px-4 text-cool-gray-60">✗</td>
+          </tr>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-3 px-4">One-Click Backups</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+            <td class="text-center py-3 px-4 text-cool-gray-60">Manual</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+          </tr>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-3 px-4">Off-site Backup Storage</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+            <td class="text-center py-3 px-4 text-cool-gray-60">✗</td>
+            <td class="text-center py-3 px-4 text-cool-gray-60">✗</td>
+          </tr>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-3 px-4">Team Management</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+            <td class="text-center py-3 px-4 text-cool-gray-60">Limited</td>
+          </tr>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-3 px-4">Mobile Responsive</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+            <td class="text-center py-3 px-4 text-cool-gray-60">Partial</td>
+            <td class="text-center py-3 px-4 text-cool-gray-60">✗</td>
+          </tr>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-3 px-4">2FA Security</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+            <td class="text-center py-3 px-4 text-cool-gray-60">✗</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="mb-16 border-2 border-[#FF9C20] p-8 md:p-12 text-center">
+    <h2 class="text-3xl md:text-4xl font-semibold mb-4">
+      <span
+        class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"
+      >
+        Experience QuackPlane today
+      </span>
+    </h2>
+    <p class="text-cool-gray-40 text-lg mb-8 max-w-2xl mx-auto">
+      Start managing your game servers the modern way. No credit card required
+      to try.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="https://client.quack.host/register"
+        class="inline-flex justify-center items-center px-8 py-3 bg-[#FF9C20] text-black hover:bg-[#FF8D00] transition-colors duration-200 font-semibold"
+      >
+        Start Free Trial
+      </a>
+      <a
+        href="/pricing"
+        class="inline-flex justify-center items-center px-8 py-3 border border-[#FF9C20] text-white hover:bg-[#FF8D00] hover:text-black transition-colors duration-200 font-semibold"
+      >
+        View Pricing
+      </a>
+    </div>
+  </div>
 </Layout>

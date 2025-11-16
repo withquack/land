@@ -3,7 +3,399 @@ import Layout from "../layouts/layout.astro";
 ---
 
 <Layout title="/ Games">
-  <div class="mb-32 mt-32">
-    <p class="text-2xl font-semibold xl:text-4xl">Games</p>
+  <!-- Header Section -->
+  <div class="mb-16">
+    <h1 class="text-4xl md:text-6xl font-semibold mb-6">
+      <span
+        class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"
+      >
+        One platform. Every game.
+      </span>
+    </h1>
+    <p class="text-cool-gray-40 text-lg md:text-xl max-w-3xl">
+      Host servers for all your favorite multiplayer games with the same
+      powerful infrastructure, DDoS protection, and easy management. From
+      Minecraft to Rust, we've got you covered.
+    </p>
+  </div>
+
+  <!-- Featured Games -->
+  <div class="mb-24">
+    <h2 class="text-2xl md:text-3xl font-semibold mb-8 flex items-center gap-3">
+      <img src="/index/doodles/tree.svg" alt="" width="40" height="40" />
+      <span class="underline decoration-4 decoration-cyan-50"
+        >Currently supported</span
+      >
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Minecraft -->
+      <div
+        class="border border-cool-gray-70 bg-cool-gray-90 p-6 hover:border-green-50 transition-colors duration-200"
+      >
+        <div class="mb-4">
+          <h3 class="text-2xl font-semibold mb-2">Minecraft</h3>
+          <span
+            class="inline-block px-3 py-1 text-xs font-semibold bg-green-50 text-black"
+            >FULLY SUPPORTED</span
+          >
+        </div>
+        <p class="text-cool-gray-40 mb-4">
+          Host Java Edition and Bedrock servers with full mod and plugin
+          support. Supports Paper, Spigot, Fabric, Forge, and more.
+        </p>
+        <ul class="space-y-2 text-sm text-cool-gray-30">
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span>Vanilla, Paper, Spigot, Fabric, Forge</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span>One-click modpack installation</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span>Automatic version updates</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-50 mr-2">✓</span>
+            <span>Plugin manager built-in</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Rust -->
+      <div
+        class="border border-cool-gray-70 bg-cool-gray-90 p-6 hover:border-cyan-50 transition-colors duration-200"
+      >
+        <div class="mb-4">
+          <h3 class="text-2xl font-semibold mb-2">Rust</h3>
+          <span
+            class="inline-block px-3 py-1 text-xs font-semibold bg-cyan-50 text-black"
+            >BETA</span
+          >
+        </div>
+        <p class="text-cool-gray-40 mb-4">
+          High-performance Rust servers with Oxide/uMod support. Perfect for
+          survival communities and PvP servers.
+        </p>
+        <ul class="space-y-2 text-sm text-cool-gray-30">
+          <li class="flex items-start">
+            <span class="text-cyan-50 mr-2">✓</span>
+            <span>Oxide/uMod plugin support</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cyan-50 mr-2">✓</span>
+            <span>Custom map uploads</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cyan-50 mr-2">✓</span>
+            <span>Wipe scheduling automation</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cyan-50 mr-2">✓</span>
+            <span>RCON integration</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Valheim -->
+      <div
+        class="border border-cool-gray-70 bg-cool-gray-90 p-6 hover:border-teal-50 transition-colors duration-200"
+      >
+        <div class="mb-4">
+          <h3 class="text-2xl font-semibold mb-2">Valheim</h3>
+          <span
+            class="inline-block px-3 py-1 text-xs font-semibold bg-teal-50 text-black"
+            >BETA</span
+          >
+        </div>
+        <p class="text-cool-gray-40 mb-4">
+          Dedicated Valheim servers for your Viking adventures. Mod support
+          with BepInEx included.
+        </p>
+        <ul class="space-y-2 text-sm text-cool-gray-30">
+          <li class="flex items-start">
+            <span class="text-teal-50 mr-2">✓</span>
+            <span>BepInEx mod support</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-teal-50 mr-2">✓</span>
+            <span>World file management</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-teal-50 mr-2">✓</span>
+            <span>Password protection</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-teal-50 mr-2">✓</span>
+            <span>Crossplay support</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ARK: Survival Evolved -->
+      <div
+        class="border border-cool-gray-70 bg-cool-gray-90 p-6 hover:border-purple-50 transition-colors duration-200"
+      >
+        <div class="mb-4">
+          <h3 class="text-2xl font-semibold mb-2">ARK: Survival Evolved</h3>
+          <span
+            class="inline-block px-3 py-1 text-xs font-semibold bg-purple-50 text-black"
+            >BETA</span
+          >
+        </div>
+        <p class="text-cool-gray-40 mb-4">
+          Host ARK servers with all maps and mods. Cluster support for
+          multi-server setups.
+        </p>
+        <ul class="space-y-2 text-sm text-cool-gray-30">
+          <li class="flex items-start">
+            <span class="text-purple-50 mr-2">✓</span>
+            <span>All official maps</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-50 mr-2">✓</span>
+            <span>Steam Workshop mods</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-50 mr-2">✓</span>
+            <span>Cluster configuration</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-50 mr-2">✓</span>
+            <span>Custom settings editor</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Terraria -->
+      <div
+        class="border border-cool-gray-70 bg-cool-gray-90 p-6 hover:border-blue-50 transition-colors duration-200"
+      >
+        <div class="mb-4">
+          <h3 class="text-2xl font-semibold mb-2">Terraria</h3>
+          <span
+            class="inline-block px-3 py-1 text-xs font-semibold bg-blue-50 text-black"
+            >BETA</span
+          >
+        </div>
+        <p class="text-cool-gray-40 mb-4">
+          TShock-powered Terraria servers with plugin support and world
+          management.
+        </p>
+        <ul class="space-y-2 text-sm text-cool-gray-30">
+          <li class="flex items-start">
+            <span class="text-blue-50 mr-2">✓</span>
+            <span>TShock pre-configured</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-50 mr-2">✓</span>
+            <span>Plugin support</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-50 mr-2">✓</span>
+            <span>World backup system</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-50 mr-2">✓</span>
+            <span>Version management</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CS2 -->
+      <div
+        class="border border-cool-gray-70 bg-cool-gray-90 p-6 hover:border-yellow-50 transition-colors duration-200"
+      >
+        <div class="mb-4">
+          <h3 class="text-2xl font-semibold mb-2">Counter-Strike 2</h3>
+          <span
+            class="inline-block px-3 py-1 text-xs font-semibold bg-yellow-50 text-black"
+            >COMING SOON</span
+          >
+        </div>
+        <p class="text-cool-gray-40 mb-4">
+          Competitive CS2 servers with full SourceMod support and custom game
+          modes.
+        </p>
+        <ul class="space-y-2 text-sm text-cool-gray-30">
+          <li class="flex items-start">
+            <span class="text-cool-gray-60 mr-2">○</span>
+            <span>SourceMod & MetaMod</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cool-gray-60 mr-2">○</span>
+            <span>Workshop maps</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cool-gray-60 mr-2">○</span>
+            <span>Match configuration</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cool-gray-60 mr-2">○</span>
+            <span>Stats & rankings</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coming Soon Section -->
+  <div class="mb-24">
+    <h2 class="text-2xl md:text-3xl font-semibold mb-8 flex items-center gap-3">
+      <img src="/index/doodles/magic wand.svg" alt="" width="40" height="40" />
+      <span class="underline decoration-4 decoration-yellow-50"
+        >Coming soon</span
+      >
+    </h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="border border-cool-gray-70 p-4 text-center">
+        <p class="font-semibold">Palworld</p>
+      </div>
+      <div class="border border-cool-gray-70 p-4 text-center">
+        <p class="font-semibold">V Rising</p>
+      </div>
+      <div class="border border-cool-gray-70 p-4 text-center">
+        <p class="font-semibold">7 Days to Die</p>
+      </div>
+      <div class="border border-cool-gray-70 p-4 text-center">
+        <p class="font-semibold">Project Zomboid</p>
+      </div>
+      <div class="border border-cool-gray-70 p-4 text-center">
+        <p class="font-semibold">Satisfactory</p>
+      </div>
+      <div class="border border-cool-gray-70 p-4 text-center">
+        <p class="font-semibold">Enshrouded</p>
+      </div>
+      <div class="border border-cool-gray-70 p-4 text-center">
+        <p class="font-semibold">Factorio</p>
+      </div>
+      <div class="border border-cool-gray-70 p-4 text-center">
+        <p class="font-semibold">Conan Exiles</p>
+      </div>
+      <div class="border border-cool-gray-70 p-4 text-center">
+        <p class="font-semibold">FiveM (GTA V)</p>
+      </div>
+      <div class="border border-cool-gray-70 p-4 text-center">
+        <p class="font-semibold">Garry's Mod</p>
+      </div>
+      <div class="border border-cool-gray-70 p-4 text-center">
+        <p class="font-semibold">Team Fortress 2</p>
+      </div>
+      <div class="border border-cool-gray-70 p-4 text-center">
+        <p class="font-semibold">Left 4 Dead 2</p>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center">
+      <p class="text-cool-gray-40 mb-4">
+        Don't see your game? Let us know what you'd like to see next.
+      </p>
+      <a
+        href="mailto:support@quack.host?subject=Game Request"
+        class="inline-flex items-center p-3 text-white border border-[#FF9C20] hover:bg-[#FF8D00] hover:text-black transition-colors duration-200"
+      >
+        Request a game
+      </a>
+    </div>
+  </div>
+
+  <!-- Universal Features -->
+  <div class="mb-24">
+    <h2 class="text-2xl md:text-3xl font-semibold mb-8 flex items-center gap-3">
+      <img src="/index/doodles/hand holding.svg" alt="" width="40" height="40" />
+      <span class="underline decoration-4 decoration-teal-50"
+        >Every game includes</span
+      >
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="border border-cool-gray-70 p-6">
+        <img
+          src="/index/doodles/rocking chair.svg"
+          alt=""
+          width="32"
+          height="32"
+          class="mb-3"
+        />
+        <h3 class="text-lg font-semibold mb-2">QuackPlane Access</h3>
+        <p class="text-cool-gray-40 text-sm">
+          Unified control panel for all your game servers
+        </p>
+      </div>
+
+      <div class="border border-cool-gray-70 p-6">
+        <img
+          src="/index/doodles/rain.svg"
+          alt=""
+          width="32"
+          height="32"
+          class="mb-3"
+        />
+        <h3 class="text-lg font-semibold mb-2">Automatic Backups</h3>
+        <p class="text-cool-gray-40 text-sm">
+          Off-site backups with one-click restoration
+        </p>
+      </div>
+
+      <div class="border border-cool-gray-70 p-6">
+        <img
+          src="/index/doodles/wizard.svg"
+          alt=""
+          width="32"
+          height="32"
+          class="mb-3"
+        />
+        <h3 class="text-lg font-semibold mb-2">DDoS Protection</h3>
+        <p class="text-cool-gray-40 text-sm">
+          Terrabit-scale protection included free
+        </p>
+      </div>
+
+      <div class="border border-cool-gray-70 p-6">
+        <img
+          src="/index/doodles/upload.svg"
+          alt=""
+          width="32"
+          height="32"
+          class="mb-3"
+        />
+        <h3 class="text-lg font-semibold mb-2">Instant Setup</h3>
+        <p class="text-cool-gray-40 text-sm">
+          Your server is ready in under 2 minutes
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="mb-16 border-2 border-[#FF9C20] p-8 md:p-12 text-center">
+    <h2 class="text-3xl md:text-4xl font-semibold mb-4">
+      <span
+        class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"
+      >
+        Ready to host your server?
+      </span>
+    </h2>
+    <p class="text-cool-gray-40 text-lg mb-8 max-w-2xl mx-auto">
+      Join thousands of communities already hosting their game servers with
+      QuackHost. Get started in minutes.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="/pricing"
+        class="inline-flex justify-center items-center px-8 py-3 bg-[#FF9C20] text-black hover:bg-[#FF8D00] transition-colors duration-200 font-semibold"
+      >
+        View Pricing
+      </a>
+      <a
+        href="https://client.quack.host/register"
+        class="inline-flex justify-center items-center px-8 py-3 border border-[#FF9C20] text-white hover:bg-[#FF8D00] hover:text-black transition-colors duration-200 font-semibold"
+      >
+        Get Started Free
+      </a>
+    </div>
   </div>
 </Layout>

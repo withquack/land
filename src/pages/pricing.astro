@@ -3,9 +3,502 @@ import Layout from "../layouts/layout.astro";
 ---
 
 <Layout title="/ Pricing">
-  <div class="mb-32 mt-32">
-    <p class="text-2xl font-semibold xl:text-4xl">Pricing</p>
+  <!-- Header Section -->
+  <div class="mb-16">
+    <h1 class="text-4xl md:text-6xl font-semibold mb-6">
+      <span
+        class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"
+      >
+        Simple, transparent pricing
+      </span>
+    </h1>
+    <p class="text-cool-gray-40 text-lg md:text-xl max-w-3xl">
+      No hidden fees. No surprise charges. Just powerful game server hosting
+      that scales with your community. All plans include DDoS protection,
+      off-site backups, and 24/7 support.
+    </p>
   </div>
 
-  <div class="h-96 rounded-md bg-gray-200"></div>
+  <!-- Pricing Tiers -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+    <!-- Starter Plan -->
+    <div
+      class="border border-cool-gray-70 bg-cool-gray-90 p-8 hover:border-cyan-50 transition-colors duration-200"
+    >
+      <div class="flex items-center gap-2 mb-4">
+        <img
+          src="/index/doodles/joy leap 2.svg"
+          alt=""
+          width="32"
+          height="32"
+        />
+        <h2 class="text-2xl font-semibold">Starter</h2>
+      </div>
+      <div class="mb-6">
+        <span class="text-4xl font-semibold">$5</span>
+        <span class="text-cool-gray-40">/month</span>
+      </div>
+      <p class="text-cool-gray-40 mb-6">
+        Perfect for small communities and friends
+      </p>
+      <ul class="space-y-3 mb-8">
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">2GB RAM</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">2 CPU cores</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">20GB NVMe storage</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">Up to 10 players</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">Daily backups</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">DDoS protection</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">QuackPlane access</span>
+        </li>
+      </ul>
+      <a
+        href="https://client.quack.host/register"
+        class="block w-full text-center p-3 border border-[#FF9C20] text-white hover:bg-[#FF8D00] hover:text-black transition-colors duration-200"
+      >
+        Get Started
+      </a>
+    </div>
+
+    <!-- Pro Plan -->
+    <div
+      class="border-2 border-[#FF9C20] bg-cool-gray-90 p-8 relative hover:border-[#FF8D00] transition-colors duration-200"
+    >
+      <div
+        class="absolute top-0 right-0 bg-[#FF9C20] text-black px-4 py-1 text-sm font-semibold"
+      >
+        POPULAR
+      </div>
+      <div class="flex items-center gap-2 mb-4 mt-4">
+        <img src="/index/doodles/rocking chair.svg" alt="" width="32" height="32" />
+        <h2 class="text-2xl font-semibold">Pro</h2>
+      </div>
+      <div class="mb-6">
+        <span class="text-4xl font-semibold">$15</span>
+        <span class="text-cool-gray-40">/month</span>
+      </div>
+      <p class="text-cool-gray-40 mb-6">
+        For growing communities and modded servers
+      </p>
+      <ul class="space-y-3 mb-8">
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">6GB RAM</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">4 CPU cores</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">60GB NVMe storage</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">Up to 50 players</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">Hourly backups</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">Priority support</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">Staff team management</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">Plugin/mod support</span>
+        </li>
+      </ul>
+      <a
+        href="https://client.quack.host/register"
+        class="block w-full text-center p-3 bg-[#FF9C20] text-black hover:bg-[#FF8D00] transition-colors duration-200"
+      >
+        Get Started
+      </a>
+    </div>
+
+    <!-- Enterprise Plan -->
+    <div
+      class="border border-cool-gray-70 bg-cool-gray-90 p-8 hover:border-purple-50 transition-colors duration-200"
+    >
+      <div class="flex items-center gap-2 mb-4">
+        <img src="/index/doodles/wizard.svg" alt="" width="32" height="32" />
+        <h2 class="text-2xl font-semibold">Enterprise</h2>
+      </div>
+      <div class="mb-6">
+        <span class="text-4xl font-semibold">Custom</span>
+      </div>
+      <p class="text-cool-gray-40 mb-6">
+        For large networks and organizations
+      </p>
+      <ul class="space-y-3 mb-8">
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">Custom RAM allocation</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">Dedicated CPU cores</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">Unlimited storage</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">Unlimited players</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">Real-time backups</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">Dedicated account manager</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">Custom SLA</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-green-50 mr-2">✓</span>
+          <span class="text-cool-gray-30">White-label options</span>
+        </li>
+      </ul>
+      <a
+        href="mailto:enterprise@quack.host"
+        class="block w-full text-center p-3 border border-purple-50 text-white hover:bg-purple-50 hover:text-black transition-colors duration-200"
+      >
+        Contact Sales
+      </a>
+    </div>
+  </div>
+
+  <!-- Alternative Pricing Models -->
+  <div class="mb-24">
+    <h2 class="text-3xl font-semibold mb-8 flex items-center gap-3">
+      <img src="/index/doodles/magic wand.svg" alt="" width="40" height="40" />
+      <span class="underline decoration-4 decoration-teal-50"
+        >Flexible pricing options</span
+      >
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="border border-cool-gray-70 p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <img
+            src="/index/doodles/cycle.svg"
+            alt=""
+            width="28"
+            height="28"
+            class="transition duration-300 ease-out hover:animate-spin"
+          />
+          <h3 class="text-xl font-semibold">Pay-per-Player</h3>
+        </div>
+        <p class="text-cool-gray-40 mb-4">
+          Only pay when players are online. Perfect for servers with
+          fluctuating activity. Starting at $0.10 per active player-hour.
+        </p>
+        <span class="text-sm text-cool-gray-50">Coming Q2 2025</span>
+      </div>
+
+      <div class="border border-cool-gray-70 p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <img src="/index/doodles/upload.svg" alt="" width="28" height="28" />
+          <h3 class="text-xl font-semibold">Reserved Instances</h3>
+        </div>
+        <p class="text-cool-gray-40 mb-4">
+          Commit to 1-3 years and save up to 40%. Ideal for established
+          communities with long-term plans.
+        </p>
+        <a
+          href="mailto:sales@quack.host"
+          class="text-cyan-50 underline decoration-2 hover:text-cyan-40 transition-colors"
+          >Request a quote</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature Comparison Table -->
+  <div class="mb-24">
+    <h2 class="text-3xl font-semibold mb-8 flex items-center gap-3">
+      <img src="/index/doodles/chat.svg" alt="" width="40" height="40" />
+      <span class="underline decoration-4 decoration-blue-50"
+        >Compare features</span
+      >
+    </h2>
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="border-b-2 border-cool-gray-70">
+            <th class="text-left py-4 px-4 font-semibold">Feature</th>
+            <th class="text-center py-4 px-4 font-semibold">Starter</th>
+            <th class="text-center py-4 px-4 font-semibold">Pro</th>
+            <th class="text-center py-4 px-4 font-semibold">Enterprise</th>
+          </tr>
+        </thead>
+        <tbody class="text-cool-gray-30">
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-3 px-4">RAM</td>
+            <td class="text-center py-3 px-4">2GB</td>
+            <td class="text-center py-3 px-4">6GB</td>
+            <td class="text-center py-3 px-4">Custom</td>
+          </tr>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-3 px-4">CPU Cores</td>
+            <td class="text-center py-3 px-4">2</td>
+            <td class="text-center py-3 px-4">4</td>
+            <td class="text-center py-3 px-4">Dedicated</td>
+          </tr>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-3 px-4">Storage</td>
+            <td class="text-center py-3 px-4">20GB</td>
+            <td class="text-center py-3 px-4">60GB</td>
+            <td class="text-center py-3 px-4">Unlimited</td>
+          </tr>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-3 px-4">Player Slots</td>
+            <td class="text-center py-3 px-4">10</td>
+            <td class="text-center py-3 px-4">50</td>
+            <td class="text-center py-3 px-4">Unlimited</td>
+          </tr>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-3 px-4">Backups</td>
+            <td class="text-center py-3 px-4">Daily</td>
+            <td class="text-center py-3 px-4">Hourly</td>
+            <td class="text-center py-3 px-4">Real-time</td>
+          </tr>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-3 px-4">DDoS Protection</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+          </tr>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-3 px-4">QuackPlane Access</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+          </tr>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-3 px-4">Support</td>
+            <td class="text-center py-3 px-4">Standard</td>
+            <td class="text-center py-3 px-4">Priority</td>
+            <td class="text-center py-3 px-4">Dedicated</td>
+          </tr>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-3 px-4">Staff Management</td>
+            <td class="text-center py-3 px-4 text-cool-gray-60">—</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+          </tr>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-3 px-4">Custom SLA</td>
+            <td class="text-center py-3 px-4 text-cool-gray-60">—</td>
+            <td class="text-center py-3 px-4 text-cool-gray-60">—</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+          </tr>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-3 px-4">White-label Options</td>
+            <td class="text-center py-3 px-4 text-cool-gray-60">—</td>
+            <td class="text-center py-3 px-4 text-cool-gray-60">—</td>
+            <td class="text-center py-3 px-4 text-green-50">✓</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <div
+    class="mb-16"
+    x-data="{ open: [false, false, false, false], focusedIndex: 0 }"
+  >
+    <h2 class="text-3xl font-semibold mb-8 flex items-center gap-3">
+      <img src="/index/doodles/owl.svg" alt="" width="40" height="40" />
+      <span class="underline decoration-4 decoration-purple-50"
+        >Pricing questions</span
+      >
+    </h2>
+
+    <div>
+      <!-- Question 1 -->
+      <div class="border-b border-cool-gray-70">
+        <button
+          @click="open[0] = !open[0]"
+          @keydown.enter.prevent="open[0] = !open[0]"
+          @keydown.space.prevent="open[0] = !open[0]"
+          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          :aria-expanded="open[0]"
+        >
+          <span class="text-lg font-semibold pr-4"
+            >Can I upgrade or downgrade my plan?</span
+          >
+          <img
+            src="/index/chevron-down.svg"
+            alt=""
+            width="24"
+            height="24"
+            class="transform transition-transform duration-200 ease-out flex-shrink-0"
+            :class="{ 'rotate-180': open[0] }"
+          />
+        </button>
+        <div
+          x-show="open[0]"
+          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter-start="transform -translate-y-2 opacity-0"
+          x-transition:enter-end="transform translate-y-0 opacity-100"
+          x-cloak
+          class="overflow-hidden"
+        >
+          <p class="text-white leading-relaxed pb-5 pr-12">
+            Yes! You can upgrade or downgrade at any time. Changes take effect
+            immediately and billing is prorated automatically. You only pay for
+            what you use.
+          </p>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="border-b border-cool-gray-70">
+        <button
+          @click="open[1] = !open[1]"
+          @keydown.enter.prevent="open[1] = !open[1]"
+          @keydown.space.prevent="open[1] = !open[1]"
+          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          :aria-expanded="open[1]"
+        >
+          <span class="text-lg font-semibold pr-4"
+            >Are there any setup fees or contracts?</span
+          >
+          <img
+            src="/index/chevron-down.svg"
+            alt=""
+            width="24"
+            height="24"
+            class="transform transition-transform duration-200 ease-out flex-shrink-0"
+            :class="{ 'rotate-180': open[1] }"
+          />
+        </button>
+        <div
+          x-show="open[1]"
+          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter-start="transform -translate-y-2 opacity-0"
+          x-transition:enter-end="transform translate-y-0 opacity-100"
+          x-cloak
+          class="overflow-hidden"
+        >
+          <p class="text-white leading-relaxed pb-5 pr-12">
+            No setup fees, no hidden charges, and no long-term contracts.
+            Cancel anytime with no penalties. We believe in earning your
+            business every month.
+          </p>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="border-b border-cool-gray-70">
+        <button
+          @click="open[2] = !open[2]"
+          @keydown.enter.prevent="open[2] = !open[2]"
+          @keydown.space.prevent="open[2] = !open[2]"
+          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          :aria-expanded="open[2]"
+        >
+          <span class="text-lg font-semibold pr-4"
+            >What payment methods do you accept?</span
+          >
+          <img
+            src="/index/chevron-down.svg"
+            alt=""
+            width="24"
+            height="24"
+            class="transform transition-transform duration-200 ease-out flex-shrink-0"
+            :class="{ 'rotate-180': open[2] }"
+          />
+        </button>
+        <div
+          x-show="open[2]"
+          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter-start="transform -translate-y-2 opacity-0"
+          x-transition:enter-end="transform translate-y-0 opacity-100"
+          x-cloak
+          class="overflow-hidden"
+        >
+          <p class="text-white leading-relaxed pb-5 pr-12">
+            We accept all major credit cards (Visa, Mastercard, American
+            Express), PayPal, and various digital payment methods. Billing is
+            monthly and you can update your payment method anytime.
+          </p>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="border-b border-cool-gray-70">
+        <button
+          @click="open[3] = !open[3]"
+          @keydown.enter.prevent="open[3] = !open[3]"
+          @keydown.space.prevent="open[3] = !open[3]"
+          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          :aria-expanded="open[3]"
+        >
+          <span class="text-lg font-semibold pr-4"
+            >Do you offer refunds?</span
+          >
+          <img
+            src="/index/chevron-down.svg"
+            alt=""
+            width="24"
+            height="24"
+            class="transform transition-transform duration-200 ease-out flex-shrink-0"
+            :class="{ 'rotate-180': open[3] }"
+          />
+        </button>
+        <div
+          x-show="open[3]"
+          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter-start="transform -translate-y-2 opacity-0"
+          x-transition:enter-end="transform translate-y-0 opacity-100"
+          x-cloak
+          class="overflow-hidden"
+        >
+          <p class="text-white leading-relaxed pb-5 pr-12">
+            We offer a 7-day money-back guarantee. If you're not satisfied with
+            our service within the first week, we'll refund your payment in
+            full, no questions asked.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    [x-cloak] {
+      display: none !important;
+    }
+  </style>
 </Layout>
