@@ -2,257 +2,535 @@
 import Layout from "../layouts/layout.astro";
 ---
 
-<Layout title="/ Unbetable Game Servers">
+<Layout title="/ Unbeatable Game Servers">
   <!-- Hero Section -->
-  <div class="grid grid-cols-1 lg:grid-cols-7 mb-16 gap-8 pb-4 items-center">
+  <div class="grid grid-cols-1 lg:grid-cols-7 mb-12 gap-8 pb-4 items-center">
     <div
       class="col-span-1 lg:col-span-4 order-1 lg:order-1 text-white flex flex-col justify-between h-full"
     >
-      <div class="text-5xl md:text-7xl">
-        <h1
-          class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"
-        >
-          Your server &
-        </h1>
-        <h1
-          class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"
-        >
-          Our obsession.
-        </h1>
+      <div>
+        <div class="text-5xl md:text-7xl font-semibold leading-tight mb-6">
+          <h1
+            class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] via-[#FF9C20] to-[#FF8D00] bg-clip-text animate-gradient"
+          >
+            Your server.
+          </h1>
+          <h1
+            class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] via-[#FF9C20] to-[#FF8D00] bg-clip-text animate-gradient"
+          >
+            Our obsession.
+          </h1>
+        </div>
+        <p class="text-xl md:text-2xl text-cool-gray-30 mb-8 leading-relaxed max-w-2xl">
+          Experience game server hosting that's <span class="text-[#FF9C20] font-semibold">blazingly fast</span>,
+          <span class="text-cyan-40 font-semibold">rock solid</span>, and
+          <span class="text-green-40 font-semibold">incredibly simple</span>.
+          Your players deserve the best. We deliver it.
+        </p>
       </div>
 
-      <div class="flex flex-col sm:flex-row mt-8 text-base">
-        <div class="mr-8">
-          <a
-            href="/pricing"
-            class="inline-flex justify-start items-center w-64 p-3 text-black bg-[#FF9C20] hover:bg-[#CC6600] transition-colors duration-200"
-          >
-            Launch your server
-          </a>
-        </div>
-        <div class="">
-          <a
-            href="/quackplane"
-            class="inline-flex items-center mt-4 sm:mt-0 w-64 p-3 text-white hover:text-black border border-[#FF9C20] hover:bg-[#FF8D00] transition-colors duration-200"
-          >
-            Discover QuackPlane
-          </a>
-        </div>
+      <div class="flex flex-col sm:flex-row gap-4 text-base">
+        <a
+          href="/pricing"
+          class="group inline-flex justify-center items-center px-8 py-4 text-lg font-semibold text-black bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] hover:from-[#FF8D00] hover:to-[#CC6600] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform"
+        >
+          <span>Launch your server</span>
+          <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+        <a
+          href="/quackplane"
+          class="group inline-flex justify-center items-center px-8 py-4 text-lg font-semibold text-white hover:text-black border-2 border-[#FF9C20] hover:bg-gradient-to-r hover:from-[#FF9C20] hover:to-[#FF8D00] transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 transform"
+        >
+          <span>Discover QuackPlane</span>
+          <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
       </div>
     </div>
     <div
       class="col-span-1 lg:col-span-3 order-2 lg:order-2 text-cool-gray-30 flex justify-center lg:justify-end items-center"
     >
-      <img
-        src="https://w7.pngwing.com/pngs/227/144/png-transparent-minecraft-illustration-minecraft-pocket-edition-minecraft-story-mode-xbox-360-wii-u-minecraft-game-video-game-mojang.png"
-        alt="Minecraft"
-        class="max-w-full h-auto"
-      />
+      <div class="relative group">
+        <div class="absolute -inset-1 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+        <img
+          src="https://w7.pngwing.com/pngs/227/144/png-transparent-minecraft-illustration-minecraft-pocket-edition-minecraft-story-mode-xbox-360-wii-u-minecraft-game-video-game-mojang.png"
+          alt="Minecraft"
+          class="relative max-w-full h-auto transform group-hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust Indicators / Stats Bar -->
+  <div class="mb-20 lg:mb-28">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 p-6 rounded-lg border border-gray-80 hover:border-[#FF9C20] transition-all duration-300 hover:shadow-lg hover:shadow-[#FF9C20]/20 transform hover:-translate-y-1">
+        <div class="text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text mb-2">99.9%</div>
+        <div class="text-cool-gray-40 text-sm lg:text-base">Uptime Guarantee</div>
+      </div>
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 p-6 rounded-lg border border-gray-80 hover:border-cyan-50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-50/20 transform hover:-translate-y-1">
+        <div class="text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-cyan-40 to-cyan-60 bg-clip-text mb-2">&lt;10ms</div>
+        <div class="text-cool-gray-40 text-sm lg:text-base">Average Latency</div>
+      </div>
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 p-6 rounded-lg border border-gray-80 hover:border-green-50 transition-all duration-300 hover:shadow-lg hover:shadow-green-50/20 transform hover:-translate-y-1">
+        <div class="text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-green-40 to-green-60 bg-clip-text mb-2">24/7</div>
+        <div class="text-cool-gray-40 text-sm lg:text-base">Expert Support</div>
+      </div>
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 p-6 rounded-lg border border-gray-80 hover:border-purple-50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-50/20 transform hover:-translate-y-1">
+        <div class="text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-purple-40 to-purple-60 bg-clip-text mb-2">10k+</div>
+        <div class="text-cool-gray-40 text-sm lg:text-base">Servers Hosted</div>
+      </div>
     </div>
   </div>
 
   <!-- Features Section -->
-  <div class="mb-16 lg:mb-32" aria-label="Product Features">
+  <div class="mb-20 lg:mb-32" aria-label="Product Features">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-5xl font-bold mb-4">
+        <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">Why gamers choose</span>
+        <span class="text-white">QuackHost</span>
+      </h2>
+      <p class="text-xl text-cool-gray-40 max-w-3xl mx-auto">
+        Every feature designed with one goal: giving you and your players the best gaming experience possible.
+      </p>
+    </div>
+
     <div
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-x-12 lg:gap-y-16"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-x-12 lg:gap-y-12"
     >
-      <div>
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
-          <span class="underline decoration-4 decoration-cyan-50">Powerful</span
-          >
+      <div class="group bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-xl border border-gray-80 hover:border-cyan-50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-50/10 transform hover:-translate-y-2">
+        <div class="flex items-start mb-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-50 to-cyan-60 rounded-lg flex items-center justify-center mr-4">
+            <svg class="w-6 h-6 text-gray-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
           <img
             src="/index/doodles/joy leap 2.svg"
-            class="ml-2 transition duration-300 ease-out hover:-translate-y-1"
+            class="ml-auto transition duration-300 ease-out group-hover:-translate-y-2 group-hover:scale-110"
             alt=""
             width="34"
             height="34"
           />
-        </h2>
-        <p class="text-cool-gray-40 leading-relaxed">
-          High-performance infrastructure running the latest hardware. Dedicated
-          resources ensure your servers run smoothly, even with tons of mods and
-          plugins.
+        </div>
+        <h3 class="text-xl lg:text-2xl font-semibold mb-3 text-white">
+          Blazingly Powerful
+        </h3>
+        <p class="text-cool-gray-30 leading-relaxed mb-4">
+          High-performance infrastructure running the latest AMD Ryzen and Intel processors. Dedicated
+          resources with NVMe SSD storage ensure your servers run smoothly, even with 200+ mods and
+          dozens of plugins running simultaneously.
         </p>
+        <ul class="text-cool-gray-40 text-sm space-y-2">
+          <li class="flex items-center">
+            <svg class="w-4 h-4 mr-2 text-cyan-50" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Latest Gen CPUs
+          </li>
+          <li class="flex items-center">
+            <svg class="w-4 h-4 mr-2 text-cyan-50" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            NVMe SSD Storage
+          </li>
+          <li class="flex items-center">
+            <svg class="w-4 h-4 mr-2 text-cyan-50" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Dedicated Resources
+          </li>
+        </ul>
       </div>
 
-      <div>
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
-          <span class="underline decoration-4 decoration-blue-50">Reliable</span
-          >
+      <div class="group bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-xl border border-gray-80 hover:border-blue-50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-50/10 transform hover:-translate-y-2">
+        <div class="flex items-start mb-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-50 to-blue-60 rounded-lg flex items-center justify-center mr-4">
+            <svg class="w-6 h-6 text-gray-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
           <img
             src="/index/doodles/rocking chair.svg"
-            class="ml-2"
+            class="ml-auto transition duration-300 ease-out group-hover:scale-110"
             alt=""
             width="34"
             height="34"
           />
-        </h2>
-        <p class="text-cool-gray-40 leading-relaxed">
-          Terrabit-scale DDoS protection keeps your server online during
-          attacks. Check our live <a
+        </div>
+        <h3 class="text-xl lg:text-2xl font-semibold mb-3 text-white">
+          Rock-Solid Reliable
+        </h3>
+        <p class="text-cool-gray-30 leading-relaxed mb-4">
+          Enterprise-grade infrastructure with terrabit-scale DDoS protection keeps your server online during
+          attacks. Multi-layered redundancy and automated failover systems ensure 99.9% uptime. Check our live <a
             href="/service-status"
-            class="text-blue-40 underline decoration-2 decoration-blue-40 hover:decoration-blue-50 transition-colors"
+            class="text-blue-40 font-semibold underline decoration-2 decoration-blue-40 hover:decoration-blue-50 hover:text-blue-30 transition-colors"
             >service status</a
           > to see our track record.
         </p>
+        <ul class="text-cool-gray-40 text-sm space-y-2">
+          <li class="flex items-center">
+            <svg class="w-4 h-4 mr-2 text-blue-50" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Terrabit DDoS Protection
+          </li>
+          <li class="flex items-center">
+            <svg class="w-4 h-4 mr-2 text-blue-50" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            99.9% Uptime SLA
+          </li>
+          <li class="flex items-center">
+            <svg class="w-4 h-4 mr-2 text-blue-50" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Auto Failover Systems
+          </li>
+        </ul>
       </div>
 
-      <div>
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
-          <span class="underline decoration-4 decoration-green-50"
-            >Scalable</span
-          >
+      <div class="group bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-xl border border-gray-80 hover:border-green-50 transition-all duration-300 hover:shadow-xl hover:shadow-green-50/10 transform hover:-translate-y-2">
+        <div class="flex items-start mb-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-50 to-green-60 rounded-lg flex items-center justify-center mr-4">
+            <svg class="w-6 h-6 text-gray-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
+            </svg>
+          </div>
           <img
             src="/index/doodles/cycle.svg"
-            class="ml-2 transition duration-300 ease-out hover:animate-spin"
+            class="ml-auto transition duration-300 ease-out group-hover:animate-spin"
             alt=""
             width="34"
             height="34"
           />
-        </h2>
-        <p class="text-cool-gray-40 leading-relaxed">
-          Easily upgrade or downgrade your plan as your community grows or
-          shrinks. Scale your resources up and down as needed without losing
-          your data.
+        </div>
+        <h3 class="text-xl lg:text-2xl font-semibold mb-3 text-white">
+          Infinitely Scalable
+        </h3>
+        <p class="text-cool-gray-30 leading-relaxed mb-4">
+          Start small and grow massive. Easily upgrade or downgrade your plan as your community evolves.
+          Scale your RAM, CPU, and storage independently in real-time without server downtime or losing
+          your precious data. No contracts, no penalties - just pure flexibility.
         </p>
+        <ul class="text-cool-gray-40 text-sm space-y-2">
+          <li class="flex items-center">
+            <svg class="w-4 h-4 mr-2 text-green-50" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Instant Scaling
+          </li>
+          <li class="flex items-center">
+            <svg class="w-4 h-4 mr-2 text-green-50" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Zero Downtime Migration
+          </li>
+          <li class="flex items-center">
+            <svg class="w-4 h-4 mr-2 text-green-50" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Prorated Billing
+          </li>
+        </ul>
       </div>
 
-      <div>
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
-          <span class="underline decoration-4 decoration-teal-50"
-            >Transparent</span
-          >
+      <div class="group bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-xl border border-gray-80 hover:border-teal-50 transition-all duration-300 hover:shadow-xl hover:shadow-teal-50/10 transform hover:-translate-y-2">
+        <div class="flex items-start mb-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-teal-50 to-teal-60 rounded-lg flex items-center justify-center mr-4">
+            <svg class="w-6 h-6 text-gray-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+            </svg>
+          </div>
           <img
             src="/index/doodles/tree.svg"
-            class="ml-2 transition duration-700 ease-out hover:scale-110"
+            class="ml-auto transition duration-700 ease-out group-hover:scale-110"
             alt=""
             width="34"
             height="34"
             loading="lazy"
           />
-        </h2>
-        <p class="text-cool-gray-40 leading-relaxed">
+        </div>
+        <h3 class="text-xl lg:text-2xl font-semibold mb-3 text-white">
+          Crystal Clear Transparent
+        </h3>
+        <p class="text-cool-gray-30 leading-relaxed mb-4">
           Complete visibility into pricing, resource usage, and server
-          performance. No hidden fees, no surprise charges - just honest,
-          straightforward hosting with clear billing.
+          performance metrics. Real-time monitoring dashboards show exactly what you're using and paying for.
+          No hidden fees, no surprise charges, no fine print - just honest,
+          straightforward hosting with clear, predictable billing.
         </p>
+        <ul class="text-cool-gray-40 text-sm space-y-2">
+          <li class="flex items-center">
+            <svg class="w-4 h-4 mr-2 text-teal-50" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Real-time Analytics
+          </li>
+          <li class="flex items-center">
+            <svg class="w-4 h-4 mr-2 text-teal-50" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            No Hidden Fees
+          </li>
+          <li class="flex items-center">
+            <svg class="w-4 h-4 mr-2 text-teal-50" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Public Pricing
+          </li>
+        </ul>
       </div>
 
-      <div class="sm:col-span-2">
-        <h2 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center">
-          <span class="underline decoration-4 decoration-purple-50"
-            >Secured by off-site backups</span
-          >
+      <div class="group sm:col-span-2 bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-xl border border-gray-80 hover:border-purple-50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-50/10 transform hover:-translate-y-2">
+        <div class="flex items-start mb-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-50 to-purple-60 rounded-lg flex items-center justify-center mr-4">
+            <svg class="w-6 h-6 text-gray-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+            </svg>
+          </div>
           <img
             src="/index/doodles/rain.svg"
-            class="ml-2 transition duration-300 ease-out hover:translate-x-1 hover:-translate-y-1"
+            class="ml-auto transition duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1"
             alt=""
             width="34"
             height="34"
             loading="lazy"
           />
-        </h2>
-        <p class="text-cool-gray-40 leading-relaxed">
-          Schedule automatic backups or take your own backups manually. The key
-          advantage: all backups are stored off-site, protecting your worlds
-          even if our datacenter goes down. Your creations are always safe.
+        </div>
+        <h3 class="text-xl lg:text-2xl font-semibold mb-3 text-white">
+          Military-Grade Backups
+        </h3>
+        <p class="text-cool-gray-30 leading-relaxed mb-4">
+          Never lose a single block. Schedule automatic backups (hourly, daily, or weekly) or take manual snapshots with one click.
+          The game-changer: all backups are stored in geographically separate off-site locations with triple redundancy,
+          protecting your worlds even if our entire datacenter goes dark. Your creations are always safe, always recoverable, always yours.
         </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <ul class="text-cool-gray-40 text-sm space-y-2">
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mr-2 text-purple-50" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Automated Scheduling
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mr-2 text-purple-50" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Off-site Storage
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mr-2 text-purple-50" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Triple Redundancy
+            </li>
+          </ul>
+          <ul class="text-cool-gray-40 text-sm space-y-2">
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mr-2 text-purple-50" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              One-Click Restore
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mr-2 text-purple-50" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Unlimited Backups
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mr-2 text-purple-50" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Encrypted Transfer
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- QuackPlane Section -->
-  <div class="mb-16 lg:mb-32" aria-label="Powered by QuackPlane">
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+  <div class="mb-20 lg:mb-32" aria-label="Powered by QuackPlane">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-5xl font-bold mb-4">
+        <span class="text-white">Powered by</span>
+        <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">QuackPlane</span>
+      </h2>
+      <p class="text-xl text-cool-gray-40 max-w-3xl mx-auto">
+        The most intuitive game server control panel ever built. Manage everything from your browser - no downloads, no complexity.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center mb-16">
       <div class="lg:col-span-3">
-        <img
-          src="/index/quackplane.webp"
-          class="w-full"
-          alt="QuackPlane Control Plane Interface"
-          width="1253"
-          height="1016"
-          loading="lazy"
-        />
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-gradient-to-r from-[#FF9C20] via-purple-60 to-cyan-60 rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition duration-1000"></div>
+          <img
+            src="/index/quackplane.webp"
+            class="relative w-full rounded-xl shadow-2xl border border-gray-80"
+            alt="QuackPlane Control Plane Interface"
+            width="1253"
+            height="1016"
+            loading="lazy"
+          />
+        </div>
       </div>
 
-      <div class="lg:col-span-2 space-y-12">
-        <div>
-          <h3 class="text-2xl font-semibold mb-4 flex items-center">
-            <span class="underline decoration-4 decoration-teal-50"
-              >Create your own staff team</span
-            >
+      <div class="lg:col-span-2 space-y-8">
+        <div class="group p-6 rounded-lg bg-gradient-to-br from-gray-90 to-gray-100 border border-gray-80 hover:border-teal-50 transition-all duration-300">
+          <h3 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center text-white">
+            <span>Build your staff team</span>
             <img
               src="/index/doodles/hand holding.svg"
               alt=""
-              width="34"
-              height="34"
-              class="ml-2 transition duration-300 ease-out hover:scale-110"
+              width="28"
+              height="28"
+              class="ml-auto transition duration-300 ease-out group-hover:scale-110"
             />
           </h3>
-          <p class="text-cool-gray-40 leading-relaxed">
-            Give your friends and moderators access to restart the server,
+          <p class="text-cool-gray-30 leading-relaxed">
+            Give your friends and moderators granular permissions to restart the server,
             manage files, or monitor players - all without sharing your main
-            login.
+            login. Perfect role-based access control.
           </p>
         </div>
 
-        <div>
-          <h3 class="text-2xl font-semibold mb-4 flex items-center">
-            <span class="underline decoration-4 decoration-cyan-50"
-              >Manage from anywhere</span
-            >
+        <div class="group p-6 rounded-lg bg-gradient-to-br from-gray-90 to-gray-100 border border-gray-80 hover:border-cyan-50 transition-all duration-300">
+          <h3 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center text-white">
+            <span>Manage from anywhere</span>
             <img
               src="/index/doodles/wizard.svg"
               alt=""
-              width="34"
-              height="34"
-              class="ml-2"
+              width="28"
+              height="28"
+              class="ml-auto transition duration-300 ease-out group-hover:scale-110"
             />
           </h3>
-          <p class="text-cool-gray-40 leading-relaxed">
-            Web-based control plane lets you restart servers, monitor player
-            activity, and manage your worlds from any device. No software to
-            install.
+          <p class="text-cool-gray-30 leading-relaxed">
+            Fully web-based control plane works on desktop, tablet, and mobile. Restart servers, monitor player
+            activity, and manage your worlds from literally any device with a browser. Zero software installation required.
           </p>
         </div>
 
-        <div>
-          <h3 class="text-2xl font-semibold mb-4 flex items-center">
-            <span class="underline decoration-4 decoration-purple-50"
-              >One-click restoration</span
-            >
+        <div class="group p-6 rounded-lg bg-gradient-to-br from-gray-90 to-gray-100 border border-gray-80 hover:border-purple-50 transition-all duration-300">
+          <h3 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center text-white">
+            <span>One-click restoration</span>
             <img
               src="/index/doodles/magic wand.svg"
               alt=""
-              width="34"
-              height="34"
-              class="ml-2 transition duration-300 ease-out hover:translate-x-1 hover:-translate-y-1"
+              width="28"
+              height="28"
+              class="ml-auto transition duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1"
             />
           </h3>
-          <p class="text-cool-gray-40 leading-relaxed">
-            Someone griefed your server. Roll back your entire server to any
-            previous backup with one click. Everything gets restored - worlds,
-            configs, mods, the lot.
+          <p class="text-cool-gray-30 leading-relaxed">
+            Someone griefed your server? No problem. Roll back your entire server to any
+            previous backup with literally one click. Everything gets restored - worlds,
+            configs, mods, plugins, the works. Time travel for your server.
           </p>
         </div>
 
-        <div>
-          <h3 class="text-2xl font-semibold mb-4 flex items-center">
-            <span class="underline decoration-4 decoration-blue-50"
-              >Easy file management</span
-            >
+        <div class="group p-6 rounded-lg bg-gradient-to-br from-gray-90 to-gray-100 border border-gray-80 hover:border-blue-50 transition-all duration-300">
+          <h3 class="text-xl lg:text-2xl font-semibold mb-3 flex items-center text-white">
+            <span>Effortless file management</span>
             <img
               src="/index/doodles/upload.svg"
               alt=""
-              width="34"
-              height="34"
-              class="ml-2"
+              width="28"
+              height="28"
+              class="ml-auto transition duration-300 ease-out group-hover:scale-110"
             />
           </h3>
-          <p class="text-cool-gray-40 leading-relaxed">
-            Upload mods, plugins, and resource packs with drag & drop. Built-in
-            text editor lets you tweak configs without downloading files.
+          <p class="text-cool-gray-30 leading-relaxed">
+            Upload mods, plugins, and resource packs with drag & drop simplicity. Built-in
+            code editor with syntax highlighting lets you tweak configs without ever downloading files. It just works.
           </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials Section -->
+  <div class="mb-20 lg:mb-32">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-5xl font-bold mb-4">
+        <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">Loved by gamers</span>
+        <span class="text-white">worldwide</span>
+      </h2>
+      <p class="text-xl text-cool-gray-40 max-w-3xl mx-auto">
+        Join thousands of server owners who've made the switch to QuackHost.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-xl border border-gray-80 hover:border-[#FF9C20] transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+        <div class="flex items-center mb-6">
+          <div class="flex text-[#FF9C20]">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+          </div>
+        </div>
+        <p class="text-cool-gray-20 leading-relaxed mb-6 italic">
+          "Switched from our old host and the difference is night and day. No more random lag spikes, and QuackPlane is so much easier to use. Our modded Minecraft server with 150+ mods runs flawlessly now."
+        </p>
+        <div class="flex items-center">
+          <div>
+            <p class="font-semibold text-white">Alex Chen</p>
+            <p class="text-sm text-cool-gray-40">SkyBlock Network</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-xl border border-gray-80 hover:border-cyan-50 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+        <div class="flex items-center mb-6">
+          <div class="flex text-cyan-40">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+          </div>
+        </div>
+        <p class="text-cool-gray-20 leading-relaxed mb-6 italic">
+          "The off-site backups saved us when our old host had a catastrophic failure. With QuackHost, we restored everything in minutes. Peace of mind is priceless."
+        </p>
+        <div class="flex items-center">
+          <div>
+            <p class="font-semibold text-white">Sarah Mitchell</p>
+            <p class="text-sm text-cool-gray-40">Survival Legends</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-xl border border-gray-80 hover:border-green-50 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+        <div class="flex items-center mb-6">
+          <div class="flex text-green-40">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+          </div>
+        </div>
+        <p class="text-cool-gray-20 leading-relaxed mb-6 italic">
+          "Best decision for our 500+ member community. We scaled from 4GB to 16GB during a big event with zero downtime. The flexibility is unmatched."
+        </p>
+        <div class="flex items-center">
+          <div>
+            <p class="font-semibold text-white">Marcus Rodriguez</p>
+            <p class="text-sm text-cool-gray-40">Eternal Realms</p>
+          </div>
         </div>
       </div>
     </div>
@@ -260,35 +538,37 @@ import Layout from "../layouts/layout.astro";
 
   <!-- FAQ Section -->
   <div
-    class="mb-16 lg:mb-32"
+    class="mb-20 lg:mb-32"
     x-data="{ open: [false, false, false, false, false, false], focusedIndex: 0 }"
   >
-    <h2
-      class="text-2xl lg:text-3xl font-semibold mb-8 flex items-center gap-2 flex-wrap"
-    >
-      <img
-        src="/index/doodles/chat.svg"
-        loading="lazy"
-        alt=""
-        width="48"
-        height="48"
-        class="sm:w-[62px] sm:h-[62px]"
-      />
-      <span class="underline decoration-4 decoration-teal-40">Questions?</span>
-      <img
-        src="/index/doodles/owl.svg"
-        loading="lazy"
-        alt=""
-        width="48"
-        height="48"
-        class="sm:w-[62px] sm:h-[62px]"
-      />
-      <span class="underline decoration-4 decoration-purple-40"
-        >We've got answers.</span
-      >
-    </h2>
+    <div class="text-center mb-12">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <img
+          src="/index/doodles/chat.svg"
+          loading="lazy"
+          alt=""
+          width="48"
+          height="48"
+          class="sm:w-[56px] sm:h-[56px]"
+        />
+        <h2 class="text-3xl lg:text-5xl font-bold">
+          <span class="text-transparent bg-gradient-to-r from-teal-40 to-cyan-40 bg-clip-text">Got questions?</span>
+        </h2>
+        <img
+          src="/index/doodles/owl.svg"
+          loading="lazy"
+          alt=""
+          width="48"
+          height="48"
+          class="sm:w-[56px] sm:h-[56px]"
+        />
+      </div>
+      <p class="text-xl text-cool-gray-40 max-w-2xl mx-auto">
+        <span class="text-transparent bg-gradient-to-r from-purple-40 to-purple-50 bg-clip-text font-semibold">We've got answers.</span> Here's everything you need to know.
+      </p>
+    </div>
 
-    <div>
+    <div class="bg-gradient-to-br from-gray-90 to-gray-100 rounded-xl border border-gray-80 overflow-hidden">
       <!-- Question 1 -->
       <div class="border-b border-cool-gray-70">
         <button
@@ -299,11 +579,11 @@ import Layout from "../layouts/layout.astro";
           @keydown.space.prevent="open[0] = !open[0]"
           @focus="focusedIndex = 0"
           id="question-0"
-          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          class="w-full flex justify-between items-center py-6 px-8 text-left hover:bg-gray-80 focus:bg-gray-80 focus:outline-none focus:ring-2 focus:ring-[#FF9C20] focus:ring-inset transition-all duration-200"
           :aria-expanded="open[0]"
           aria-controls="content-0"
         >
-          <span class="text-base sm:text-lg font-semibold pr-4"
+          <span class="text-base sm:text-xl font-semibold pr-4 text-white"
             >How quickly can I get my server online?</span
           >
           <img
@@ -311,24 +591,24 @@ import Layout from "../layouts/layout.astro";
             alt=""
             width="24"
             height="24"
-            class="transform transition-transform duration-200 ease-out flex-shrink-0"
+            class="transform transition-transform duration-300 ease-out flex-shrink-0"
             :class="{ 'rotate-180': open[0] }"
           />
         </button>
         <div
           x-show="open[0]"
-          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter="transition-all ease-out duration-200"
           x-transition:enter-start="transform -translate-y-2 opacity-0"
           x-transition:enter-end="transform translate-y-0 opacity-100"
           x-cloak
           id="content-0"
           class="overflow-hidden"
         >
-          <p class="text-white leading-relaxed pb-5 pr-12">
-            Your server is ready in under 2 minutes! Once you complete payment,
-            our system automatically provisions your server and sends you the
-            login details. No waiting around - you can start building your world
-            immediately.
+          <p class="text-cool-gray-20 text-lg leading-relaxed pb-6 px-8 pr-16">
+            Your server is ready in <span class="text-[#FF9C20] font-semibold">under 2 minutes</span>! Once you complete payment,
+            our automated system instantly provisions your server and sends you the
+            login details via email. No waiting around, no setup hassles - you can start building your world
+            immediately and invite your friends within minutes.
           </p>
         </div>
       </div>
@@ -343,11 +623,11 @@ import Layout from "../layouts/layout.astro";
           @keydown.space.prevent="open[1] = !open[1]"
           @focus="focusedIndex = 1"
           id="question-1"
-          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          class="w-full flex justify-between items-center py-6 px-8 text-left hover:bg-gray-80 focus:bg-gray-80 focus:outline-none focus:ring-2 focus:ring-[#FF9C20] focus:ring-inset transition-all duration-200"
           :aria-expanded="open[1]"
           aria-controls="content-1"
         >
-          <span class="text-base sm:text-lg font-semibold pr-4"
+          <span class="text-base sm:text-xl font-semibold pr-4 text-white"
             >Can I upgrade or downgrade my plan anytime?</span
           >
           <img
@@ -355,24 +635,24 @@ import Layout from "../layouts/layout.astro";
             alt=""
             width="24"
             height="24"
-            class="transform transition-transform duration-200 ease-out flex-shrink-0"
+            class="transform transition-transform duration-300 ease-out flex-shrink-0"
             :class="{ 'rotate-180': open[1] }"
           />
         </button>
         <div
           x-show="open[1]"
-          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter="transition-all ease-out duration-200"
           x-transition:enter-start="transform -translate-y-2 opacity-0"
           x-transition:enter-end="transform translate-y-0 opacity-100"
           x-cloak
           id="content-1"
           class="overflow-hidden"
         >
-          <p class="text-white leading-relaxed pb-5 pr-12">
-            Absolutely! Scale up when your community grows or scale down during
-            quieter periods. Changes take effect immediately and billing is
-            prorated - you only pay for what you use. No contracts, no
-            penalties, just flexibility.
+          <p class="text-cool-gray-20 text-lg leading-relaxed pb-6 px-8 pr-16">
+            <span class="text-green-40 font-semibold">Absolutely!</span> Scale up when your community grows or scale down during
+            quieter periods. Changes take effect <span class="text-cyan-40 font-semibold">immediately</span> with zero downtime, and billing is
+            automatically prorated - you only pay for exactly what you use. No contracts, no
+            penalties, no BS - just pure flexibility when you need it.
           </p>
         </div>
       </div>
@@ -387,11 +667,11 @@ import Layout from "../layouts/layout.astro";
           @keydown.space.prevent="open[2] = !open[2]"
           @focus="focusedIndex = 2"
           id="question-2"
-          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          class="w-full flex justify-between items-center py-6 px-8 text-left hover:bg-gray-80 focus:bg-gray-80 focus:outline-none focus:ring-2 focus:ring-[#FF9C20] focus:ring-inset transition-all duration-200"
           :aria-expanded="open[2]"
           aria-controls="content-2"
         >
-          <span class="text-base sm:text-lg font-semibold pr-4"
+          <span class="text-base sm:text-xl font-semibold pr-4 text-white"
             >What happens if my server gets griefed?</span
           >
           <img
@@ -399,25 +679,25 @@ import Layout from "../layouts/layout.astro";
             alt=""
             width="24"
             height="24"
-            class="transform transition-transform duration-200 ease-out flex-shrink-0"
+            class="transform transition-transform duration-300 ease-out flex-shrink-0"
             :class="{ 'rotate-180': open[2] }"
           />
         </button>
         <div
           x-show="open[2]"
-          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter="transition-all ease-out duration-200"
           x-transition:enter-start="transform -translate-y-2 opacity-0"
           x-transition:enter-end="transform translate-y-0 opacity-100"
           x-cloak
           id="content-2"
           class="overflow-hidden"
         >
-          <p class="text-white leading-relaxed pb-5 pr-12">
-            No panic needed! Schedule automatic backups or take your own backups
-            manually. The key advantage: all backups are stored off-site,
-            protecting your worlds even if our datacenter goes down. One click
-            in QuackPlane and your world rolls back to before the damage
-            happened. Your creations are always safe.
+          <p class="text-cool-gray-20 text-lg leading-relaxed pb-6 px-8 pr-16">
+            <span class="text-purple-40 font-semibold">No panic needed!</span> Schedule automatic backups (hourly, daily, or weekly) or create manual snapshots instantly.
+            The game-changer: all backups are stored <span class="text-purple-40 font-semibold">off-site</span> in geographically separate locations,
+            protecting your worlds even if our entire datacenter vanishes. One click
+            in QuackPlane and your world rolls back to before the griefer struck.
+            Your creations are always safe, always recoverable.
           </p>
         </div>
       </div>
@@ -432,11 +712,11 @@ import Layout from "../layouts/layout.astro";
           @keydown.space.prevent="open[3] = !open[3]"
           @focus="focusedIndex = 3"
           id="question-3"
-          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          class="w-full flex justify-between items-center py-6 px-8 text-left hover:bg-gray-80 focus:bg-gray-80 focus:outline-none focus:ring-2 focus:ring-[#FF9C20] focus:ring-inset transition-all duration-200"
           :aria-expanded="open[3]"
           aria-controls="content-3"
         >
-          <span class="text-base sm:text-lg font-semibold pr-4"
+          <span class="text-base sm:text-xl font-semibold pr-4 text-white"
             >Do you provide DDoS protection?</span
           >
           <img
@@ -444,24 +724,24 @@ import Layout from "../layouts/layout.astro";
             alt=""
             width="24"
             height="24"
-            class="transform transition-transform duration-200 ease-out flex-shrink-0"
+            class="transform transition-transform duration-300 ease-out flex-shrink-0"
             :class="{ 'rotate-180': open[3] }"
           />
         </button>
         <div
           x-show="open[3]"
-          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter="transition-all ease-out duration-200"
           x-transition:enter-start="transform -translate-y-2 opacity-0"
           x-transition:enter-end="transform translate-y-0 opacity-100"
           x-cloak
           id="content-3"
           class="overflow-hidden"
         >
-          <p class="text-white leading-relaxed pb-5 pr-12">
-            Yes! Every server comes with terrabit-scale DDoS protection at no
-            extra cost. Whether someone's trying to knock your server offline or
-            you're dealing with a massive influx of players, our network keeps
-            you online and playable.
+          <p class="text-cool-gray-20 text-lg leading-relaxed pb-6 px-8 pr-16">
+            <span class="text-blue-40 font-semibold">Absolutely!</span> Every server comes with <span class="text-blue-40 font-semibold">terrabit-scale DDoS protection</span> included at no
+            extra cost. Whether a rival is trying to knock your server offline with a botnet or
+            you're dealing with a massive, legitimate influx of players during a launch event, our enterprise-grade network infrastructure keeps
+            you online and fully playable. Your players won't even notice.
           </p>
         </div>
       </div>
@@ -476,42 +756,42 @@ import Layout from "../layouts/layout.astro";
           @keydown.space.prevent="open[4] = !open[4]"
           @focus="focusedIndex = 4"
           id="question-4"
-          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          class="w-full flex justify-between items-center py-6 px-8 text-left hover:bg-gray-80 focus:bg-gray-80 focus:outline-none focus:ring-2 focus:ring-[#FF9C20] focus:ring-inset transition-all duration-200"
           :aria-expanded="open[4]"
           aria-controls="content-4"
         >
-          <span class="text-base sm:text-lg font-semibold pr-4"
-            >Can I transfer my server to QuackHost?</span
+          <span class="text-base sm:text-xl font-semibold pr-4 text-white"
+            >Can I transfer my existing server to QuackHost?</span
           >
           <img
             src="/index/chevron-down.svg"
             alt=""
             width="24"
             height="24"
-            class="transform transition-transform duration-200 ease-out flex-shrink-0"
+            class="transform transition-transform duration-300 ease-out flex-shrink-0"
             :class="{ 'rotate-180': open[4] }"
           />
         </button>
         <div
           x-show="open[4]"
-          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter="transition-all ease-out duration-200"
           x-transition:enter-start="transform -translate-y-2 opacity-0"
           x-transition:enter-end="transform translate-y-0 opacity-100"
           x-cloak
           id="content-4"
           class="overflow-hidden"
         >
-          <p class="text-white leading-relaxed pb-5 pr-12">
-            Yes! We'll help you migrate your server to QuackHost for free. Just
-            upload your world files, plugins, and configs through QuackPlane's
-            file manager. Our support team can also assist with the transfer to
-            make sure everything works perfectly on our platform.
+          <p class="text-cool-gray-20 text-lg leading-relaxed pb-6 px-8 pr-16">
+            <span class="text-teal-40 font-semibold">Yes, and we make it easy!</span> Migration is completely <span class="text-teal-40 font-semibold">free</span>. Just
+            upload your world files, plugins, configs, and any custom mods through QuackPlane's intuitive
+            file manager with drag-and-drop support. If you need help, our expert support team is standing by to assist with the transfer to
+            ensure everything works flawlessly on our blazing-fast infrastructure. Zero downtime migrations are our specialty.
           </p>
         </div>
       </div>
 
       <!-- Question 6 -->
-      <div class="border-b border-cool-gray-70">
+      <div>
         <button
           @click="open[5] = !open[5]"
           @keydown.down.prevent="focusedIndex = Math.min(5, focusedIndex + 1); $nextTick(() => document.getElementById('question-' + focusedIndex).focus())"
@@ -520,11 +800,11 @@ import Layout from "../layouts/layout.astro";
           @keydown.space.prevent="open[5] = !open[5]"
           @focus="focusedIndex = 5"
           id="question-5"
-          class="w-full flex justify-between items-center py-5 text-left hover:bg-cool-gray-90 focus:bg-cool-gray-90 focus:outline-none focus:ring-2 focus:ring-blue-60 focus:ring-inset transition-colors"
+          class="w-full flex justify-between items-center py-6 px-8 text-left hover:bg-gray-80 focus:bg-gray-80 focus:outline-none focus:ring-2 focus:ring-[#FF9C20] focus:ring-inset transition-all duration-200"
           :aria-expanded="open[5]"
           aria-controls="content-5"
         >
-          <span class="text-base sm:text-lg font-semibold pr-4"
+          <span class="text-base sm:text-xl font-semibold pr-4 text-white"
             >What payment methods do you accept?</span
           >
           <img
@@ -532,26 +812,64 @@ import Layout from "../layouts/layout.astro";
             alt=""
             width="24"
             height="24"
-            class="transform transition-transform duration-200 ease-out flex-shrink-0"
+            class="transform transition-transform duration-300 ease-out flex-shrink-0"
             :class="{ 'rotate-180': open[5] }"
           />
         </button>
         <div
           x-show="open[5]"
-          x-transition:enter="transition-all ease-out duration-50"
+          x-transition:enter="transition-all ease-out duration-200"
           x-transition:enter-start="transform -translate-y-2 opacity-0"
           x-transition:enter-end="transform translate-y-0 opacity-100"
           x-cloak
           id="content-5"
           class="overflow-hidden"
         >
-          <p class="text-white leading-relaxed pb-5 pr-12">
-            We accept all major credit cards, PayPal, and various digital
-            payment methods. Billing is monthly with no long-term contracts
-            required. You can update your payment method anytime through the
-            client portal.
+          <p class="text-cool-gray-20 text-lg leading-relaxed pb-6 px-8 pr-16">
+            We accept all major <span class="text-[#FF9C20] font-semibold">credit cards</span> (Visa, Mastercard, Amex), <span class="text-[#FF9C20] font-semibold">PayPal</span>, and various digital
+            payment methods for maximum flexibility. Billing is simple and monthly with <span class="text-[#FF9C20] font-semibold">no long-term contracts</span>
+            required - cancel anytime with no penalties. You can update your payment method instantly anytime through the
+            secure client portal. All transactions are encrypted and PCI compliant.
           </p>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Final CTA Section -->
+  <div class="mb-20 lg:mb-32">
+    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-90 via-gray-100 to-gray-90 border-2 border-gray-80 p-12 lg:p-16">
+      <div class="absolute inset-0 bg-gradient-to-r from-[#FF9C20]/10 via-purple-60/10 to-cyan-60/10 blur-3xl"></div>
+      <div class="relative z-10 text-center">
+        <h2 class="text-4xl lg:text-6xl font-bold mb-6">
+          <span class="text-transparent bg-gradient-to-r from-[#FF9C20] via-[#FF9C20] to-[#FF8D00] bg-clip-text">Ready to level up</span>
+          <br/>
+          <span class="text-white">your gaming experience?</span>
+        </h2>
+        <p class="text-xl lg:text-2xl text-cool-gray-30 mb-10 max-w-3xl mx-auto leading-relaxed">
+          Join thousands of gamers who've already discovered the QuackHost difference.
+          Your players deserve better. <span class="text-[#FF9C20] font-semibold">Give it to them.</span>
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <a
+            href="/pricing"
+            class="group inline-flex justify-center items-center px-10 py-5 text-xl font-bold text-black bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] hover:from-[#FF8D00] hover:to-[#CC6600] transition-all duration-300 shadow-2xl hover:shadow-[#FF9C20]/50 hover:scale-110 transform rounded-lg"
+          >
+            <span>Start Your Server Now</span>
+            <svg class="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+          <a
+            href="/service-status"
+            class="inline-flex justify-center items-center px-10 py-5 text-xl font-semibold text-cool-gray-20 hover:text-white border-2 border-cool-gray-60 hover:border-[#FF9C20] transition-all duration-300 hover:shadow-lg rounded-lg"
+          >
+            View Live Status
+          </a>
+        </div>
+        <p class="mt-8 text-cool-gray-40 text-sm">
+          Server ready in under 2 minutes • No credit card required for trial • Cancel anytime
+        </p>
       </div>
     </div>
   </div>
