@@ -3,7 +3,541 @@ import Layout from "../layouts/layout.astro";
 ---
 
 <Layout title="/ Games">
-  <div class="mb-32 mt-32">
-    <p class="text-2xl font-semibold xl:text-4xl">Games</p>
+  <div class="container mx-auto px-4 py-16">
+
+    <!-- Hero Section -->
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">
+        Host Any Game You Love
+      </h1>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+        One platform, multiple games. Switch between games instantly without losing your data or settings.
+      </p>
+    </div>
+
+    <!-- Featured Games Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+
+      <!-- Minecraft Java -->
+      <div class="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden hover:border-orange-500 transition-all group">
+        <div class="h-48 bg-gradient-to-br from-green-600 to-green-800 flex items-center justify-center">
+          <div class="text-6xl">🎮</div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-2xl font-bold">Minecraft: Java Edition</h3>
+            <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">POPULAR</span>
+          </div>
+          <p class="text-gray-400 text-sm mb-4">
+            The classic. Full mod and plugin support with Paper, Spigot, Fabric, and Forge.
+          </p>
+          <div class="space-y-2 text-sm mb-4">
+            <div class="flex items-center text-gray-400">
+              <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>One-click modpack installation</span>
+            </div>
+            <div class="flex items-center text-gray-400">
+              <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Auto-updates for server software</span>
+            </div>
+            <div class="flex items-center text-gray-400">
+              <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Supports Vanilla, Paper, Spigot, Fabric, Forge</span>
+            </div>
+          </div>
+          <a href="https://client.quack.host/register?game=minecraft-java" class="block text-center bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-lg transition-colors">
+            Create Server →
+          </a>
+        </div>
+      </div>
+
+      <!-- Minecraft Bedrock -->
+      <div class="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden hover:border-orange-500 transition-all group">
+        <div class="h-48 bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
+          <div class="text-6xl">📱</div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-2xl font-bold">Minecraft: Bedrock</h3>
+          </div>
+          <p class="text-gray-400 text-sm mb-4">
+            Cross-platform play for Windows 10, mobile, and consoles. PocketMine and BDS support.
+          </p>
+          <div class="space-y-2 text-sm mb-4">
+            <div class="flex items-center text-gray-400">
+              <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Cross-platform compatible</span>
+            </div>
+            <div class="flex items-center text-gray-400">
+              <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>PocketMine & BDS servers</span>
+            </div>
+            <div class="flex items-center text-gray-400">
+              <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Mobile-optimized performance</span>
+            </div>
+          </div>
+          <a href="https://client.quack.host/register?game=minecraft-bedrock" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition-colors">
+            Create Server →
+          </a>
+        </div>
+      </div>
+
+      <!-- Valheim -->
+      <div class="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden hover:border-orange-500 transition-all group">
+        <div class="h-48 bg-gradient-to-br from-cyan-600 to-cyan-800 flex items-center justify-center">
+          <div class="text-6xl">⚔️</div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-2xl font-bold">Valheim</h3>
+            <span class="bg-cyan-500 text-white text-xs font-bold px-2 py-1 rounded">NEW</span>
+          </div>
+          <p class="text-gray-400 text-sm mb-4">
+            Viking survival with friends. Low-latency dedicated servers for the ultimate Norse adventure.
+          </p>
+          <div class="space-y-2 text-sm mb-4">
+            <div class="flex items-center text-gray-400">
+              <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Optimized for 10+ players</span>
+            </div>
+            <div class="flex items-center text-gray-400">
+              <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>World backup & restore</span>
+            </div>
+            <div class="flex items-center text-gray-400">
+              <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Mod support via ValheimPlus</span>
+            </div>
+          </div>
+          <a href="https://client.quack.host/register?game=valheim" class="block text-center bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2 rounded-lg transition-colors">
+            Create Server →
+          </a>
+        </div>
+      </div>
+
+      <!-- Rust -->
+      <div class="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden hover:border-orange-500 transition-all group">
+        <div class="h-48 bg-gradient-to-br from-red-600 to-orange-700 flex items-center justify-center">
+          <div class="text-6xl">🔥</div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2">Rust</h3>
+          <p class="text-gray-400 text-sm mb-4">
+            Survive, build, raid. High-performance servers with Oxide/uMod plugin support.
+          </p>
+          <div class="space-y-2 text-sm mb-4">
+            <div class="flex items-center text-gray-400">
+              <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Oxide/uMod plugin support</span>
+            </div>
+            <div class="flex items-center text-gray-400">
+              <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Custom map size & seed</span>
+            </div>
+            <div class="flex items-center text-gray-400">
+              <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>High-frequency tick rates</span>
+            </div>
+          </div>
+          <a href="https://client.quack.host/register?game=rust" class="block text-center bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded-lg transition-colors">
+            Create Server →
+          </a>
+        </div>
+      </div>
+
+      <!-- ARK: Survival Evolved -->
+      <div class="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden hover:border-orange-500 transition-all group">
+        <div class="h-48 bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center">
+          <div class="text-6xl">🦖</div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2">ARK: Survival Evolved</h3>
+          <p class="text-gray-400 text-sm mb-4">
+            Tame dinosaurs and explore. Support for all maps and extensive mod library.
+          </p>
+          <div class="space-y-2 text-sm mb-4">
+            <div class="flex items-center text-gray-400">
+              <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>All official & custom maps</span>
+            </div>
+            <div class="flex items-center text-gray-400">
+              <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Steam Workshop mod support</span>
+            </div>
+            <div class="flex items-center text-gray-400">
+              <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Cluster support available</span>
+            </div>
+          </div>
+          <a href="https://client.quack.host/register?game=ark" class="block text-center bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 rounded-lg transition-colors">
+            Create Server →
+          </a>
+        </div>
+      </div>
+
+      <!-- Terraria -->
+      <div class="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden hover:border-orange-500 transition-all group">
+        <div class="h-48 bg-gradient-to-br from-teal-600 to-teal-800 flex items-center justify-center">
+          <div class="text-6xl">🌍</div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2">Terraria</h3>
+          <p class="text-gray-400 text-sm mb-4">
+            Dig, fight, build. TShock support for enhanced multiplayer adventures.
+          </p>
+          <div class="space-y-2 text-sm mb-4">
+            <div class="flex items-center text-gray-400">
+              <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>TShock server support</span>
+            </div>
+            <div class="flex items-center text-gray-400">
+              <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Plugin & mod support</span>
+            </div>
+            <div class="flex items-center text-gray-400">
+              <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>World size customization</span>
+            </div>
+          </div>
+          <a href="https://client.quack.host/register?game=terraria" class="block text-center bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 rounded-lg transition-colors">
+            Create Server →
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Coming Soon Section -->
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold text-center mb-8">Coming Soon</h2>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="bg-gray-900 border border-gray-700 rounded-lg p-6 text-center opacity-75">
+          <div class="text-4xl mb-3">🎯</div>
+          <h4 class="font-semibold mb-2">Palworld</h4>
+          <p class="text-sm text-gray-400">Pokemon meets survival</p>
+        </div>
+        <div class="bg-gray-900 border border-gray-700 rounded-lg p-6 text-center opacity-75">
+          <div class="text-4xl mb-3">🎮</div>
+          <h4 class="font-semibold mb-2">Counter-Strike 2</h4>
+          <p class="text-sm text-gray-400">Competitive FPS hosting</p>
+        </div>
+        <div class="bg-gray-900 border border-gray-700 rounded-lg p-6 text-center opacity-75">
+          <div class="text-4xl mb-3">🏭</div>
+          <h4 class="font-semibold mb-2">Satisfactory</h4>
+          <p class="text-sm text-gray-400">Factory building with friends</p>
+        </div>
+        <div class="bg-gray-900 border border-gray-700 rounded-lg p-6 text-center opacity-75">
+          <div class="text-4xl mb-3">🚂</div>
+          <h4 class="font-semibold mb-2">Factorio</h4>
+          <p class="text-sm text-gray-400">Automation at scale</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature Highlights -->
+    <div class="mb-16 bg-gradient-to-r from-orange-600 to-orange-500 rounded-lg p-12">
+      <h2 class="text-3xl font-bold text-center mb-4 text-white">Every Game, Same Great Features</h2>
+      <p class="text-center text-orange-100 mb-8 max-w-2xl mx-auto">
+        No matter which game you choose, you get the full QuackHost experience
+      </p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="text-4xl mb-3">⚡</div>
+          <h3 class="font-bold text-white mb-2">Instant Setup</h3>
+          <p class="text-sm text-orange-100">
+            Your server is ready in under 60 seconds. No manual configuration required.
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-3">🔄</div>
+          <h3 class="font-bold text-white mb-2">One-Click Switching</h3>
+          <p class="text-sm text-orange-100">
+            Want to try a different game? Switch anytime without losing your subscription.
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-3">💾</div>
+          <h3 class="font-bold text-white mb-2">Automatic Backups</h3>
+          <p class="text-sm text-orange-100">
+            Your worlds are backed up automatically. Restore to any point with one click.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game Server Templates -->
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold text-center mb-4">Pre-Configured Templates</h2>
+      <p class="text-center text-gray-400 mb-8 max-w-2xl mx-auto">
+        Start with popular server configurations. One-click deployment, fully customizable.
+      </p>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-gray-900 border border-gray-700 rounded-lg p-6 hover:border-orange-500 transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <h4 class="font-bold">Minecraft: SkyBlock</h4>
+            <span class="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">TEMPLATE</span>
+          </div>
+          <p class="text-sm text-gray-400 mb-4">
+            Pre-configured SkyBlock server with popular plugins: EconomyAPI, Vault, and WorldEdit.
+          </p>
+          <div class="text-xs text-gray-500 mb-4">
+            Paper 1.20.4 • 15 plugins included
+          </div>
+          <a href="https://client.quack.host/templates/skyblock" class="block text-center bg-gray-800 hover:bg-gray-700 text-white font-semibold py-2 rounded-lg transition-colors text-sm">
+            Use Template
+          </a>
+        </div>
+
+        <div class="bg-gray-900 border border-gray-700 rounded-lg p-6 hover:border-orange-500 transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <h4 class="font-bold">Minecraft: Prison Server</h4>
+            <span class="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">TEMPLATE</span>
+          </div>
+          <p class="text-sm text-gray-400 mb-4">
+            Complete prison server setup with mines, ranks, and economy system ready to go.
+          </p>
+          <div class="text-xs text-gray-500 mb-4">
+            Paper 1.20.4 • 20 plugins included
+          </div>
+          <a href="https://client.quack.host/templates/prison" class="block text-center bg-gray-800 hover:bg-gray-700 text-white font-semibold py-2 rounded-lg transition-colors text-sm">
+            Use Template
+          </a>
+        </div>
+
+        <div class="bg-gray-900 border border-gray-700 rounded-lg p-6 hover:border-orange-500 transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <h4 class="font-bold">Minecraft: Modded (All the Mods 9)</h4>
+            <span class="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">TEMPLATE</span>
+          </div>
+          <p class="text-sm text-gray-400 mb-4">
+            Popular All the Mods 9 modpack pre-installed and optimized for multiplayer.
+          </p>
+          <div class="text-xs text-gray-500 mb-4">
+            Forge 1.20.1 • 300+ mods included
+          </div>
+          <a href="https://client.quack.host/templates/atm9" class="block text-center bg-gray-800 hover:bg-gray-700 text-white font-semibold py-2 rounded-lg transition-colors text-sm">
+            Use Template
+          </a>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <a href="https://client.quack.host/templates" class="text-orange-500 hover:text-orange-400 font-semibold">
+          Browse All Templates →
+        </a>
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold text-center mb-8">Game Comparison</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-gray-700">
+              <th class="text-left py-4 px-4">Feature</th>
+              <th class="text-center py-4 px-4">Minecraft Java</th>
+              <th class="text-center py-4 px-4">Valheim</th>
+              <th class="text-center py-4 px-4">Rust</th>
+              <th class="text-center py-4 px-4">ARK</th>
+              <th class="text-center py-4 px-4">Terraria</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-800">
+              <td class="py-4 px-4 font-medium">Mod Support</td>
+              <td class="text-center py-4 px-4">✓ Extensive</td>
+              <td class="text-center py-4 px-4">✓ ValheimPlus</td>
+              <td class="text-center py-4 px-4">✓ Oxide/uMod</td>
+              <td class="text-center py-4 px-4">✓ Workshop</td>
+              <td class="text-center py-4 px-4">✓ TShock</td>
+            </tr>
+            <tr class="border-b border-gray-800">
+              <td class="py-4 px-4 font-medium">Typical Players</td>
+              <td class="text-center py-4 px-4 text-gray-400">10-100+</td>
+              <td class="text-center py-4 px-4 text-gray-400">10-20</td>
+              <td class="text-center py-4 px-4 text-gray-400">50-200</td>
+              <td class="text-center py-4 px-4 text-gray-400">20-70</td>
+              <td class="text-center py-4 px-4 text-gray-400">8-16</td>
+            </tr>
+            <tr class="border-b border-gray-800">
+              <td class="py-4 px-4 font-medium">RAM Requirement</td>
+              <td class="text-center py-4 px-4 text-gray-400">2-16 GB</td>
+              <td class="text-center py-4 px-4 text-gray-400">4-8 GB</td>
+              <td class="text-center py-4 px-4 text-gray-400">8-16 GB</td>
+              <td class="text-center py-4 px-4 text-gray-400">8-32 GB</td>
+              <td class="text-center py-4 px-4 text-gray-400">1-4 GB</td>
+            </tr>
+            <tr class="border-b border-gray-800">
+              <td class="py-4 px-4 font-medium">Auto-Updates</td>
+              <td class="text-center py-4 px-4">✓</td>
+              <td class="text-center py-4 px-4">✓</td>
+              <td class="text-center py-4 px-4">✓</td>
+              <td class="text-center py-4 px-4">✓</td>
+              <td class="text-center py-4 px-4">✓</td>
+            </tr>
+            <tr class="border-b border-gray-800">
+              <td class="py-4 px-4 font-medium">Starting Price</td>
+              <td class="text-center py-4 px-4 text-orange-500">$12/mo</td>
+              <td class="text-center py-4 px-4 text-orange-500">$10/mo</td>
+              <td class="text-center py-4 px-4 text-orange-500">$18/mo</td>
+              <td class="text-center py-4 px-4 text-orange-500">$20/mo</td>
+              <td class="text-center py-4 px-4 text-orange-500">$8/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl font-bold text-center mb-8">Game Hosting FAQ</h2>
+      <div class="space-y-4" x-data="{ active: null }">
+
+        <div class="bg-gray-900 border border-gray-700 rounded-lg">
+          <button
+            @click="active = active === 1 ? null : 1"
+            class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center"
+          >
+            <span>Can I switch between games on the same server?</span>
+            <svg
+              class="w-5 h-5 transition-transform"
+              :class="active === 1 ? 'rotate-180' : ''"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div x-show="active === 1" x-collapse class="px-6 pb-4 text-gray-400">
+            Yes! You can switch games anytime through QuackPlane. Your data for each game is preserved, so you can switch back and forth without losing progress. Your subscription remains the same.
+          </div>
+        </div>
+
+        <div class="bg-gray-900 border border-gray-700 rounded-lg">
+          <button
+            @click="active = active === 2 ? null : 2"
+            class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center"
+          >
+            <span>Do you support modpacks and custom mods?</span>
+            <svg
+              class="w-5 h-5 transition-transform"
+              :class="active === 2 ? 'rotate-180' : ''"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div x-show="active === 2" x-collapse class="px-6 pb-4 text-gray-400">
+            Absolutely! We support all major modpacks (CurseForge, FTB, ATLauncher) with one-click installation. You can also upload custom mods, plugins, and configurations through QuackPlane's file manager or FTP.
+          </div>
+        </div>
+
+        <div class="bg-gray-900 border border-gray-700 rounded-lg">
+          <button
+            @click="active = active === 3 ? null : 3"
+            class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center"
+          >
+            <span>How do game updates work?</span>
+            <svg
+              class="w-5 h-5 transition-transform"
+              :class="active === 3 ? 'rotate-180' : ''"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div x-show="active === 3" x-collapse class="px-6 pb-4 text-gray-400">
+            Game updates are handled automatically but you stay in control. You'll be notified when updates are available, and can choose to update immediately or schedule it for later. We always create a backup before updating.
+          </div>
+        </div>
+
+        <div class="bg-gray-900 border border-gray-700 rounded-lg">
+          <button
+            @click="active = active === 4 ? null : 4"
+            class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center"
+          >
+            <span>Can I run multiple game servers?</span>
+            <svg
+              class="w-5 h-5 transition-transform"
+              :class="active === 4 ? 'rotate-180' : ''"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div x-show="active === 4" x-collapse class="px-6 pb-4 text-gray-400">
+            Yes! Each server requires its own subscription, but you get a multi-server discount: 10% off for 3+ servers, 15% off for 5+ servers. All managed from one QuackPlane dashboard.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center bg-gradient-to-r from-orange-600 to-orange-500 rounded-lg p-12">
+      <h2 class="text-3xl font-bold mb-4 text-white">Ready to Start Your Adventure?</h2>
+      <p class="text-orange-100 mb-6 max-w-2xl mx-auto">
+        Launch your game server in under 60 seconds. No credit card required for trial.
+      </p>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a
+          href="https://client.quack.host/register"
+          class="bg-white text-orange-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors"
+        >
+          Create Your Server
+        </a>
+        <a
+          href="/pricing"
+          class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-orange-600 transition-colors"
+        >
+          View Pricing
+        </a>
+      </div>
+    </div>
+
   </div>
 </Layout>

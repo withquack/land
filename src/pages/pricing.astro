@@ -1,11 +1,530 @@
 ---
 import Layout from "../layouts/layout.astro";
+import PricingCalculator from "../components/pricing-calculator.astro";
 ---
 
 <Layout title="/ Pricing">
-  <div class="mb-32 mt-32">
-    <p class="text-2xl font-semibold xl:text-4xl">Pricing</p>
-  </div>
+  <div class="container mx-auto px-4 py-16">
 
-  <div class="h-96 rounded-md bg-gray-200"></div>
+    <!-- Hero Section -->
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">
+        Simple, Transparent Pricing
+      </h1>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+        No hidden fees. No surprises. Scale up or down anytime. Pay only for what you use.
+      </p>
+    </div>
+
+    <!-- Pricing Toggle -->
+    <div class="flex justify-center mb-12" x-data="{ billing: 'monthly' }">
+      <div class="inline-flex rounded-lg bg-gray-800 p-1">
+        <button
+          @click="billing = 'monthly'"
+          :class="billing === 'monthly' ? 'bg-orange-500 text-white' : 'text-gray-400'"
+          class="px-6 py-2 rounded-md font-medium transition-all"
+        >
+          Monthly
+        </button>
+        <button
+          @click="billing = 'annual'"
+          :class="billing === 'annual' ? 'bg-orange-500 text-white' : 'text-gray-400'"
+          class="px-6 py-2 rounded-md font-medium transition-all"
+        >
+          Annual
+          <span class="ml-2 text-xs bg-green-500 text-white px-2 py-1 rounded">Save 15%</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16" x-data="{ billing: 'monthly' }">
+
+      <!-- Starter Plan -->
+      <div class="bg-gray-900 border border-gray-700 rounded-lg p-8 hover:border-orange-500 transition-all">
+        <h3 class="text-2xl font-bold mb-2">Starter</h3>
+        <p class="text-gray-400 text-sm mb-6">Perfect for small communities</p>
+        <div class="mb-6">
+          <span class="text-5xl font-bold">$12</span>
+          <span class="text-gray-400" x-show="billing === 'monthly'">/mo</span>
+          <span class="text-gray-400" x-show="billing === 'annual'">/mo</span>
+          <div x-show="billing === 'annual'" class="text-sm text-green-500 mt-1">
+            $122/year (save $22)
+          </div>
+        </div>
+        <ul class="space-y-3 mb-8 text-sm">
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>2 CPU Cores</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>4 GB RAM</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>50 GB NVMe Storage</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Up to 20 Players</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>DDoS Protection</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Daily Backups</span>
+          </li>
+        </ul>
+        <a href="https://client.quack.host/register?plan=starter" class="block text-center bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 rounded-lg transition-colors">
+          Get Started
+        </a>
+      </div>
+
+      <!-- Pro Plan (Popular) -->
+      <div class="bg-gradient-to-b from-orange-600 to-orange-500 rounded-lg p-8 relative transform lg:scale-105 shadow-2xl">
+        <div class="absolute top-0 right-0 bg-white text-orange-600 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+          POPULAR
+        </div>
+        <h3 class="text-2xl font-bold mb-2 text-white">Pro</h3>
+        <p class="text-orange-100 text-sm mb-6">For growing servers</p>
+        <div class="mb-6">
+          <span class="text-5xl font-bold text-white">$28</span>
+          <span class="text-orange-100" x-show="billing === 'monthly'">/mo</span>
+          <span class="text-orange-100" x-show="billing === 'annual'">/mo</span>
+          <div x-show="billing === 'annual'" class="text-sm text-white mt-1">
+            $286/year (save $50)
+          </div>
+        </div>
+        <ul class="space-y-3 mb-8 text-sm text-white">
+          <li class="flex items-start">
+            <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>4 CPU Cores</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>8 GB RAM</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>100 GB NVMe Storage</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Up to 50 Players</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>DDoS Protection</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Hourly Backups</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Priority Support</span>
+          </li>
+        </ul>
+        <a href="https://client.quack.host/register?plan=pro" class="block text-center bg-white hover:bg-gray-100 text-orange-600 font-bold py-3 rounded-lg transition-colors">
+          Get Started
+        </a>
+      </div>
+
+      <!-- Elite Plan -->
+      <div class="bg-gray-900 border border-gray-700 rounded-lg p-8 hover:border-orange-500 transition-all">
+        <h3 class="text-2xl font-bold mb-2">Elite</h3>
+        <p class="text-gray-400 text-sm mb-6">For large communities</p>
+        <div class="mb-6">
+          <span class="text-5xl font-bold">$55</span>
+          <span class="text-gray-400" x-show="billing === 'monthly'">/mo</span>
+          <span class="text-gray-400" x-show="billing === 'annual'">/mo</span>
+          <div x-show="billing === 'annual'" class="text-sm text-green-500 mt-1">
+            $561/year (save $99)
+          </div>
+        </div>
+        <ul class="space-y-3 mb-8 text-sm">
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>8 CPU Cores</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>16 GB RAM</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>200 GB NVMe Storage</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Up to 100 Players</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>DDoS Protection</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Real-time Backups</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Priority Support</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Multi-Server Discount</span>
+          </li>
+        </ul>
+        <a href="https://client.quack.host/register?plan=elite" class="block text-center bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 rounded-lg transition-colors">
+          Get Started
+        </a>
+      </div>
+
+      <!-- Enterprise Plan -->
+      <div class="bg-gray-900 border border-gray-700 rounded-lg p-8 hover:border-orange-500 transition-all">
+        <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+        <p class="text-gray-400 text-sm mb-6">Custom solutions</p>
+        <div class="mb-6">
+          <span class="text-5xl font-bold">Custom</span>
+        </div>
+        <ul class="space-y-3 mb-8 text-sm">
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Custom CPU Cores</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Custom RAM</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Custom Storage</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Unlimited Players</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Dedicated Hardware</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Custom SLA</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Dedicated Account Manager</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>White-Label Options</span>
+          </li>
+        </ul>
+        <a href="https://client.quack.host/contact" class="block text-center bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 rounded-lg transition-colors">
+          Contact Sales
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Interactive Calculator Section -->
+    <div class="mb-16">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold mb-4">Need a Custom Configuration?</h2>
+        <p class="text-gray-400">Use our calculator to build your perfect server</p>
+      </div>
+      <div class="max-w-2xl mx-auto">
+        <PricingCalculator />
+      </div>
+    </div>
+
+    <!-- Feature Comparison Table -->
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold text-center mb-8">Compare All Plans</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="border-b border-gray-700">
+              <th class="text-left py-4 px-4">Feature</th>
+              <th class="text-center py-4 px-4">Starter</th>
+              <th class="text-center py-4 px-4 bg-orange-500 bg-opacity-10">Pro</th>
+              <th class="text-center py-4 px-4">Elite</th>
+              <th class="text-center py-4 px-4">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody class="text-sm">
+            <tr class="border-b border-gray-800">
+              <td class="py-4 px-4 font-medium">CPU Cores</td>
+              <td class="text-center py-4 px-4 text-gray-400">2</td>
+              <td class="text-center py-4 px-4 bg-orange-500 bg-opacity-10">4</td>
+              <td class="text-center py-4 px-4 text-gray-400">8</td>
+              <td class="text-center py-4 px-4 text-gray-400">Custom</td>
+            </tr>
+            <tr class="border-b border-gray-800">
+              <td class="py-4 px-4 font-medium">RAM</td>
+              <td class="text-center py-4 px-4 text-gray-400">4 GB</td>
+              <td class="text-center py-4 px-4 bg-orange-500 bg-opacity-10">8 GB</td>
+              <td class="text-center py-4 px-4 text-gray-400">16 GB</td>
+              <td class="text-center py-4 px-4 text-gray-400">Custom</td>
+            </tr>
+            <tr class="border-b border-gray-800">
+              <td class="py-4 px-4 font-medium">NVMe Storage</td>
+              <td class="text-center py-4 px-4 text-gray-400">50 GB</td>
+              <td class="text-center py-4 px-4 bg-orange-500 bg-opacity-10">100 GB</td>
+              <td class="text-center py-4 px-4 text-gray-400">200 GB</td>
+              <td class="text-center py-4 px-4 text-gray-400">Custom</td>
+            </tr>
+            <tr class="border-b border-gray-800">
+              <td class="py-4 px-4 font-medium">Player Capacity</td>
+              <td class="text-center py-4 px-4 text-gray-400">20</td>
+              <td class="text-center py-4 px-4 bg-orange-500 bg-opacity-10">50</td>
+              <td class="text-center py-4 px-4 text-gray-400">100</td>
+              <td class="text-center py-4 px-4 text-gray-400">Unlimited</td>
+            </tr>
+            <tr class="border-b border-gray-800">
+              <td class="py-4 px-4 font-medium">Backups</td>
+              <td class="text-center py-4 px-4 text-gray-400">Daily</td>
+              <td class="text-center py-4 px-4 bg-orange-500 bg-opacity-10">Hourly</td>
+              <td class="text-center py-4 px-4 text-gray-400">Real-time</td>
+              <td class="text-center py-4 px-4 text-gray-400">Custom</td>
+            </tr>
+            <tr class="border-b border-gray-800">
+              <td class="py-4 px-4 font-medium">DDoS Protection</td>
+              <td class="text-center py-4 px-4">✓</td>
+              <td class="text-center py-4 px-4 bg-orange-500 bg-opacity-10">✓</td>
+              <td class="text-center py-4 px-4">✓</td>
+              <td class="text-center py-4 px-4">✓</td>
+            </tr>
+            <tr class="border-b border-gray-800">
+              <td class="py-4 px-4 font-medium">Mod/Plugin Support</td>
+              <td class="text-center py-4 px-4">✓</td>
+              <td class="text-center py-4 px-4 bg-orange-500 bg-opacity-10">✓</td>
+              <td class="text-center py-4 px-4">✓</td>
+              <td class="text-center py-4 px-4">✓</td>
+            </tr>
+            <tr class="border-b border-gray-800">
+              <td class="py-4 px-4 font-medium">QuackPlane Access</td>
+              <td class="text-center py-4 px-4">✓</td>
+              <td class="text-center py-4 px-4 bg-orange-500 bg-opacity-10">✓</td>
+              <td class="text-center py-4 px-4">✓</td>
+              <td class="text-center py-4 px-4">✓</td>
+            </tr>
+            <tr class="border-b border-gray-800">
+              <td class="py-4 px-4 font-medium">Support</td>
+              <td class="text-center py-4 px-4 text-gray-400">Standard</td>
+              <td class="text-center py-4 px-4 bg-orange-500 bg-opacity-10">Priority</td>
+              <td class="text-center py-4 px-4 text-gray-400">Priority</td>
+              <td class="text-center py-4 px-4 text-gray-400">Dedicated</td>
+            </tr>
+            <tr class="border-b border-gray-800">
+              <td class="py-4 px-4 font-medium">API Access</td>
+              <td class="text-center py-4 px-4 text-gray-400">-</td>
+              <td class="text-center py-4 px-4 bg-orange-500 bg-opacity-10">✓</td>
+              <td class="text-center py-4 px-4">✓</td>
+              <td class="text-center py-4 px-4">✓</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8">Pricing FAQ</h2>
+      <div class="space-y-4" x-data="{ active: null }">
+
+        <div class="bg-gray-900 border border-gray-700 rounded-lg">
+          <button
+            @click="active = active === 1 ? null : 1"
+            class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center"
+          >
+            <span>Can I upgrade or downgrade my plan?</span>
+            <svg
+              class="w-5 h-5 transition-transform"
+              :class="active === 1 ? 'rotate-180' : ''"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div x-show="active === 1" x-collapse class="px-6 pb-4 text-gray-400">
+            Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate the cost difference. Your server data remains intact during plan changes.
+          </div>
+        </div>
+
+        <div class="bg-gray-900 border border-gray-700 rounded-lg">
+          <button
+            @click="active = active === 2 ? null : 2"
+            class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center"
+          >
+            <span>What payment methods do you accept?</span>
+            <svg
+              class="w-5 h-5 transition-transform"
+              :class="active === 2 ? 'rotate-180' : ''"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div x-show="active === 2" x-collapse class="px-6 pb-4 text-gray-400">
+            We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and cryptocurrency. Annual subscriptions can also be paid via bank transfer for enterprise customers.
+          </div>
+        </div>
+
+        <div class="bg-gray-900 border border-gray-700 rounded-lg">
+          <button
+            @click="active = active === 3 ? null : 3"
+            class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center"
+          >
+            <span>Is there a free trial?</span>
+            <svg
+              class="w-5 h-5 transition-transform"
+              :class="active === 3 ? 'rotate-180' : ''"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div x-show="active === 3" x-collapse class="px-6 pb-4 text-gray-400">
+            We offer a 48-hour money-back guarantee. Try QuackHost risk-free, and if you're not satisfied within the first 48 hours, we'll provide a full refund—no questions asked.
+          </div>
+        </div>
+
+        <div class="bg-gray-900 border border-gray-700 rounded-lg">
+          <button
+            @click="active = active === 4 ? null : 4"
+            class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center"
+          >
+            <span>Are there any hidden fees?</span>
+            <svg
+              class="w-5 h-5 transition-transform"
+              :class="active === 4 ? 'rotate-180' : ''"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div x-show="active === 4" x-collapse class="px-6 pb-4 text-gray-400">
+            No hidden fees, ever. The price you see is the price you pay. DDoS protection, backups, and basic support are included in all plans. Optional add-ons like additional storage or enhanced backup frequencies are clearly priced in your dashboard.
+          </div>
+        </div>
+
+        <div class="bg-gray-900 border border-gray-700 rounded-lg">
+          <button
+            @click="active = active === 5 ? null : 5"
+            class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center"
+          >
+            <span>What happens if I exceed my player limit?</span>
+            <svg
+              class="w-5 h-5 transition-transform"
+              :class="active === 5 ? 'rotate-180' : ''"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div x-show="active === 5" x-collapse class="px-6 pb-4 text-gray-400">
+            Player limits are soft recommendations based on optimal performance. Your server won't stop working if you exceed them, but you may experience performance degradation. We'll notify you and suggest upgrading to a higher tier for the best experience.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="mt-16 text-center bg-gradient-to-r from-orange-600 to-orange-500 rounded-lg p-12">
+      <h2 class="text-3xl font-bold mb-4 text-white">Ready to Launch Your Server?</h2>
+      <p class="text-orange-100 mb-6 max-w-2xl mx-auto">
+        Join thousands of server owners who trust QuackHost for reliable, high-performance game server hosting.
+      </p>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a
+          href="https://client.quack.host/register"
+          class="bg-white text-orange-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors"
+        >
+          Get Started Now
+        </a>
+        <a
+          href="/quackplane"
+          class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-orange-600 transition-colors"
+        >
+          Explore QuackPlane
+        </a>
+      </div>
+    </div>
+
+  </div>
 </Layout>

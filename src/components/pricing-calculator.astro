@@ -1,0 +1,264 @@
+---
+// Interactive Pricing Calculator Component
+---
+
+<div class="pricing-calculator bg-gray-900 border border-gray-700 rounded-lg p-8 shadow-xl" x-data="pricingCalculator()">
+  <h3 class="text-2xl font-bold mb-6">Build Your Perfect Server</h3>
+
+  <div class="space-y-6">
+    <!-- Game Selection -->
+    <div>
+      <label class="block text-sm font-medium mb-2">Game Type</label>
+      <select x-model="game" @change="calculate()" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
+        <option value="minecraft">Minecraft (Java Edition)</option>
+        <option value="minecraft-bedrock">Minecraft (Bedrock Edition)</option>
+        <option value="valheim">Valheim</option>
+        <option value="rust">Rust</option>
+        <option value="ark">ARK: Survival Evolved</option>
+        <option value="terraria">Terraria</option>
+      </select>
+    </div>
+
+    <!-- Player Count Slider -->
+    <div>
+      <label class="block text-sm font-medium mb-2">
+        Expected Players: <span class="text-orange-500" x-text="players"></span>
+      </label>
+      <input
+        type="range"
+        min="1"
+        max="200"
+        x-model="players"
+        @input="calculate()"
+        class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-orange-500"
+      />
+      <div class="flex justify-between text-xs text-gray-400 mt-1">
+        <span>1</span>
+        <span>50</span>
+        <span>100</span>
+        <span>200+</span>
+      </div>
+    </div>
+
+    <!-- RAM Slider -->
+    <div>
+      <label class="block text-sm font-medium mb-2">
+        RAM: <span class="text-orange-500" x-text="ram + ' GB'"></span>
+      </label>
+      <input
+        type="range"
+        min="2"
+        max="32"
+        step="2"
+        x-model="ram"
+        @input="calculate()"
+        class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-orange-500"
+      />
+    </div>
+
+    <!-- Storage Slider -->
+    <div>
+      <label class="block text-sm font-medium mb-2">
+        NVMe Storage: <span class="text-orange-500" x-text="storage + ' GB'"></span>
+      </label>
+      <input
+        type="range"
+        min="10"
+        max="500"
+        step="10"
+        x-model="storage"
+        @input="calculate()"
+        class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-orange-500"
+      />
+    </div>
+
+    <!-- Mod Support -->
+    <div>
+      <label class="flex items-center space-x-3 cursor-pointer">
+        <input
+          type="checkbox"
+          x-model="mods"
+          @change="calculate()"
+          class="w-5 h-5 bg-gray-800 border-gray-600 rounded text-orange-500 focus:ring-orange-500"
+        />
+        <span class="text-sm font-medium">Heavy Mods/Plugins (+20% CPU)</span>
+      </label>
+    </div>
+
+    <!-- Backup Frequency -->
+    <div>
+      <label class="block text-sm font-medium mb-2">Backup Frequency</label>
+      <select x-model="backups" @change="calculate()" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
+        <option value="daily">Daily Backups (Included)</option>
+        <option value="hourly">Hourly Backups (+$2/mo)</option>
+        <option value="realtime">Real-time Backups (+$5/mo)</option>
+      </select>
+    </div>
+
+    <!-- DDoS Protection -->
+    <div>
+      <label class="flex items-center space-x-3 cursor-pointer">
+        <input
+          type="checkbox"
+          x-model="ddos"
+          checked
+          disabled
+          class="w-5 h-5 bg-gray-800 border-gray-600 rounded text-orange-500"
+        />
+        <span class="text-sm font-medium">Terrabit DDoS Protection (Always Included)</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Pricing Result -->
+  <div class="mt-8 p-6 bg-gradient-to-r from-orange-600 to-orange-500 rounded-lg">
+    <div class="flex justify-between items-center">
+      <div>
+        <p class="text-sm text-orange-100">Estimated Monthly Cost</p>
+        <p class="text-4xl font-bold text-white">
+          $<span x-text="price.toFixed(2)"></span>
+        </p>
+        <p class="text-sm text-orange-100 mt-1">
+          or $<span x-text="(price * 0.85).toFixed(2)"></span>/mo billed annually (15% off)
+        </p>
+      </div>
+      <div class="text-right">
+        <p class="text-xs text-orange-100">Recommended Plan:</p>
+        <p class="text-xl font-semibold text-white" x-text="recommendedPlan"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Specs Summary -->
+  <div class="mt-4 p-4 bg-gray-800 rounded-lg border border-gray-700">
+    <p class="text-xs font-semibold text-gray-400 mb-2">YOUR SERVER SPECS:</p>
+    <div class="grid grid-cols-2 gap-3 text-sm">
+      <div>
+        <span class="text-gray-400">CPU Cores:</span>
+        <span class="text-white font-semibold ml-2" x-text="specs.cpu"></span>
+      </div>
+      <div>
+        <span class="text-gray-400">RAM:</span>
+        <span class="text-white font-semibold ml-2" x-text="ram + ' GB'"></span>
+      </div>
+      <div>
+        <span class="text-gray-400">Storage:</span>
+        <span class="text-white font-semibold ml-2" x-text="storage + ' GB NVMe'"></span>
+      </div>
+      <div>
+        <span class="text-gray-400">Bandwidth:</span>
+        <span class="text-white font-semibold ml-2">Unlimited</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Button -->
+  <a
+    href="https://client.quack.host/register"
+    class="mt-6 w-full block text-center bg-white text-gray-900 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors"
+  >
+    Launch Your Server →
+  </a>
+</div>
+
+<script>
+  function pricingCalculator() {
+    return {
+      game: 'minecraft',
+      players: 20,
+      ram: 4,
+      storage: 50,
+      mods: false,
+      backups: 'daily',
+      ddos: true,
+      price: 12,
+      recommendedPlan: 'Starter',
+      specs: {
+        cpu: 2
+      },
+
+      calculate() {
+        // Base pricing algorithm
+        let basePrice = 5;
+
+        // RAM pricing: $2 per GB
+        basePrice += this.ram * 2;
+
+        // Storage pricing: $0.10 per GB
+        basePrice += this.storage * 0.10;
+
+        // Player scaling (CPU cost)
+        if (this.players > 50) {
+          basePrice += (this.players - 50) * 0.15;
+        }
+
+        // Mods multiplier
+        if (this.mods) {
+          basePrice *= 1.2;
+        }
+
+        // Backup pricing
+        if (this.backups === 'hourly') {
+          basePrice += 2;
+        } else if (this.backups === 'realtime') {
+          basePrice += 5;
+        }
+
+        // Game-specific pricing
+        const gameMultipliers = {
+          'minecraft': 1.0,
+          'minecraft-bedrock': 0.9,
+          'valheim': 0.8,
+          'rust': 1.3,
+          'ark': 1.4,
+          'terraria': 0.7
+        };
+        basePrice *= gameMultipliers[this.game] || 1.0;
+
+        this.price = basePrice;
+
+        // Calculate recommended CPU cores
+        let cores = Math.ceil(this.ram / 4);
+        if (this.players > 50) cores += 1;
+        if (this.players > 100) cores += 1;
+        if (this.mods) cores += 1;
+        this.specs.cpu = Math.max(2, cores);
+
+        // Determine recommended plan
+        if (this.price < 15) {
+          this.recommendedPlan = 'Starter';
+        } else if (this.price < 30) {
+          this.recommendedPlan = 'Pro';
+        } else if (this.price < 60) {
+          this.recommendedPlan = 'Elite';
+        } else {
+          this.recommendedPlan = 'Enterprise';
+        }
+      },
+
+      init() {
+        this.calculate();
+      }
+    }
+  }
+</script>
+
+<style>
+  input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #FF9C20;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #FF9C20;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+  }
+</style>
