@@ -1,6 +1,8 @@
 ---
 import Navbar from "../components/navbar.astro";
 import Footer from "../components/footer.astro";
+import CookieBanner from "../components/cookie-banner.astro";
+import ChatWidget from "../components/chat-widget.astro";
 import "@fontsource/ibm-plex-sans/400.css";
 import "@fontsource/ibm-plex-sans/600.css";
 const { title } = Astro.props;
@@ -34,5 +36,7 @@ const { title } = Astro.props;
       </div>
       <Footer />
     </div>
+    <CookieBanner />
+    <ChatWidget />
   </body>
 </html>

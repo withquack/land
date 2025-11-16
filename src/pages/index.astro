@@ -1297,6 +1297,82 @@ import Layout from "../layouts/layout.astro";
     </div>
   </div>
 
+  <!-- Trusted By / Partner Logos Section -->
+  <div class="mb-20 lg:mb-32">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+        <span class="text-white">Trusted by</span>
+        <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">thousands of gamers</span>
+      </h2>
+      <p class="text-xl text-cool-gray-40 max-w-3xl mx-auto">
+        Powered by industry-leading technology and trusted partners
+      </p>
+    </div>
+
+    <!-- Partner Logos Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+      <!-- Stripe -->
+      <div class="flex items-center justify-center p-6 bg-gradient-to-br from-gray-90 to-gray-100 rounded-xl border border-gray-80 hover:border-purple-50/50 transition-all duration-300 group">
+        <div class="text-center">
+          <svg class="w-16 h-16 mx-auto mb-2 text-purple-40 group-hover:text-purple-30 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.594-7.305h.003z"/>
+          </svg>
+          <p class="text-cool-gray-40 text-xs font-medium">Payments</p>
+        </div>
+      </div>
+
+      <!-- Cloudflare -->
+      <div class="flex items-center justify-center p-6 bg-gradient-to-br from-gray-90 to-gray-100 rounded-xl border border-gray-80 hover:border-[#FF9C20]/50 transition-all duration-300 group">
+        <div class="text-center">
+          <svg class="w-16 h-16 mx-auto mb-2 text-[#FF9C20] group-hover:text-[#FF8D00] transition-colors" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M16.5289 11.5108l-.0024.0168c-.1128.6132-.6408 1.0667-1.2708 1.0667H6.7837c-.324 0-.6072-.228-.6768-.5448-.012-.0552-.0168-.1128-.0168-.1728 0-.3288.2688-.5976.5976-.5976h8.724c.3288 0 .5976-.2688.5976-.5976 0-.3288-.2688-.5976-.5976-.5976H8.2525c-1.8648 0-3.4356 1.3596-3.7356 3.1956-.0168.0972-.024.1968-.024.2976 0 1.0092.8184 1.8276 1.8276 1.8276h8.652c1.5588 0 2.9016-1.1388 3.1584-2.676l.0024-.0144c.0204-.1128.0312-.228.0312-.3456 0-.5976-.252-1.1376-.6564-1.518-.2568-.2412-.588-.4044-.9528-.468-.0972-.0168-.1968-.024-.2976-.024H8.6461c-.3288 0-.5976-.2688-.5976-.5976s.2688-.5976.5976-.5976h7.3116c.5724 0 1.092.2724 1.4172.6948.2544.3324.4056.7452.4056 1.1928 0 .2028-.0312.3996-.0864.588z"/>
+          </svg>
+          <p class="text-cool-gray-40 text-xs font-medium">DDoS Protection</p>
+        </div>
+      </div>
+
+      <!-- NVME Storage -->
+      <div class="flex items-center justify-center p-6 bg-gradient-to-br from-gray-90 to-gray-100 rounded-xl border border-gray-80 hover:border-cyan-50/50 transition-all duration-300 group">
+        <div class="text-center">
+          <svg class="w-16 h-16 mx-auto mb-2 text-cyan-40 group-hover:text-cyan-30 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
+          </svg>
+          <p class="text-cool-gray-40 text-xs font-medium">NVMe Storage</p>
+        </div>
+      </div>
+
+      <!-- Enterprise Support -->
+      <div class="flex items-center justify-center p-6 bg-gradient-to-br from-gray-90 to-gray-100 rounded-xl border border-gray-80 hover:border-green-50/50 transition-all duration-300 group">
+        <div class="text-center">
+          <svg class="w-16 h-16 mx-auto mb-2 text-green-40 group-hover:text-green-30 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+          <p class="text-cool-gray-40 text-xs font-medium">24/7 Support</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 bg-gradient-to-br from-gray-90 to-gray-100 rounded-2xl border border-gray-80">
+      <div class="text-center">
+        <div class="text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text mb-2">99.99%</div>
+        <p class="text-cool-gray-40 text-sm">Uptime SLA</p>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-purple-40 to-purple-60 bg-clip-text mb-2">&lt;50ms</div>
+        <p class="text-cool-gray-40 text-sm">Average Latency</p>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-cyan-40 to-cyan-60 bg-clip-text mb-2">24/7</div>
+        <p class="text-cool-gray-40 text-sm">Expert Support</p>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-green-40 to-green-60 bg-clip-text mb-2">15K+</div>
+        <p class="text-cool-gray-40 text-sm">Happy Customers</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Final CTA Section -->
   <div class="mb-20 lg:mb-32">
     <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-90 via-gray-100 to-gray-90 border-2 border-gray-80 p-12 lg:p-16">
