@@ -4,35 +4,38 @@ import Layout from "../layouts/layout.astro";
 
 <Layout title="/ Unbeatable Game Servers">
   <!-- Hero Section -->
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 mb-16">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-32">
     <!-- Hero Text -->
-    <div class="bg-cool-gray-90 border border-cool-gray-70 p-8 lg:p-12 flex flex-col justify-between min-h-[400px] lg:min-h-[500px]">
+    <div class="bg-cool-gray-90 border border-cool-gray-70 p-12 lg:p-16 flex flex-col justify-between min-h-[450px] lg:min-h-[550px]">
       <div>
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-semibold mb-6">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-semibold mb-4 leading-tight">
           <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">
             Your server &
           </span>
         </h1>
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-semibold mb-8">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-semibold mb-10 leading-tight">
           <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">
             Our obsession.
           </span>
         </h1>
-        <p class="text-cool-gray-40 text-lg leading-relaxed max-w-xl">
+        <p class="text-cool-gray-30 text-xl leading-relaxed max-w-xl font-light">
           High-performance game servers built for communities that demand reliability, scalability, and zero compromises.
         </p>
       </div>
 
-      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+      <div class="flex flex-col sm:flex-row gap-4 mt-12">
         <a
           href="/pricing"
-          class="inline-flex justify-center items-center px-8 py-4 text-base font-semibold text-black bg-[#FF9C20] hover:bg-[#CC6600] transition-colors duration-200 border-2 border-[#FF9C20]"
+          class="inline-flex justify-center items-center px-10 py-5 text-base font-semibold text-black bg-[#FF9C20] hover:bg-[#FF8D00] transition-all duration-200 border border-[#FF9C20] hover:border-[#FF8D00] group"
         >
-          Launch your server
+          <span>Launch your server</span>
+          <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
         </a>
         <a
           href="/quackplane"
-          class="inline-flex justify-center items-center px-8 py-4 text-base font-semibold text-white hover:text-black border-2 border-[#FF9C20] hover:bg-[#FF8D00] transition-colors duration-200"
+          class="inline-flex justify-center items-center px-10 py-5 text-base font-semibold text-white hover:text-black border border-[#FF9C20] hover:bg-[#FF9C20] transition-all duration-200"
         >
           Discover QuackPlane
         </a>
@@ -40,204 +43,219 @@ import Layout from "../layouts/layout.astro";
     </div>
 
     <!-- Hero Image Placeholder -->
-    <div class="bg-gradient-to-br from-cool-gray-80 to-cool-gray-90 border border-cool-gray-70 border-l-0 lg:border-l-0 p-8 lg:p-12 flex items-center justify-center min-h-[400px] lg:min-h-[500px]">
-      <div class="text-center">
-        <div class="w-48 h-48 mx-auto bg-cool-gray-70 border border-cool-gray-60 flex items-center justify-center">
-          <span class="text-cool-gray-50 text-sm">HERO IMAGE</span>
+    <div class="bg-gradient-to-br from-cool-gray-80 to-cool-gray-90 border border-cool-gray-70 p-12 lg:p-16 flex items-center justify-center min-h-[450px] lg:min-h-[550px]">
+      <div class="text-center w-full">
+        <div class="aspect-square max-w-[280px] mx-auto bg-cool-gray-70 border border-cool-gray-60 flex items-center justify-center">
+          <span class="text-cool-gray-50 text-sm font-mono">HERO IMAGE</span>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Main Features Grid -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-24">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-32">
     <!-- Feature 1: Powerful -->
     <a
       href="#powerful"
-      class="group bg-black border border-purple-50 p-10 hover:bg-cool-gray-100 hover:border-purple-40 transition-all duration-200 min-h-[320px] flex flex-col"
+      class="group bg-black border border-purple-50 p-12 hover:bg-cool-gray-100 hover:border-purple-40 transition-all duration-300 min-h-[360px] flex flex-col"
     >
-      <!-- IBM Pictogram: Power/Performance -->
-      <div class="mb-6">
-        <svg class="w-16 h-16 text-purple-50 group-hover:text-purple-40 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 64 64" stroke-width="1.5">
-          <path d="M32 8 L32 32 M20 20 L32 32 L44 20" stroke-linecap="square" stroke-linejoin="miter"/>
-          <circle cx="32" cy="32" r="20" stroke-linecap="square"/>
-          <path d="M16 48 L48 48 M16 52 L48 52" stroke-linecap="square"/>
+      <!-- IBM Pictogram: Power/CPU -->
+      <div class="mb-8">
+        <svg class="w-20 h-20 text-purple-50 group-hover:text-purple-40 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 64 64" stroke-width="1.2">
+          <rect x="20" y="20" width="24" height="24" stroke-linecap="square"/>
+          <path d="M28 14 L28 20 M32 14 L32 20 M36 14 L36 20" stroke-linecap="square"/>
+          <path d="M28 44 L28 50 M32 44 L32 50 M36 44 L36 50" stroke-linecap="square"/>
+          <path d="M14 28 L20 28 M14 32 L20 32 M14 36 L20 36" stroke-linecap="square"/>
+          <path d="M44 28 L50 28 M44 32 L50 32 M44 36 L50 36" stroke-linecap="square"/>
+          <circle cx="32" cy="32" r="6" stroke-linecap="square"/>
         </svg>
       </div>
 
       <div class="flex-grow">
-        <div class="mb-5">
-          <h2 class="text-2xl lg:text-3xl font-semibold text-purple-40 group-hover:text-purple-30 transition-colors mb-3">
+        <div class="mb-6">
+          <h2 class="text-3xl lg:text-4xl font-semibold text-purple-40 group-hover:text-purple-30 transition-colors mb-4 tracking-tight">
             Powerful
           </h2>
-          <div class="w-12 h-0.5 bg-purple-50"></div>
+          <div class="w-16 h-px bg-purple-50"></div>
         </div>
-        <p class="text-purple-30 leading-relaxed">
+        <p class="text-purple-30 text-base leading-relaxed font-light">
           High-performance infrastructure running the latest hardware. Dedicated resources ensure your servers run smoothly, even with tons of mods and plugins.
         </p>
       </div>
 
-      <div class="mt-6 text-purple-40 group-hover:text-purple-20 transition-colors text-xl font-semibold">
-        →
+      <div class="mt-8 flex items-center text-purple-40 group-hover:text-purple-20 transition-colors text-lg font-medium">
+        <span class="mr-2">Learn more</span>
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+        </svg>
       </div>
     </a>
 
     <!-- Feature 2: Reliable -->
     <a
       href="#reliable"
-      class="group bg-black border border-cyan-50 p-10 hover:bg-cool-gray-100 hover:border-cyan-40 transition-all duration-200 min-h-[320px] flex flex-col"
+      class="group bg-black border border-cyan-50 p-12 hover:bg-cool-gray-100 hover:border-cyan-40 transition-all duration-300 min-h-[360px] flex flex-col"
     >
-      <!-- IBM Pictogram: Shield/Security -->
-      <div class="mb-6">
-        <svg class="w-16 h-16 text-cyan-50 group-hover:text-cyan-40 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 64 64" stroke-width="1.5">
-          <path d="M32 8 L48 16 L48 32 Q48 48 32 56 Q16 48 16 32 L16 16 Z" stroke-linecap="square" stroke-linejoin="miter"/>
-          <path d="M24 32 L30 38 L42 26" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2"/>
+      <!-- IBM Pictogram: Shield/Protection -->
+      <div class="mb-8">
+        <svg class="w-20 h-20 text-cyan-50 group-hover:text-cyan-40 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 64 64" stroke-width="1.2">
+          <path d="M32 10 L46 16 L46 30 C46 42 32 52 32 52 C32 52 18 42 18 30 L18 16 Z" stroke-linecap="square" stroke-linejoin="miter"/>
+          <path d="M26 32 L30 36 L40 26" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.8"/>
+          <circle cx="32" cy="30" r="12" stroke-linecap="square" opacity="0.3"/>
         </svg>
       </div>
 
       <div class="flex-grow">
-        <div class="mb-5">
-          <h2 class="text-2xl lg:text-3xl font-semibold text-cyan-40 group-hover:text-cyan-30 transition-colors mb-3">
+        <div class="mb-6">
+          <h2 class="text-3xl lg:text-4xl font-semibold text-cyan-40 group-hover:text-cyan-30 transition-colors mb-4 tracking-tight">
             Reliable
           </h2>
-          <div class="w-12 h-0.5 bg-cyan-50"></div>
+          <div class="w-16 h-px bg-cyan-50"></div>
         </div>
-        <p class="text-cyan-30 leading-relaxed">
+        <p class="text-cyan-30 text-base leading-relaxed font-light">
           Terrabit-scale DDoS protection keeps your server online during attacks. Check our live service status to see our track record.
         </p>
       </div>
 
-      <div class="mt-6 text-cyan-40 group-hover:text-cyan-20 transition-colors text-xl font-semibold">
-        →
+      <div class="mt-8 flex items-center text-cyan-40 group-hover:text-cyan-20 transition-colors text-lg font-medium">
+        <span class="mr-2">Learn more</span>
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+        </svg>
       </div>
     </a>
 
     <!-- Feature 3: Scalable -->
     <a
       href="#scalable"
-      class="group bg-black border border-green-50 p-10 hover:bg-cool-gray-100 hover:border-green-40 transition-all duration-200 min-h-[320px] flex flex-col"
+      class="group bg-black border border-green-50 p-12 hover:bg-cool-gray-100 hover:border-green-40 transition-all duration-300 min-h-[360px] flex flex-col"
     >
-      <!-- IBM Pictogram: Autoscaling/Growth -->
-      <div class="mb-6">
-        <svg class="w-16 h-16 text-green-50 group-hover:text-green-40 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 64 64" stroke-width="1.5">
-          <path d="M12 52 L12 40 M12 40 L24 40 M20 44 L12 40 L20 36" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2"/>
-          <path d="M52 12 L52 24 M52 24 L40 24 M44 20 L52 24 L44 28" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2"/>
-          <rect x="16" y="16" width="10" height="32" stroke-linecap="square"/>
-          <rect x="28" y="24" width="10" height="24" stroke-linecap="square"/>
-          <rect x="40" y="32" width="10" height="16" stroke-linecap="square"/>
+      <!-- IBM Pictogram: Autoscale/Growth -->
+      <div class="mb-8">
+        <svg class="w-20 h-20 text-green-50 group-hover:text-green-40 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 64 64" stroke-width="1.2">
+          <path d="M14 50 L14 38 M14 38 L26 38" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5"/>
+          <path d="M20 42 L14 38 L20 34" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" fill="currentColor"/>
+          <path d="M50 14 L50 26 M50 26 L38 26" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5"/>
+          <path d="M44 22 L50 26 L44 30" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" fill="currentColor"/>
+          <rect x="18" y="20" width="8" height="28" stroke-linecap="square"/>
+          <rect x="28" y="28" width="8" height="20" stroke-linecap="square"/>
+          <rect x="38" y="36" width="8" height="12" stroke-linecap="square"/>
         </svg>
       </div>
 
       <div class="flex-grow">
-        <div class="mb-5">
-          <h2 class="text-2xl lg:text-3xl font-semibold text-green-40 group-hover:text-green-30 transition-colors mb-3">
+        <div class="mb-6">
+          <h2 class="text-3xl lg:text-4xl font-semibold text-green-40 group-hover:text-green-30 transition-colors mb-4 tracking-tight">
             Scalable
           </h2>
-          <div class="w-12 h-0.5 bg-green-50"></div>
+          <div class="w-16 h-px bg-green-50"></div>
         </div>
-        <p class="text-green-30 leading-relaxed">
+        <p class="text-green-30 text-base leading-relaxed font-light">
           Easily upgrade or downgrade your plan as your community grows or shrinks. Scale your resources up and down as needed without losing your data.
         </p>
       </div>
 
-      <div class="mt-6 text-green-40 group-hover:text-green-20 transition-colors text-xl font-semibold">
-        →
+      <div class="mt-8 flex items-center text-green-40 group-hover:text-green-20 transition-colors text-lg font-medium">
+        <span class="mr-2">Learn more</span>
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+        </svg>
       </div>
     </a>
   </div>
 
   <!-- Large Feature Blocks -->
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 mb-16">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-32">
     <!-- Transparent Pricing Block -->
-    <div class="bg-cool-gray-90 border border-cool-gray-70 p-8 lg:p-12 flex flex-col justify-end min-h-[400px]">
+    <div class="bg-cool-gray-90 border border-cool-gray-70 p-12 lg:p-16 flex flex-col justify-end min-h-[450px]">
       <div class="mb-auto">
-        <div class="w-full h-32 bg-cool-gray-80 border border-cool-gray-70 mb-8 flex items-center justify-center">
-          <span class="text-cool-gray-50 text-sm">PRICING GRAPHIC</span>
+        <div class="w-full aspect-video bg-cool-gray-80 border border-cool-gray-70 mb-10 flex items-center justify-center">
+          <span class="text-cool-gray-50 text-sm font-mono">PRICING GRAPHIC</span>
         </div>
       </div>
       <div>
-        <h2 class="text-3xl lg:text-4xl font-semibold text-white mb-4">
+        <h2 class="text-3xl lg:text-5xl font-semibold text-white mb-6 tracking-tight">
           Transparent Pricing
         </h2>
-        <div class="w-16 h-1 bg-teal-50 mb-4"></div>
-        <p class="text-cool-gray-40 leading-relaxed text-lg">
+        <div class="w-20 h-px bg-teal-50 mb-6"></div>
+        <p class="text-cool-gray-30 leading-relaxed text-lg font-light max-w-lg">
           Complete visibility into pricing, resource usage, and server performance. No hidden fees, no surprise charges - just honest, straightforward hosting with clear billing.
         </p>
       </div>
     </div>
 
     <!-- Backup Security Block -->
-    <div class="bg-gradient-to-br from-cool-gray-80 to-cool-gray-90 border border-cool-gray-70 border-l-0 lg:border-l-0 p-8 lg:p-12 flex flex-col justify-start min-h-[400px]">
+    <div class="bg-gradient-to-br from-cool-gray-80 to-cool-gray-90 border border-cool-gray-70 p-12 lg:p-16 flex flex-col justify-start min-h-[450px]">
       <div>
-        <h2 class="text-3xl lg:text-4xl font-semibold text-white mb-4">
+        <h2 class="text-3xl lg:text-5xl font-semibold text-white mb-6 tracking-tight">
           Off-Site Backups
         </h2>
-        <div class="w-16 h-1 bg-purple-50 mb-4"></div>
-        <p class="text-cool-gray-40 leading-relaxed text-lg mb-8">
+        <div class="w-20 h-px bg-purple-50 mb-6"></div>
+        <p class="text-cool-gray-30 leading-relaxed text-lg font-light mb-10 max-w-lg">
           Schedule automatic backups or take your own backups manually. The key advantage: all backups are stored off-site, protecting your worlds even if our datacenter goes down.
         </p>
       </div>
       <div class="mt-auto">
-        <div class="w-full h-32 bg-cool-gray-90 border border-cool-gray-70 flex items-center justify-center">
-          <span class="text-cool-gray-50 text-sm">BACKUP ILLUSTRATION</span>
+        <div class="w-full aspect-video bg-cool-gray-90 border border-cool-gray-70 flex items-center justify-center">
+          <span class="text-cool-gray-50 text-sm font-mono">BACKUP ILLUSTRATION</span>
         </div>
       </div>
     </div>
   </div>
 
   <!-- QuackPlane Control Panel Section -->
-  <div class="bg-cool-gray-90 border border-cool-gray-70 p-8 lg:p-12 mb-16">
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+  <div class="bg-cool-gray-90 border border-cool-gray-70 p-12 lg:p-16 mb-32">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-16">
       <!-- Image -->
-      <div class="lg:col-span-3 bg-cool-gray-80 border border-cool-gray-70 p-4 flex items-center justify-center min-h-[400px]">
-        <span class="text-cool-gray-50 text-sm">QUACKPLANE DASHBOARD</span>
+      <div class="lg:col-span-3 bg-cool-gray-80 border border-cool-gray-70 p-6 flex items-center justify-center min-h-[450px]">
+        <span class="text-cool-gray-50 text-sm font-mono">QUACKPLANE DASHBOARD</span>
       </div>
 
       <!-- Features List -->
       <div class="lg:col-span-2 flex flex-col justify-between">
-        <div class="mb-8">
-          <h2 class="text-3xl lg:text-4xl font-semibold text-white mb-4">
+        <div class="mb-12">
+          <h2 class="text-4xl lg:text-5xl font-semibold text-white mb-6 tracking-tight">
             QuackPlane
           </h2>
-          <div class="w-16 h-1 bg-[#FF9C20] mb-4"></div>
-          <p class="text-cool-gray-40 leading-relaxed">
+          <div class="w-20 h-px bg-[#FF9C20] mb-6"></div>
+          <p class="text-cool-gray-30 leading-relaxed text-lg font-light">
             Your control center for managing game servers. Built for simplicity and power.
           </p>
         </div>
 
-        <div class="space-y-6">
-          <div class="border-l-4 border-teal-50 pl-4">
-            <h3 class="text-xl font-semibold text-white mb-2">
+        <div class="space-y-8">
+          <div class="border-l-2 border-teal-50 pl-6">
+            <h3 class="text-xl lg:text-2xl font-semibold text-white mb-3 tracking-tight">
               Create your own staff team
             </h3>
-            <p class="text-cool-gray-40 leading-relaxed text-sm">
+            <p class="text-cool-gray-30 leading-relaxed font-light">
               Give your friends and moderators access to restart the server, manage files, or monitor players.
             </p>
           </div>
 
-          <div class="border-l-4 border-cyan-50 pl-4">
-            <h3 class="text-xl font-semibold text-white mb-2">
+          <div class="border-l-2 border-cyan-50 pl-6">
+            <h3 class="text-xl lg:text-2xl font-semibold text-white mb-3 tracking-tight">
               Manage from anywhere
             </h3>
-            <p class="text-cool-gray-40 leading-relaxed text-sm">
+            <p class="text-cool-gray-30 leading-relaxed font-light">
               Web-based control plane lets you restart servers, monitor player activity, and manage your worlds from any device.
             </p>
           </div>
 
-          <div class="border-l-4 border-purple-50 pl-4">
-            <h3 class="text-xl font-semibold text-white mb-2">
+          <div class="border-l-2 border-purple-50 pl-6">
+            <h3 class="text-xl lg:text-2xl font-semibold text-white mb-3 tracking-tight">
               One-click restoration
             </h3>
-            <p class="text-cool-gray-40 leading-relaxed text-sm">
+            <p class="text-cool-gray-30 leading-relaxed font-light">
               Roll back your entire server to any previous backup with one click. Everything gets restored - worlds, configs, mods, the lot.
             </p>
           </div>
 
-          <div class="border-l-4 border-blue-50 pl-4">
-            <h3 class="text-xl font-semibold text-white mb-2">
+          <div class="border-l-2 border-blue-50 pl-6">
+            <h3 class="text-xl lg:text-2xl font-semibold text-white mb-3 tracking-tight">
               Easy file management
             </h3>
-            <p class="text-cool-gray-40 leading-relaxed text-sm">
+            <p class="text-cool-gray-30 leading-relaxed font-light">
               Upload mods, plugins, and resource packs with drag & drop. Built-in text editor lets you tweak configs.
             </p>
           </div>
@@ -247,40 +265,46 @@ import Layout from "../layouts/layout.astro";
   </div>
 
   <!-- Call to Action Grid -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-0 mb-16">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-32">
     <!-- CTA 1 -->
     <a
       href="/pricing"
-      class="group bg-gradient-to-br from-[#FF9C20] to-[#FF8D00] border border-[#FF9C20] p-12 hover:from-[#CC6600] hover:to-[#CC6600] transition-all duration-200 min-h-[300px] flex flex-col justify-between"
+      class="group bg-gradient-to-br from-[#FF9C20] to-[#FF8D00] border border-[#FF9C20] p-12 lg:p-16 hover:from-[#CC6600] hover:to-[#CC6600] transition-all duration-300 min-h-[350px] flex flex-col justify-between"
     >
       <div>
-        <h2 class="text-4xl lg:text-5xl font-semibold text-black mb-4">
+        <h2 class="text-4xl lg:text-5xl font-semibold text-black mb-6 tracking-tight leading-tight">
           Start building today
         </h2>
-        <p class="text-gray-100 text-lg leading-relaxed">
+        <p class="text-gray-100 text-lg leading-relaxed font-light">
           Your server is ready in under 2 minutes. No waiting around - you can start building your world immediately.
         </p>
       </div>
-      <div class="text-black text-2xl font-semibold group-hover:translate-x-2 transition-transform">
-        View pricing →
+      <div class="flex items-center text-black text-xl lg:text-2xl font-semibold mt-8">
+        <span class="mr-2">View pricing</span>
+        <svg class="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+        </svg>
       </div>
     </a>
 
     <!-- CTA 2 -->
     <a
       href="/service-status"
-      class="group bg-cool-gray-90 border border-cool-gray-70 border-l-0 md:border-l-0 p-12 hover:bg-cool-gray-80 transition-colors duration-200 min-h-[300px] flex flex-col justify-between"
+      class="group bg-cool-gray-90 border border-cool-gray-70 p-12 lg:p-16 hover:bg-cool-gray-80 transition-all duration-300 min-h-[350px] flex flex-col justify-between"
     >
       <div>
-        <h2 class="text-4xl lg:text-5xl font-semibold text-white mb-4">
+        <h2 class="text-4xl lg:text-5xl font-semibold text-white mb-6 tracking-tight leading-tight">
           99.9% uptime
         </h2>
-        <p class="text-cool-gray-40 text-lg leading-relaxed">
+        <p class="text-cool-gray-30 text-lg leading-relaxed font-light">
           Check our live service status and see our track record for yourself. We're transparent about our performance.
         </p>
       </div>
-      <div class="text-[#FF9C20] text-2xl font-semibold group-hover:translate-x-2 transition-transform">
-        View status →
+      <div class="flex items-center text-[#FF9C20] text-xl lg:text-2xl font-semibold mt-8">
+        <span class="mr-2">View status</span>
+        <svg class="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+        </svg>
       </div>
     </a>
   </div>
