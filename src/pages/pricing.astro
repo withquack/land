@@ -3,9 +3,820 @@ import Layout from "../layouts/layout.astro";
 ---
 
 <Layout title="/ Pricing">
-  <div class="mb-32 mt-32">
-    <p class="text-2xl font-semibold xl:text-4xl">Pricing</p>
+  <!-- Hero Section -->
+  <div class="mb-16 mt-12 text-center">
+    <h1
+      class="text-4xl md:text-6xl font-bold mb-6 text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"
+    >
+      Transparent Pricing
+    </h1>
+    <p class="text-xl text-cool-gray-40 max-w-3xl mx-auto">
+      No hidden fees. No surprise charges. Choose between fixed pricing for
+      predictability or pay-per-player to optimize costs.
+    </p>
   </div>
 
-  <div class="h-96 rounded-md bg-gray-200"></div>
+  <!-- Pricing Model Selector -->
+  <div
+    class="mb-16"
+    x-data="{ model: 'fixed', players: 20, game: 'minecraft' }"
+  >
+    <!-- Toggle Between Pricing Models -->
+    <div class="flex justify-center mb-12">
+      <div class="inline-flex rounded-lg bg-cool-gray-80 p-1">
+        <button
+          @click="model = 'fixed'"
+          :class="model === 'fixed' ? 'bg-[#FF9C20] text-black' : 'text-white hover:text-[#FF9C20]'"
+          class="px-8 py-3 rounded-md transition-all duration-200 font-semibold"
+        >
+          Fixed Pricing
+        </button>
+        <button
+          @click="model = 'dynamic'"
+          :class="model === 'dynamic' ? 'bg-[#FF9C20] text-black' : 'text-white hover:text-[#FF9C20]'"
+          class="px-8 py-3 rounded-md transition-all duration-200 font-semibold"
+        >
+          Pay-Per-Player
+          <span
+            class="ml-2 text-xs bg-green-500 text-white px-2 py-1 rounded-full"
+            >NEW</span
+          >
+        </button>
+      </div>
+    </div>
+
+    <!-- Fixed Pricing Tiers -->
+    <div x-show="model === 'fixed'" x-transition class="mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Starter Plan -->
+        <div
+          class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-8 hover:border-[#FF9C20] transition-colors"
+        >
+          <h3 class="text-2xl font-bold mb-2">Starter</h3>
+          <div class="mb-6">
+            <span class="text-4xl font-bold">$8</span>
+            <span class="text-cool-gray-40">/month</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>2GB RAM</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Up to 10 players</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>20GB SSD Storage</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Daily backups</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>DDoS protection</span>
+            </li>
+          </ul>
+          <button
+            class="w-full p-3 bg-[#FF9C20] hover:bg-[#CC6600] text-black font-semibold transition-colors duration-200"
+          >
+            Get Started
+          </button>
+        </div>
+
+        <!-- Growth Plan -->
+        <div
+          class="bg-cool-gray-90 border-2 border-[#FF9C20] rounded-lg p-8 relative"
+        >
+          <div
+            class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#FF9C20] text-black px-4 py-1 rounded-full text-sm font-semibold"
+          >
+            POPULAR
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Growth</h3>
+          <div class="mb-6">
+            <span class="text-4xl font-bold">$20</span>
+            <span class="text-cool-gray-40">/month</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>4GB RAM</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Up to 25 players</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>50GB SSD Storage</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Hourly backups</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Priority support</span>
+            </li>
+          </ul>
+          <button
+            class="w-full p-3 bg-[#FF9C20] hover:bg-[#CC6600] text-black font-semibold transition-colors duration-200"
+          >
+            Get Started
+          </button>
+        </div>
+
+        <!-- Pro Plan -->
+        <div
+          class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-8 hover:border-[#FF9C20] transition-colors"
+        >
+          <h3 class="text-2xl font-bold mb-2">Pro</h3>
+          <div class="mb-6">
+            <span class="text-4xl font-bold">$40</span>
+            <span class="text-cool-gray-40">/month</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>8GB RAM</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Up to 50 players</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>100GB NVMe Storage</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Continuous backups</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Dedicated support</span>
+            </li>
+          </ul>
+          <button
+            class="w-full p-3 bg-[#FF9C20] hover:bg-[#CC6600] text-black font-semibold transition-colors duration-200"
+          >
+            Get Started
+          </button>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div
+          class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-8 hover:border-[#FF9C20] transition-colors"
+        >
+          <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+          <div class="mb-6">
+            <span class="text-4xl font-bold">Custom</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Custom RAM</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Unlimited players</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Custom storage</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Custom SLA</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>White-label options</span>
+            </li>
+          </ul>
+          <button
+            class="w-full p-3 bg-white hover:bg-cool-gray-20 text-black font-semibold transition-colors duration-200"
+          >
+            Contact Sales
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pay-Per-Player Pricing Calculator -->
+    <div x-show="model === 'dynamic'" x-transition>
+      <!-- Calculator Card -->
+      <div
+        class="max-w-4xl mx-auto bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-8 mb-8"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-center">
+          Only Pay for What You Use
+        </h2>
+        <p class="text-cool-gray-40 text-center mb-8">
+          Perfect for servers with variable player counts. Scale costs with
+          your community.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <!-- Calculator Controls -->
+          <div>
+            <label class="block text-sm font-semibold mb-2">Game Type</label>
+            <select
+              x-model="game"
+              class="w-full p-3 bg-cool-gray-80 border border-cool-gray-70 rounded-md text-white mb-6"
+            >
+              <option value="minecraft">Minecraft</option>
+              <option value="terraria">Terraria</option>
+              <option value="valheim">Valheim</option>
+            </select>
+
+            <label class="block text-sm font-semibold mb-2"
+              >Average Concurrent Players</label
+            >
+            <input
+              type="range"
+              x-model="players"
+              min="1"
+              max="100"
+              class="w-full mb-2"
+            />
+            <div class="text-3xl font-bold text-center mb-6">
+              <span x-text="players"></span> players
+            </div>
+
+            <div class="space-y-3 text-sm">
+              <div class="flex justify-between">
+                <span class="text-cool-gray-40">Base server cost:</span>
+                <span class="font-semibold">$2.00/month</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-cool-gray-40">Player slots:</span>
+                <span class="font-semibold"
+                  ><span x-text="players"></span> × $0.50</span
+                >
+              </div>
+              <div class="border-t border-cool-gray-70 pt-3"></div>
+              <div class="flex justify-between text-lg">
+                <span class="font-bold">Total Monthly Cost:</span>
+                <span class="font-bold text-[#FF9C20]"
+                  >$<span x-text="(2 + players * 0.5).toFixed(2)"></span
+                  >/month</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Comparison -->
+          <div>
+            <div
+              class="bg-cool-gray-80 rounded-lg p-6 border border-cool-gray-70"
+            >
+              <h3 class="text-xl font-bold mb-4">vs Fixed Pricing</h3>
+
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-cool-gray-40">Pay-Per-Player</span>
+                    <span class="font-bold text-[#FF9C20]"
+                      >$<span x-text="(2 + players * 0.5).toFixed(2)"></span
+                      >/mo</span
+                    >
+                  </div>
+                  <div class="w-full bg-cool-gray-70 rounded-full h-2">
+                    <div
+                      class="bg-[#FF9C20] h-2 rounded-full"
+                      :style="`width: ${((2 + players * 0.5) / 52) * 100}%`"
+                    >
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-cool-gray-40">Fixed Plan</span>
+                    <span
+                      class="font-bold"
+                      x-text="players <= 10 ? '$8/mo' : players <= 25 ? '$20/mo' : players <= 50 ? '$40/mo' : '$80+/mo'"
+                    >
+                    </span>
+                  </div>
+                  <div class="w-full bg-cool-gray-70 rounded-full h-2">
+                    <div
+                      class="bg-cool-gray-50 h-2 rounded-full"
+                      :style="`width: ${(players <= 10 ? 8 : players <= 25 ? 20 : players <= 50 ? 40 : 80) / 52 * 100}%`"
+                    >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pt-4 border-t border-cool-gray-70">
+                  <div class="text-center">
+                    <span
+                      class="text-2xl font-bold"
+                      :class="(2 + players * 0.5) < (players <= 10 ? 8 : players <= 25 ? 20 : players <= 50 ? 40 : 80) ? 'text-green-500' : 'text-red-500'"
+                      x-text="(2 + players * 0.5) < (players <= 10 ? 8 : players <= 25 ? 20 : players <= 50 ? 40 : 80) ? 'You save $' + ((players <= 10 ? 8 : players <= 25 ? 20 : players <= 50 ? 40 : 80) - (2 + players * 0.5)).toFixed(2) : 'Fixed plan saves $' + ((2 + players * 0.5) - (players <= 10 ? 8 : players <= 25 ? 20 : players <= 50 ? 40 : 80)).toFixed(2)"
+                    >
+                    </span>
+                    <p class="text-sm text-cool-gray-40 mt-1">per month</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 text-center">
+              <button
+                class="w-full p-3 bg-[#FF9C20] hover:bg-[#CC6600] text-black font-semibold transition-colors duration-200"
+              >
+                Start Pay-Per-Player Trial
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- How It Works -->
+        <div class="border-t border-cool-gray-70 pt-8">
+          <h3 class="text-xl font-bold mb-4">How Pay-Per-Player Works</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div>
+              <div
+                class="w-12 h-12 bg-[#FF9C20] rounded-full flex items-center justify-center text-black font-bold text-xl mb-3"
+              >
+                1
+              </div>
+              <h4 class="font-semibold mb-2">We Track Usage</h4>
+              <p class="text-sm text-cool-gray-40">
+                Every 5 minutes, we record your concurrent player count. No
+                manual reporting needed.
+              </p>
+            </div>
+            <div>
+              <div
+                class="w-12 h-12 bg-[#FF9C20] rounded-full flex items-center justify-center text-black font-bold text-xl mb-3"
+              >
+                2
+              </div>
+              <h4 class="font-semibold mb-2">95th Percentile Billing</h4>
+              <p class="text-sm text-cool-gray-40">
+                We charge based on your 95th percentile usage, excluding rare
+                spikes. Fair and predictable.
+              </p>
+            </div>
+            <div>
+              <div
+                class="w-12 h-12 bg-[#FF9C20] rounded-full flex items-center justify-center text-black font-bold text-xl mb-3"
+              >
+                3
+              </div>
+              <h4 class="font-semibold mb-2">Transparent Billing</h4>
+              <p class="text-sm text-cool-gray-40">
+                View real-time cost estimates in your dashboard. Always know
+                what you'll pay.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Use Cases -->
+      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6">
+          <h4 class="font-bold text-lg mb-2 text-green-500">
+            Perfect For: Weekend Warriors
+          </h4>
+          <p class="text-sm text-cool-gray-40 mb-3">
+            Server mostly empty during the week, but packed on weekends? Only
+            pay for active hours.
+          </p>
+          <p class="text-xs text-cool-gray-50">
+            Example: 5 players weekdays, 30 on weekends = ~$10/month instead of
+            $40
+          </p>
+        </div>
+
+        <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-6">
+          <h4 class="font-bold text-lg mb-2 text-green-500">
+            Perfect For: New Communities
+          </h4>
+          <p class="text-sm text-cool-gray-40 mb-3">
+            Start small at $2-5/month and automatically scale as your community
+            grows.
+          </p>
+          <p class="text-xs text-cool-gray-50">
+            Example: Start with 3 friends, grow to 50 players organically
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- All Plans Include -->
+  <div class="mb-16 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold mb-8 text-center">
+      Everything Includes These Features
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="flex items-start space-x-3">
+        <svg
+          class="w-6 h-6 text-[#FF9C20] flex-shrink-0 mt-1"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <div>
+          <h3 class="font-semibold mb-1">Instant Setup</h3>
+          <p class="text-sm text-cool-gray-40">
+            Server ready in under 2 minutes
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-start space-x-3">
+        <svg
+          class="w-6 h-6 text-[#FF9C20] flex-shrink-0 mt-1"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <div>
+          <h3 class="font-semibold mb-1">DDoS Protection</h3>
+          <p class="text-sm text-cool-gray-40">
+            Terrabit-scale attack mitigation
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-start space-x-3">
+        <svg
+          class="w-6 h-6 text-[#FF9C20] flex-shrink-0 mt-1"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <div>
+          <h3 class="font-semibold mb-1">Off-Site Backups</h3>
+          <p class="text-sm text-cool-gray-40">Your data is always safe</p>
+        </div>
+      </div>
+
+      <div class="flex items-start space-x-3">
+        <svg
+          class="w-6 h-6 text-[#FF9C20] flex-shrink-0 mt-1"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <div>
+          <h3 class="font-semibold mb-1">99.9% Uptime</h3>
+          <p class="text-sm text-cool-gray-40">SLA-backed reliability</p>
+        </div>
+      </div>
+
+      <div class="flex items-start space-x-3">
+        <svg
+          class="w-6 h-6 text-[#FF9C20] flex-shrink-0 mt-1"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <div>
+          <h3 class="font-semibold mb-1">QuackPlane Access</h3>
+          <p class="text-sm text-cool-gray-40">
+            Manage from web, mobile, or API
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-start space-x-3">
+        <svg
+          class="w-6 h-6 text-[#FF9C20] flex-shrink-0 mt-1"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <div>
+          <h3 class="font-semibold mb-1">No Contracts</h3>
+          <p class="text-sm text-cool-gray-40">Cancel anytime, no penalties</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="mb-16 max-w-4xl mx-auto" x-data="{ faqOpen: [false, false, false, false] }">
+    <h2 class="text-3xl font-bold mb-8 text-center">
+      Pricing Questions
+    </h2>
+
+    <div class="space-y-4">
+      <div class="border-b border-cool-gray-70">
+        <button
+          @click="faqOpen[0] = !faqOpen[0]"
+          class="w-full flex justify-between items-center py-4 text-left hover:bg-cool-gray-90 transition-colors"
+        >
+          <span class="font-semibold">Can I switch between pricing models?</span>
+          <svg
+            class="w-5 h-5 transform transition-transform"
+            :class="{ 'rotate-180': faqOpen[0] }"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <div x-show="faqOpen[0]" x-cloak class="pb-4 text-cool-gray-40">
+          Yes! Switch between fixed and pay-per-player pricing anytime. Changes
+          take effect at your next billing cycle.
+        </div>
+      </div>
+
+      <div class="border-b border-cool-gray-70">
+        <button
+          @click="faqOpen[1] = !faqOpen[1]"
+          class="w-full flex justify-between items-center py-4 text-left hover:bg-cool-gray-90 transition-colors"
+        >
+          <span class="font-semibold">What happens if I exceed my plan's player limit?</span>
+          <svg
+            class="w-5 h-5 transform transition-transform"
+            :class="{ 'rotate-180': faqOpen[1] }"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <div x-show="faqOpen[1]" x-cloak class="pb-4 text-cool-gray-40">
+          On fixed plans, we'll notify you and give you 24 hours to upgrade
+          before enforcing the limit. On pay-per-player, there's no limit - you
+          just pay for the additional players.
+        </div>
+      </div>
+
+      <div class="border-b border-cool-gray-70">
+        <button
+          @click="faqOpen[2] = !faqOpen[2]"
+          class="w-full flex justify-between items-center py-4 text-left hover:bg-cool-gray-90 transition-colors"
+        >
+          <span class="font-semibold">Do you offer refunds?</span>
+          <svg
+            class="w-5 h-5 transform transition-transform"
+            :class="{ 'rotate-180': faqOpen[2] }"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <div x-show="faqOpen[2]" x-cloak class="pb-4 text-cool-gray-40">
+          We offer a 7-day money-back guarantee, no questions asked. If you're
+          not satisfied, we'll refund your first payment in full.
+        </div>
+      </div>
+
+      <div class="border-b border-cool-gray-70">
+        <button
+          @click="faqOpen[3] = !faqOpen[3]"
+          class="w-full flex justify-between items-center py-4 text-left hover:bg-cool-gray-90 transition-colors"
+        >
+          <span class="font-semibold">Are there any hidden fees?</span>
+          <svg
+            class="w-5 h-5 transform transition-transform"
+            :class="{ 'rotate-180': faqOpen[3] }"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <div x-show="faqOpen[3]" x-cloak class="pb-4 text-cool-gray-40">
+          Absolutely not. The price you see is the price you pay. No setup
+          fees, no bandwidth charges, no surprise costs.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    [x-cloak] {
+      display: none !important;
+    }
+  </style>
 </Layout>
