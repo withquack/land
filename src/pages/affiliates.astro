@@ -1,0 +1,584 @@
+---
+import Layout from "../layouts/layout.astro";
+---
+
+<Layout title="/ Affiliate Program">
+  <div class="max-w-7xl mx-auto">
+    <!-- Hero Section -->
+    <div class="mb-20 mt-16 lg:mt-32 text-center">
+      <div class="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-[#FF9C20]/20 to-purple-50/20 border border-[#FF9C20]/50 rounded-full">
+        <span class="text-[#FF9C20] font-bold text-sm">PARTNER PROGRAM</span>
+      </div>
+      <h1 class="text-4xl lg:text-6xl font-bold text-white mb-6">
+        Earn <span class="bg-gradient-to-r from-[#FF9C20] to-purple-50 bg-clip-text text-transparent">30% commission</span> with QuackHost
+      </h1>
+      <p class="text-xl lg:text-2xl text-cool-gray-20 max-w-3xl mx-auto mb-8">
+        Join our affiliate program and earn recurring commissions by referring game server hosting customers.
+      </p>
+      <a
+        href="#apply"
+        class="inline-block px-8 py-4 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black font-bold rounded-lg hover:shadow-lg hover:shadow-[#FF9C20]/50 transition-all hover:scale-105"
+      >
+        Apply Now →
+      </a>
+    </div>
+
+    <!-- Benefits Grid -->
+    <div class="mb-20 grid md:grid-cols-3 gap-6">
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-[#FF9C20] rounded-xl p-8 text-center">
+        <div class="text-5xl font-bold text-[#FF9C20] mb-2">30%</div>
+        <div class="text-white font-semibold mb-2">Commission Rate</div>
+        <div class="text-cool-gray-40 text-sm">Industry-leading payouts on every sale</div>
+      </div>
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-purple-50 rounded-xl p-8 text-center">
+        <div class="text-5xl font-bold text-purple-50 mb-2">∞</div>
+        <div class="text-white font-semibold mb-2">Lifetime Recurring</div>
+        <div class="text-cool-gray-40 text-sm">Earn commissions for the life of the customer</div>
+      </div>
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-cyan-50 rounded-xl p-8 text-center">
+        <div class="text-5xl font-bold text-cyan-50 mb-2">$50</div>
+        <div class="text-white font-semibold mb-2">Minimum Payout</div>
+        <div class="text-cool-gray-40 text-sm">Low threshold with PayPal or crypto</div>
+      </div>
+    </div>
+
+    <!-- How It Works -->
+    <div class="mb-20">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white text-center mb-12">
+        How it <span class="text-[#FF9C20]">works</span>
+      </h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#FF9C20] to-[#FF8D00] flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl font-bold text-black">1</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Apply</h3>
+          <p class="text-cool-gray-20">
+            Fill out our simple application form. We review applications within 24 hours.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-cyan-50 to-purple-50 flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl font-bold text-black">2</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Get Approved</h3>
+          <p class="text-cool-gray-20">
+            Receive your unique referral link and promotional materials.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-purple-50 to-cyan-50 flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl font-bold text-black">3</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Promote</h3>
+          <p class="text-cool-gray-20">
+            Share your link with your audience through videos, streams, or content.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-green-50 to-[#FF9C20] flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl font-bold text-black">4</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Earn</h3>
+          <p class="text-cool-gray-20">
+            Get paid 30% recurring commissions for every customer you refer.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Earnings Calculator -->
+    <div class="mb-20">
+      <div class="bg-gradient-to-r from-[#FF9C20] to-cyan-50 rounded-2xl p-1">
+        <div class="bg-gray-100 rounded-xl p-8 lg:p-12">
+          <h2 class="text-3xl font-bold text-white text-center mb-8">
+            Earnings Calculator
+          </h2>
+          <div x-data="{ referrals: 10, avgPrice: 20 }" class="max-w-3xl mx-auto">
+            <div class="space-y-6 mb-8">
+              <div>
+                <label class="block text-white font-semibold mb-3">
+                  Monthly Referrals: <span x-text="referrals" class="text-[#FF9C20]"></span>
+                </label>
+                <input
+                  type="range"
+                  x-model="referrals"
+                  min="1"
+                  max="100"
+                  class="w-full h-3 bg-gray-90 rounded-lg appearance-none cursor-pointer slider"
+                />
+              </div>
+              <div>
+                <label class="block text-white font-semibold mb-3">
+                  Average Order Value: $<span x-text="avgPrice" class="text-[#FF9C20]"></span>
+                </label>
+                <input
+                  type="range"
+                  x-model="avgPrice"
+                  min="10"
+                  max="100"
+                  step="5"
+                  class="w-full h-3 bg-gray-90 rounded-lg appearance-none cursor-pointer slider"
+                />
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-gray-90 to-gray-100 rounded-xl p-8">
+              <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <div class="text-cool-gray-40 text-sm mb-2">Monthly Earnings</div>
+                  <div class="text-4xl font-bold text-[#FF9C20]">
+                    $<span x-text="(referrals * avgPrice * 0.3).toFixed(0)"></span>
+                  </div>
+                </div>
+                <div>
+                  <div class="text-cool-gray-40 text-sm mb-2">Yearly Earnings</div>
+                  <div class="text-4xl font-bold text-cyan-50">
+                    $<span x-text="(referrals * avgPrice * 0.3 * 12).toFixed(0)"></span>
+                  </div>
+                </div>
+                <div>
+                  <div class="text-cool-gray-40 text-sm mb-2">Commission Rate</div>
+                  <div class="text-4xl font-bold text-purple-50">30%</div>
+                </div>
+              </div>
+              <p class="text-cool-gray-40 text-sm text-center mt-6">
+                * Estimates based on recurring monthly subscriptions. Actual earnings may vary.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Who Should Join -->
+    <div class="mb-20">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white text-center mb-12">
+        Perfect for <span class="text-cyan-50">creators</span>
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-[#FF9C20] transition-all">
+          <div class="text-4xl mb-4">🎥</div>
+          <h3 class="text-xl font-bold text-white mb-3">YouTubers</h3>
+          <p class="text-cool-gray-20">
+            Create server setup tutorials and earn from every viewer who signs up.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-cyan-50 transition-all">
+          <div class="text-4xl mb-4">📺</div>
+          <h3 class="text-xl font-bold text-white mb-3">Streamers</h3>
+          <p class="text-cool-gray-20">
+            Host your own server and share your unique link with your community.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-purple-50 transition-all">
+          <div class="text-4xl mb-4">✍️</div>
+          <h3 class="text-xl font-bold text-white mb-3">Bloggers</h3>
+          <p class="text-cool-gray-20">
+            Write hosting reviews and guides with your affiliate links embedded.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-green-50 transition-all">
+          <div class="text-4xl mb-4">👥</div>
+          <h3 class="text-xl font-bold text-white mb-3">Communities</h3>
+          <p class="text-cool-gray-20">
+            Run a Discord server or forum? Earn from members who need hosting.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Program Features -->
+    <div class="mb-20">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white text-center mb-12">
+        Program <span class="text-purple-50">features</span>
+      </h2>
+      <div class="grid lg:grid-cols-2 gap-8">
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+          <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+            <span class="text-3xl">📊</span>
+            Real-Time Dashboard
+          </h3>
+          <ul class="space-y-3 text-cool-gray-20">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-[#FF9C20] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Track clicks, conversions, and earnings in real-time</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-[#FF9C20] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Detailed analytics and performance metrics</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-[#FF9C20] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>See which content drives the most conversions</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-[#FF9C20] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Export reports for accounting and taxes</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+          <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+            <span class="text-3xl">🎨</span>
+            Marketing Materials
+          </h3>
+          <ul class="space-y-3 text-cool-gray-20">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-cyan-50 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Professionally designed banners and graphics</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-cyan-50 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Pre-written email templates and social posts</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-cyan-50 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Logo files and brand assets</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-cyan-50 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Custom coupon codes for your audience</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+          <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+            <span class="text-3xl">💰</span>
+            Flexible Payouts
+          </h3>
+          <ul class="space-y-3 text-cool-gray-20">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-purple-50 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>PayPal, bank transfer, or cryptocurrency</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-purple-50 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Monthly payments on the 1st of each month</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-purple-50 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Low $50 minimum payout threshold</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-purple-50 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Transparent payment tracking and history</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+          <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+            <span class="text-3xl">🤝</span>
+            Dedicated Support
+          </h3>
+          <ul class="space-y-3 text-cool-gray-20">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-50 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Dedicated affiliate manager for top performers</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-50 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Priority support channel on Discord</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-50 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Monthly performance tips and strategies</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-50 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Help promoting your best-performing content</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Success Stories -->
+    <div class="mb-20">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white text-center mb-12">
+        Partner <span class="text-[#FF9C20]">success stories</span>
+      </h2>
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-16 h-16 rounded-full bg-[#FF9C20]/20 flex items-center justify-center">
+              <span class="text-3xl">🎥</span>
+            </div>
+            <div>
+              <div class="text-white font-bold">TechGamer</div>
+              <div class="text-cool-gray-40 text-sm">YouTube Creator</div>
+            </div>
+          </div>
+          <p class="text-cool-gray-20 mb-4">
+            "I've been an affiliate for 6 months and earned over $3,000! The 30% recurring commission is incredible. My audience loves QuackHost."
+          </p>
+          <div class="pt-4 border-t border-gray-80 flex items-center justify-between">
+            <span class="text-cool-gray-40 text-sm">Monthly Earnings</span>
+            <span class="text-[#FF9C20] font-bold">$500+</span>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-16 h-16 rounded-full bg-cyan-50/20 flex items-center justify-center">
+              <span class="text-3xl">📺</span>
+            </div>
+            <div>
+              <div class="text-white font-bold">StreamQueen</div>
+              <div class="text-cool-gray-40 text-sm">Twitch Partner</div>
+            </div>
+          </div>
+          <p class="text-cool-gray-20 mb-4">
+            "As a streamer running my own Minecraft network, recommending QuackHost was natural. Now I earn passive income from my community!"
+          </p>
+          <div class="pt-4 border-t border-gray-80 flex items-center justify-between">
+            <span class="text-cool-gray-40 text-sm">Monthly Earnings</span>
+            <span class="text-cyan-50 font-bold">$800+</span>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-16 h-16 rounded-full bg-purple-50/20 flex items-center justify-center">
+              <span class="text-3xl">✍️</span>
+            </div>
+            <div>
+              <div class="text-white font-bold">ServerPro</div>
+              <div class="text-cool-gray-40 text-sm">Gaming Blogger</div>
+            </div>
+          </div>
+          <p class="text-cool-gray-20 mb-4">
+            "My hosting comparison articles drive consistent traffic. QuackHost's conversion rate is the highest among all providers I promote."
+          </p>
+          <div class="pt-4 border-t border-gray-80 flex items-center justify-between">
+            <span class="text-cool-gray-40 text-sm">Monthly Earnings</span>
+            <span class="text-purple-50 font-bold">$1,200+</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Application Form -->
+    <div id="apply" class="mb-20">
+      <div class="bg-gradient-to-r from-[#FF9C20] to-purple-50 rounded-2xl p-1">
+        <div class="bg-gray-100 rounded-xl p-8 lg:p-12">
+          <h2 class="text-3xl font-bold text-white text-center mb-4">
+            Ready to start earning?
+          </h2>
+          <p class="text-cool-gray-20 text-center mb-8 max-w-2xl mx-auto">
+            Join hundreds of content creators earning recurring commissions with QuackHost. Applications are reviewed within 24 hours.
+          </p>
+
+          <form class="max-w-2xl mx-auto space-y-6" x-data="{ name: '', email: '', platform: '', audience: '', website: '' }" @submit.prevent="alert('Affiliate application coming soon!')">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-white font-semibold mb-2">Full Name *</label>
+                <input
+                  type="text"
+                  x-model="name"
+                  placeholder="John Doe"
+                  class="w-full px-4 py-3 bg-gray-90 border border-gray-80 rounded-lg text-white placeholder-cool-gray-60 focus:outline-none focus:border-[#FF9C20] transition-colors"
+                  required
+                />
+              </div>
+              <div>
+                <label class="block text-white font-semibold mb-2">Email Address *</label>
+                <input
+                  type="email"
+                  x-model="email"
+                  placeholder="you@example.com"
+                  class="w-full px-4 py-3 bg-gray-90 border border-gray-80 rounded-lg text-white placeholder-cool-gray-60 focus:outline-none focus:border-[#FF9C20] transition-colors"
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-white font-semibold mb-2">Primary Platform *</label>
+              <select
+                x-model="platform"
+                class="w-full px-4 py-3 bg-gray-90 border border-gray-80 rounded-lg text-white focus:outline-none focus:border-[#FF9C20] transition-colors"
+                required
+              >
+                <option value="" class="bg-gray-90">Select a platform...</option>
+                <option value="youtube" class="bg-gray-90">YouTube</option>
+                <option value="twitch" class="bg-gray-90">Twitch</option>
+                <option value="blog" class="bg-gray-90">Blog/Website</option>
+                <option value="discord" class="bg-gray-90">Discord Community</option>
+                <option value="other" class="bg-gray-90">Other</option>
+              </select>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-white font-semibold mb-2">Channel/Website URL *</label>
+                <input
+                  type="url"
+                  x-model="website"
+                  placeholder="https://youtube.com/@yourhandle"
+                  class="w-full px-4 py-3 bg-gray-90 border border-gray-80 rounded-lg text-white placeholder-cool-gray-60 focus:outline-none focus:border-[#FF9C20] transition-colors"
+                  required
+                />
+              </div>
+              <div>
+                <label class="block text-white font-semibold mb-2">Audience Size *</label>
+                <select
+                  x-model="audience"
+                  class="w-full px-4 py-3 bg-gray-90 border border-gray-80 rounded-lg text-white focus:outline-none focus:border-[#FF9C20] transition-colors"
+                  required
+                >
+                  <option value="" class="bg-gray-90">Select range...</option>
+                  <option value="<1k" class="bg-gray-90">Less than 1,000</option>
+                  <option value="1k-10k" class="bg-gray-90">1,000 - 10,000</option>
+                  <option value="10k-100k" class="bg-gray-90">10,000 - 100,000</option>
+                  <option value="100k+" class="bg-gray-90">100,000+</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-white font-semibold mb-2">Tell us about your content</label>
+              <textarea
+                placeholder="Describe your channel/content and how you plan to promote QuackHost..."
+                class="w-full px-4 py-3 bg-gray-90 border border-gray-80 rounded-lg text-white placeholder-cool-gray-60 focus:outline-none focus:border-[#FF9C20] transition-colors h-32"
+              ></textarea>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <input
+                type="checkbox"
+                id="terms"
+                class="mt-1"
+                required
+              />
+              <label for="terms" class="text-cool-gray-20 text-sm">
+                I agree to the <a href="/terms-of-service" class="text-[#FF9C20] hover:underline">Terms of Service</a> and <a href="/privacy-policy" class="text-[#FF9C20] hover:underline">Privacy Policy</a>, and confirm that I will promote QuackHost ethically and honestly.
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full px-8 py-4 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black font-bold rounded-lg hover:shadow-lg hover:shadow-[#FF9C20]/50 transition-all"
+            >
+              Submit Application
+            </button>
+
+            <p class="text-cool-gray-40 text-sm text-center">
+              We review all applications within 24 hours. You'll receive an email with your decision.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="mb-20">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white text-center mb-12">
+        Frequently <span class="text-cyan-50">asked questions</span>
+      </h2>
+      <div class="max-w-3xl mx-auto space-y-4">
+        <details class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 group">
+          <summary class="text-white font-bold cursor-pointer list-none flex items-center justify-between">
+            <span>How much can I realistically earn?</span>
+            <svg class="w-5 h-5 text-cool-gray-40 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="text-cool-gray-20 mt-4">
+            Earnings vary based on your audience size and engagement. Our top affiliates earn $1,000-$3,000/month. With 30% recurring commissions, even 10 referrals at $20/month = $60/month in passive income.
+          </p>
+        </details>
+
+        <details class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 group">
+          <summary class="text-white font-bold cursor-pointer list-none flex items-center justify-between">
+            <span>What does "lifetime recurring" mean?</span>
+            <svg class="w-5 h-5 text-cool-gray-40 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="text-cool-gray-20 mt-4">
+            You earn 30% commission not just on the first payment, but every month the customer remains subscribed. If someone you refer stays for a year, you earn commissions for all 12 months.
+          </p>
+        </details>
+
+        <details class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 group">
+          <summary class="text-white font-bold cursor-pointer list-none flex items-center justify-between">
+            <span>How long does approval take?</span>
+            <svg class="w-5 h-5 text-cool-gray-40 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="text-cool-gray-20 mt-4">
+            Most applications are reviewed within 24 hours. We accept affiliates with audiences of all sizes, as long as you create quality gaming content.
+          </p>
+        </details>
+
+        <details class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 group">
+          <summary class="text-white font-bold cursor-pointer list-none flex items-center justify-between">
+            <span>When and how do I get paid?</span>
+            <svg class="w-5 h-5 text-cool-gray-40 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="text-cool-gray-20 mt-4">
+            Payments are sent on the 1st of each month via PayPal, bank transfer, or cryptocurrency. Minimum payout is $50. If you don't reach the minimum, your earnings roll over to the next month.
+          </p>
+        </details>
+
+        <details class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 group">
+          <summary class="text-white font-bold cursor-pointer list-none flex items-center justify-between">
+            <span>Can I be an affiliate if I'm not a content creator?</span>
+            <svg class="w-5 h-5 text-cool-gray-40 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="text-cool-gray-20 mt-4">
+            Absolutely! If you run a Discord server, gaming forum, or have any other way to refer customers, you're welcome to apply. We evaluate each application individually.
+          </p>
+        </details>
+      </div>
+    </div>
+
+  </div>
+</Layout>

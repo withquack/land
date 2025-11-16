@@ -1,0 +1,442 @@
+---
+import Layout from "../layouts/layout.astro";
+---
+
+<Layout title="/ Support">
+  <div class="max-w-7xl mx-auto">
+    <!-- Hero Section -->
+    <div class="mb-20 mt-16 lg:mt-32 text-center">
+      <div class="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-purple-50/20 to-cyan-50/20 border border-purple-50/50 rounded-full">
+        <span class="text-purple-50 font-bold text-sm">HELP CENTER</span>
+      </div>
+      <h1 class="text-4xl lg:text-6xl font-bold text-white mb-6">
+        How can we <span class="bg-gradient-to-r from-[#FF9C20] to-purple-50 bg-clip-text text-transparent">help you</span>?
+      </h1>
+      <p class="text-xl lg:text-2xl text-cool-gray-20 max-w-3xl mx-auto mb-8">
+        Get instant support from our team of gaming experts. We're here 24/7 to help you succeed.
+      </p>
+
+      <!-- Search Bar -->
+      <div class="max-w-2xl mx-auto">
+        <form class="relative" x-data="{ search: '' }" @submit.prevent="alert('Search coming soon!')">
+          <input
+            type="text"
+            x-model="search"
+            placeholder="Search for help articles, guides, or FAQs..."
+            class="w-full px-6 py-4 bg-gray-90 border border-gray-80 rounded-lg text-white placeholder-cool-gray-60 focus:outline-none focus:border-[#FF9C20] transition-colors pr-12"
+          />
+          <button
+            type="submit"
+            class="absolute right-3 top-1/2 -translate-y-1/2 p-2 text-cool-gray-40 hover:text-[#FF9C20] transition-colors"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Quick Support Options -->
+    <div class="mb-20 grid md:grid-cols-3 gap-6">
+      <a href="/discord-flock" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8 hover:border-[#FF9C20] transition-all group">
+        <div class="text-4xl mb-4">💬</div>
+        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-[#FF9C20] transition-colors">Live Chat</h3>
+        <p class="text-cool-gray-20 mb-4">Average response time: <span class="text-purple-50 font-bold">~2 minutes</span></p>
+        <p class="text-cool-gray-40 text-sm">Get instant help from our support team on Discord</p>
+      </a>
+
+      <a href="/contact" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8 hover:border-cyan-50 transition-all group">
+        <div class="text-4xl mb-4">📧</div>
+        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-50 transition-colors">Email Support</h3>
+        <p class="text-cool-gray-20 mb-4">Average response time: <span class="text-cyan-50 font-bold">~4 hours</span></p>
+        <p class="text-cool-gray-40 text-sm">Send us a detailed message and we'll get back to you</p>
+      </a>
+
+      <a href="/faq" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8 hover:border-purple-50 transition-all group">
+        <div class="text-4xl mb-4">📚</div>
+        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-purple-50 transition-colors">Knowledge Base</h3>
+        <p class="text-cool-gray-20 mb-4">Browse <span class="text-purple-50 font-bold">100+ articles</span></p>
+        <p class="text-cool-gray-40 text-sm">Find answers to common questions instantly</p>
+      </a>
+    </div>
+
+    <!-- Popular Topics -->
+    <div class="mb-20">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white text-center mb-12">
+        Popular <span class="text-[#FF9C20]">Topics</span>
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Getting Started -->
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+          <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+            <span class="text-2xl">🚀</span>
+            Getting Started
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="/guides-&-tutorials" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>How to create your first server</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides-&-tutorials" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Choosing the right plan</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides-&-tutorials" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Selecting a data center location</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides-&-tutorials" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Understanding server resources</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Server Management -->
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+          <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+            <span class="text-2xl">⚙️</span>
+            Server Management
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="/quackplane" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Using QuackPlane panel</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides-&-tutorials" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Installing mods and plugins</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides-&-tutorials" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Backup and restore</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides-&-tutorials" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Server console commands</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Billing & Account -->
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+          <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+            <span class="text-2xl">💳</span>
+            Billing & Account
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="/faq" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Payment methods accepted</span>
+              </a>
+            </li>
+            <li>
+              <a href="/faq" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Upgrading your server</span>
+              </a>
+            </li>
+            <li>
+              <a href="/faq" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Refund policy</span>
+              </a>
+            </li>
+            <li>
+              <a href="/faq" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Managing your subscription</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Performance -->
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+          <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+            <span class="text-2xl">⚡</span>
+            Performance
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="/guides-&-tutorials" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Reducing server lag</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides-&-tutorials" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Optimizing memory usage</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides-&-tutorials" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Understanding TPS and MSPT</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides-&-tutorials" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Server optimization guide</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Security -->
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+          <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+            <span class="text-2xl">🛡️</span>
+            Security
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="/guides-&-tutorials" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Protecting against DDoS</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides-&-tutorials" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Setting up 2FA</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides-&-tutorials" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Managing server permissions</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides-&-tutorials" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Security best practices</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+          <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+            <span class="text-2xl">🔧</span>
+            Troubleshooting
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="/guides-&-tutorials" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Server won't start</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides-&-tutorials" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Connection issues</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides-&-tutorials" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Crash reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="/guides-&-tutorials" class="text-cool-gray-20 hover:text-[#FF9C20] transition-colors flex items-center gap-2">
+                <span>→</span>
+                <span>Common error codes</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Support Stats -->
+    <div class="mb-20 bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-8 lg:p-12">
+      <h2 class="text-3xl font-bold text-white text-center mb-12">
+        Award-winning <span class="text-[#FF9C20]">support</span>
+      </h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="text-5xl font-bold text-purple-50 mb-2">24/7</div>
+          <div class="text-cool-gray-20">Always Available</div>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl font-bold text-cyan-50 mb-2">~2min</div>
+          <div class="text-cool-gray-20">Avg Response Time</div>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl font-bold text-[#FF9C20] mb-2">98%</div>
+          <div class="text-cool-gray-20">Satisfaction Rate</div>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl font-bold text-green-50 mb-2">10K+</div>
+          <div class="text-cool-gray-20">Tickets Resolved</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game-Specific Help -->
+    <div class="mb-20">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white text-center mb-12">
+        Game-specific <span class="text-cyan-50">guides</span>
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="/games#minecraft" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-[#FF9C20] transition-all group text-center">
+          <div class="text-4xl mb-3">⛏️</div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-[#FF9C20] transition-colors">Minecraft</h3>
+          <p class="text-cool-gray-40 text-sm">Setup guides, mods, plugins</p>
+        </a>
+
+        <a href="/games#rust" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-cyan-50 transition-all group text-center">
+          <div class="text-4xl mb-3">🦀</div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-50 transition-colors">Rust</h3>
+          <p class="text-cool-gray-40 text-sm">Server config, admin tools</p>
+        </a>
+
+        <a href="/games#ark" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-purple-50 transition-all group text-center">
+          <div class="text-4xl mb-3">🦖</div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-50 transition-colors">ARK</h3>
+          <p class="text-cool-gray-40 text-sm">Cluster setup, mods</p>
+        </a>
+
+        <a href="/games#valheim" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-green-50 transition-all group text-center">
+          <div class="text-4xl mb-3">⚔️</div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-green-50 transition-colors">Valheim</h3>
+          <p class="text-cool-gray-40 text-sm">World management, backups</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Community Resources -->
+    <div class="mb-20">
+      <div class="bg-gradient-to-r from-purple-50 to-cyan-50 rounded-2xl p-1">
+        <div class="bg-gray-100 rounded-xl p-8 lg:p-12">
+          <div class="grid lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 class="text-3xl font-bold text-white mb-4">Join Our Community</h2>
+              <p class="text-cool-gray-20 text-lg mb-6">
+                Connect with 10,000+ server owners, share tips, get help from experienced community members, and stay updated on new features.
+              </p>
+              <ul class="space-y-3 text-cool-gray-20 mb-8">
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-purple-50 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Instant help from community experts</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-purple-50 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Share server configurations and tips</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-purple-50 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Early access to new features</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-purple-50 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Exclusive community events and giveaways</span>
+                </li>
+              </ul>
+              <a
+                href="/discord-flock"
+                class="inline-block px-8 py-4 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black font-bold rounded-lg hover:shadow-lg transition-all hover:scale-105"
+              >
+                Join Discord Community →
+              </a>
+            </div>
+            <div class="bg-gradient-to-br from-gray-90 to-gray-100 rounded-xl p-8">
+              <h3 class="text-xl font-bold text-white mb-6">Recent Community Activity</h3>
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <div class="w-10 h-10 rounded-full bg-[#FF9C20]/20 flex items-center justify-center flex-shrink-0">
+                    <span class="text-lg">👤</span>
+                  </div>
+                  <div class="flex-1">
+                    <p class="text-white font-semibold">CraftMaster</p>
+                    <p class="text-cool-gray-40 text-sm">Shared an optimization guide for Minecraft servers</p>
+                    <p class="text-cool-gray-60 text-xs mt-1">2 hours ago</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-10 h-10 rounded-full bg-cyan-50/20 flex items-center justify-center flex-shrink-0">
+                    <span class="text-lg">👤</span>
+                  </div>
+                  <div class="flex-1">
+                    <p class="text-white font-semibold">RustPro</p>
+                    <p class="text-cool-gray-40 text-sm">Helped 5 members with server configuration</p>
+                    <p class="text-cool-gray-60 text-xs mt-1">5 hours ago</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-10 h-10 rounded-full bg-purple-50/20 flex items-center justify-center flex-shrink-0">
+                    <span class="text-lg">🦆</span>
+                  </div>
+                  <div class="flex-1">
+                    <p class="text-white font-semibold">QuackHost Team</p>
+                    <p class="text-cool-gray-40 text-sm">Announced new feature: One-click server cloning</p>
+                    <p class="text-cool-gray-60 text-xs mt-1">1 day ago</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Emergency Support -->
+    <div class="mb-20">
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-red-500 rounded-2xl p-8 lg:p-12 text-center">
+        <div class="text-5xl mb-4">🚨</div>
+        <h2 class="text-3xl font-bold text-white mb-4">Experiencing a Critical Issue?</h2>
+        <p class="text-cool-gray-20 text-lg mb-6 max-w-2xl mx-auto">
+          If your server is down or you're experiencing a critical issue, contact us immediately via Discord for the fastest response.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a
+            href="/discord-flock"
+            class="px-8 py-4 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black font-bold rounded-lg hover:shadow-lg transition-all hover:scale-105"
+          >
+            Get Immediate Help
+          </a>
+          <a
+            href="/service-status"
+            class="px-8 py-4 bg-gray-90 border border-gray-80 text-white font-bold rounded-lg hover:bg-gray-80 transition-all"
+          >
+            Check Service Status
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</Layout>
