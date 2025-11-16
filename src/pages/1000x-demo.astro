@@ -1,0 +1,408 @@
+---
+import Layout from "../layouts/layout.astro";
+import RevenueCalculator from "../components/revenue-calculator.astro";
+import AIServerCreator from "../components/ai-server-creator.astro";
+
+const title = "QuackHost 1000x - The Future of Game Server Hosting";
+const description = "Transform from a hosting provider to the AWS of Gaming. AI-powered server creation, revenue share model, and creator economy platform.";
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="py-20 bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <!-- Badge -->
+        <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full text-sm font-semibold mb-6 animate-pulse">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <span>Introducing QuackHost 1000x</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-6xl md:text-7xl font-bold mb-6">
+          <span class="text-gray-900 dark:text-white">Build Your Gaming</span>
+          <br>
+          <span class="bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text text-transparent">
+            Business in Minutes
+          </span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+          The first AI-powered gaming infrastructure platform that helps creators build, scale, and monetize game servers - transforming entertainment into entrepreneurship.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <a
+            href="#ai-demo"
+            class="bg-gradient-to-r from-orange-600 to-red-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-orange-700 hover:to-red-700 transition-all shadow-lg hover:shadow-xl"
+          >
+            Try AI Server Creator →
+          </a>
+          <a
+            href="#calculator"
+            class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white px-8 py-4 rounded-lg text-lg font-semibold border-2 border-gray-300 dark:border-gray-600 hover:border-orange-600 dark:hover:border-orange-600 transition-all"
+          >
+            Calculate Your Earnings
+          </a>
+        </div>
+
+        <!-- Social Proof -->
+        <div class="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+          <div>
+            <div class="text-4xl font-bold text-orange-600">1,247</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">Servers Online</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-orange-600">$125K</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">Paid to Creators</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-orange-600">23</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">Launched Today</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Proposition Section -->
+  <section class="py-20 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          Why QuackHost 1000x?
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400">
+          We're not just hosting servers - we're building the future of gaming entrepreneurship
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- AI-First -->
+        <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-2xl p-8">
+          <div class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+            AI-Powered Creation
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            Describe your server in plain English. Our AI handles plugin selection, configuration, and deployment in under 2 minutes.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Natural language server creation
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Predictive performance optimization
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Player churn prevention insights
+            </li>
+          </ul>
+        </div>
+
+        <!-- Revenue Share -->
+        <div class="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-2xl p-8">
+          <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+            Revenue Share Model
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            Pay only when you make money. We succeed when you succeed. Start free, scale with your success.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Free tier: 15% of revenue (or $0 if you make $0)
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Built-in payment processing
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Revenue optimization AI
+            </li>
+          </ul>
+        </div>
+
+        <!-- Marketplace -->
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl p-8">
+          <div class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+            Creator Marketplace
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            Buy professional server templates or sell your creations. Turn your building skills into passive income.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Launch professional servers in 60 seconds
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Earn 80% on every sale
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Build your creator brand
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Server Creator Demo -->
+  <section id="ai-demo" class="py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <AIServerCreator />
+    </div>
+  </section>
+
+  <!-- Revenue Calculator -->
+  <section id="calculator" class="py-20 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <RevenueCalculator />
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section class="py-20 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          Real Creators, Real Results
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400">
+          Join hundreds of creators building successful gaming businesses
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Story 1 -->
+        <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+              S
+            </div>
+            <div class="ml-4">
+              <div class="font-bold text-gray-900 dark:text-white">SkyBuilder_YT</div>
+              <div class="text-sm text-gray-500">Skyblock Server</div>
+            </div>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            "QuackHost's AI helped me launch in 30 minutes. Now making $3,200/month with 200+ active players. The revenue share model means I only pay when I earn."
+          </p>
+          <div class="flex items-center space-x-4 text-sm">
+            <div class="text-green-600 font-bold">$3,200/mo</div>
+            <div class="text-gray-500">•</div>
+            <div class="text-gray-600 dark:text-gray-400">200 players</div>
+          </div>
+        </div>
+
+        <!-- Story 2 -->
+        <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+              M
+            </div>
+            <div class="ml-4">
+              <div class="font-bold text-gray-900 dark:text-white">MedievalMaster</div>
+              <div class="text-sm text-gray-500">Template Creator</div>
+            </div>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            "I built a medieval server template and listed it on the marketplace. Sold 150+ copies at $29.99 each. Passive income while I sleep!"
+          </p>
+          <div class="flex items-center space-x-4 text-sm">
+            <div class="text-green-600 font-bold">$3,600 earned</div>
+            <div class="text-gray-500">•</div>
+            <div class="text-gray-600 dark:text-gray-400">150 sales</div>
+          </div>
+        </div>
+
+        <!-- Story 3 -->
+        <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+              P
+            </div>
+            <div class="ml-4">
+              <div class="font-bold text-gray-900 dark:text-white">PrisonPro</div>
+              <div class="text-sm text-gray-500">Prison Network</div>
+            </div>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            "Started with QuackHost AI. Grew to 500 players in 3 months. The churn prediction AI saved my server - it warned me before players left."
+          </p>
+          <div class="flex items-center space-x-4 text-sm">
+            <div class="text-green-600 font-bold">$8,500/mo</div>
+            <div class="text-gray-500">•</div>
+            <div class="text-gray-600 dark:text-gray-400">500 players</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Comparison -->
+  <section class="py-20 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          QuackHost vs Traditional Hosting
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400">
+          See why creators are switching to QuackHost
+        </p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="border-b-2 border-gray-200 dark:border-gray-700">
+              <th class="text-left py-4 px-6 text-gray-600 dark:text-gray-400 font-semibold">Feature</th>
+              <th class="text-center py-4 px-6 text-orange-600 font-bold text-lg">QuackHost 1000x</th>
+              <th class="text-center py-4 px-6 text-gray-600 dark:text-gray-400 font-semibold">Traditional Hosting</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+            <tr>
+              <td class="py-4 px-6 font-medium text-gray-900 dark:text-white">AI Server Creation</td>
+              <td class="py-4 px-6 text-center">
+                <svg class="w-6 h-6 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+              </td>
+              <td class="py-4 px-6 text-center">
+                <svg class="w-6 h-6 text-red-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                </svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-medium text-gray-900 dark:text-white">Revenue Share Pricing</td>
+              <td class="py-4 px-6 text-center">
+                <svg class="w-6 h-6 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+              </td>
+              <td class="py-4 px-6 text-center">
+                <span class="text-gray-500">Fixed costs</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-medium text-gray-900 dark:text-white">Built-in Monetization</td>
+              <td class="py-4 px-6 text-center">
+                <svg class="w-6 h-6 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+              </td>
+              <td class="py-4 px-6 text-center">
+                <span class="text-gray-500">DIY plugins</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-medium text-gray-900 dark:text-white">Creator Marketplace</td>
+              <td class="py-4 px-6 text-center">
+                <svg class="w-6 h-6 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+              </td>
+              <td class="py-4 px-6 text-center">
+                <svg class="w-6 h-6 text-red-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                </svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-medium text-gray-900 dark:text-white">Churn Prediction AI</td>
+              <td class="py-4 px-6 text-center">
+                <svg class="w-6 h-6 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+              </td>
+              <td class="py-4 px-6 text-center">
+                <svg class="w-6 h-6 text-red-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                </svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-medium text-gray-900 dark:text-white">Setup Time</td>
+              <td class="py-4 px-6 text-center text-green-600 font-bold">&lt;2 minutes</td>
+              <td class="py-4 px-6 text-center text-gray-500">Hours to days</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-20 bg-gradient-to-r from-orange-600 via-red-600 to-pink-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-5xl font-bold text-white mb-6">
+        Ready to Build Your Gaming Empire?
+      </h2>
+      <p class="text-xl text-white/90 mb-8">
+        Join the platform where creators build businesses, not just servers.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/signup"
+          class="bg-white text-orange-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all shadow-xl"
+        >
+          Start Free Today →
+        </a>
+        <a
+          href="/demo"
+          class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/10 transition-all"
+        >
+          Book a Demo
+        </a>
+      </div>
+      <div class="mt-8 text-white/80 text-sm">
+        No credit card required • 7-day free trial • Cancel anytime
+      </div>
+    </div>
+  </section>
+</Layout>
