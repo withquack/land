@@ -2,10 +2,382 @@
 import Layout from "../layouts/layout.astro";
 ---
 
-<Layout title="/ QuackPlane">
-  <div class="mb-32 mt-32">
-    <p class="text-2xl font-semibold xl:text-4xl">QuackPlane</p>
+<Layout title="/ QuackPlane - Control Your Servers">
+  <!-- Hero Section -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 mb-24 gap-12 items-center">
+    <div>
+      <h1 class="text-5xl md:text-7xl font-bold mb-6">
+        <span class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">
+          QuackPlane
+        </span>
+      </h1>
+      <p class="text-2xl text-cool-gray-30 mb-8">
+        The most powerful control panel for game server management. Built for creators, loved by communities.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a
+          href="/pricing"
+          class="inline-flex justify-center items-center px-8 py-4 text-black bg-[#FF9C20] hover:bg-[#CC6600] transition-colors duration-200 text-lg font-semibold"
+        >
+          Start Free
+        </a>
+        <a
+          href="#features"
+          class="inline-flex items-center justify-center px-8 py-4 text-white border border-[#FF9C20] hover:bg-[#FF8D00] hover:text-black transition-colors duration-200 text-lg"
+        >
+          Explore Features
+        </a>
+      </div>
+    </div>
+    <div class="order-first lg:order-last">
+      <img
+        src="/index/quackplane.webp"
+        alt="QuackPlane Control Panel Interface"
+        class="w-full rounded-lg shadow-2xl border border-cool-gray-70"
+        width="1253"
+        height="1016"
+      />
+    </div>
   </div>
 
-  <div class="h-96 rounded-md bg-gray-200"></div>
+  <!-- Key Features Grid -->
+  <div id="features" class="mb-24">
+    <h2 class="text-4xl font-bold mb-12 text-center">
+      <span class="underline decoration-4 decoration-cyan-50">Everything you need</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Feature 1 -->
+      <div class="border border-cool-gray-70 bg-cool-gray-90 p-8 rounded-lg hover:border-cyan-50 transition-all duration-300">
+        <div class="flex items-center mb-4">
+          <img src="/index/doodles/wizard.svg" alt="" width="48" height="48" class="mr-3" />
+          <h3 class="text-2xl font-bold text-cyan-50">One-Click Actions</h3>
+        </div>
+        <p class="text-cool-gray-40 leading-relaxed">
+          Start, stop, restart your server with a single click. Install plugins, update versions, and manage mods without touching the terminal.
+        </p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="border border-cool-gray-70 bg-cool-gray-90 p-8 rounded-lg hover:border-blue-50 transition-all duration-300">
+        <div class="flex items-center mb-4">
+          <img src="/index/doodles/upload.svg" alt="" width="48" height="48" class="mr-3" />
+          <h3 class="text-2xl font-bold text-blue-50">File Manager</h3>
+        </div>
+        <p class="text-cool-gray-40 leading-relaxed">
+          Drag-and-drop file uploads. Built-in text editor with syntax highlighting. Compress, extract, and manage your server files with ease.
+        </p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="border border-cool-gray-70 bg-cool-gray-90 p-8 rounded-lg hover:border-purple-50 transition-all duration-300">
+        <div class="flex items-center mb-4">
+          <img src="/index/doodles/rain.svg" alt="" width="48" height="48" class="mr-3" />
+          <h3 class="text-2xl font-bold text-purple-50">Smart Backups</h3>
+        </div>
+        <p class="text-cool-gray-40 leading-relaxed">
+          Schedule automatic backups or create them manually. One-click restoration to any previous backup. All backups stored off-site for safety.
+        </p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="border border-cool-gray-70 bg-cool-gray-90 p-8 rounded-lg hover:border-green-50 transition-all duration-300">
+        <div class="flex items-center mb-4">
+          <img src="/index/doodles/hand holding.svg" alt="" width="48" height="48" class="mr-3" />
+          <h3 class="text-2xl font-bold text-green-50">Team Management</h3>
+        </div>
+        <p class="text-cool-gray-40 leading-relaxed">
+          Invite moderators and give them specific permissions. Role-based access control ensures everyone has the right level of access.
+        </p>
+      </div>
+
+      <!-- Feature 5 -->
+      <div class="border border-cool-gray-70 bg-cool-gray-90 p-8 rounded-lg hover:border-teal-50 transition-all duration-300">
+        <div class="flex items-center mb-4">
+          <img src="/index/doodles/cycle.svg" alt="" width="48" height="48" class="mr-3" />
+          <h3 class="text-2xl font-bold text-teal-50">Real-Time Monitoring</h3>
+        </div>
+        <p class="text-cool-gray-40 leading-relaxed">
+          Live graphs of CPU, RAM, and disk usage. Monitor player count, TPS, and server performance. Get alerts when issues arise.
+        </p>
+      </div>
+
+      <!-- Feature 6 -->
+      <div class="border border-cool-gray-70 bg-cool-gray-90 p-8 rounded-lg hover:border-[#FF9C20] transition-all duration-300">
+        <div class="flex items-center mb-4">
+          <img src="/index/doodles/joy leap 2.svg" alt="" width="48" height="48" class="mr-3" />
+          <h3 class="text-2xl font-bold text-[#FF9C20]">Live Console</h3>
+        </div>
+        <p class="text-cool-gray-40 leading-relaxed">
+          Full-featured console with command history and autocomplete. Execute commands, read logs, and interact with your server in real-time.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Features Section - Next-Gen -->
+  <div class="mb-24 bg-gradient-to-r from-purple-90 to-blue-90 border border-purple-60 rounded-lg p-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-block bg-purple-50 text-black text-sm font-bold px-4 py-2 rounded-full mb-4">
+          BETA - CREATOR & NETWORK PLANS
+        </div>
+        <h2 class="text-4xl font-bold mb-6">
+          <span class="text-transparent gradient bg-gradient-to-r from-purple-40 to-blue-40 bg-clip-text">
+            AI-Powered Intelligence
+          </span>
+        </h2>
+        <p class="text-xl text-cool-gray-30 mb-8">
+          Let AI optimize your server automatically. QuackPlane learns from millions of servers to give you the best performance possible.
+        </p>
+
+        <div class="space-y-6">
+          <div class="flex items-start">
+            <span class="text-purple-40 text-2xl mr-4">⚡</span>
+            <div>
+              <h4 class="text-lg font-semibold mb-2">Auto-Optimization</h4>
+              <p class="text-cool-gray-40">AI analyzes your server and automatically tunes JVM flags, chunk loading, and entity management for peak performance.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <span class="text-blue-40 text-2xl mr-4">🔮</span>
+            <div>
+              <h4 class="text-lg font-semibold mb-2">Predictive Scaling</h4>
+              <p class="text-cool-gray-40">Machine learning predicts player surges and scales resources before lag hits. Your players never notice a thing.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <span class="text-cyan-40 text-2xl mr-4">🛡️</span>
+            <div>
+              <h4 class="text-lg font-semibold mb-2">Smart Mod Checker</h4>
+              <p class="text-cool-gray-40">AI detects mod conflicts before you install them. Get suggested fixes and compatibility warnings automatically.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <span class="text-green-40 text-2xl mr-4">💬</span>
+            <div>
+              <h4 class="text-lg font-semibold mb-2">Natural Language Control</h4>
+              <p class="text-cool-gray-40">"Backup my server and restart it in 5 minutes" - manage your server by simply telling QuackPlane what you want.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-8">
+        <div class="mb-4 text-green-50 font-mono text-sm">$ AI Optimizer Output</div>
+        <div class="space-y-3 font-mono text-sm text-cool-gray-30">
+          <div>✓ Analyzing server performance...</div>
+          <div>✓ Detected 247 players online (avg: 180)</div>
+          <div>✓ TPS dropping to 16.8 during peak hours</div>
+          <div class="text-yellow-50">⚠ Recommendation: Increase view distance from 10→8</div>
+          <div class="text-yellow-50">⚠ Recommendation: Enable async chunk loading</div>
+          <div class="text-yellow-50">⚠ Recommendation: Optimize entity activation range</div>
+          <div class="text-cyan-50 mt-4">→ Apply optimizations? [Y/n]</div>
+          <div class="text-green-50">✓ Applied! TPS improved to 19.2 (+14%)</div>
+          <div class="text-green-50">✓ Player latency reduced by 23ms</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Plugin & Mod Management -->
+  <div class="mb-24">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1">
+        <div class="bg-cool-gray-90 border border-cool-gray-70 rounded-lg p-8">
+          <h4 class="text-xl font-semibold mb-6 flex items-center">
+            <span class="underline decoration-4 decoration-cyan-50">Popular Plugins</span>
+            <img src="/index/doodles/magic wand.svg" alt="" class="ml-2" width="28" height="28" />
+          </h4>
+          <div class="space-y-4">
+            <div class="flex items-center justify-between p-4 bg-cool-gray-80 rounded hover:bg-cool-gray-70 transition-colors">
+              <div>
+                <div class="font-semibold">EssentialsX</div>
+                <div class="text-sm text-cool-gray-40">Core server commands & features</div>
+              </div>
+              <button class="px-4 py-2 bg-cyan-50 text-black rounded hover:bg-cyan-40 transition-colors text-sm font-semibold">
+                Install
+              </button>
+            </div>
+            <div class="flex items-center justify-between p-4 bg-cool-gray-80 rounded hover:bg-cool-gray-70 transition-colors">
+              <div>
+                <div class="font-semibold">WorldEdit</div>
+                <div class="text-sm text-cool-gray-40">In-game world editor</div>
+              </div>
+              <button class="px-4 py-2 bg-cyan-50 text-black rounded hover:bg-cyan-40 transition-colors text-sm font-semibold">
+                Install
+              </button>
+            </div>
+            <div class="flex items-center justify-between p-4 bg-cool-gray-80 rounded hover:bg-cool-gray-70 transition-colors">
+              <div>
+                <div class="font-semibold">CoreProtect</div>
+                <div class="text-sm text-cool-gray-40">Block logging & rollback tool</div>
+              </div>
+              <button class="px-4 py-2 bg-green-50 text-black rounded opacity-50 cursor-not-allowed text-sm font-semibold">
+                Installed
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-1 lg:order-2">
+        <h2 class="text-4xl font-bold mb-6">
+          <span class="underline decoration-4 decoration-teal-50">Plugin Marketplace</span>
+        </h2>
+        <p class="text-xl text-cool-gray-30 mb-6">
+          Browse and install from thousands of plugins and mods. One-click installation with automatic dependency resolution.
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <span class="text-teal-50 text-xl mr-3">✓</span>
+            <div>
+              <h4 class="font-semibold mb-1">Spigot, Paper, Bukkit Integration</h4>
+              <p class="text-cool-gray-40">Direct integration with plugin repositories. Always get the latest versions.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <span class="text-teal-50 text-xl mr-3">✓</span>
+            <div>
+              <h4 class="font-semibold mb-1">CurseForge & Modrinth Support</h4>
+              <p class="text-cool-gray-40">Install modpacks and mods with a single click. We handle all the dependencies.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <span class="text-teal-50 text-xl mr-3">✓</span>
+            <div>
+              <h4 class="font-semibold mb-1">Auto-Update Management</h4>
+              <p class="text-cool-gray-40">Keep plugins up-to-date automatically, or review updates before applying them.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <span class="text-teal-50 text-xl mr-3">✓</span>
+            <div>
+              <h4 class="font-semibold mb-1">Configuration Presets</h4>
+              <p class="text-cool-gray-40">Pre-configured setups for Prison, Skyblock, Survival, Creative, and more.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Management -->
+  <div class="mb-24 bg-gradient-to-r from-blue-90 to-cyan-90 border border-blue-60 rounded-lg p-12">
+    <div class="text-center mb-12">
+      <div class="inline-block bg-blue-50 text-black text-sm font-bold px-4 py-2 rounded-full mb-4">
+        COMING SOON
+      </div>
+      <h2 class="text-4xl font-bold mb-6">
+        <span class="text-transparent gradient bg-gradient-to-r from-blue-40 to-cyan-40 bg-clip-text">
+          Manage from Anywhere
+        </span>
+      </h2>
+      <p class="text-xl text-cool-gray-30 max-w-3xl mx-auto">
+        Native iOS and Android apps bring the full power of QuackPlane to your pocket. Restart servers, check player counts, and respond to alerts on the go.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="text-4xl mb-4">📱</div>
+        <h4 class="text-lg font-semibold mb-2">Native Apps</h4>
+        <p class="text-cool-gray-40">Built specifically for iOS and Android. Fast, native, beautiful.</p>
+      </div>
+
+      <div class="text-center">
+        <div class="text-4xl mb-4">🔔</div>
+        <h4 class="text-lg font-semibold mb-2">Push Notifications</h4>
+        <p class="text-cool-gray-40">Get alerted when your server goes down or players spike.</p>
+      </div>
+
+      <div class="text-center">
+        <div class="text-4xl mb-4">⚡</div>
+        <h4 class="text-lg font-semibold mb-2">Quick Actions</h4>
+        <p class="text-cool-gray-40">Restart, backup, or check status with iOS shortcuts and widgets.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Security Features -->
+  <div class="mb-24">
+    <h2 class="text-4xl font-bold mb-12 text-center">
+      <span class="underline decoration-4 decoration-purple-50">Enterprise Security</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="border border-cool-gray-70 bg-cool-gray-90 p-8 rounded-lg">
+        <h3 class="text-2xl font-bold mb-4 flex items-center">
+          <span class="text-purple-50">🔐</span>
+          <span class="ml-3">Two-Factor Authentication</span>
+        </h3>
+        <p class="text-cool-gray-40 leading-relaxed">
+          Protect your account with 2FA. Support for authenticator apps, SMS, and hardware security keys.
+        </p>
+      </div>
+
+      <div class="border border-cool-gray-70 bg-cool-gray-90 p-8 rounded-lg">
+        <h3 class="text-2xl font-bold mb-4 flex items-center">
+          <span class="text-purple-50">📋</span>
+          <span class="ml-3">Audit Logs</span>
+        </h3>
+        <p class="text-cool-gray-40 leading-relaxed">
+          Complete history of every action taken on your servers. See who did what, when, and from where.
+        </p>
+      </div>
+
+      <div class="border border-cool-gray-70 bg-cool-gray-90 p-8 rounded-lg">
+        <h3 class="text-2xl font-bold mb-4 flex items-center">
+          <span class="text-purple-50">🔒</span>
+          <span class="ml-3">Encrypted Backups</span>
+        </h3>
+        <p class="text-cool-gray-40 leading-relaxed">
+          All backups encrypted at rest and in transit. Optional customer-managed encryption keys for compliance.
+        </p>
+      </div>
+
+      <div class="border border-cool-gray-70 bg-cool-gray-90 p-8 rounded-lg">
+        <h3 class="text-2xl font-bold mb-4 flex items-center">
+          <span class="text-purple-50">👥</span>
+          <span class="ml-3">IP Whitelisting</span>
+        </h3>
+        <p class="text-cool-gray-40 leading-relaxed">
+          Restrict access to QuackPlane and SFTP to specific IP addresses. Perfect for teams and organizations.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="text-center py-16 border-t border-cool-gray-70">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+      <span class="text-transparent gradient bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">
+        Experience QuackPlane today
+      </span>
+    </h2>
+    <p class="text-xl text-cool-gray-40 mb-8 max-w-2xl mx-auto">
+      Start with our free tier. No credit card required. Launch your server in under 2 minutes.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a
+        href="/pricing"
+        class="inline-flex justify-center items-center w-64 p-4 text-black bg-[#FF9C20] hover:bg-[#CC6600] transition-colors duration-200 text-lg font-semibold"
+      >
+        Get Started Free
+      </a>
+      <a
+        href="/service-status"
+        class="inline-flex items-center justify-center w-64 p-4 text-white border border-[#FF9C20] hover:bg-[#FF8D00] hover:text-black transition-colors duration-200 text-lg"
+      >
+        Check Status
+      </a>
+    </div>
+  </div>
 </Layout>
