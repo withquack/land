@@ -1,0 +1,576 @@
+---
+import Layout from "../layouts/layout.astro";
+---
+
+<Layout title="/ FAQ">
+  <div class="max-w-5xl mx-auto">
+    <!-- Header -->
+    <div class="mb-16 mt-16 lg:mt-32 text-center">
+      <div class="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-cyan-50/20 to-purple-50/20 border border-cyan-50/50 rounded-full">
+        <span class="text-cyan-50 font-bold text-sm">KNOWLEDGE BASE</span>
+      </div>
+      <h1 class="text-4xl lg:text-6xl font-bold text-white mb-6">
+        Frequently Asked <span class="bg-gradient-to-r from-[#FF9C20] to-cyan-50 bg-clip-text text-transparent">Questions</span>
+      </h1>
+      <p class="text-xl lg:text-2xl text-cool-gray-20 max-w-3xl mx-auto mb-8">
+        Find quick answers to common questions about QuackHost game server hosting, billing, technical support, and more.
+      </p>
+    </div>
+
+    <!-- Search Box -->
+    <div class="mb-12">
+      <div class="relative max-w-2xl mx-auto">
+        <input
+          type="text"
+          placeholder="Search for answers..."
+          class="w-full px-6 py-4 bg-gray-90 border-2 border-gray-80 rounded-xl text-white placeholder-cool-gray-40 focus:outline-none focus:border-[#FF9C20] transition-colors"
+        />
+        <svg class="absolute right-6 top-1/2 transform -translate-y-1/2 w-6 h-6 text-cool-gray-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Category Tabs -->
+    <div
+      x-data="{ activeCategory: 'general' }"
+      class="mb-12"
+    >
+      <div class="flex flex-wrap gap-3 justify-center mb-12">
+        <button
+          @click="activeCategory = 'general'"
+          :class="activeCategory === 'general' ? 'bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black' : 'bg-gray-90 text-cool-gray-20 hover:bg-gray-80'"
+          class="px-6 py-3 font-semibold rounded-lg transition-all"
+        >
+          General
+        </button>
+        <button
+          @click="activeCategory = 'billing'"
+          :class="activeCategory === 'billing' ? 'bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black' : 'bg-gray-90 text-cool-gray-20 hover:bg-gray-80'"
+          class="px-6 py-3 font-semibold rounded-lg transition-all"
+        >
+          Billing
+        </button>
+        <button
+          @click="activeCategory = 'technical'"
+          :class="activeCategory === 'technical' ? 'bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black' : 'bg-gray-90 text-cool-gray-20 hover:bg-gray-80'"
+          class="px-6 py-3 font-semibold rounded-lg transition-all"
+        >
+          Technical
+        </button>
+        <button
+          @click="activeCategory = 'games'"
+          :class="activeCategory === 'games' ? 'bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black' : 'bg-gray-90 text-cool-gray-20 hover:bg-gray-80'"
+          class="px-6 py-3 font-semibold rounded-lg transition-all"
+        >
+          Games
+        </button>
+        <button
+          @click="activeCategory = 'account'"
+          :class="activeCategory === 'account' ? 'bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black' : 'bg-gray-90 text-cool-gray-20 hover:bg-gray-80'"
+          class="px-6 py-3 font-semibold rounded-lg transition-all"
+        >
+          Account
+        </button>
+      </div>
+
+      <!-- General Questions -->
+      <div x-show="activeCategory === 'general'" class="space-y-4">
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-[#FF9C20] transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">What is QuackHost?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed">
+              QuackHost is a premium game server hosting platform designed specifically for gamers. We provide blazing-fast, reliable servers for 50+ popular games including Minecraft, Rust, ARK, Valheim, and Counter-Strike 2. Our infrastructure features AMD Ryzen 9 processors, DDR5 RAM, NVMe Gen4 SSDs, and 10Gbps network connectivity across multiple global regions (US, EU, APAC).
+            </p>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-cyan-50 transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">How quickly can I get my server online?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed">
+              Most game servers are deployed within 60-120 seconds after purchase. Our automated provisioning system handles everything - OS installation, game installation, firewall configuration, and control panel setup. You'll receive login credentials immediately and can start configuring your server right away.
+            </p>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-purple-50 transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">Do I need technical knowledge to use QuackHost?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed">
+              Not at all! QuackPlane, our custom control panel, is designed for users of all skill levels. With one-click installations, automatic backups, and an intuitive interface, you can manage your server without any command-line knowledge. For advanced users, we also provide full SSH/FTP access, console commands, and API integration.
+            </p>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-green-50 transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">What is your uptime guarantee?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed">
+              We guarantee 99.9% uptime with our SLA. This means your server will be available and running 99.9% of the time, with minimal scheduled maintenance. If we fail to meet this guarantee, you're eligible for service credits. View our real-time uptime statistics on our <a href="/service-status" class="text-[#FF9C20] hover:underline">service status page</a>.
+            </p>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-[#FF9C20] transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">Which data center location should I choose?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed mb-3">
+              Choose the region closest to your players to minimize latency:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-cool-gray-20 ml-4">
+              <li><strong class="text-white">US East (Virginia):</strong> North America, South America</li>
+              <li><strong class="text-white">US West (Los Angeles):</strong> Western North America, Pacific</li>
+              <li><strong class="text-white">EU (Frankfurt):</strong> Europe, Middle East, Africa</li>
+              <li><strong class="text-white">APAC (Singapore):</strong> Asia, Australia, Oceania</li>
+            </ul>
+            <p class="text-cool-gray-20 mt-3">
+              You can migrate between regions anytime with our server transfer tool (small fee may apply).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Billing Questions -->
+      <div x-show="activeCategory === 'billing'" class="space-y-4">
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-[#FF9C20] transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">What payment methods do you accept?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed mb-3">
+              We accept all major payment methods:
+            </p>
+            <ul class="list-disc list-inside space-y-1 text-cool-gray-20 ml-4">
+              <li>Credit/Debit Cards (Visa, Mastercard, Amex, Discover)</li>
+              <li>PayPal</li>
+              <li>Cryptocurrency (Bitcoin, Ethereum, USDT)</li>
+              <li>Bank Transfer (for Enterprise plans)</li>
+              <li>Regional payment methods (varies by location)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-cyan-50 transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">How does billing work? Can I pay monthly?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed">
+              Yes! We offer flexible billing cycles: monthly, quarterly (5% discount), semi-annually (10% discount), and annually (15% discount). All plans automatically renew unless you cancel. You can upgrade, downgrade, or cancel anytime - we'll prorate the difference. Invoices are sent 3 days before each billing cycle.
+            </p>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-purple-50 transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">What is your refund policy?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed">
+              We offer a 7-day money-back guarantee on all new purchases. If you're not satisfied within the first 7 days, request a full refund (no questions asked). After 7 days, refunds are evaluated case-by-case for exceptional circumstances. To request a refund, contact <a href="mailto:billing@quack.host" class="text-[#FF9C20] hover:underline">billing@quack.host</a> or open a ticket.
+            </p>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-green-50 transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">Can I upgrade or downgrade my plan?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed">
+              Absolutely! You can change your plan anytime from the client portal. Upgrades are instant - you'll be charged the prorated difference and your server resources will increase immediately. Downgrades take effect at your next billing cycle, and you'll receive credit for the unused portion. No downtime required for either operation.
+            </p>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-[#FF9C20] transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">Are there any hidden fees?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed">
+              No hidden fees! Our pricing is 100% transparent. What you see on the pricing page is what you pay. All plans include unlimited bandwidth, DDoS protection, automated backups, and 24/7 support at no extra cost. Optional add-ons (like extra storage or dedicated IP) are clearly listed with their prices.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical Questions -->
+      <div x-show="activeCategory === 'technical'" class="space-y-4">
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-[#FF9C20] transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">How do I access my server files?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed mb-3">
+              You have multiple options to access your server files:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-cool-gray-20 ml-4">
+              <li><strong class="text-white">QuackPlane File Manager:</strong> Built-in web-based file manager with syntax highlighting and drag-and-drop uploads</li>
+              <li><strong class="text-white">FTP/SFTP:</strong> Connect with FileZilla, Cyberduck, or any FTP client using your server credentials</li>
+              <li><strong class="text-white">SSH Access:</strong> Full SSH access for advanced users (available on all plans)</li>
+            </ul>
+            <p class="text-cool-gray-20 mt-3">
+              File manager credentials are provided in your welcome email and accessible in the client portal.
+            </p>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-cyan-50 transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">How do backups work?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed">
+              QuackHost provides automated daily backups at no extra cost. Backups run at 3 AM in your selected timezone and retain for 7 days. You can also create manual backups anytime through QuackPlane. Restoring a backup is one-click - select a backup and your server will roll back to that state. Enterprise plans include 30-day retention and off-site backup storage.
+            </p>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-purple-50 transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">Can I install mods and plugins?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed">
+              Yes! You have full control to install any mods, plugins, or custom configurations. For Minecraft, we support Vanilla, Paper, Spigot, Forge, Fabric, and Sponge. For other games, simply upload your mod files via FTP or the file manager. Our guides section has step-by-step tutorials for popular mod installations. If you need help, our support team can assist 24/7.
+            </p>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-green-50 transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">What DDoS protection do you provide?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed">
+              All QuackHost servers include enterprise-grade DDoS mitigation at the network edge. We can absorb attacks up to 1.2 Tbps with automatic detection and mitigation within seconds. Our filtering system uses machine learning to distinguish legitimate traffic from attack vectors, ensuring minimal false positives. Protection is always-on and included free with all plans.
+            </p>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-[#FF9C20] transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">Can I use a custom domain for my server?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed">
+              Yes! You can point your own domain to your game server. Create an A record pointing to your server's IP address, or use an SRV record for games that support it (like Minecraft). Full setup instructions are in our <a href="/guides-&-tutorials" class="text-[#FF9C20] hover:underline">guides section</a>. If you don't have a domain, you can use the free subdomain we provide (e.g., yourserver.quack.host).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Games Questions -->
+      <div x-show="activeCategory === 'games'" class="space-y-4">
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-[#FF9C20] transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">Which games do you support?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed mb-3">
+              We support 50+ popular games with one-click installation. Our most popular include:
+            </p>
+            <ul class="list-disc list-inside space-y-1 text-cool-gray-20 ml-4 mb-3">
+              <li>Minecraft (Java & Bedrock)</li>
+              <li>Rust</li>
+              <li>ARK: Survival Evolved/Ascended</li>
+              <li>Valheim</li>
+              <li>Counter-Strike 2</li>
+              <li>Terraria, 7 Days to Die, Project Zomboid, Palworld, and many more!</li>
+            </ul>
+            <p class="text-cool-gray-20">
+              View the full list on our <a href="/games" class="text-[#FF9C20] hover:underline">games page</a>. Don't see your game? Contact us - we can likely support it!
+            </p>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-cyan-50 transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">How many players can my server support?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed mb-3">
+              Player capacity depends on your plan and the game. Here are general guidelines:
+            </p>
+            <ul class="list-disc list-inside space-y-1 text-cool-gray-20 ml-4">
+              <li><strong class="text-white">Duck (2GB RAM):</strong> 10-20 players (Minecraft vanilla/light modded)</li>
+              <li><strong class="text-white">Goose (4GB RAM):</strong> 20-40 players (most games)</li>
+              <li><strong class="text-white">Swan (8GB RAM):</strong> 40-80 players (modded/larger worlds)</li>
+              <li><strong class="text-white">Flock (16GB+ RAM):</strong> 100+ players (large communities, heavy mods)</li>
+            </ul>
+            <p class="text-cool-gray-20 mt-3">
+              Actual capacity varies by game, mods, and world size. Our interactive pricing calculator can help estimate your needs.
+            </p>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-purple-50 transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">Can I switch between games on the same server?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed">
+              Yes! You can reinstall a different game anytime from QuackPlane. Just create a backup of your current game (if you want to save it), then use the "Reinstall" feature to select a new game. The process takes 2-5 minutes. Your previous game data will be deleted unless you back it up first. Many users switch seasonally between games.
+            </p>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-green-50 transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">How do I migrate my existing server to QuackHost?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed">
+              Migration is simple! Download your world/server files from your current host, then upload them to your QuackHost server via FTP or the file manager. Adjust configuration files if needed (like server.properties). Our <a href="/guides-&-tutorials" class="text-[#FF9C20] hover:underline">migration guide</a> has game-specific instructions. Need help? Our support team offers FREE migration assistance - we'll handle everything for you!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Account Questions -->
+      <div x-show="activeCategory === 'account'" class="space-y-4">
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-[#FF9C20] transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">How do I create an account?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed">
+              When you purchase your first server, an account is automatically created using your email. You'll receive login credentials immediately. Access your client portal at <a href="https://client.quack.host" class="text-[#FF9C20] hover:underline">client.quack.host</a> to manage servers, billing, and support tickets. Enable two-factor authentication for added security!
+            </p>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-cyan-50 transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">How do I cancel my service?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed">
+              You can cancel anytime from the client portal under "My Services" > "Request Cancellation". Your server will remain active until the end of your paid period. We'll send a cancellation confirmation email. After cancellation, your data is retained for 7 days in case you change your mind, then permanently deleted. No cancellation fees!
+            </p>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-purple-50 transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">Can I have multiple servers on one account?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed">
+              Absolutely! You can manage unlimited servers from a single account. Each server is billed separately and can have different plans, games, and locations. The client portal provides a centralized dashboard to view and manage all your servers. Perfect for communities running multiple game types or test/production setups.
+            </p>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-green-50 transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">How do I reset my password?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed">
+              Visit the <a href="https://client.quack.host/password/reset" class="text-[#FF9C20] hover:underline">password reset page</a> and enter your email address. You'll receive a reset link within minutes. If you don't receive it, check your spam folder or contact support. For security, reset links expire after 1 hour.
+            </p>
+          </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden hover:border-[#FF9C20] transition-all">
+          <button
+            @click="open = !open"
+            class="w-full p-6 text-left flex items-center justify-between"
+          >
+            <span class="text-lg font-semibold text-white">Is two-factor authentication available?</span>
+            <svg class="w-5 h-5 text-cool-gray-30 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6">
+            <p class="text-cool-gray-20 leading-relaxed">
+              Yes! We strongly recommend enabling 2FA for account security. QuackHost supports TOTP-based 2FA using apps like Google Authenticator, Authy, or 1Password. Enable it in your account settings under "Security". Once enabled, you'll need both your password and a time-based code to log in. Backup codes are provided for emergency access.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Still Have Questions CTA -->
+    <div class="mb-20 mt-16">
+      <div class="bg-gradient-to-r from-[#FF9C20] to-cyan-50 rounded-2xl p-12 lg:p-16 text-center">
+        <h2 class="text-3xl lg:text-5xl font-bold text-black mb-6">
+          Still have questions?
+        </h2>
+        <p class="text-xl text-gray-90 mb-8 max-w-2xl mx-auto">
+          Our support team is available 24/7 to help with anything you need. Get instant answers from our community or open a ticket.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a
+            href="/discord-flock"
+            class="px-8 py-4 bg-black text-white font-bold rounded-lg hover:bg-gray-90 transition-all hover:scale-105"
+          >
+            Join Discord Community
+          </a>
+          <a
+            href="/contact"
+            class="px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-100 transition-all hover:scale-105"
+          >
+            Contact Support
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import Alpine from "alpinejs";
+  Alpine.start();
+</script>

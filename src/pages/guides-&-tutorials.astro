@@ -1,1 +1,411 @@
-<meta http-equiv="refresh" content="0; url=https://vault.quack.host" />
+---
+import Layout from "../layouts/layout.astro";
+---
+
+<Layout title="/ Guides & Tutorials">
+  <!-- Hero Section -->
+  <div class="mb-16 mt-16 lg:mt-32 text-center">
+    <div class="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-green-50/20 to-cyan-50/20 border border-green-50/50 rounded-full">
+      <span class="text-green-50 font-bold text-sm">LEARN & MASTER</span>
+    </div>
+    <h1 class="text-4xl lg:text-6xl font-bold text-white mb-6">
+      Guides & <span class="bg-gradient-to-r from-[#FF9C20] to-cyan-50 bg-clip-text text-transparent">Tutorials</span>
+    </h1>
+    <p class="text-xl lg:text-2xl text-cool-gray-20 max-w-3xl mx-auto mb-8">
+      Step-by-step guides to help you master game server hosting, from basic setup to advanced configurations.
+    </p>
+  </div>
+
+  <!-- Quick Start Guide (Featured) -->
+  <div class="mb-12">
+    <div class="bg-gradient-to-br from-[#FF9C20] to-[#FF8D00] rounded-2xl p-1">
+      <div class="bg-gray-100 rounded-xl p-8 lg:p-12">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-3 py-1 bg-[#FF9C20] text-black text-xs font-bold rounded-full">FEATURED</span>
+          <span class="text-cool-gray-30 text-sm">5 min read</span>
+        </div>
+        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+          Quick Start: Your First Game Server
+        </h2>
+        <p class="text-xl text-cool-gray-20 mb-6">
+          Learn how to deploy, configure, and launch your first game server in under 5 minutes. Perfect for beginners getting started with QuackHost.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="px-3 py-1 bg-gray-90 text-cool-gray-20 text-xs rounded-full">Beginner</span>
+          <span class="px-3 py-1 bg-gray-90 text-cool-gray-20 text-xs rounded-full">Setup</span>
+          <span class="px-3 py-1 bg-gray-90 text-cool-gray-20 text-xs rounded-full">QuackPlane</span>
+        </div>
+        <a
+          href="#"
+          class="inline-block px-6 py-3 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black font-bold rounded-lg hover:shadow-lg transition-all"
+        >
+          Read Guide →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tutorial Grid -->
+  <div class="grid xl:grid-cols-3 gap-6 mb-20">
+    <!-- Minecraft Guides -->
+    <div class="xl:col-span-2 xl:row-span-2 bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-8 hover:border-green-50 transition-all">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-4xl">🎮</span>
+        <div>
+          <h3 class="text-2xl font-bold text-white">Minecraft Server Guide</h3>
+          <p class="text-cool-gray-30 text-sm">12 min read • Intermediate</p>
+        </div>
+      </div>
+      <p class="text-cool-gray-20 mb-6">
+        Complete guide to setting up and managing a Minecraft server. Learn how to install plugins, configure permissions, manage worlds, and optimize performance for smooth gameplay.
+      </p>
+      <div class="space-y-3 mb-6">
+        <div class="flex items-center gap-2 text-cool-gray-20">
+          <svg class="w-5 h-5 text-green-40" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Installing Paper/Spigot/Forge</span>
+        </div>
+        <div class="flex items-center gap-2 text-cool-gray-20">
+          <svg class="w-5 h-5 text-green-40" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Plugin installation & management</span>
+        </div>
+        <div class="flex items-center gap-2 text-cool-gray-20">
+          <svg class="w-5 h-5 text-green-40" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Performance optimization tips</span>
+        </div>
+      </div>
+      <a href="#" class="inline-flex items-center text-[#FF9C20] font-semibold hover:underline">
+        Read Full Guide →
+      </a>
+    </div>
+
+    <!-- FTP Access -->
+    <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-6 hover:border-cyan-50 transition-all">
+      <div class="text-3xl mb-3">📁</div>
+      <h3 class="text-xl font-bold text-white mb-2">FTP File Access</h3>
+      <p class="text-cool-gray-20 text-sm mb-4">
+        Connect to your server via FTP and manage files directly.
+      </p>
+      <div class="flex items-center justify-between">
+        <span class="text-xs text-cool-gray-30">8 min • Beginner</span>
+        <a href="#" class="text-cyan-50 font-semibold hover:underline text-sm">Read →</a>
+      </div>
+    </div>
+
+    <!-- Backups -->
+    <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-6 hover:border-purple-50 transition-all">
+      <div class="text-3xl mb-3">💾</div>
+      <h3 class="text-xl font-bold text-white mb-2">Automated Backups</h3>
+      <p class="text-cool-gray-20 text-sm mb-4">
+        Set up automatic backups and restore points for your server.
+      </p>
+      <div class="flex items-center justify-between">
+        <span class="text-xs text-cool-gray-30">6 min • Beginner</span>
+        <a href="#" class="text-purple-50 font-semibold hover:underline text-sm">Read →</a>
+      </div>
+    </div>
+
+    <!-- Modded Servers -->
+    <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-6 hover:border-[#FF9C20] transition-all">
+      <div class="text-3xl mb-3">⚙️</div>
+      <h3 class="text-xl font-bold text-white mb-2">Modded Servers</h3>
+      <p class="text-cool-gray-20 text-sm mb-4">
+        Install and configure mods for Minecraft, Rust, and more.
+      </p>
+      <div class="flex items-center justify-between">
+        <span class="text-xs text-cool-gray-30">15 min • Advanced</span>
+        <a href="#" class="text-[#FF9C20] font-semibold hover:underline text-sm">Read →</a>
+      </div>
+    </div>
+
+    <!-- Server Performance -->
+    <div class="xl:col-span-2 bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-6 hover:border-green-50 transition-all">
+      <div class="flex items-start gap-4">
+        <div class="text-4xl">🚀</div>
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-white mb-2">Optimizing Server Performance</h3>
+          <p class="text-cool-gray-20 mb-4">
+            Advanced techniques to maximize your server's performance. Learn about RAM allocation, tick rate optimization, and reducing lag for the best player experience.
+          </p>
+          <div class="flex items-center justify-between">
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-20 text-xs rounded">Advanced</span>
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-20 text-xs rounded">Performance</span>
+            </div>
+            <a href="#" class="text-green-50 font-semibold hover:underline text-sm">Read Guide →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rust Server -->
+    <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-6 hover:border-cyan-50 transition-all">
+      <div class="text-3xl mb-3">🦀</div>
+      <h3 class="text-xl font-bold text-white mb-2">Rust Server Setup</h3>
+      <p class="text-cool-gray-20 text-sm mb-4">
+        Configure and manage a Rust server with custom settings.
+      </p>
+      <div class="flex items-center justify-between">
+        <span class="text-xs text-cool-gray-30">10 min • Intermediate</span>
+        <a href="#" class="text-cyan-50 font-semibold hover:underline text-sm">Read →</a>
+      </div>
+    </div>
+
+    <!-- Custom Domains -->
+    <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-6 hover:border-purple-50 transition-all">
+      <div class="text-3xl mb-3">🌐</div>
+      <h3 class="text-xl font-bold text-white mb-2">Custom Domains</h3>
+      <p class="text-cool-gray-20 text-sm mb-4">
+        Point your own domain name to your game server.
+      </p>
+      <div class="flex items-center justify-between">
+        <span class="text-xs text-cool-gray-30">5 min • Intermediate</span>
+        <a href="#" class="text-purple-50 font-semibold hover:underline text-sm">Read →</a>
+      </div>
+    </div>
+
+    <!-- Security -->
+    <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-6 hover:border-[#FF9C20] transition-all">
+      <div class="text-3xl mb-3">🛡️</div>
+      <h3 class="text-xl font-bold text-white mb-2">Server Security</h3>
+      <p class="text-cool-gray-20 text-sm mb-4">
+        Best practices for keeping your server secure from attacks.
+      </p>
+      <div class="flex items-center justify-between">
+        <span class="text-xs text-cool-gray-30">12 min • Intermediate</span>
+        <a href="#" class="text-[#FF9C20] font-semibold hover:underline text-sm">Read →</a>
+      </div>
+    </div>
+
+    <!-- QuackPlane Features -->
+    <div class="xl:col-span-2 bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-6 hover:border-cyan-50 transition-all">
+      <div class="flex items-start gap-4">
+        <div class="text-4xl">📱</div>
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-white mb-2">Mastering QuackPlane</h3>
+          <p class="text-cool-gray-20 mb-4">
+            Deep dive into QuackPlane's control panel features. Learn about the file manager, console access, scheduled tasks, user management, and mobile optimization.
+          </p>
+          <div class="flex items-center justify-between">
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-20 text-xs rounded">Beginner</span>
+              <span class="px-2 py-1 bg-gray-80 text-cool-gray-20 text-xs rounded">QuackPlane</span>
+            </div>
+            <a href="#" class="text-cyan-50 font-semibold hover:underline text-sm">Read Guide →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Valheim -->
+    <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-6 hover:border-green-50 transition-all">
+      <div class="text-3xl mb-3">⚔️</div>
+      <h3 class="text-xl font-bold text-white mb-2">Valheim Hosting</h3>
+      <p class="text-cool-gray-20 text-sm mb-4">
+        Set up a dedicated Valheim server for your Viking adventures.
+      </p>
+      <div class="flex items-center justify-between">
+        <span class="text-xs text-cool-gray-30">7 min • Beginner</span>
+        <a href="#" class="text-green-50 font-semibold hover:underline text-sm">Read →</a>
+      </div>
+    </div>
+
+    <!-- Database -->
+    <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-6 hover:border-purple-50 transition-all">
+      <div class="text-3xl mb-3">🗄️</div>
+      <h3 class="text-xl font-bold text-white mb-2">Database Setup</h3>
+      <p class="text-cool-gray-20 text-sm mb-4">
+        Configure MySQL databases for plugins and mods.
+      </p>
+      <div class="flex items-center justify-between">
+        <span class="text-xs text-cool-gray-30">10 min • Advanced</span>
+        <a href="#" class="text-purple-50 font-semibold hover:underline text-sm">Read →</a>
+      </div>
+    </div>
+
+    <!-- Migration -->
+    <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-6 hover:border-[#FF9C20] transition-all">
+      <div class="text-3xl mb-3">📦</div>
+      <h3 class="text-xl font-bold text-white mb-2">Server Migration</h3>
+      <p class="text-cool-gray-20 text-sm mb-4">
+        Transfer your existing server to QuackHost seamlessly.
+      </p>
+      <div class="flex items-center justify-between">
+        <span class="text-xs text-cool-gray-30">15 min • Intermediate</span>
+        <a href="#" class="text-[#FF9C20] font-semibold hover:underline text-sm">Read →</a>
+      </div>
+    </div>
+
+    <!-- ARK Server -->
+    <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-6 hover:border-cyan-50 transition-all">
+      <div class="text-3xl mb-3">🦖</div>
+      <h3 class="text-xl font-bold text-white mb-2">ARK: Survival</h3>
+      <p class="text-cool-gray-20 text-sm mb-4">
+        Host an ARK server with mods and custom configurations.
+      </p>
+      <div class="flex items-center justify-between">
+        <span class="text-xs text-cool-gray-30">12 min • Intermediate</span>
+        <a href="#" class="text-cyan-50 font-semibold hover:underline text-sm">Read →</a>
+      </div>
+    </div>
+
+    <!-- Troubleshooting -->
+    <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-6 hover:border-green-50 transition-all">
+      <div class="text-3xl mb-3">🔧</div>
+      <h3 class="text-xl font-bold text-white mb-2">Troubleshooting</h3>
+      <p class="text-cool-gray-20 text-sm mb-4">
+        Common issues and how to fix them quickly.
+      </p>
+      <div class="flex items-center justify-between">
+        <span class="text-xs text-cool-gray-30">8 min • All Levels</span>
+        <a href="#" class="text-green-50 font-semibold hover:underline text-sm">Read →</a>
+      </div>
+    </div>
+
+    <!-- Plugins -->
+    <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-6 hover:border-purple-50 transition-all">
+      <div class="text-3xl mb-3">🔌</div>
+      <h3 class="text-xl font-bold text-white mb-2">Essential Plugins</h3>
+      <p class="text-cool-gray-20 text-sm mb-4">
+        Must-have plugins for your Minecraft server.
+      </p>
+      <div class="flex items-center justify-between">
+        <span class="text-xs text-cool-gray-30">10 min • Beginner</span>
+        <a href="#" class="text-purple-50 font-semibold hover:underline text-sm">Read →</a>
+      </div>
+    </div>
+
+    <!-- Permissions -->
+    <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-6 hover:border-[#FF9C20] transition-all">
+      <div class="text-3xl mb-3">👥</div>
+      <h3 class="text-xl font-bold text-white mb-2">Permission Systems</h3>
+      <p class="text-cool-gray-20 text-sm mb-4">
+        Configure player permissions and admin roles.
+      </p>
+      <div class="flex items-center justify-between">
+        <span class="text-xs text-cool-gray-30">9 min • Intermediate</span>
+        <a href="#" class="text-[#FF9C20] font-semibold hover:underline text-sm">Read →</a>
+      </div>
+    </div>
+
+    <!-- CS2 -->
+    <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-6 hover:border-cyan-50 transition-all">
+      <div class="text-3xl mb-3">🎯</div>
+      <h3 class="text-xl font-bold text-white mb-2">CS2 Server</h3>
+      <p class="text-cool-gray-20 text-sm mb-4">
+        Deploy and configure a Counter-Strike 2 server.
+      </p>
+      <div class="flex items-center justify-between">
+        <span class="text-xs text-cool-gray-30">11 min • Intermediate</span>
+        <a href="#" class="text-cyan-50 font-semibold hover:underline text-sm">Read →</a>
+      </div>
+    </div>
+
+    <!-- Scheduled Tasks -->
+    <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-6 hover:border-green-50 transition-all">
+      <div class="text-3xl mb-3">⏰</div>
+      <h3 class="text-xl font-bold text-white mb-2">Scheduled Tasks</h3>
+      <p class="text-cool-gray-20 text-sm mb-4">
+        Automate restarts, backups, and maintenance tasks.
+      </p>
+      <div class="flex items-center justify-between">
+        <span class="text-xs text-cool-gray-30">6 min • Beginner</span>
+        <a href="#" class="text-green-50 font-semibold hover:underline text-sm">Read →</a>
+      </div>
+    </div>
+
+    <!-- API -->
+    <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-6 hover:border-purple-50 transition-all">
+      <div class="text-3xl mb-3">🔗</div>
+      <h3 class="text-xl font-bold text-white mb-2">API Integration</h3>
+      <p class="text-cool-gray-20 text-sm mb-4">
+        Use the QuackHost API for custom integrations.
+      </p>
+      <div class="flex items-center justify-between">
+        <span class="text-xs text-cool-gray-30">20 min • Advanced</span>
+        <a href="#" class="text-purple-50 font-semibold hover:underline text-sm">Read →</a>
+      </div>
+    </div>
+
+    <!-- Full Width Bottom -->
+    <div class="xl:col-span-3 bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-2xl p-8 hover:border-[#FF9C20] transition-all">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="flex items-start gap-4 flex-1">
+          <div class="text-5xl">📚</div>
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-2">Video Tutorials Coming Soon</h3>
+            <p class="text-cool-gray-20">
+              We're working on comprehensive video guides covering all aspects of game server hosting. Subscribe to our YouTube channel to get notified when new tutorials drop.
+            </p>
+          </div>
+        </div>
+        <a
+          href="#"
+          class="px-6 py-3 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black font-bold rounded-lg hover:shadow-lg transition-all whitespace-nowrap"
+        >
+          Subscribe on YouTube
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <div class="mb-20">
+    <h2 class="text-3xl lg:text-4xl font-bold text-white text-center mb-12">
+      Browse by <span class="text-[#FF9C20]">category</span>
+    </h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <a href="#" class="group bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-[#FF9C20] transition-all">
+        <div class="text-4xl mb-3">🎮</div>
+        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-[#FF9C20] transition-colors">Game-Specific</h3>
+        <p class="text-cool-gray-20 text-sm">Tutorials for Minecraft, Rust, ARK, Valheim, and more.</p>
+      </a>
+      <a href="#" class="group bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-cyan-50 transition-all">
+        <div class="text-4xl mb-3">⚙️</div>
+        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-50 transition-colors">Configuration</h3>
+        <p class="text-cool-gray-20 text-sm">Setup guides, configs, and optimization tips.</p>
+      </a>
+      <a href="#" class="group bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-purple-50 transition-all">
+        <div class="text-4xl mb-3">📱</div>
+        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-50 transition-colors">QuackPlane</h3>
+        <p class="text-cool-gray-20 text-sm">Master the control panel and its features.</p>
+      </a>
+      <a href="#" class="group bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-green-50 transition-all">
+        <div class="text-4xl mb-3">🚀</div>
+        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-green-50 transition-colors">Advanced</h3>
+        <p class="text-cool-gray-20 text-sm">Performance, security, and expert techniques.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="mb-20">
+    <div class="bg-gradient-to-r from-[#FF9C20] to-cyan-50 rounded-2xl p-12 lg:p-16 text-center">
+      <h2 class="text-3xl lg:text-5xl font-bold text-black mb-6">
+        Can't find what you're looking for?
+      </h2>
+      <p class="text-xl text-gray-90 mb-8 max-w-2xl mx-auto">
+        Our support team is here to help 24/7. Join our Discord community or open a support ticket.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a
+          href="/discord-flock"
+          class="px-8 py-4 bg-black text-white font-bold rounded-lg hover:bg-gray-90 transition-all hover:scale-105"
+        >
+          Join Discord
+        </a>
+        <a
+          href="/contact"
+          class="px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-100 transition-all hover:scale-105"
+        >
+          Contact Support
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
