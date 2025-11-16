@@ -3,7 +3,266 @@ import Layout from "../layouts/layout.astro";
 ---
 
 <Layout title="/ Games">
-  <div class="mb-32 mt-32">
-    <p class="text-2xl font-semibold xl:text-4xl">Games</p>
+  <!-- Hero Section -->
+  <div class="mb-16 text-center">
+    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+      <span class="text-white">Host any</span>
+      <br/>
+      <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">
+        game you love
+      </span>
+    </h1>
+    <p class="text-xl text-cool-gray-40 max-w-3xl mx-auto">
+      From Minecraft to Rust, we support 50+ games with one-click installation.
+    </p>
+  </div>
+
+  <!-- Popular Games Grid -->
+  <div class="mb-20">
+    <h2 class="text-3xl font-bold text-white mb-8 text-center">Most Popular Games</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Minecraft -->
+      <div class="group bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-2xl border-2 border-gray-80 hover:border-[#FF9C20] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+        <div class="flex items-center justify-between mb-6">
+          <div class="text-5xl">🎮</div>
+          <div class="px-3 py-1 bg-green-50/20 border border-green-40 rounded-full text-green-40 text-xs font-bold">
+            MOST POPULAR
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-2">Minecraft</h3>
+        <p class="text-cool-gray-40 mb-4">Java & Bedrock Edition</p>
+        <div class="space-y-2 mb-6 text-sm text-cool-gray-20">
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-[#FF9C20] mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Vanilla, Paper, Spigot, Forge
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-[#FF9C20] mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            One-click modpack installation
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-[#FF9C20] mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Automatic plugin updates
+          </div>
+        </div>
+        <a href="/pricing" class="block w-full px-6 py-3 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black font-bold rounded-lg text-center hover:shadow-lg transition-all">
+          Start Server
+        </a>
+      </div>
+
+      <!-- Rust -->
+      <div class="group bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-2xl border-2 border-gray-80 hover:border-cyan-50 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+        <div class="flex items-center justify-between mb-6">
+          <div class="text-5xl">⚔️</div>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-2">Rust</h3>
+        <p class="text-cool-gray-40 mb-4">Survival PvP</p>
+        <div class="space-y-2 mb-6 text-sm text-cool-gray-20">
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-cyan-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Auto-wipe configuration
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-cyan-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Oxide mod support
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-cyan-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            High-performance hardware
+          </div>
+        </div>
+        <a href="/pricing" class="block w-full px-6 py-3 bg-gradient-to-r from-cyan-50 to-cyan-60 text-black font-bold rounded-lg text-center hover:shadow-lg transition-all">
+          Start Server
+        </a>
+      </div>
+
+      <!-- ARK -->
+      <div class="group bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-2xl border-2 border-gray-80 hover:border-green-50 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+        <div class="flex items-center justify-between mb-6">
+          <div class="text-5xl">🦖</div>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-2">ARK</h3>
+        <p class="text-cool-gray-40 mb-4">Survival Evolved</p>
+        <div class="space-y-2 mb-6 text-sm text-cool-gray-20">
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-green-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            All DLC maps supported
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-green-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Custom server rates
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-green-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Mod manager included
+          </div>
+        </div>
+        <a href="/pricing" class="block w-full px-6 py-3 bg-gradient-to-r from-green-50 to-green-60 text-black font-bold rounded-lg text-center hover:shadow-lg transition-all">
+          Start Server
+        </a>
+      </div>
+
+      <!-- Valheim -->
+      <div class="group bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-2xl border-2 border-gray-80 hover:border-blue-50 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+        <div class="text-5xl mb-6">🏗️</div>
+        <h3 class="text-2xl font-bold text-white mb-2">Valheim</h3>
+        <p class="text-cool-gray-40 mb-4">Viking Survival</p>
+        <div class="space-y-2 mb-6 text-sm text-cool-gray-20">
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-blue-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Dedicated server support
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-blue-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            World backup system
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-blue-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Easy mod installation
+          </div>
+        </div>
+        <a href="/pricing" class="block w-full px-6 py-3 bg-gradient-to-r from-blue-50 to-blue-60 text-black font-bold rounded-lg text-center hover:shadow-lg transition-all">
+          Start Server
+        </a>
+      </div>
+
+      <!-- CS2 -->
+      <div class="group bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-2xl border-2 border-gray-80 hover:border-purple-50 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+        <div class="text-5xl mb-6">🔫</div>
+        <h3 class="text-2xl font-bold text-white mb-2">Counter-Strike 2</h3>
+        <p class="text-cool-gray-40 mb-4">Competitive FPS</p>
+        <div class="space-y-2 mb-6 text-sm text-cool-gray-20">
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-purple-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            128-tick servers
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-purple-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Custom workshop maps
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-purple-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            SourceMod support
+          </div>
+        </div>
+        <a href="/pricing" class="block w-full px-6 py-3 bg-gradient-to-r from-purple-50 to-purple-60 text-black font-bold rounded-lg text-center hover:shadow-lg transition-all">
+          Start Server
+        </a>
+      </div>
+
+      <!-- Terraria -->
+      <div class="group bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-2xl border-2 border-gray-80 hover:border-teal-50 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+        <div class="text-5xl mb-6">⛏️</div>
+        <h3 class="text-2xl font-bold text-white mb-2">Terraria</h3>
+        <p class="text-cool-gray-40 mb-4">2D Sandbox Adventure</p>
+        <div class="space-y-2 mb-6 text-sm text-cool-gray-20">
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-teal-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            TShock integration
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-teal-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            World management tools
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-teal-40 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Plugin marketplace
+          </div>
+        </div>
+        <a href="/pricing" class="block w-full px-6 py-3 bg-gradient-to-r from-teal-50 to-teal-60 text-black font-bold rounded-lg text-center hover:shadow-lg transition-all">
+          Start Server
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- All Supported Games -->
+  <div class="mb-20">
+    <h2 class="text-3xl font-bold text-white mb-8 text-center">All Supported Games (50+)</h2>
+    <div class="bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-2xl border border-gray-80">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="flex items-center gap-3 p-3 bg-gray-80 rounded-lg hover:bg-gray-70 transition-colors">
+          <span class="text-2xl">🎮</span>
+          <span class="text-white text-sm">Minecraft</span>
+        </div>
+        <div class="flex items-center gap-3 p-3 bg-gray-80 rounded-lg hover:bg-gray-70 transition-colors">
+          <span class="text-2xl">⚔️</span>
+          <span class="text-white text-sm">Rust</span>
+        </div>
+        <div class="flex items-center gap-3 p-3 bg-gray-80 rounded-lg hover:bg-gray-70 transition-colors">
+          <span class="text-2xl">🦖</span>
+          <span class="text-white text-sm">ARK</span>
+        </div>
+        <div class="flex items-center gap-3 p-3 bg-gray-80 rounded-lg hover:bg-gray-70 transition-colors">
+          <span class="text-2xl">🏗️</span>
+          <span class="text-white text-sm">Valheim</span>
+        </div>
+        <div class="flex items-center gap-3 p-3 bg-gray-80 rounded-lg hover:bg-gray-70 transition-colors">
+          <span class="text-2xl">🔫</span>
+          <span class="text-white text-sm">CS2</span>
+        </div>
+        <div class="flex items-center gap-3 p-3 bg-gray-80 rounded-lg hover:bg-gray-70 transition-colors">
+          <span class="text-2xl">⛏️</span>
+          <span class="text-white text-sm">Terraria</span>
+        </div>
+        <div class="flex items-center gap-3 p-3 bg-gray-80 rounded-lg hover:bg-gray-70 transition-colors">
+          <span class="text-2xl">🎯</span>
+          <span class="text-white text-sm">7 Days to Die</span>
+        </div>
+        <div class="flex items-center gap-3 p-3 bg-gray-80 rounded-lg hover:bg-gray-70 transition-colors">
+          <span class="text-2xl">🚀</span>
+          <span class="text-white text-sm">Space Engineers</span>
+        </div>
+        <div class="flex items-center gap-3 p-3 bg-gray-80 rounded-lg hover:bg-gray-70 transition-colors">
+          <span class="text-2xl">🌲</span>
+          <span class="text-white text-sm">The Forest</span>
+        </div>
+        <div class="flex items-center gap-3 p-3 bg-gray-80 rounded-lg hover:bg-gray-70 transition-colors">
+          <span class="text-2xl">🏰</span>
+          <span class="text-white text-sm">Conan Exiles</span>
+        </div>
+        <div class="flex items-center gap-3 p-3 bg-gray-80 rounded-lg hover:bg-gray-70 transition-colors">
+          <span class="text-2xl">🧟</span>
+          <span class="text-white text-sm">DayZ</span>
+        </div>
+        <div class="flex items-center gap-3 p-3 bg-gray-80 rounded-lg hover:bg-gray-70 transition-colors">
+          <span class="text-2xl">🎲</span>
+          <span class="text-white text-sm">Satisfactory</span>
+        </div>
+        <div class="flex items-center gap-3 p-3 bg-gray-80 rounded-lg hover:bg-gray-70 transition-colors">
+          <span class="text-2xl">🌊</span>
+          <span class="text-white text-sm">Raft</span>
+        </div>
+        <div class="flex items-center gap-3 p-3 bg-gray-80 rounded-lg hover:bg-gray-70 transition-colors">
+          <span class="text-2xl">👾</span>
+          <span class="text-white text-sm">Project Zomboid</span>
+        </div>
+        <div class="flex items-center gap-3 p-3 bg-gray-80 rounded-lg hover:bg-gray-70 transition-colors">
+          <span class="text-2xl">🔨</span>
+          <span class="text-white text-sm">Unturned</span>
+        </div>
+        <div class="flex items-center gap-3 p-3 bg-gray-80 rounded-lg hover:bg-gray-70 transition-colors">
+          <span class="text-2xl">💀</span>
+          <span class="text-white text-sm">V Rising</span>
+        </div>
+      </div>
+      <div class="mt-6 text-center">
+        <p class="text-cool-gray-40 text-sm">+ 34 more games supported</p>
+        <a href="/discord-flock" class="inline-block mt-4 text-[#FF9C20] hover:text-[#FF8D00] font-semibold">
+          Don't see your game? Request it →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="text-center bg-gradient-to-br from-gray-90 to-gray-100 p-12 rounded-2xl border-2 border-gray-80">
+    <h2 class="text-3xl font-bold text-white mb-4">Ready to start your server?</h2>
+    <p class="text-cool-gray-40 mb-8 max-w-2xl mx-auto">
+      One-click installation. Automatic updates. Zero configuration hassle.
+    </p>
+    <a href="/pricing" class="inline-block px-8 py-4 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black font-bold rounded-lg hover:shadow-xl transition-all">
+      View Pricing
+    </a>
   </div>
 </Layout>
