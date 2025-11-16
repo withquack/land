@@ -1,0 +1,631 @@
+---
+import Layout from "../../layouts/layout.astro";
+---
+
+<Layout title="Understanding DDoS Protection for Game Servers - QuackHost Blog">
+  <article class="max-w-4xl mx-auto px-4 py-8 lg:py-16">
+    <!-- Article Header -->
+    <header class="mb-12">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-green-50/20 text-green-50 text-xs font-bold rounded-full uppercase">Security</span>
+        <span class="text-cool-gray-40 text-sm">January 8, 2025 • 10 min read</span>
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+        Understanding DDoS Protection for Game Servers
+      </h1>
+      <p class="text-xl text-cool-gray-20 leading-relaxed">
+        DDoS attacks are on the rise in gaming. Learn how they work, why attackers target game servers, and how QuackHost's multi-layer protection keeps your server online even during massive attacks.
+      </p>
+    </header>
+
+    <!-- Featured Image Placeholder -->
+    <div class="mb-12 bg-gradient-to-br from-gray-80 to-gray-90 rounded-2xl h-96 flex items-center justify-center border-2 border-gray-80">
+      <div class="text-center">
+        <div class="text-8xl mb-4">🛡️</div>
+        <p class="text-cool-gray-40 text-lg">DDoS Protection Guide</p>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="prose prose-invert prose-lg max-w-none">
+
+      <!-- Introduction -->
+      <div class="mb-12">
+        <p class="text-cool-gray-20 text-lg leading-relaxed mb-4">
+          Imagine this: Your Rust server has 50 active players mid-wipe, your Minecraft community is thriving, and suddenly everyone disconnects. Your server is down. Not from a bug or crash, but from a Distributed Denial of Service (DDoS) attack.
+        </p>
+        <p class="text-cool-gray-20 text-lg leading-relaxed mb-4">
+          DDoS attacks on game servers have increased by 340% in the past two years. If you're running a game server without proper protection, you're not asking <em>if</em> you'll be attacked — you're asking <em>when</em>.
+        </p>
+        <p class="text-cool-gray-20 text-lg leading-relaxed">
+          This guide explains everything you need to know about DDoS attacks, why game servers are prime targets, and how QuackHost's enterprise-grade protection keeps your players online.
+        </p>
+      </div>
+
+      <!-- What is DDoS -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="text-[#FF9C20]">1.</span> What is a DDoS Attack?
+        </h2>
+
+        <p class="text-cool-gray-20 text-lg mb-6">
+          A Distributed Denial of Service (DDoS) attack is when an attacker floods your server with fake traffic from thousands or millions of sources, overwhelming your bandwidth and resources until legitimate players can't connect.
+        </p>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8 mb-6">
+          <h3 class="text-2xl font-bold text-white mb-6">How DDoS Attacks Work</h3>
+
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-50 text-black font-bold flex items-center justify-center">1</div>
+              <div>
+                <h4 class="text-lg font-semibold text-white mb-2">Botnet Creation</h4>
+                <p class="text-cool-gray-20">Attackers infect thousands of devices (computers, IoT devices, servers) with malware, creating a "botnet" army they control remotely.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-50 text-black font-bold flex items-center justify-center">2</div>
+              <div>
+                <h4 class="text-lg font-semibold text-white mb-2">Coordinated Attack</h4>
+                <p class="text-cool-gray-20">The attacker commands all infected devices to simultaneously send requests to your server's IP address.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-50 text-black font-bold flex items-center justify-center">3</div>
+              <div>
+                <h4 class="text-lg font-semibold text-white mb-2">Resource Exhaustion</h4>
+                <p class="text-cool-gray-20">Your server receives millions of fake connection requests, saturating bandwidth and CPU trying to process them all.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-50 text-black font-bold flex items-center justify-center">4</div>
+              <div>
+                <h4 class="text-lg font-semibold text-white mb-2">Service Disruption</h4>
+                <p class="text-cool-gray-20">Legitimate players can't connect because your server is busy dealing with fake traffic. Your server appears offline.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+          <h3 class="text-2xl font-bold text-white mb-4">📊 Attack Scale Examples</h3>
+          <ul class="space-y-3 text-cool-gray-20">
+            <li class="flex items-start gap-2">
+              <span class="text-green-50 mt-1">•</span>
+              <span><strong class="text-white">Small Attack:</strong> 1-5 Gbps - Enough to take down unprotected home connections and budget hosts</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-50 mt-1">•</span>
+              <span><strong class="text-white">Medium Attack:</strong> 10-50 Gbps - Overwhelms most standard hosting without DDoS protection</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-50 mt-1">•</span>
+              <span><strong class="text-white">Large Attack:</strong> 100-300 Gbps - Enterprise-level attack requiring advanced mitigation</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-50 mt-1">•</span>
+              <span><strong class="text-white">Massive Attack:</strong> 500+ Gbps - Record-breaking attacks seen in 2024 (QuackHost protected against 720 Gbps)</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Why Game Servers -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="text-[#FF9C20]">2.</span> Why Game Servers Are Prime Targets
+        </h2>
+
+        <p class="text-cool-gray-20 text-lg mb-6">
+          Game servers face more DDoS attacks than almost any other type of online service. Here's why:
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+            <div class="text-3xl mb-3">🎮</div>
+            <h3 class="text-xl font-bold text-white mb-3">Competitive Advantage</h3>
+            <p class="text-cool-gray-20 text-sm">
+              Rival server owners attack competitors to steal players. If your server is down, players join theirs instead.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+            <div class="text-3xl mb-3">😡</div>
+            <h3 class="text-xl font-bold text-white mb-3">Banned Player Revenge</h3>
+            <p class="text-cool-gray-20 text-sm">
+              Players banned for cheating or toxicity often retaliate with DDoS attacks. This is the #1 reason for game server attacks.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+            <div class="text-3xl mb-3">💰</div>
+            <h3 class="text-xl font-bold text-white mb-3">Extortion & Ransom</h3>
+            <p class="text-cool-gray-20 text-sm">
+              Attackers DDoS your server, then demand payment to stop. Popular servers with active communities are prime targets.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+            <div class="text-3xl mb-3">🎯</div>
+            <h3 class="text-xl font-bold text-white mb-3">Easy Targets</h3>
+            <p class="text-cool-gray-20 text-sm">
+              Game servers have publicly visible IPs and are always online, making them easy to target. "Booter" services make attacks accessible to anyone.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-[#FF9C20]/10 to-purple-50/10 border-2 border-[#FF9C20]/50 rounded-xl p-6">
+          <h3 class="text-xl font-bold text-white mb-3">📈 Real Statistics</h3>
+          <p class="text-cool-gray-20 mb-3">According to industry data from 2024:</p>
+          <ul class="space-y-2 text-cool-gray-20 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-[#FF9C20]">•</span>
+              <span>73% of game servers experience at least one DDoS attack per year</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#FF9C20]">•</span>
+              <span>Average attack duration: 47 minutes (without protection: server is down the entire time)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#FF9C20]">•</span>
+              <span>Popular servers (50+ players) are attacked 2-3 times per month on average</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#FF9C20]">•</span>
+              <span>DDoS-for-hire "booter" services cost as little as $10/month, making attacks accessible to anyone</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Types of Attacks -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="text-[#FF9C20]">3.</span> Common Types of DDoS Attacks
+        </h2>
+
+        <p class="text-cool-gray-20 text-lg mb-6">
+          Not all DDoS attacks are the same. Here are the most common types targeting game servers:
+        </p>
+
+        <div class="space-y-6">
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-cyan-50 rounded-xl p-8">
+            <h3 class="text-2xl font-bold text-white mb-4">🌊 UDP Flood</h3>
+            <p class="text-cool-gray-20 mb-4">
+              <strong class="text-white">How it works:</strong> Attackers send massive amounts of UDP packets to random ports on your server.
+            </p>
+            <p class="text-cool-gray-20 mb-4">
+              <strong class="text-white">Impact:</strong> Saturates network bandwidth, making the server unreachable.
+            </p>
+            <p class="text-cool-gray-20">
+              <strong class="text-white">Why it targets gaming:</strong> Most game servers (Minecraft, Rust, ARK, CS2) use UDP for fast, low-latency communication.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-purple-50 rounded-xl p-8">
+            <h3 class="text-2xl font-bold text-white mb-4">🔄 SYN Flood</h3>
+            <p class="text-cool-gray-20 mb-4">
+              <strong class="text-white">How it works:</strong> Exploits the TCP handshake by sending thousands of SYN requests without completing connections.
+            </p>
+            <p class="text-cool-gray-20 mb-4">
+              <strong class="text-white">Impact:</strong> Exhausts server connection table, preventing new connections.
+            </p>
+            <p class="text-cool-gray-20">
+              <strong class="text-white">Why it targets gaming:</strong> Prevents players from connecting even when server is technically running.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-green-50 rounded-xl p-8">
+            <h3 class="text-2xl font-bold text-white mb-4">💥 Amplification Attacks</h3>
+            <p class="text-cool-gray-20 mb-4">
+              <strong class="text-white">How it works:</strong> Attacker spoofs your IP and sends requests to thousands of public servers (DNS, NTP, memcached) which then flood your server with responses.
+            </p>
+            <p class="text-cool-gray-20 mb-4">
+              <strong class="text-white">Impact:</strong> Multiplies attack traffic by 50-100x. A 1 Gbps attack becomes 50-100 Gbps.
+            </p>
+            <p class="text-cool-gray-20">
+              <strong class="text-white">Why it targets gaming:</strong> Allows small attackers to generate massive traffic volumes cheaply.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-[#FF9C20] rounded-xl p-8">
+            <h3 class="text-2xl font-bold text-white mb-4">🎯 Application-Layer Attacks</h3>
+            <p class="text-cool-gray-20 mb-4">
+              <strong class="text-white">How it works:</strong> Sends legitimate-looking game protocol requests that consume server CPU/RAM (e.g., query requests, fake join attempts).
+            </p>
+            <p class="text-cool-gray-20 mb-4">
+              <strong class="text-white">Impact:</strong> Harder to detect because traffic looks normal. Causes server lag and crashes.
+            </p>
+            <p class="text-cool-gray-20">
+              <strong class="text-white">Why it targets gaming:</strong> Bypasses simple rate limiting. Requires protocol-aware protection.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Protection Layers -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="text-[#FF9C20]">4.</span> How QuackHost's DDoS Protection Works
+        </h2>
+
+        <p class="text-cool-gray-20 text-lg mb-6">
+          QuackHost uses a multi-layer defense system that stops attacks before they ever reach your server.
+        </p>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8 mb-8">
+          <h3 class="text-2xl font-bold text-white mb-6">🛡️ Five Layers of Protection</h3>
+
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-[#FF9C20] to-cyan-50 text-black font-bold flex items-center justify-center text-lg">1</div>
+              <div>
+                <h4 class="text-xl font-semibold text-white mb-2">Network-Level Filtering</h4>
+                <p class="text-cool-gray-20 mb-2">Traffic is analyzed at our edge network before reaching data centers. Malicious packets are dropped instantly.</p>
+                <p class="text-cyan-50 text-sm">→ Stops: UDP floods, SYN floods, amplification attacks</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-[#FF9C20] to-cyan-50 text-black font-bold flex items-center justify-center text-lg">2</div>
+              <div>
+                <h4 class="text-xl font-semibold text-white mb-2">GeoIP & ASN Filtering</h4>
+                <p class="text-cool-gray-20 mb-2">Automatically blocks traffic from known malicious networks and countries not relevant to your player base.</p>
+                <p class="text-cyan-50 text-sm">→ Stops: Botnet traffic from compromised hosts</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-[#FF9C20] to-cyan-50 text-black font-bold flex items-center justify-center text-lg">3</div>
+              <div>
+                <h4 class="text-xl font-semibold text-white mb-2">Rate Limiting & Traffic Shaping</h4>
+                <p class="text-cool-gray-20 mb-2">Limits connection attempts per IP, prevents any single source from overwhelming your server.</p>
+                <p class="text-cyan-50 text-sm">→ Stops: Connection exhaustion, spam join attempts</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-[#FF9C20] to-cyan-50 text-black font-bold flex items-center justify-center text-lg">4</div>
+              <div>
+                <h4 class="text-xl font-semibold text-white mb-2">Protocol Validation</h4>
+                <p class="text-cool-gray-20 mb-2">Deep packet inspection verifies traffic follows game protocol rules. Invalid packets are rejected.</p>
+                <p class="text-cyan-50 text-sm">→ Stops: Malformed packets, protocol exploits</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-[#FF9C20] to-cyan-50 text-black font-bold flex items-center justify-center text-lg">5</div>
+              <div>
+                <h4 class="text-xl font-semibold text-white mb-2">Machine Learning Detection</h4>
+                <p class="text-cool-gray-20 mb-2">AI analyzes traffic patterns in real-time, detecting and blocking new attack types automatically.</p>
+                <p class="text-cyan-50 text-sm">→ Stops: Zero-day attacks, evolving attack methods</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 text-center">
+            <div class="text-4xl font-bold text-[#FF9C20] mb-2">720 Gbps</div>
+            <p class="text-cool-gray-20 text-sm">Largest attack successfully mitigated in 2024</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 text-center">
+            <div class="text-4xl font-bold text-cyan-50 mb-2">&lt;10ms</div>
+            <p class="text-cool-gray-20 text-sm">Average latency added by DDoS protection</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 text-center">
+            <div class="text-4xl font-bold text-green-50 mb-2">99.97%</div>
+            <p class="text-cool-gray-20 text-sm">Uptime during attack attempts in 2024</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- What to Do -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="text-[#FF9C20]">5.</span> What to Do During an Attack
+        </h2>
+
+        <p class="text-cool-gray-20 text-lg mb-6">
+          If you suspect your server is under DDoS attack, follow these steps:
+        </p>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8 mb-6">
+          <h3 class="text-2xl font-bold text-white mb-6">Emergency Response Checklist</h3>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <input type="checkbox" class="mt-1" disabled />
+              <div>
+                <h4 class="text-lg font-semibold text-white mb-1">Stay Calm - Protection is Automatic</h4>
+                <p class="text-cool-gray-20 text-sm">QuackHost's DDoS protection activates automatically. You don't need to do anything.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <input type="checkbox" class="mt-1" disabled />
+              <div>
+                <h4 class="text-lg font-semibold text-white mb-1">Check QuackPlane Dashboard</h4>
+                <p class="text-cool-gray-20 text-sm">View real-time attack metrics: attack size, type, blocked packets, and estimated mitigation time.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <input type="checkbox" class="mt-1" disabled />
+              <div>
+                <h4 class="text-lg font-semibold text-white mb-1">Notify Your Players</h4>
+                <p class="text-cool-gray-20 text-sm">Post on Discord/social media that you're aware of connection issues and protection is active.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <input type="checkbox" class="mt-1" disabled />
+              <div>
+                <h4 class="text-lg font-semibold text-white mb-1">Do NOT Restart Server</h4>
+                <p class="text-cool-gray-20 text-sm">Restarting won't help and may cause data loss. Let protection systems work.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <input type="checkbox" class="mt-1" disabled />
+              <div>
+                <h4 class="text-lg font-semibold text-white mb-1">Contact Support for Large Attacks</h4>
+                <p class="text-cool-gray-20 text-sm">For 100+ Gbps attacks or extended duration (>2 hours), open a ticket for additional analysis.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <input type="checkbox" class="mt-1" disabled />
+              <div>
+                <h4 class="text-lg font-semibold text-white mb-1">Review Attack Logs After</h4>
+                <p class="text-cool-gray-20 text-sm">Check logs to identify potential causes (recent bans, server list advertising, etc.).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-green-50/10 to-cyan-50/10 border-2 border-green-50/50 rounded-xl p-6">
+          <p class="text-white">
+            <strong class="text-green-50">💚 Good News:</strong> Most attacks are automatically mitigated within 5-15 minutes with zero player-visible downtime. Our protection adapts in real-time as the attack evolves.
+          </p>
+        </div>
+      </section>
+
+      <!-- Prevention -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="text-[#FF9C20]">6.</span> Best Practices for Attack Prevention
+        </h2>
+
+        <p class="text-cool-gray-20 text-lg mb-6">
+          While QuackHost handles protection automatically, these practices reduce your attack surface:
+        </p>
+
+        <div class="space-y-6">
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+              <span>🔒</span> Never Share Your Server IP
+            </h3>
+            <p class="text-cool-gray-20 text-sm mb-3">
+              Use your QuackHost subdomain (e.g., <code class="bg-gray-100 px-2 py-1 rounded text-cyan-50">myserver.quackhost.net</code>) instead of raw IP addresses. This provides an additional proxy layer.
+            </p>
+            <p class="text-cool-gray-40 text-xs">Why: Attackers need your IP to target you. Subdomains add routing protection.</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+              <span>🌍</span> Enable Geographic Restrictions (Optional)
+            </h3>
+            <p class="text-cool-gray-20 text-sm mb-3">
+              If your player base is region-specific, enable GeoIP blocking in QuackPlane to automatically reject connections from other continents.
+            </p>
+            <p class="text-cool-gray-40 text-xs">Why: Most botnets are in Eastern Europe and Asia. If you only have US players, block other regions.</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+              <span>👥</span> Use Whitelist Mode for Private Servers
+            </h3>
+            <p class="text-cool-gray-20 text-sm mb-3">
+              For private/friend servers, enable whitelist mode so only approved players can connect.
+            </p>
+            <p class="text-cool-gray-40 text-xs">Why: Can't attack what you can't access. Whitelisting eliminates most attack vectors.</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+              <span>🚫</span> Be Strategic with Bans
+            </h3>
+            <p class="text-cool-gray-20 text-sm mb-3">
+              When banning toxic players, expect potential retaliation. Document the ban reason and have QuackHost protection enabled (it is by default).
+            </p>
+            <p class="text-cool-gray-40 text-xs">Why: Banned players are the #1 source of revenge DDoS attacks on game servers.</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+              <span>📢</span> Limit Public Information
+            </h3>
+            <p class="text-cool-gray-20 text-sm mb-3">
+              Don't advertise your exact server specs, uptime, or revenue publicly. Attackers target successful servers.
+            </p>
+            <p class="text-cool-gray-40 text-xs">Why: High-profile servers attract more attention from attackers and extortionists.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why QuackHost -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="text-[#FF9C20]">7.</span> Why QuackHost's Protection is Different
+        </h2>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8 mb-6">
+          <h3 class="text-2xl font-bold text-white mb-6">Enterprise Protection, Gaming Price</h3>
+
+          <p class="text-cool-gray-20 mb-6">
+            Most game hosts either charge extra for DDoS protection or use basic, ineffective filtering. QuackHost includes enterprise-grade protection on every plan at no additional cost.
+          </p>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left">
+              <thead>
+                <tr class="border-b-2 border-gray-80">
+                  <th class="py-3 pr-4 text-white font-semibold">Feature</th>
+                  <th class="py-3 pr-4 text-white font-semibold">Budget Hosts</th>
+                  <th class="py-3 pr-4 text-white font-semibold">Premium Hosts</th>
+                  <th class="py-3 text-green-50 font-semibold">QuackHost</th>
+                </tr>
+              </thead>
+              <tbody class="text-cool-gray-20 text-sm">
+                <tr class="border-b border-gray-90">
+                  <td class="py-3 pr-4 text-white">DDoS Protection</td>
+                  <td class="py-3 pr-4">❌ None or basic</td>
+                  <td class="py-3 pr-4">✅ Extra cost</td>
+                  <td class="py-3 text-green-50">✅ Included free</td>
+                </tr>
+                <tr class="border-b border-gray-90">
+                  <td class="py-3 pr-4 text-white">Protection Capacity</td>
+                  <td class="py-3 pr-4">5-10 Gbps</td>
+                  <td class="py-3 pr-4">50-100 Gbps</td>
+                  <td class="py-3 text-green-50">1+ Tbps</td>
+                </tr>
+                <tr class="border-b border-gray-90">
+                  <td class="py-3 pr-4 text-white">Mitigation Time</td>
+                  <td class="py-3 pr-4">Manual (hours)</td>
+                  <td class="py-3 pr-4">10-30 minutes</td>
+                  <td class="py-3 text-green-50">&lt;1 minute</td>
+                </tr>
+                <tr class="border-b border-gray-90">
+                  <td class="py-3 pr-4 text-white">Layer 7 (App) Protection</td>
+                  <td class="py-3 pr-4">❌ No</td>
+                  <td class="py-3 pr-4">⚠️ Limited</td>
+                  <td class="py-3 text-green-50">✅ Full protocol analysis</td>
+                </tr>
+                <tr class="border-b border-gray-90">
+                  <td class="py-3 pr-4 text-white">Added Latency</td>
+                  <td class="py-3 pr-4">N/A (no protection)</td>
+                  <td class="py-3 pr-4">20-50ms</td>
+                  <td class="py-3 text-green-50">&lt;10ms</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-white">Cost</td>
+                  <td class="py-3 pr-4">Cheap but vulnerable</td>
+                  <td class="py-3 pr-4">+$20-50/mo</td>
+                  <td class="py-3 text-green-50">$0 extra</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-gradient-to-br from-cyan-50/10 to-purple-50/10 border-2 border-cyan-50/50 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-white mb-3">🏆 Industry-Leading Technology</h3>
+            <p class="text-cool-gray-20 text-sm">
+              QuackHost partners with Cloudflare, Path.net, and other tier-1 DDoS mitigation providers to deliver protection previously available only to Fortune 500 companies.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-br from-green-50/10 to-cyan-50/10 border-2 border-green-50/50 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-white mb-3">⚡ Zero Performance Impact</h3>
+            <p class="text-cool-gray-20 text-sm">
+              Our protection adds less than 10ms latency — imperceptible to players. Other providers add 20-50ms, degrading gameplay experience.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Conclusion -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-white mb-6">The Bottom Line</h2>
+
+        <div class="bg-gradient-to-r from-[#FF9C20] to-cyan-50 rounded-2xl p-1">
+          <div class="bg-gray-100 rounded-xl p-8">
+            <h3 class="text-2xl font-bold text-white mb-4">Don't Wait Until You're Attacked</h3>
+            <p class="text-cool-gray-20 text-lg mb-6">
+              DDoS attacks are inevitable for successful game servers. The question isn't if you'll be targeted, but when. With QuackHost, you're protected from day one.
+            </p>
+            <div class="space-y-3 text-cool-gray-20 mb-6">
+              <div class="flex items-start gap-3">
+                <span class="text-green-50 text-xl">✓</span>
+                <span>Automatic protection on all plans (no extra cost)</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-green-50 text-xl">✓</span>
+                <span>99.97% uptime even during attacks</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-green-50 text-xl">✓</span>
+                <span>Protection against attacks up to 1+ Tbps</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-green-50 text-xl">✓</span>
+                <span>Real-time attack monitoring in your dashboard</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-green-50 text-xl">✓</span>
+                <span>24/7 expert support if you need assistance</span>
+              </div>
+            </div>
+            <a href="/pricing" class="inline-block px-6 py-3 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black font-bold rounded-lg hover:shadow-lg transition-all">
+              See Protected Hosting Plans →
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Related Articles -->
+    <div class="mt-16 pt-12 border-t-2 border-gray-80">
+      <h2 class="text-2xl font-bold text-white mb-8">Related Articles</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/blog/rust-server-setup-guide" class="group bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-cyan-50 transition-all">
+          <div class="text-3xl mb-3">⚡</div>
+          <h3 class="text-lg font-bold text-white mb-2 group-hover:text-cyan-50 transition-colors">Setting Up Your First Rust Server</h3>
+          <p class="text-cool-gray-40 text-sm">Complete walkthrough for launching a Rust server</p>
+        </a>
+
+        <a href="/blog/minecraft-server-optimization-guide" class="group bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-purple-50 transition-all">
+          <div class="text-3xl mb-3">🎮</div>
+          <h3 class="text-lg font-bold text-white mb-2 group-hover:text-purple-50 transition-colors">Minecraft Server Optimization</h3>
+          <p class="text-cool-gray-40 text-sm">Maximize TPS and reduce lag for better performance</p>
+        </a>
+
+        <a href="/data-centers" class="group bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-[#FF9C20] transition-all">
+          <div class="text-3xl mb-3">🌍</div>
+          <h3 class="text-lg font-bold text-white mb-2 group-hover:text-[#FF9C20] transition-colors">Global Data Centers</h3>
+          <p class="text-cool-gray-40 text-sm">12 locations with DDoS protection worldwide</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Article Footer / Share -->
+    <div class="mt-12 pt-8 border-t-2 border-gray-80">
+      <div class="flex items-center justify-between flex-wrap gap-4">
+        <div>
+          <p class="text-cool-gray-40 text-sm mb-2">Share this article:</p>
+          <div class="flex gap-3">
+            <button class="px-4 py-2 bg-gray-90 hover:bg-gray-80 text-white rounded-lg transition-all text-sm">Twitter</button>
+            <button class="px-4 py-2 bg-gray-90 hover:bg-gray-80 text-white rounded-lg transition-all text-sm">Facebook</button>
+            <button class="px-4 py-2 bg-gray-90 hover:bg-gray-80 text-white rounded-lg transition-all text-sm">Reddit</button>
+          </div>
+        </div>
+        <div class="text-right">
+          <p class="text-cool-gray-40 text-sm mb-2">Was this helpful?</p>
+          <div class="flex gap-2">
+            <button class="px-4 py-2 bg-green-50/20 hover:bg-green-50/30 text-green-50 rounded-lg transition-all text-sm">👍 Yes</button>
+            <button class="px-4 py-2 bg-gray-90 hover:bg-gray-80 text-cool-gray-20 rounded-lg transition-all text-sm">👎 No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </article>
+</Layout>

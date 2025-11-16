@@ -1,0 +1,703 @@
+---
+import Layout from "../../layouts/layout.astro";
+---
+
+<Layout title="Setting Up Your First Rust Server - QuackHost Blog">
+  <article class="max-w-4xl mx-auto px-4 py-8 lg:py-16">
+    <!-- Article Header -->
+    <header class="mb-12">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-cyan-50/20 text-cyan-50 text-xs font-bold rounded-full uppercase">Tutorial</span>
+        <span class="text-cool-gray-40 text-sm">January 12, 2025 • 9 min read</span>
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+        Setting Up Your First Rust Server: Complete Walkthrough
+      </h1>
+      <p class="text-xl text-cool-gray-20 leading-relaxed">
+        Launch your own Rust server in under 10 minutes with this step-by-step guide. From server creation to mod installation, we'll cover everything you need to get started.
+      </p>
+    </header>
+
+    <!-- Featured Image Placeholder -->
+    <div class="mb-12 bg-gradient-to-br from-gray-80 to-gray-90 rounded-2xl h-96 flex items-center justify-center border-2 border-gray-80">
+      <div class="text-center">
+        <div class="text-8xl mb-4">⚡</div>
+        <p class="text-cool-gray-40 text-lg">Rust Server Setup Guide</p>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="prose prose-invert prose-lg max-w-none">
+
+      <!-- Introduction -->
+      <div class="mb-12">
+        <p class="text-cool-gray-20 text-lg leading-relaxed mb-4">
+          Rust is one of the most demanding yet rewarding survival games to host. Whether you're setting up a server for friends or building a community, this guide will walk you through the entire process from start to finish.
+        </p>
+        <p class="text-cool-gray-20 text-lg leading-relaxed">
+          By the end of this tutorial, you'll have a fully functional Rust server with custom settings, mods, and optimizations for the best player experience.
+        </p>
+      </div>
+
+      <!-- Prerequisites -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="text-[#FF9C20]">1.</span> Prerequisites
+        </h2>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-cyan-50 rounded-xl p-8 mb-6">
+          <h3 class="text-xl font-bold text-white mb-4">What You'll Need</h3>
+          <ul class="space-y-3 text-cool-gray-20">
+            <li class="flex items-start gap-3">
+              <span class="text-cyan-50 mt-1">✓</span>
+              <span><strong class="text-white">QuackHost Account:</strong> Sign up for free at quackhost.com</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-cyan-50 mt-1">✓</span>
+              <span><strong class="text-white">Server Plan:</strong> Minimum Duck plan (4GB RAM) recommended for 10-20 players</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-cyan-50 mt-1">✓</span>
+              <span><strong class="text-white">15 Minutes:</strong> That's all it takes to get your server running</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+          <h3 class="text-xl font-bold text-white mb-4">📊 Rust Server Requirements</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left">
+              <thead>
+                <tr class="border-b border-gray-80">
+                  <th class="py-3 pr-4 text-white font-semibold">Players</th>
+                  <th class="py-3 pr-4 text-white font-semibold">RAM</th>
+                  <th class="py-3 pr-4 text-white font-semibold">CPU</th>
+                  <th class="py-3 text-white font-semibold">Recommended Plan</th>
+                </tr>
+              </thead>
+              <tbody class="text-cool-gray-20">
+                <tr class="border-b border-gray-90">
+                  <td class="py-3 pr-4">5-10</td>
+                  <td class="py-3 pr-4">4GB</td>
+                  <td class="py-3 pr-4">2 cores</td>
+                  <td class="py-3 text-cyan-50 font-semibold">Duck</td>
+                </tr>
+                <tr class="border-b border-gray-90">
+                  <td class="py-3 pr-4">10-50</td>
+                  <td class="py-3 pr-4">8GB</td>
+                  <td class="py-3 pr-4">4 cores</td>
+                  <td class="py-3 text-cyan-50 font-semibold">Goose</td>
+                </tr>
+                <tr class="border-b border-gray-90">
+                  <td class="py-3 pr-4">50-100</td>
+                  <td class="py-3 pr-4">16GB</td>
+                  <td class="py-3 pr-4">6 cores</td>
+                  <td class="py-3 text-cyan-50 font-semibold">Swan</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4">100+</td>
+                  <td class="py-3 pr-4">32GB+</td>
+                  <td class="py-3 pr-4">8+ cores</td>
+                  <td class="py-3 text-cyan-50 font-semibold">Flock</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 1: Create Server -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="text-[#FF9C20]">2.</span> Creating Your Rust Server
+        </h2>
+
+        <div class="space-y-6">
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+            <h3 class="text-xl font-bold text-white mb-4">Step-by-Step Server Creation</h3>
+
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#FF9C20] text-black font-bold flex items-center justify-center">1</div>
+                <div>
+                  <h4 class="text-lg font-semibold text-white mb-2">Log into QuackPlane</h4>
+                  <p class="text-cool-gray-20">Navigate to panel.quackhost.com and sign in with your credentials.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#FF9C20] text-black font-bold flex items-center justify-center">2</div>
+                <div>
+                  <h4 class="text-lg font-semibold text-white mb-2">Select "Create Server"</h4>
+                  <p class="text-cool-gray-20">Click the "Create New Server" button in your dashboard.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#FF9C20] text-black font-bold flex items-center justify-center">3</div>
+                <div>
+                  <h4 class="text-lg font-semibold text-white mb-2">Choose Rust</h4>
+                  <p class="text-cool-gray-20 mb-3">Select "Rust" from the game server options.</p>
+                  <div class="bg-gray-100 border-2 border-gray-80 rounded-lg p-4">
+                    <p class="text-cyan-50 text-sm font-mono">Game Type: Rust → Server Edition: Vanilla or Oxide/uMod</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#FF9C20] text-black font-bold flex items-center justify-center">4</div>
+                <div>
+                  <h4 class="text-lg font-semibold text-white mb-2">Select Server Location</h4>
+                  <p class="text-cool-gray-20">Choose a data center closest to your players for best performance.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#FF9C20] text-black font-bold flex items-center justify-center">5</div>
+                <div>
+                  <h4 class="text-lg font-semibold text-white mb-2">Configure Server Name</h4>
+                  <p class="text-cool-gray-20">Give your server a memorable name (you can change this later).</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#FF9C20] text-black font-bold flex items-center justify-center">6</div>
+                <div>
+                  <h4 class="text-lg font-semibold text-white mb-2">Deploy</h4>
+                  <p class="text-cool-gray-20">Click "Create Server" and wait 2-3 minutes for automatic setup.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-cyan-50/10 to-purple-50/10 border-2 border-cyan-50/50 rounded-xl p-6">
+            <p class="text-white">
+              <strong class="text-cyan-50">💡 Pro Tip:</strong> Choose "Oxide/uMod" if you plan to install plugins. Vanilla is best for pure Rust experience.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 2: Basic Configuration -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="text-[#FF9C20]">3.</span> Basic Server Configuration
+        </h2>
+
+        <p class="text-cool-gray-20 text-lg mb-6">
+          Once your server is created, it's time to configure the essential settings.
+        </p>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8 mb-6">
+          <h3 class="text-2xl font-bold text-white mb-6">Server Settings File</h3>
+
+          <p class="text-cool-gray-20 mb-4">Navigate to Files → <code class="bg-gray-100 px-2 py-1 rounded text-cyan-50">server.cfg</code></p>
+
+          <div class="bg-gray-100 border-2 border-gray-80 rounded-xl p-6 font-mono text-sm overflow-x-auto">
+            <div class="text-cool-gray-40 mb-2"># server.cfg - Basic Rust Server Configuration</div>
+            <div class="space-y-1 text-cool-gray-20">
+              <div><span class="text-cyan-50">server.hostname</span> <span class="text-purple-50">"My Awesome Rust Server"</span></div>
+              <div><span class="text-cyan-50">server.description</span> <span class="text-purple-50">"Friendly community server - All welcome!"</span></div>
+              <div><span class="text-cyan-50">server.headerimage</span> <span class="text-purple-50">"https://yoursite.com/header.png"</span></div>
+              <div><span class="text-cyan-50">server.url</span> <span class="text-purple-50">"https://yoursite.com"</span></div>
+              <div class="text-cool-gray-40 mt-4 mb-2"># Player Limits</div>
+              <div><span class="text-cyan-50">server.maxplayers</span> <span class="text-green-50">50</span></div>
+              <div class="text-cool-gray-40 mt-4 mb-2"># Map Settings</div>
+              <div><span class="text-cyan-50">server.seed</span> <span class="text-green-50">12345</span> <span class="text-cool-gray-40"># Procedural map seed</span></div>
+              <div><span class="text-cyan-50">server.worldsize</span> <span class="text-green-50">3500</span> <span class="text-cool-gray-40"># 3500 recommended for 50 players</span></div>
+              <div><span class="text-cyan-50">server.saveinterval</span> <span class="text-green-50">600</span> <span class="text-cool-gray-40"># Save every 10 minutes</span></div>
+              <div class="text-cool-gray-40 mt-4 mb-2"># Gameplay Settings</div>
+              <div><span class="text-cyan-50">server.pve</span> <span class="text-green-50">false</span> <span class="text-cool-gray-40"># Set to true for PVE mode</span></div>
+              <div><span class="text-cyan-50">decay.scale</span> <span class="text-green-50">1.0</span> <span class="text-cool-gray-40"># Base decay rate</span></div>
+              <div class="text-cool-gray-40 mt-4 mb-2"># RCON Settings (for admin access)</div>
+              <div><span class="text-cyan-50">rcon.password</span> <span class="text-purple-50">"yourSecurePassword123"</span></div>
+              <div><span class="text-cyan-50">rcon.web</span> <span class="text-green-50">1</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+          <h3 class="text-2xl font-bold text-white mb-4">🗺️ World Size Guidelines</h3>
+          <ul class="space-y-2 text-cool-gray-20">
+            <li class="flex items-start gap-2">
+              <span class="text-[#FF9C20] mt-1">•</span>
+              <span><strong class="text-white">2500:</strong> Small map, 10-25 players, faster action</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#FF9C20] mt-1">•</span>
+              <span><strong class="text-white">3500:</strong> Medium map, 25-50 players, balanced gameplay</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#FF9C20] mt-1">•</span>
+              <span><strong class="text-white">4500:</strong> Large map, 50-100 players, exploration focus</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#FF9C20] mt-1">•</span>
+              <span><strong class="text-white">5500+:</strong> Huge map, 100+ players, epic scale (requires Swan/Flock plan)</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Step 3: Installing Plugins -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="text-[#FF9C20]">4.</span> Installing Plugins with uMod
+        </h2>
+
+        <p class="text-cool-gray-20 text-lg mb-6">
+          Plugins add powerful features to your Rust server. Here's how to install the most popular ones.
+        </p>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8 mb-6">
+          <h3 class="text-2xl font-bold text-white mb-6">Quick Plugin Installation</h3>
+
+          <div class="space-y-6">
+            <div>
+              <h4 class="text-lg font-semibold text-cyan-50 mb-3">Method 1: QuackPlane Plugin Manager (Easiest)</h4>
+              <ol class="space-y-2 text-cool-gray-20 list-decimal list-inside">
+                <li>Navigate to Plugins tab in QuackPlane</li>
+                <li>Search for plugin name (e.g., "Admin Radar")</li>
+                <li>Click "Install" → Server automatically restarts</li>
+              </ol>
+            </div>
+
+            <div>
+              <h4 class="text-lg font-semibold text-cyan-50 mb-3">Method 2: Manual Installation</h4>
+              <ol class="space-y-2 text-cool-gray-20 list-decimal list-inside">
+                <li>Download plugin from umod.org</li>
+                <li>Navigate to Files → <code class="bg-gray-100 px-2 py-1 rounded text-cyan-50">oxide/plugins/</code></li>
+                <li>Upload the .cs file</li>
+                <li>Restart server or type <code class="bg-gray-100 px-2 py-1 rounded text-cyan-50">oxide.reload PluginName</code> in console</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-purple-50 rounded-xl p-8">
+          <h3 class="text-2xl font-bold text-white mb-6">🔌 Essential Plugins for New Servers</h3>
+
+          <div class="space-y-4">
+            <div class="border-l-4 border-purple-50 pl-4">
+              <h4 class="text-lg font-bold text-white mb-2">Admin Radar</h4>
+              <p class="text-cool-gray-20 text-sm mb-2">ESP and admin tools for server management</p>
+              <a href="https://umod.org/plugins/admin-radar" target="_blank" class="text-cyan-50 text-sm hover:underline">umod.org/plugins/admin-radar →</a>
+            </div>
+
+            <div class="border-l-4 border-cyan-50 pl-4">
+              <h4 class="text-lg font-bold text-white mb-2">Kits</h4>
+              <p class="text-cool-gray-20 text-sm mb-2">Create starter kits, VIP kits, and custom item sets</p>
+              <a href="https://umod.org/plugins/kits" target="_blank" class="text-cyan-50 text-sm hover:underline">umod.org/plugins/kits →</a>
+            </div>
+
+            <div class="border-l-4 border-green-50 pl-4">
+              <h4 class="text-lg font-bold text-white mb-2">Teleportation</h4>
+              <p class="text-cool-gray-20 text-sm mb-2">Home, warp, and teleport features</p>
+              <a href="https://umod.org/plugins/nteleportation" target="_blank" class="text-cyan-50 text-sm hover:underline">umod.org/plugins/nteleportation →</a>
+            </div>
+
+            <div class="border-l-4 border-[#FF9C20] pl-4">
+              <h4 class="text-lg font-bold text-white mb-2">Stack Size Controller</h4>
+              <p class="text-cool-gray-20 text-sm mb-2">Adjust stack sizes for custom gameplay</p>
+              <a href="https://umod.org/plugins/stack-size-controller" target="_blank" class="text-cyan-50 text-sm hover:underline">umod.org/plugins/stack-size-controller →</a>
+            </div>
+
+            <div class="border-l-4 border-purple-50 pl-4">
+              <h4 class="text-lg font-bold text-white mb-2">Economics</h4>
+              <p class="text-cool-gray-20 text-sm mb-2">Currency system for your server economy</p>
+              <a href="https://umod.org/plugins/economics" target="_blank" class="text-cyan-50 text-sm hover:underline">umod.org/plugins/economics →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 4: Server Management -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="text-[#FF9C20]">5.</span> Server Management Basics
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <span>🎮</span> Starting Your Server
+            </h3>
+            <ol class="space-y-2 text-cool-gray-20 list-decimal list-inside text-sm">
+              <li>Go to QuackPlane dashboard</li>
+              <li>Click "Start" button</li>
+              <li>Wait 2-3 minutes for full startup</li>
+              <li>Server appears in Rust server list</li>
+            </ol>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <span>⏹️</span> Stopping Your Server
+            </h3>
+            <ol class="space-y-2 text-cool-gray-20 list-decimal list-inside text-sm">
+              <li>Click "Stop" in dashboard</li>
+              <li>Wait for graceful shutdown</li>
+              <li>All progress is auto-saved</li>
+              <li>Players receive disconnect message</li>
+            </ol>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <span>🔄</span> Restarting Your Server
+            </h3>
+            <ol class="space-y-2 text-cool-gray-20 list-decimal list-inside text-sm">
+              <li>Click "Restart" button</li>
+              <li>Or use console: <code class="bg-gray-100 px-2 py-1 rounded text-cyan-50 text-xs">quit</code></li>
+              <li>Automatic wipes handled by schedule</li>
+              <li>Config changes take effect</li>
+            </ol>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <span>📊</span> Monitoring Performance
+            </h3>
+            <ul class="space-y-2 text-cool-gray-20 text-sm">
+              <li class="flex items-start gap-2">
+                <span class="text-cyan-50">•</span>
+                <span>CPU & RAM usage in dashboard</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-cyan-50">•</span>
+                <span>Player count and ping</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-cyan-50">•</span>
+                <span>Console logs for errors</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-cyan-50">•</span>
+                <span>Performance graphs over time</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+          <h3 class="text-2xl font-bold text-white mb-6">🛠️ Essential Admin Commands</h3>
+
+          <div class="bg-gray-100 border-2 border-gray-80 rounded-xl p-6 font-mono text-sm overflow-x-auto">
+            <div class="space-y-3 text-cool-gray-20">
+              <div><span class="text-cyan-50">server.save</span> <span class="text-cool-gray-40"># Manually save the server</span></div>
+              <div><span class="text-cyan-50">oxide.reload PluginName</span> <span class="text-cool-gray-40"># Reload a plugin</span></div>
+              <div><span class="text-cyan-50">ownerid "steamid64" "playername"</span> <span class="text-cool-gray-40"># Make player owner</span></div>
+              <div><span class="text-cyan-50">moderatorid "steamid64" "playername"</span> <span class="text-cool-gray-40"># Make player moderator</span></div>
+              <div><span class="text-cyan-50">ban "playername" "reason"</span> <span class="text-cool-gray-40"># Ban a player</span></div>
+              <div><span class="text-cyan-50">kick "playername" "reason"</span> <span class="text-cool-gray-40"># Kick a player</span></div>
+              <div><span class="text-cyan-50">env.time 12</span> <span class="text-cool-gray-40"># Set time to noon</span></div>
+              <div><span class="text-cyan-50">weather.rain 0</span> <span class="text-cool-gray-40"># Disable rain</span></div>
+              <div><span class="text-cyan-50">fps.limit 60</span> <span class="text-cool-gray-40"># Limit server FPS</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Wipe Schedule -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="text-[#FF9C20]">6.</span> Setting Up Wipe Schedule
+        </h2>
+
+        <p class="text-cool-gray-20 text-lg mb-6">
+          Rust servers require periodic wipes to maintain performance and fairness. Here's how to configure automatic wipes.
+        </p>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8 mb-6">
+          <h3 class="text-2xl font-bold text-white mb-6">Recommended Wipe Schedules</h3>
+
+          <div class="space-y-4">
+            <div class="bg-gray-100 border-l-4 border-cyan-50 p-4 rounded">
+              <h4 class="text-lg font-bold text-white mb-2">Weekly Wipes (Most Popular)</h4>
+              <p class="text-cool-gray-20 text-sm mb-2">Full wipe every Thursday at server restart</p>
+              <ul class="text-cool-gray-40 text-sm space-y-1">
+                <li>• Best for high-activity servers</li>
+                <li>• Keeps gameplay fresh</li>
+                <li>• Matches official Rust updates</li>
+              </ul>
+            </div>
+
+            <div class="bg-gray-100 border-l-4 border-purple-50 p-4 rounded">
+              <h4 class="text-lg font-bold text-white mb-2">Bi-Weekly Wipes</h4>
+              <p class="text-cool-gray-20 text-sm mb-2">Full wipe every other Thursday</p>
+              <ul class="text-cool-gray-40 text-sm space-y-1">
+                <li>• Good for medium-pop servers</li>
+                <li>• More time for base building</li>
+                <li>• Blueprint wipes monthly</li>
+              </ul>
+            </div>
+
+            <div class="bg-gray-100 border-l-4 border-green-50 p-4 rounded">
+              <h4 class="text-lg font-bold text-white mb-2">Monthly Wipes (Required)</h4>
+              <p class="text-cool-gray-20 text-sm mb-2">Forced wipe first Thursday of each month</p>
+              <ul class="text-cool-gray-40 text-sm space-y-1">
+                <li>• Mandatory Facepunch update</li>
+                <li>• All servers must wipe</li>
+                <li>• Good for long-term progression</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-[#FF9C20]/10 to-purple-50/10 border-2 border-[#FF9C20]/50 rounded-xl p-6">
+          <p class="text-white">
+            <strong class="text-[#FF9C20]">⚠️ Important:</strong> QuackPlane can automatically handle wipes on your schedule. Configure in Settings → Wipe Schedule.
+          </p>
+        </div>
+      </section>
+
+      <!-- Optimization Tips -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="text-[#FF9C20]">7.</span> Performance Optimization
+        </h2>
+
+        <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+          <h3 class="text-2xl font-bold text-white mb-6">⚡ Quick Optimization Wins</h3>
+
+          <div class="space-y-4 text-cool-gray-20">
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">🗺️</span>
+              <div>
+                <h4 class="text-lg font-semibold text-white mb-1">Right-Size Your Map</h4>
+                <p class="text-sm">Don't make the map bigger than necessary. Smaller maps = better performance and player density.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">🔌</span>
+              <div>
+                <h4 class="text-lg font-semibold text-white mb-1">Limit Plugin Count</h4>
+                <p class="text-sm">Each plugin adds overhead. Start with 10-15 essential plugins, add more only if needed.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">💾</span>
+              <div>
+                <h4 class="text-lg font-semibold text-white mb-1">Regular Backups</h4>
+                <p class="text-sm">QuackPlane auto-backs up daily. Use manual backups before major changes.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">📊</span>
+              <div>
+                <h4 class="text-lg font-semibold text-white mb-1">Monitor RAM Usage</h4>
+                <p class="text-sm">If RAM usage consistently exceeds 80%, consider upgrading your plan.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">🔧</span>
+              <div>
+                <h4 class="text-lg font-semibold text-white mb-1">Adjust FPS Limits</h4>
+                <p class="text-sm">Set <code class="bg-gray-100 px-2 py-1 rounded text-cyan-50">fps.limit 30</code> for better CPU efficiency (players won't notice).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Troubleshooting -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="text-[#FF9C20]">8.</span> Common Issues & Solutions
+        </h2>
+
+        <div class="space-y-4">
+          <details class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden">
+            <summary class="p-6 cursor-pointer hover:bg-gray-80 transition-colors">
+              <h3 class="text-lg font-bold text-white inline">Server won't start after plugin install</h3>
+            </summary>
+            <div class="px-6 pb-6 text-cool-gray-20">
+              <p class="mb-3">Check the console for plugin errors. Common fixes:</p>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-50">•</span>
+                  <span>Delete the plugin from oxide/plugins/</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-50">•</span>
+                  <span>Verify plugin compatibility with current Rust version</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-50">•</span>
+                  <span>Check plugin dependencies (some require other plugins)</span>
+                </li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden">
+            <summary class="p-6 cursor-pointer hover:bg-gray-80 transition-colors">
+              <h3 class="text-lg font-bold text-white inline">Players can't find server in list</h3>
+            </summary>
+            <div class="px-6 pb-6 text-cool-gray-20">
+              <p class="mb-3">Server visibility issues are usually due to:</p>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-50">•</span>
+                  <span>Server still starting (wait 5 minutes for full registration)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-50">•</span>
+                  <span>Players using filters (wrong game mode, map type, etc.)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-50">•</span>
+                  <span>Give players your server's IP:Port to connect directly via F1 console</span>
+                </li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden">
+            <summary class="p-6 cursor-pointer hover:bg-gray-80 transition-colors">
+              <h3 class="text-lg font-bold text-white inline">High RAM usage / Crashes</h3>
+            </summary>
+            <div class="px-6 pb-6 text-cool-gray-20">
+              <p class="mb-3">Rust is memory-intensive. Solutions:</p>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-50">•</span>
+                  <span>Reduce world size (smaller map = less RAM)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-50">•</span>
+                  <span>Remove unnecessary plugins</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-50">•</span>
+                  <span>Schedule automatic restarts every 6-12 hours to clear memory</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-50">•</span>
+                  <span>Consider upgrading to next tier plan</span>
+                </li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl overflow-hidden">
+            <summary class="p-6 cursor-pointer hover:bg-gray-80 transition-colors">
+              <h3 class="text-lg font-bold text-white inline">Connection issues / High ping</h3>
+            </summary>
+            <div class="px-6 pb-6 text-cool-gray-20">
+              <p class="mb-3">Network performance tips:</p>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-50">•</span>
+                  <span>Choose server location closest to your player base</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-50">•</span>
+                  <span>Check if DDoS protection is causing issues (rare)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-50">•</span>
+                  <span>Verify server isn't CPU throttling (check performance graphs)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-50">•</span>
+                  <span>Contact QuackHost support for network diagnostics</span>
+                </li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Next Steps -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-white mb-6">Next Steps</h2>
+
+        <div class="bg-gradient-to-r from-[#FF9C20] to-cyan-50 rounded-2xl p-1">
+          <div class="bg-gray-100 rounded-xl p-8">
+            <h3 class="text-2xl font-bold text-white mb-4">Your Server is Ready!</h3>
+            <p class="text-cool-gray-20 text-lg mb-6">
+              Congratulations! You now have a fully functional Rust server. Here's what to do next:
+            </p>
+            <ul class="space-y-3 text-cool-gray-20 mb-6">
+              <li class="flex items-start gap-3">
+                <span class="text-[#FF9C20] text-xl">✓</span>
+                <span>Invite your friends and test gameplay</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-[#FF9C20] text-xl">✓</span>
+                <span>Customize server rules and descriptions</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-[#FF9C20] text-xl">✓</span>
+                <span>Join Rust admin communities for tips</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-[#FF9C20] text-xl">✓</span>
+                <span>Set up Discord integration for announcements</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-[#FF9C20] text-xl">✓</span>
+                <span>Advertise your server on Rust server lists</span>
+              </li>
+            </ul>
+            <a href="/support" class="inline-block px-6 py-3 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black font-bold rounded-lg hover:shadow-lg transition-all">
+              Need Help? Visit Support →
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Related Articles -->
+    <div class="mt-16 pt-12 border-t-2 border-gray-80">
+      <h2 class="text-2xl font-bold text-white mb-8">Related Articles</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/blog/minecraft-server-optimization-guide" class="group bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-purple-50 transition-all">
+          <div class="text-3xl mb-3">🎮</div>
+          <h3 class="text-lg font-bold text-white mb-2 group-hover:text-purple-50 transition-colors">Minecraft Server Optimization</h3>
+          <p class="text-cool-gray-40 text-sm">Complete guide to maximize Minecraft server performance</p>
+        </a>
+
+        <a href="/guides" class="group bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-cyan-50 transition-all">
+          <div class="text-3xl mb-3">📚</div>
+          <h3 class="text-lg font-bold text-white mb-2 group-hover:text-cyan-50 transition-colors">All Server Guides</h3>
+          <p class="text-cool-gray-40 text-sm">Browse all game server setup tutorials</p>
+        </a>
+
+        <a href="/support" class="group bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-[#FF9C20] transition-all">
+          <div class="text-3xl mb-3">💬</div>
+          <h3 class="text-lg font-bold text-white mb-2 group-hover:text-[#FF9C20] transition-colors">Get Support</h3>
+          <p class="text-cool-gray-40 text-sm">24/7 help from our expert team</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Article Footer / Share -->
+    <div class="mt-12 pt-8 border-t-2 border-gray-80">
+      <div class="flex items-center justify-between flex-wrap gap-4">
+        <div>
+          <p class="text-cool-gray-40 text-sm mb-2">Share this article:</p>
+          <div class="flex gap-3">
+            <button class="px-4 py-2 bg-gray-90 hover:bg-gray-80 text-white rounded-lg transition-all text-sm">Twitter</button>
+            <button class="px-4 py-2 bg-gray-90 hover:bg-gray-80 text-white rounded-lg transition-all text-sm">Facebook</button>
+            <button class="px-4 py-2 bg-gray-90 hover:bg-gray-80 text-white rounded-lg transition-all text-sm">Reddit</button>
+          </div>
+        </div>
+        <div class="text-right">
+          <p class="text-cool-gray-40 text-sm mb-2">Was this helpful?</p>
+          <div class="flex gap-2">
+            <button class="px-4 py-2 bg-green-50/20 hover:bg-green-50/30 text-green-50 rounded-lg transition-all text-sm">👍 Yes</button>
+            <button class="px-4 py-2 bg-gray-90 hover:bg-gray-80 text-cool-gray-20 rounded-lg transition-all text-sm">👎 No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </article>
+</Layout>
