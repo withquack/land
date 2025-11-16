@@ -3,9 +3,512 @@ import Layout from "../layouts/layout.astro";
 ---
 
 <Layout title="/ Pricing">
-  <div class="mb-32 mt-32">
-    <p class="text-2xl font-semibold xl:text-4xl">Pricing</p>
+  <div class="mb-16 mt-32">
+    <h1 class="text-4xl font-bold xl:text-6xl mb-4">Simple, Transparent Pricing</h1>
+    <p class="text-xl text-gray-600">Only pay for what you need. Scale up or down anytime.</p>
   </div>
 
-  <div class="h-96 rounded-md bg-gray-200"></div>
+  <!-- Pricing Calculator -->
+  <div
+    x-data="{
+      ram: 4,
+      cpu: 2,
+      storage: 20,
+      players: 100,
+      billing: 'monthly',
+      addons: {
+        ddos: false,
+        backups: false,
+        support: false,
+        domain: false
+      },
+      get basePrice() {
+        return 5;
+      },
+      get ramCost() {
+        return this.ram * 2;
+      },
+      get cpuCost() {
+        return this.cpu * 3;
+      },
+      get storageCost() {
+        return this.storage * 0.1;
+      },
+      get playerCost() {
+        return Math.ceil(this.players / 10) * 1;
+      },
+      get addonsCost() {
+        let cost = 0;
+        if (this.addons.ddos) cost += 10;
+        if (this.addons.backups) cost += 5;
+        if (this.addons.support) cost += 15;
+        if (this.addons.domain) cost += 5;
+        return cost;
+      },
+      get subtotal() {
+        return this.basePrice + this.ramCost + this.cpuCost + this.storageCost + this.playerCost + this.addonsCost;
+      },
+      get discount() {
+        return this.billing === 'annual' ? this.subtotal * 0.2 : 0;
+      },
+      get total() {
+        return this.subtotal - this.discount;
+      },
+      get tierName() {
+        if (this.total < 20) return 'Starter';
+        if (this.total < 50) return 'Professional';
+        if (this.total < 100) return 'Business';
+        return 'Enterprise';
+      },
+      get tierColor() {
+        if (this.total < 20) return 'text-green-600';
+        if (this.total < 50) return 'text-blue-600';
+        if (this.total < 100) return 'text-purple-600';
+        return 'text-orange-600';
+      }
+    }"
+    class="max-w-6xl mx-auto"
+  >
+    <!-- Billing Toggle -->
+    <div class="mb-12 flex justify-center items-center gap-4">
+      <button
+        @click="billing = 'monthly'"
+        :class="billing === 'monthly' ? 'bg-orange-500 text-white' : 'bg-gray-200 text-gray-700'"
+        class="px-6 py-3 rounded-lg font-semibold transition-all"
+      >
+        Monthly
+      </button>
+      <button
+        @click="billing = 'annual'"
+        :class="billing === 'annual' ? 'bg-orange-500 text-white' : 'bg-gray-200 text-gray-700'"
+        class="px-6 py-3 rounded-lg font-semibold transition-all relative"
+      >
+        Annual
+        <span class="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">Save 20%</span>
+      </button>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+      <!-- Left Column: Configuration -->
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <h2 class="text-2xl font-bold mb-6">Configure Your Server</h2>
+
+        <!-- RAM Slider -->
+        <div class="mb-8">
+          <div class="flex justify-between mb-2">
+            <label class="font-semibold text-gray-700">RAM (Memory)</label>
+            <span class="text-orange-600 font-bold" x-text="ram + ' GB'"></span>
+          </div>
+          <input
+            type="range"
+            min="1"
+            max="32"
+            step="1"
+            x-model.number="ram"
+            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-orange-500"
+          />
+          <div class="flex justify-between text-xs text-gray-500 mt-1">
+            <span>1 GB</span>
+            <span>32 GB</span>
+          </div>
+        </div>
+
+        <!-- CPU Slider -->
+        <div class="mb-8">
+          <div class="flex justify-between mb-2">
+            <label class="font-semibold text-gray-700">CPU Cores</label>
+            <span class="text-orange-600 font-bold" x-text="cpu + ' cores'"></span>
+          </div>
+          <input
+            type="range"
+            min="1"
+            max="16"
+            step="1"
+            x-model.number="cpu"
+            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-orange-500"
+          />
+          <div class="flex justify-between text-xs text-gray-500 mt-1">
+            <span>1 core</span>
+            <span>16 cores</span>
+          </div>
+        </div>
+
+        <!-- Storage Slider -->
+        <div class="mb-8">
+          <div class="flex justify-between mb-2">
+            <label class="font-semibold text-gray-700">Storage (SSD)</label>
+            <span class="text-orange-600 font-bold" x-text="storage + ' GB'"></span>
+          </div>
+          <input
+            type="range"
+            min="10"
+            max="500"
+            step="10"
+            x-model.number="storage"
+            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-orange-500"
+          />
+          <div class="flex justify-between text-xs text-gray-500 mt-1">
+            <span>10 GB</span>
+            <span>500 GB</span>
+          </div>
+        </div>
+
+        <!-- Player Slots Slider -->
+        <div class="mb-8">
+          <div class="flex justify-between mb-2">
+            <label class="font-semibold text-gray-700">Player Slots</label>
+            <span class="text-orange-600 font-bold" x-text="players"></span>
+          </div>
+          <input
+            type="range"
+            min="10"
+            max="1000"
+            step="10"
+            x-model.number="players"
+            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-orange-500"
+          />
+          <div class="flex justify-between text-xs text-gray-500 mt-1">
+            <span>10 players</span>
+            <span>1000+ players</span>
+          </div>
+        </div>
+
+        <!-- Add-ons -->
+        <div class="border-t pt-6">
+          <h3 class="font-semibold text-gray-700 mb-4">Premium Add-ons</h3>
+
+          <label class="flex items-center justify-between mb-4 cursor-pointer group">
+            <div class="flex items-center gap-3">
+              <input
+                type="checkbox"
+                x-model="addons.ddos"
+                class="w-5 h-5 accent-orange-500"
+              />
+              <div>
+                <div class="font-medium group-hover:text-orange-600 transition-colors">Premium DDoS Protection</div>
+                <div class="text-sm text-gray-500">Terrabit-scale protection</div>
+              </div>
+            </div>
+            <span class="text-gray-600 font-semibold">+$10/mo</span>
+          </label>
+
+          <label class="flex items-center justify-between mb-4 cursor-pointer group">
+            <div class="flex items-center gap-3">
+              <input
+                type="checkbox"
+                x-model="addons.backups"
+                class="w-5 h-5 accent-orange-500"
+              />
+              <div>
+                <div class="font-medium group-hover:text-orange-600 transition-colors">Hourly Backups</div>
+                <div class="text-sm text-gray-500">Auto-backups every hour</div>
+              </div>
+            </div>
+            <span class="text-gray-600 font-semibold">+$5/mo</span>
+          </label>
+
+          <label class="flex items-center justify-between mb-4 cursor-pointer group">
+            <div class="flex items-center gap-3">
+              <input
+                type="checkbox"
+                x-model="addons.support"
+                class="w-5 h-5 accent-orange-500"
+              />
+              <div>
+                <div class="font-medium group-hover:text-orange-600 transition-colors">Priority Support</div>
+                <div class="text-sm text-gray-500">15-min response guarantee</div>
+              </div>
+            </div>
+            <span class="text-gray-600 font-semibold">+$15/mo</span>
+          </label>
+
+          <label class="flex items-center justify-between mb-4 cursor-pointer group">
+            <div class="flex items-center gap-3">
+              <input
+                type="checkbox"
+                x-model="addons.domain"
+                class="w-5 h-5 accent-orange-500"
+              />
+              <div>
+                <div class="font-medium group-hover:text-orange-600 transition-colors">Custom Domain</div>
+                <div class="text-sm text-gray-500">your-server.com</div>
+              </div>
+            </div>
+            <span class="text-gray-600 font-semibold">+$5/mo</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Right Column: Price Summary -->
+      <div class="bg-gradient-to-br from-orange-50 to-purple-50 rounded-xl shadow-lg p-8 h-fit sticky top-8">
+        <div class="mb-6">
+          <div class="text-sm text-gray-600 mb-1">Your Plan</div>
+          <div class="text-3xl font-bold" :class="tierColor" x-text="tierName"></div>
+        </div>
+
+        <!-- Specifications -->
+        <div class="bg-white rounded-lg p-6 mb-6">
+          <h3 class="font-semibold mb-4">Server Specifications</h3>
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between">
+              <span class="text-gray-600">RAM</span>
+              <span class="font-semibold" x-text="ram + ' GB'"></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">CPU Cores</span>
+              <span class="font-semibold" x-text="cpu"></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">SSD Storage</span>
+              <span class="font-semibold" x-text="storage + ' GB'"></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Player Slots</span>
+              <span class="font-semibold" x-text="players"></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">DDoS Protection</span>
+              <span class="font-semibold">✓ Standard</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Daily Backups</span>
+              <span class="font-semibold">✓ Included</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">99.9% Uptime SLA</span>
+              <span class="font-semibold">✓ Guaranteed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Price Breakdown -->
+        <div class="bg-white rounded-lg p-6 mb-6">
+          <h3 class="font-semibold mb-4">Price Breakdown</h3>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between">
+              <span class="text-gray-600">Base Price</span>
+              <span x-text="'$' + basePrice.toFixed(2)"></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">RAM (<span x-text="ram"></span> GB)</span>
+              <span x-text="'$' + ramCost.toFixed(2)"></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">CPU (<span x-text="cpu"></span> cores)</span>
+              <span x-text="'$' + cpuCost.toFixed(2)"></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Storage (<span x-text="storage"></span> GB)</span>
+              <span x-text="'$' + storageCost.toFixed(2)"></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Player Slots (<span x-text="players"></span>)</span>
+              <span x-text="'$' + playerCost.toFixed(2)"></span>
+            </div>
+            <template x-if="addonsCost > 0">
+              <div class="flex justify-between">
+                <span class="text-gray-600">Add-ons</span>
+                <span x-text="'$' + addonsCost.toFixed(2)"></span>
+              </div>
+            </template>
+            <div class="border-t pt-2 flex justify-between font-semibold">
+              <span>Subtotal</span>
+              <span x-text="'$' + subtotal.toFixed(2)"></span>
+            </div>
+            <template x-if="discount > 0">
+              <div class="flex justify-between text-green-600">
+                <span>Annual Discount (20%)</span>
+                <span x-text="'-$' + discount.toFixed(2)"></span>
+              </div>
+            </template>
+          </div>
+        </div>
+
+        <!-- Total Price -->
+        <div class="bg-gradient-to-r from-orange-500 to-purple-500 text-white rounded-lg p-6 mb-6">
+          <div class="text-sm mb-2">Total Price</div>
+          <div class="flex items-baseline gap-2">
+            <span class="text-5xl font-bold" x-text="'$' + total.toFixed(2)"></span>
+            <span class="text-lg" x-text="billing === 'monthly' ? '/month' : '/year'"></span>
+          </div>
+          <template x-if="billing === 'annual'">
+            <div class="text-sm mt-2 opacity-90">
+              That's just <span x-text="'$' + (total / 12).toFixed(2)"></span>/month, billed annually
+            </div>
+          </template>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="space-y-3">
+          <a
+            href="#"
+            class="block w-full bg-white text-center text-orange-600 font-bold py-4 rounded-lg hover:bg-gray-50 transition-all shadow-md hover:shadow-lg"
+          >
+            Start 7-Day Free Trial
+          </a>
+          <a
+            href="#"
+            class="block w-full bg-gray-900 text-center text-white font-bold py-4 rounded-lg hover:bg-gray-800 transition-all"
+          >
+            Launch Your Server
+          </a>
+          <p class="text-center text-sm text-gray-600">
+            No credit card required • Cancel anytime
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Popular Configurations -->
+    <div class="mt-16">
+      <h2 class="text-3xl font-bold text-center mb-8">Popular Configurations</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Starter Pack -->
+        <button
+          @click="ram = 2; cpu = 1; storage = 20; players = 50; addons = {ddos: false, backups: false, support: false, domain: false}"
+          class="bg-white rounded-lg shadow-md p-6 text-left hover:shadow-xl transition-all border-2 border-transparent hover:border-green-500"
+        >
+          <div class="text-green-600 font-bold text-sm mb-2">STARTER</div>
+          <div class="text-2xl font-bold mb-4">$13/mo</div>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>✓ 2 GB RAM</li>
+            <li>✓ 1 CPU Core</li>
+            <li>✓ 20 GB Storage</li>
+            <li>✓ 50 Player Slots</li>
+            <li>✓ Perfect for small communities</li>
+          </ul>
+        </button>
+
+        <!-- Pro Pack -->
+        <button
+          @click="ram = 6; cpu = 3; storage = 50; players = 150; addons = {ddos: true, backups: false, support: false, domain: false}"
+          class="bg-white rounded-lg shadow-md p-6 text-left hover:shadow-xl transition-all border-2 border-transparent hover:border-blue-500"
+        >
+          <div class="text-blue-600 font-bold text-sm mb-2">PROFESSIONAL</div>
+          <div class="text-2xl font-bold mb-4">$43/mo</div>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>✓ 6 GB RAM</li>
+            <li>✓ 3 CPU Cores</li>
+            <li>✓ 50 GB Storage</li>
+            <li>✓ 150 Player Slots</li>
+            <li>✓ Premium DDoS Protection</li>
+          </ul>
+        </button>
+
+        <!-- Enterprise Pack -->
+        <button
+          @click="ram = 16; cpu = 8; storage = 200; players = 500; addons = {ddos: true, backups: true, support: true, domain: true}"
+          class="bg-white rounded-lg shadow-md p-6 text-left hover:shadow-xl transition-all border-2 border-transparent hover:border-purple-500"
+        >
+          <div class="text-purple-600 font-bold text-sm mb-2">ENTERPRISE</div>
+          <div class="text-2xl font-bold mb-4">$128/mo</div>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>✓ 16 GB RAM</li>
+            <li>✓ 8 CPU Cores</li>
+            <li>✓ 200 GB Storage</li>
+            <li>✓ 500 Player Slots</li>
+            <li>✓ All Premium Add-ons</li>
+          </ul>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="mt-24 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-12">Pricing FAQ</h2>
+    <div
+      x-data="{ openFaq: null }"
+      class="space-y-4"
+    >
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <button
+          @click="openFaq = openFaq === 1 ? null : 1"
+          class="w-full px-6 py-4 text-left font-semibold hover:bg-gray-50 flex justify-between items-center"
+        >
+          <span>Can I upgrade or downgrade my plan anytime?</span>
+          <svg class="w-5 h-5 transition-transform" :class="openFaq === 1 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div x-show="openFaq === 1" x-collapse class="px-6 pb-4 text-gray-600">
+          Yes! You can adjust your RAM, CPU, storage, and player slots anytime. Changes take effect immediately, and you'll only be charged for what you use.
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <button
+          @click="openFaq = openFaq === 2 ? null : 2"
+          class="w-full px-6 py-4 text-left font-semibold hover:bg-gray-50 flex justify-between items-center"
+        >
+          <span>Is there a free trial?</span>
+          <svg class="w-5 h-5 transition-transform" :class="openFaq === 2 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div x-show="openFaq === 2" x-collapse class="px-6 pb-4 text-gray-600">
+          Absolutely! We offer a 7-day free trial with no credit card required. Test all features and decide if QuackHost is right for you.
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <button
+          @click="openFaq = openFaq === 3 ? null : 3"
+          class="w-full px-6 py-4 text-left font-semibold hover:bg-gray-50 flex justify-between items-center"
+        >
+          <span>What payment methods do you accept?</span>
+          <svg class="w-5 h-5 transition-transform" :class="openFaq === 3 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div x-show="openFaq === 3" x-collapse class="px-6 pb-4 text-gray-600">
+          We accept all major credit cards, PayPal, and cryptocurrency. Annual plans can also be paid via bank transfer.
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <button
+          @click="openFaq = openFaq === 4 ? null : 4"
+          class="w-full px-6 py-4 text-left font-semibold hover:bg-gray-50 flex justify-between items-center"
+        >
+          <span>Are there any hidden fees?</span>
+          <svg class="w-5 h-5 transition-transform" :class="openFaq === 4 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div x-show="openFaq === 4" x-collapse class="px-6 pb-4 text-gray-600">
+          Never. What you see in the calculator is exactly what you'll pay. No setup fees, no hidden charges, no surprises.
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <button
+          @click="openFaq = openFaq === 5 ? null : 5"
+          class="w-full px-6 py-4 text-left font-semibold hover:bg-gray-50 flex justify-between items-center"
+        >
+          <span>What's your refund policy?</span>
+          <svg class="w-5 h-5 transition-transform" :class="openFaq === 5 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div x-show="openFaq === 5" x-collapse class="px-6 pb-4 text-gray-600">
+          We offer a 30-day money-back guarantee, no questions asked. If you're not satisfied, we'll refund you in full.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom CTA -->
+  <div class="mt-24 bg-gradient-to-r from-orange-500 to-purple-500 rounded-2xl p-12 text-center text-white">
+    <h2 class="text-4xl font-bold mb-4">Ready to launch your server?</h2>
+    <p class="text-xl mb-8 opacity-90">Join thousands of server owners who trust QuackHost</p>
+    <div class="flex gap-4 justify-center">
+      <a href="#" class="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all">
+        Start Free Trial
+      </a>
+      <a href="/discord-flock" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-orange-600 transition-all">
+        Join Discord
+      </a>
+    </div>
+  </div>
 </Layout>

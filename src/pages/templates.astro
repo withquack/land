@@ -1,0 +1,400 @@
+---
+import Layout from "../layouts/layout.astro";
+
+const templates = [
+  {
+    id: 'skyblock-advanced',
+    name: 'Skyblock Advanced',
+    category: 'Skyblock',
+    description: 'Ultimate skyblock experience with advanced features, custom islands, and economy system',
+    image: '/index/minecraft-goose.gif',
+    rating: 4.8,
+    downloads: 1247,
+    playerRange: '50-500',
+    plugins: 25,
+    tags: ['Popular', 'Economy', 'PvE'],
+    color: 'blue'
+  },
+  {
+    id: 'vanilla-enhanced',
+    name: 'Vanilla Enhanced',
+    category: 'Survival',
+    description: 'Pure Minecraft survival with quality-of-life improvements and anti-grief protection',
+    image: '/index/minecraft-goose.gif',
+    rating: 4.9,
+    downloads: 2103,
+    playerRange: '20-200',
+    plugins: 12,
+    tags: ['Beginner Friendly', 'Survival'],
+    color: 'green'
+  },
+  {
+    id: 'bedwars-pro',
+    name: 'Bedwars Pro',
+    category: 'Minigames',
+    description: 'Professional Bedwars setup with custom maps, shop system, and party features',
+    image: '/index/minecraft-goose.gif',
+    rating: 4.7,
+    downloads: 1856,
+    playerRange: '100-500',
+    plugins: 18,
+    tags: ['PvP', 'Competitive'],
+    color: 'red'
+  },
+  {
+    id: 'pixelmon-complete',
+    name: 'Pixelmon Complete',
+    category: 'Modded',
+    description: 'Full Pixelmon modpack with Pokémon battles, gyms, and trading system',
+    image: '/index/minecraft-goose.gif',
+    rating: 4.6,
+    downloads: 987,
+    playerRange: '50-200',
+    plugins: 35,
+    tags: ['Modded', 'RPG'],
+    color: 'purple'
+  },
+  {
+    id: 'creative-plots',
+    name: 'Creative Plots',
+    category: 'Creative',
+    description: 'Player-owned plots with WorldEdit, VoxelSniper, and build competitions',
+    image: '/index/minecraft-goose.gif',
+    rating: 4.5,
+    downloads: 743,
+    playerRange: '20-300',
+    plugins: 15,
+    tags: ['Creative', 'Building'],
+    color: 'cyan'
+  },
+  {
+    id: 'factions-warfare',
+    name: 'Factions Warfare',
+    category: 'PvP',
+    description: 'Intense faction PvP with raiding, claiming, and custom enchantments',
+    image: '/index/minecraft-goose.gif',
+    rating: 4.7,
+    downloads: 1432,
+    playerRange: '100-1000',
+    plugins: 28,
+    tags: ['PvP', 'Factions'],
+    color: 'orange'
+  },
+  {
+    id: 'prison-server',
+    name: 'Prison Server',
+    category: 'Economy',
+    description: 'Rank progression prison server with mining, shops, and PvP zones',
+    image: '/index/minecraft-goose.gif',
+    rating: 4.4,
+    downloads: 654,
+    playerRange: '50-500',
+    plugins: 22,
+    tags: ['Economy', 'Progression'],
+    color: 'gray'
+  },
+  {
+    id: 'survival-towny',
+    name: 'Survival Towny',
+    category: 'Survival',
+    description: 'Community-focused survival with towns, nations, and economy',
+    image: '/index/minecraft-goose.gif',
+    rating: 4.8,
+    downloads: 1576,
+    playerRange: '50-500',
+    plugins: 20,
+    tags: ['Community', 'Economy'],
+    color: 'green'
+  },
+  {
+    id: 'oneblock',
+    name: 'OneBlock Paradise',
+    category: 'Skyblock',
+    description: 'Start with one block and expand your island through automated progression',
+    image: '/index/minecraft-goose.gif',
+    rating: 4.6,
+    downloads: 892,
+    playerRange: '20-200',
+    plugins: 16,
+    tags: ['Unique', 'Solo'],
+    color: 'blue'
+  },
+  {
+    id: 'uhc-champion',
+    name: 'UHC Champion',
+    category: 'Minigames',
+    description: 'Ultra Hardcore survival matches with custom scenarios and leaderboards',
+    image: '/index/minecraft-goose.gif',
+    rating: 4.5,
+    downloads: 567,
+    playerRange: '20-100',
+    plugins: 14,
+    tags: ['Competitive', 'Hardcore'],
+    color: 'red'
+  },
+  {
+    id: 'rpg-adventure',
+    name: 'RPG Adventure',
+    category: 'RPG',
+    description: 'Questing system with custom items, dungeons, bosses, and skill progression',
+    image: '/index/minecraft-goose.gif',
+    rating: 4.9,
+    downloads: 1234,
+    playerRange: '50-300',
+    plugins: 32,
+    tags: ['RPG', 'Quests'],
+    color: 'purple'
+  },
+  {
+    id: 'build-battle',
+    name: 'Build Battle Arena',
+    category: 'Minigames',
+    description: 'Competitive building minigame with themes, voting, and rewards',
+    image: '/index/minecraft-goose.gif',
+    rating: 4.3,
+    downloads: 445,
+    playerRange: '10-50',
+    plugins: 10,
+    tags: ['Creative', 'Casual'],
+    color: 'cyan'
+  }
+];
+
+const categories = ['All', 'Survival', 'Skyblock', 'Minigames', 'Modded', 'Creative', 'PvP', 'Economy', 'RPG'];
+---
+
+<Layout title="/ Server Templates">
+  <div class="mb-16 mt-32">
+    <h1 class="text-4xl font-bold xl:text-6xl mb-4">Server Templates</h1>
+    <p class="text-xl text-gray-600">Launch your perfect server in 60 seconds. No technical knowledge required.</p>
+  </div>
+
+  <!-- Stats Banner -->
+  <div class="grid grid-cols-3 gap-6 mb-12 max-w-3xl mx-auto">
+    <div class="text-center">
+      <div class="text-4xl font-bold text-orange-600">{templates.length}+</div>
+      <div class="text-gray-600">Templates</div>
+    </div>
+    <div class="text-center">
+      <div class="text-4xl font-bold text-purple-600">15K+</div>
+      <div class="text-gray-600">Downloads</div>
+    </div>
+    <div class="text-center">
+      <div class="text-4xl font-bold text-green-600">4.7★</div>
+      <div class="text-gray-600">Avg Rating</div>
+    </div>
+  </div>
+
+  <!-- Filters and Search -->
+  <div
+    x-data="{
+      searchQuery: '',
+      selectedCategory: 'All',
+      sortBy: 'popular',
+      get filteredTemplates() {
+        let filtered = this.templates;
+
+        // Filter by category
+        if (this.selectedCategory !== 'All') {
+          filtered = filtered.filter(t => t.category === this.selectedCategory);
+        }
+
+        // Filter by search
+        if (this.searchQuery) {
+          const query = this.searchQuery.toLowerCase();
+          filtered = filtered.filter(t =>
+            t.name.toLowerCase().includes(query) ||
+            t.description.toLowerCase().includes(query) ||
+            t.tags.some(tag => tag.toLowerCase().includes(query))
+          );
+        }
+
+        // Sort
+        if (this.sortBy === 'popular') {
+          filtered = filtered.sort((a, b) => b.downloads - a.downloads);
+        } else if (this.sortBy === 'rating') {
+          filtered = filtered.sort((a, b) => b.rating - a.rating);
+        } else if (this.sortBy === 'name') {
+          filtered = filtered.sort((a, b) => a.name.localeCompare(b.name));
+        }
+
+        return filtered;
+      },
+      templates: ${JSON.stringify(templates)}
+    }"
+    class="mb-12"
+  >
+    <!-- Search Bar -->
+    <div class="max-w-2xl mx-auto mb-8">
+      <div class="relative">
+        <input
+          type="text"
+          x-model="searchQuery"
+          placeholder="Search templates, game modes, plugins..."
+          class="w-full px-6 py-4 pr-12 rounded-lg border-2 border-gray-200 focus:border-orange-500 focus:outline-none text-lg"
+        />
+        <svg class="w-6 h-6 absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Category Filter -->
+    <div class="flex flex-wrap gap-3 justify-center mb-8">
+      {categories.map(category => (
+        <button
+          @click={`selectedCategory = '${category}'`}
+          :class={`selectedCategory === '${category}' ? 'bg-orange-500 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'`}
+          class="px-6 py-2 rounded-full font-semibold transition-all"
+        >
+          {category}
+        </button>
+      ))}
+    </div>
+
+    <!-- Sort Options -->
+    <div class="flex justify-between items-center mb-8">
+      <div>
+        <span class="text-gray-600" x-text="`Showing ${filteredTemplates.length} template${filteredTemplates.length !== 1 ? 's' : ''}`"></span>
+      </div>
+      <div class="flex gap-2 items-center">
+        <span class="text-gray-600">Sort by:</span>
+        <select
+          x-model="sortBy"
+          class="px-4 py-2 rounded-lg border-2 border-gray-200 focus:border-orange-500 focus:outline-none"
+        >
+          <option value="popular">Most Popular</option>
+          <option value="rating">Highest Rated</option>
+          <option value="name">Name (A-Z)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Templates Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <template x-for="template in filteredTemplates" :key="template.id">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all transform hover:-translate-y-1">
+          <!-- Template Image -->
+          <div class="h-48 bg-gradient-to-br from-orange-100 to-purple-100 relative overflow-hidden">
+            <img :src="template.image" :alt="template.name" class="w-full h-full object-cover opacity-60" />
+            <div class="absolute top-4 left-4 flex gap-2">
+              <template x-for="tag in template.tags.slice(0, 2)" :key="tag">
+                <span class="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-gray-700" x-text="tag"></span>
+              </template>
+            </div>
+            <div class="absolute top-4 right-4">
+              <div class="flex items-center gap-1 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                <span class="text-sm font-semibold" x-text="template.rating"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template Info -->
+          <div class="p-6">
+            <div class="mb-2">
+              <span class="text-sm font-semibold text-gray-500 uppercase" x-text="template.category"></span>
+            </div>
+            <h3 class="text-xl font-bold mb-2" x-text="template.name"></h3>
+            <p class="text-gray-600 text-sm mb-4 line-clamp-2" x-text="template.description"></p>
+
+            <!-- Template Stats -->
+            <div class="grid grid-cols-3 gap-2 mb-4 text-center">
+              <div class="bg-gray-50 rounded-lg p-2">
+                <div class="text-xs text-gray-500">Downloads</div>
+                <div class="font-semibold" x-text="template.downloads"></div>
+              </div>
+              <div class="bg-gray-50 rounded-lg p-2">
+                <div class="text-xs text-gray-500">Plugins</div>
+                <div class="font-semibold" x-text="template.plugins"></div>
+              </div>
+              <div class="bg-gray-50 rounded-lg p-2">
+                <div class="text-xs text-gray-500">Players</div>
+                <div class="font-semibold text-xs" x-text="template.playerRange"></div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex gap-2">
+              <button class="flex-1 bg-orange-500 text-white py-3 rounded-lg font-semibold hover:bg-orange-600 transition-all">
+                Launch Server
+              </button>
+              <button class="px-4 bg-gray-100 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+
+    <!-- No Results -->
+    <div x-show="filteredTemplates.length === 0" class="text-center py-16">
+      <svg class="w-24 h-24 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <h3 class="text-2xl font-bold text-gray-400 mb-2">No templates found</h3>
+      <p class="text-gray-500 mb-4">Try adjusting your search or filters</p>
+      <button
+        @click="searchQuery = ''; selectedCategory = 'All'"
+        class="px-6 py-3 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600 transition-all"
+      >
+        Clear Filters
+      </button>
+    </div>
+  </div>
+
+  <!-- Custom Template CTA -->
+  <div class="mt-24 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl p-12 text-center text-white">
+    <h2 class="text-4xl font-bold mb-4">Need a custom template?</h2>
+    <p class="text-xl mb-8 opacity-90">Our team can create a custom server configuration tailored to your exact needs</p>
+    <div class="flex gap-4 justify-center">
+      <a href="#" class="bg-white text-purple-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all">
+        Request Custom Template
+      </a>
+      <a href="/pricing" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-purple-600 transition-all">
+        See Pricing
+      </a>
+    </div>
+  </div>
+
+  <!-- How It Works -->
+  <div class="mt-24">
+    <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+    <div class="grid md:grid-cols-4 gap-8">
+      <div class="text-center">
+        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="text-2xl font-bold text-orange-600">1</span>
+        </div>
+        <h3 class="font-bold mb-2">Choose Template</h3>
+        <p class="text-gray-600 text-sm">Browse and select from our curated templates</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="text-2xl font-bold text-purple-600">2</span>
+        </div>
+        <h3 class="font-bold mb-2">Customize Settings</h3>
+        <p class="text-gray-600 text-sm">Adjust RAM, CPU, and server configuration</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="text-2xl font-bold text-blue-600">3</span>
+        </div>
+        <h3 class="font-bold mb-2">Launch Server</h3>
+        <p class="text-gray-600 text-sm">We'll deploy your server in under 60 seconds</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="text-2xl font-bold text-green-600">4</span>
+        </div>
+        <h3 class="font-bold mb-2">Start Playing</h3>
+        <p class="text-gray-600 text-sm">Share your server and start building community</p>
+      </div>
+    </div>
+  </div>
+</Layout>
