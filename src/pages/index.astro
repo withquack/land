@@ -86,6 +86,66 @@ import Layout from "../layouts/layout.astro";
     </div>
   </div>
 
+  <!-- Supported Games Section -->
+  <div class="mb-20 lg:mb-32">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-5xl font-bold mb-4">
+        <span class="text-white">Host your favorite</span>
+        <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">games</span>
+      </h2>
+      <p class="text-xl text-cool-gray-40 max-w-3xl mx-auto">
+        From Minecraft to Rust, we support all the games your community loves.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+      <div class="group bg-gradient-to-br from-gray-90 to-gray-100 p-6 rounded-xl border border-gray-80 hover:border-[#FF9C20] transition-all duration-300 hover:shadow-xl hover:-translate-y-2 text-center">
+        <div class="mb-4 text-4xl">🎮</div>
+        <h4 class="font-semibold text-white mb-1">Minecraft</h4>
+        <p class="text-xs text-cool-gray-40">Java & Bedrock</p>
+      </div>
+
+      <div class="group bg-gradient-to-br from-gray-90 to-gray-100 p-6 rounded-xl border border-gray-80 hover:border-cyan-50 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 text-center">
+        <div class="mb-4 text-4xl">⚔️</div>
+        <h4 class="font-semibold text-white mb-1">Rust</h4>
+        <p class="text-xs text-cool-gray-40">Survival</p>
+      </div>
+
+      <div class="group bg-gradient-to-br from-gray-90 to-gray-100 p-6 rounded-xl border border-gray-80 hover:border-green-50 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 text-center">
+        <div class="mb-4 text-4xl">🧟</div>
+        <h4 class="font-semibold text-white mb-1">ARK</h4>
+        <p class="text-xs text-cool-gray-40">Survival Evolved</p>
+      </div>
+
+      <div class="group bg-gradient-to-br from-gray-90 to-gray-100 p-6 rounded-xl border border-gray-80 hover:border-purple-50 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 text-center">
+        <div class="mb-4 text-4xl">🔫</div>
+        <h4 class="font-semibold text-white mb-1">CS2</h4>
+        <p class="text-xs text-cool-gray-40">Counter-Strike 2</p>
+      </div>
+
+      <div class="group bg-gradient-to-br from-gray-90 to-gray-100 p-6 rounded-xl border border-gray-80 hover:border-blue-50 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 text-center">
+        <div class="mb-4 text-4xl">🏗️</div>
+        <h4 class="font-semibold text-white mb-1">Valheim</h4>
+        <p class="text-xs text-cool-gray-40">Viking Survival</p>
+      </div>
+
+      <div class="group bg-gradient-to-br from-gray-90 to-gray-100 p-6 rounded-xl border border-gray-80 hover:border-teal-50 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 text-center">
+        <div class="mb-4 text-4xl">🎯</div>
+        <h4 class="font-semibold text-white mb-1">+50 More</h4>
+        <p class="text-xs text-cool-gray-40">View all games</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="/games" class="inline-flex items-center text-[#FF9C20] hover:text-[#FF8D00] font-semibold transition-colors group">
+        <span>Browse all supported games</span>
+        <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+
   <!-- Features Section -->
   <div class="mb-20 lg:mb-32" aria-label="Product Features">
     <div class="text-center mb-16">
@@ -1122,6 +1182,118 @@ import Layout from "../layouts/layout.astro";
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
         </svg>
       </a>
+    </div>
+  </div>
+
+  <!-- Risk-Free Guarantee Banner -->
+  <div class="mb-20 lg:mb-32">
+    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-green-60/20 via-green-50/20 to-green-60/20 border-2 border-green-50 p-8 lg:p-12">
+      <div class="absolute inset-0 bg-gradient-to-r from-green-60/5 via-green-50/10 to-green-60/5 blur-2xl"></div>
+      <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-6">
+          <div class="flex-shrink-0 w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-green-50 to-green-60 rounded-full flex items-center justify-center shadow-lg">
+            <svg class="w-8 h-8 lg:w-10 lg:h-10 text-gray-100" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-2xl lg:text-3xl font-bold text-white mb-2">30-Day Money-Back Guarantee</h3>
+            <p class="text-cool-gray-20 text-lg">
+              Not satisfied? Get a <span class="text-green-40 font-semibold">full refund</span> within 30 days. No questions asked.
+            </p>
+          </div>
+        </div>
+        <div class="flex-shrink-0 flex flex-col items-center gap-3">
+          <div class="flex items-center gap-2 bg-gray-90 px-6 py-3 rounded-lg border border-green-50/30">
+            <svg class="w-5 h-5 text-green-40" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-white font-semibold">100% Risk-Free</span>
+          </div>
+          <p class="text-cool-gray-40 text-sm">Try it completely risk-free</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Live Activity Section -->
+  <div class="mb-20 lg:mb-32">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-5xl font-bold mb-4">
+        <span class="text-white">Join the</span>
+        <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">QuackHost community</span>
+      </h2>
+      <p class="text-xl text-cool-gray-40 max-w-3xl mx-auto">
+        Thousands of servers are running right now. Here's what's happening live.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Real-time stat 1 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-xl border border-gray-80 text-center">
+        <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#FF9C20] to-[#FF8D00] rounded-full mb-4">
+          <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path>
+          </svg>
+        </div>
+        <div class="text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text mb-2">47,382</div>
+        <p class="text-cool-gray-30 font-semibold mb-1">Players Online</p>
+        <p class="text-cool-gray-40 text-sm">Across all QuackHost servers</p>
+      </div>
+
+      <!-- Real-time stat 2 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-xl border border-gray-80 text-center">
+        <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-50 to-cyan-60 rounded-full mb-4">
+          <svg class="w-8 h-8 text-gray-100" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <div class="text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-cyan-40 to-cyan-60 bg-clip-text mb-2">8,547</div>
+        <p class="text-cool-gray-30 font-semibold mb-1">Active Servers</p>
+        <p class="text-cool-gray-40 text-sm">Currently running worldwide</p>
+      </div>
+
+      <!-- Real-time stat 3 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-xl border border-gray-80 text-center">
+        <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-50 to-green-60 rounded-full mb-4">
+          <svg class="w-8 h-8 text-gray-100" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
+          </svg>
+        </div>
+        <div class="text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-green-40 to-green-60 bg-clip-text mb-2">98.7%</div>
+        <p class="text-cool-gray-30 font-semibold mb-1">Satisfaction Rate</p>
+        <p class="text-cool-gray-40 text-sm">Based on 5,000+ reviews</p>
+      </div>
+    </div>
+
+    <div class="mt-12 bg-gradient-to-br from-gray-90 to-gray-100 p-8 rounded-xl border border-gray-80">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="flex -space-x-2">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#FF9C20] to-[#FF8D00] border-2 border-gray-90 flex items-center justify-center text-sm font-bold text-black">A</div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-50 to-cyan-60 border-2 border-gray-90 flex items-center justify-center text-sm font-bold text-gray-100">B</div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-50 to-green-60 border-2 border-gray-90 flex items-center justify-center text-sm font-bold text-gray-100">C</div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-50 to-purple-60 border-2 border-gray-90 flex items-center justify-center text-sm font-bold text-gray-100">D</div>
+          <div class="w-10 h-10 rounded-full bg-gray-80 border-2 border-gray-90 flex items-center justify-center text-sm font-bold text-cool-gray-30">+12K</div>
+        </div>
+        <div>
+          <p class="text-white font-semibold">Join 12,000+ happy server owners</p>
+          <p class="text-cool-gray-40 text-sm">Who've already made the switch to QuackHost</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-gray-80 text-cool-gray-20 text-sm">
+          <span class="w-2 h-2 bg-green-40 rounded-full mr-2 animate-pulse"></span>
+          23 servers launched today
+        </span>
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-gray-80 text-cool-gray-20 text-sm">
+          <span class="w-2 h-2 bg-cyan-40 rounded-full mr-2 animate-pulse"></span>
+          156 backups created in the last hour
+        </span>
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-gray-80 text-cool-gray-20 text-sm">
+          <span class="w-2 h-2 bg-[#FF9C20] rounded-full mr-2 animate-pulse"></span>
+          99.96% uptime this month
+        </span>
+      </div>
     </div>
   </div>
 
