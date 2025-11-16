@@ -2,10 +2,362 @@
 import Layout from "../layouts/layout.astro";
 ---
 
-<Layout title="/ Terns of Service">
-  <div class="mb-32 mt-32">
-    <p class="text-2xl font-semibold xl:text-4xl">Terms of Service</p>
-  </div>
+<Layout title="/ Terms of Service">
+  <div class="max-w-4xl mx-auto">
+    <!-- Header -->
+    <div class="mb-12 mt-16 lg:mt-32">
+      <div class="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-[#FF9C20]/20 to-cyan-50/20 border border-[#FF9C20]/50 rounded-full">
+        <span class="text-[#FF9C20] font-bold text-sm">LEGAL</span>
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4">Terms of Service</h1>
+      <p class="text-cool-gray-20 text-lg">Last updated: November 16, 2025</p>
+    </div>
 
-  <div class="h-96 rounded-md bg-gray-200"></div>
+    <!-- Introduction -->
+    <div class="mb-12 p-6 bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl">
+      <p class="text-cool-gray-20 leading-relaxed">
+        These Terms of Service ("Terms") govern your use of QuackHost's game server hosting services. By creating an account or using our services, you agree to be bound by these Terms. Please read them carefully.
+      </p>
+    </div>
+
+    <!-- Content -->
+    <div class="space-y-8 mb-20">
+      <!-- Section 1 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+          <span class="text-[#FF9C20]">1.</span>
+          Acceptance of Terms
+        </h2>
+        <div class="space-y-3 text-cool-gray-20">
+          <p>
+            By accessing or using QuackHost services, you agree to comply with and be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, you may not use our services.
+          </p>
+          <p>
+            We reserve the right to modify these Terms at any time. Continued use of our services after changes constitutes acceptance of the modified Terms.
+          </p>
+        </div>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+          <span class="text-cyan-50">2.</span>
+          Service Description
+        </h2>
+        <div class="space-y-3 text-cool-gray-20">
+          <p>QuackHost provides game server hosting services, including:</p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li>Virtual and dedicated server infrastructure</li>
+            <li>QuackPlane control panel access</li>
+            <li>Technical support and customer service</li>
+            <li>Automated backups and disaster recovery</li>
+            <li>DDoS protection and network security</li>
+          </ul>
+          <p class="mt-4">
+            We strive to maintain 99.9% uptime but do not guarantee uninterrupted service. Scheduled maintenance will be announced in advance when possible.
+          </p>
+        </div>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+          <span class="text-purple-50">3.</span>
+          Account Registration and Eligibility
+        </h2>
+        <div class="space-y-3 text-cool-gray-20">
+          <p>To use our services, you must:</p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li>Be at least 13 years of age (or legal age in your jurisdiction)</li>
+            <li>Provide accurate and complete registration information</li>
+            <li>Maintain the security of your account credentials</li>
+            <li>Accept responsibility for all activities under your account</li>
+            <li>Notify us immediately of any unauthorized access</li>
+          </ul>
+          <p class="mt-4">
+            You may not share, sell, or transfer your account to another person without our written consent.
+          </p>
+        </div>
+      </div>
+
+      <!-- Section 4 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+          <span class="text-[#FF9C20]">4.</span>
+          Acceptable Use Policy
+        </h2>
+        <div class="space-y-3 text-cool-gray-20">
+          <p>You agree NOT to use our services to:</p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li><strong class="text-white">Illegal Activities:</strong> Violate any laws, regulations, or third-party rights</li>
+            <li><strong class="text-white">Harmful Content:</strong> Host, distribute, or promote malware, viruses, or harmful software</li>
+            <li><strong class="text-white">Network Abuse:</strong> Conduct port scanning, DDoS attacks, or network flooding</li>
+            <li><strong class="text-white">Resource Abuse:</strong> Excessively consume server resources (CPU mining, etc.)</li>
+            <li><strong class="text-white">Spam:</strong> Send unsolicited bulk email or engage in spamming activities</li>
+            <li><strong class="text-white">Copyright Infringement:</strong> Host pirated content or violate intellectual property rights</li>
+            <li><strong class="text-white">Harassment:</strong> Harass, threaten, or harm other users</li>
+            <li><strong class="text-white">Fraudulent Activities:</strong> Engage in phishing, scamming, or fraudulent schemes</li>
+          </ul>
+          <p class="mt-4 text-white font-semibold">
+            Violation of this policy may result in immediate suspension or termination of services without refund.
+          </p>
+        </div>
+      </div>
+
+      <!-- Section 5 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+          <span class="text-cyan-50">5.</span>
+          Billing and Payments
+        </h2>
+        <div class="space-y-3 text-cool-gray-20">
+          <h3 class="text-lg font-semibold text-white mb-2">Payment Terms</h3>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li>Services are billed on a monthly basis or as otherwise specified</li>
+            <li>Payment is due in advance for each billing period</li>
+            <li>All fees are in USD unless otherwise stated</li>
+            <li>Prices are subject to change with 30 days notice</li>
+          </ul>
+
+          <h3 class="text-lg font-semibold text-white mb-2 mt-4">Refund Policy</h3>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li><strong class="text-white">New Customers:</strong> 7-day money-back guarantee on first purchase</li>
+            <li><strong class="text-white">Service Issues:</strong> Pro-rated refunds for extended downtime (>24 hours)</li>
+            <li><strong class="text-white">No Refunds:</strong> Violations of Terms, add-ons, or custom services</li>
+          </ul>
+
+          <h3 class="text-lg font-semibold text-white mb-2 mt-4">Late Payments</h3>
+          <p>
+            Failure to pay on time may result in service suspension. Accounts unpaid for 7+ days may be terminated, and data permanently deleted.
+          </p>
+        </div>
+      </div>
+
+      <!-- Section 6 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+          <span class="text-purple-50">6.</span>
+          Service Level Agreement (SLA)
+        </h2>
+        <div class="space-y-3 text-cool-gray-20">
+          <p>We guarantee 99.9% uptime for our services, calculated monthly. Uptime excludes:</p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li>Scheduled maintenance (announced at least 24 hours in advance)</li>
+            <li>Issues caused by your actions or third-party services</li>
+            <li>Force majeure events beyond our control</li>
+            <li>DDoS attacks targeting your specific server</li>
+          </ul>
+          <p class="mt-4">
+            <strong class="text-white">SLA Credits:</strong> If uptime falls below 99.9%, you may request service credits:
+          </p>
+          <ul class="list-disc list-inside space-y-2 ml-4 mt-2">
+            <li>99.0% - 99.8%: 10% credit</li>
+            <li>95.0% - 98.9%: 25% credit</li>
+            <li>Below 95.0%: 50% credit</li>
+          </ul>
+          <p class="mt-4 text-sm">
+            Credits must be requested within 7 days of the incident and apply to the following month's bill.
+          </p>
+        </div>
+      </div>
+
+      <!-- Section 7 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+          <span class="text-[#FF9C20]">7.</span>
+          Data and Backups
+        </h2>
+        <div class="space-y-3 text-cool-gray-20">
+          <p><strong class="text-white">Your Responsibility:</strong></p>
+          <p>
+            You are solely responsible for maintaining backups of your data. While we provide automated backup services, these are offered as a convenience and should not be your sole backup solution.
+          </p>
+
+          <p class="mt-4"><strong class="text-white">Our Backups:</strong></p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li>Daily automated backups retained for 7 days</li>
+            <li>Backups are best-effort and not guaranteed</li>
+            <li>You can download backups at any time via QuackPlane</li>
+          </ul>
+
+          <p class="mt-4"><strong class="text-white">Data Deletion:</strong></p>
+          <p>
+            Upon service cancellation, your data is retained for 7 days, then permanently deleted. We cannot recover data after this period.
+          </p>
+        </div>
+      </div>
+
+      <!-- Section 8 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+          <span class="text-cyan-50">8.</span>
+          Intellectual Property
+        </h2>
+        <div class="space-y-3 text-cool-gray-20">
+          <p><strong class="text-white">Our IP:</strong></p>
+          <p>
+            QuackHost, QuackPlane, our logo, and all related marks are trademarks of QuackHost. All website content, software, and documentation are protected by copyright and other intellectual property laws.
+          </p>
+
+          <p class="mt-4"><strong class="text-white">Your Content:</strong></p>
+          <p>
+            You retain all rights to content you upload to our servers. By using our services, you grant us a limited license to host, store, and transmit your content solely for the purpose of providing services to you.
+          </p>
+
+          <p class="mt-4"><strong class="text-white">DMCA Compliance:</strong></p>
+          <p>
+            We respond to valid DMCA takedown notices. Repeat copyright infringers may have their accounts terminated.
+          </p>
+        </div>
+      </div>
+
+      <!-- Section 9 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+          <span class="text-purple-50">9.</span>
+          Suspension and Termination
+        </h2>
+        <div class="space-y-3 text-cool-gray-20">
+          <p>We may suspend or terminate your account immediately if:</p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li>You violate these Terms or our Acceptable Use Policy</li>
+            <li>Your account poses a security risk to our infrastructure</li>
+            <li>You fail to pay fees when due</li>
+            <li>You provide false or misleading information</li>
+            <li>We're required to do so by law</li>
+          </ul>
+
+          <p class="mt-4"><strong class="text-white">Voluntary Cancellation:</strong></p>
+          <p>
+            You may cancel your services at any time via QuackPlane. Cancellations take effect at the end of your current billing period. No refunds are provided for partial months except as stated in our refund policy.
+          </p>
+        </div>
+      </div>
+
+      <!-- Section 10 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+          <span class="text-[#FF9C20]">10.</span>
+          Limitation of Liability
+        </h2>
+        <div class="space-y-3 text-cool-gray-20">
+          <p class="font-semibold text-white">
+            TO THE MAXIMUM EXTENT PERMITTED BY LAW:
+          </p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li>QuackHost is provided "AS IS" without warranties of any kind</li>
+            <li>We are not liable for indirect, incidental, or consequential damages</li>
+            <li>Our total liability is limited to the amount you paid us in the past 12 months</li>
+            <li>We are not responsible for data loss, revenue loss, or business interruption</li>
+            <li>We are not liable for third-party actions or content</li>
+          </ul>
+          <p class="mt-4 text-sm">
+            Some jurisdictions do not allow limitation of certain warranties or damages, so these limitations may not apply to you.
+          </p>
+        </div>
+      </div>
+
+      <!-- Section 11 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+          <span class="text-cyan-50">11.</span>
+          Indemnification
+        </h2>
+        <div class="space-y-3 text-cool-gray-20">
+          <p>
+            You agree to indemnify and hold harmless QuackHost, its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from:
+          </p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li>Your use of our services</li>
+            <li>Your violation of these Terms</li>
+            <li>Your violation of any third-party rights</li>
+            <li>Content you upload or transmit through our services</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Section 12 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+          <span class="text-purple-50">12.</span>
+          Dispute Resolution
+        </h2>
+        <div class="space-y-3 text-cool-gray-20">
+          <p><strong class="text-white">Informal Resolution:</strong></p>
+          <p>
+            Before filing a claim, please contact us at support@quack.host to attempt to resolve the dispute informally.
+          </p>
+
+          <p class="mt-4"><strong class="text-white">Arbitration:</strong></p>
+          <p>
+            Any disputes that cannot be resolved informally shall be settled by binding arbitration in accordance with the rules of the American Arbitration Association. You waive any right to a jury trial.
+          </p>
+
+          <p class="mt-4"><strong class="text-white">Class Action Waiver:</strong></p>
+          <p>
+            You agree to resolve disputes on an individual basis only and waive the right to participate in class actions or class arbitrations.
+          </p>
+        </div>
+      </div>
+
+      <!-- Section 13 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+          <span class="text-[#FF9C20]">13.</span>
+          Governing Law
+        </h2>
+        <div class="space-y-3 text-cool-gray-20">
+          <p>
+            These Terms are governed by the laws of the United States and the State of Delaware, without regard to conflict of law principles. Any legal action must be brought in the courts located in Delaware.
+          </p>
+        </div>
+      </div>
+
+      <!-- Section 14 -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+          <span class="text-cyan-50">14.</span>
+          Miscellaneous
+        </h2>
+        <div class="space-y-3 text-cool-gray-20">
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li><strong class="text-white">Entire Agreement:</strong> These Terms constitute the entire agreement between you and QuackHost</li>
+            <li><strong class="text-white">Severability:</strong> If any provision is found unenforceable, the remaining provisions remain in effect</li>
+            <li><strong class="text-white">No Waiver:</strong> Failure to enforce any right does not constitute a waiver of that right</li>
+            <li><strong class="text-white">Assignment:</strong> You may not assign these Terms; we may assign them to any successor entity</li>
+            <li><strong class="text-white">Third-Party Rights:</strong> These Terms do not create rights for third parties</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-[#FF9C20] rounded-xl p-8">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+          <span class="text-[#FF9C20]">📧</span>
+          Questions About These Terms?
+        </h2>
+        <div class="space-y-3 text-cool-gray-20">
+          <p>If you have questions about these Terms of Service, please contact us:</p>
+          <div class="mt-4 space-y-2">
+            <p><strong class="text-white">Legal:</strong> <a href="mailto:legal@quack.host" class="text-[#FF9C20] hover:underline">legal@quack.host</a></p>
+            <p><strong class="text-white">Support:</strong> <a href="mailto:support@quack.host" class="text-[#FF9C20] hover:underline">support@quack.host</a></p>
+            <p><strong class="text-white">Discord:</strong> <a href="/discord-flock" class="text-[#FF9C20] hover:underline">Join our community</a></p>
+          </div>
+          <p class="mt-4 text-sm">
+            For urgent legal matters, please include "URGENT" in your subject line.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="mb-20 flex flex-wrap gap-4 justify-center">
+      <a href="/privacy-policy" class="px-6 py-3 bg-gray-90 border-2 border-gray-80 text-white font-semibold rounded-lg hover:border-[#FF9C20] transition-all">
+        Privacy Policy →
+      </a>
+      <a href="/" class="px-6 py-3 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black font-bold rounded-lg hover:shadow-lg transition-all">
+        Back to Home
+      </a>
+    </div>
+  </div>
 </Layout>
