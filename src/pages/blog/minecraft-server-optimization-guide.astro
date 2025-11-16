@@ -1,0 +1,414 @@
+---
+import Layout from "../../layouts/layout.astro";
+---
+
+<Layout title="/ Ultimate Minecraft Server Optimization Guide for 2025">
+  <div class="max-w-4xl mx-auto">
+    <!-- Back to Blog -->
+    <div class="mt-8 mb-6">
+      <a href="/blog" class="text-[#FF9C20] hover:text-[#FF8D00] transition-colors flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        Back to Blog
+      </a>
+    </div>
+
+    <!-- Article Header -->
+    <article class="mb-20">
+      <header class="mb-12">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-3 py-1 bg-purple-50/20 text-purple-50 text-xs font-bold rounded-full">TUTORIAL</span>
+          <span class="text-cool-gray-40 text-sm">January 15, 2025 • 12 min read</span>
+        </div>
+        <h1 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+          Ultimate Minecraft Server Optimization Guide for 2025
+        </h1>
+        <p class="text-xl text-cool-gray-20">
+          Learn how to optimize your Minecraft server for maximum performance, reduce lag, and support more players with these proven techniques.
+        </p>
+      </header>
+
+      <!-- Featured Image Placeholder -->
+      <div class="mb-12 bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-16 text-center">
+        <div class="text-6xl mb-4">⛏️</div>
+        <p class="text-cool-gray-40">Minecraft Server Optimization</p>
+      </div>
+
+      <!-- Article Content -->
+      <div class="prose prose-invert prose-lg max-w-none">
+        <div class="space-y-8 text-cool-gray-20">
+
+          <section>
+            <h2 class="text-3xl font-bold text-white mb-4">Why Server Optimization Matters</h2>
+            <p class="mb-4">
+              Running a Minecraft server isn't just about hitting the start button and hoping for the best. Whether you're hosting 10 friends or managing a 500-player network, optimization is crucial for providing a smooth, lag-free experience that keeps players coming back.
+            </p>
+            <p class="mb-4">
+              Poor server performance leads to frustrated players, negative reviews, and ultimately, a dying community. But with the right optimization techniques, you can maximize your server's potential and create an experience that rivals the biggest networks.
+            </p>
+          </section>
+
+          <section class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-[#FF9C20] rounded-xl p-8">
+            <h3 class="text-2xl font-bold text-white mb-4">📊 Performance Metrics That Matter</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2">
+                <span class="text-[#FF9C20] mt-1">•</span>
+                <span><strong class="text-white">TPS (Ticks Per Second):</strong> Should stay at 20 TPS. Below 18 TPS means noticeable lag.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#FF9C20] mt-1">•</span>
+                <span><strong class="text-white">MSPT (Milliseconds Per Tick):</strong> Target under 50ms. Over 50ms indicates server strain.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#FF9C20] mt-1">•</span>
+                <span><strong class="text-white">Memory Usage:</strong> Should stay under 80% with headroom for spikes.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#FF9C20] mt-1">•</span>
+                <span><strong class="text-white">Entity Count:</strong> Keep entities per chunk reasonable (under 100 recommended).</span>
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold text-white mb-4">1. Choose the Right Server Software</h2>
+            <p class="mb-4">
+              Your server software choice dramatically impacts performance. Here's what you need to know:
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+              <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+                <h4 class="text-xl font-bold text-white mb-3">Paper/Purpur (Recommended)</h4>
+                <p class="text-sm mb-3">Best for most servers. Optimized fork of Spigot with async chunk loading, improved entity AI, and extensive configuration options.</p>
+                <div class="text-green-50 font-bold text-sm">✓ Best Performance</div>
+              </div>
+              <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+                <h4 class="text-xl font-bold text-white mb-3">Fabric</h4>
+                <p class="text-sm mb-3">Lightweight modding platform with excellent performance mods like Lithium, Starlight, and FerriteCore.</p>
+                <div class="text-cyan-50 font-bold text-sm">✓ Great for Modded</div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold text-white mb-4">2. Optimize server.properties</h2>
+            <p class="mb-4">
+              Your server.properties file is the foundation of server configuration. Here are the most important settings:
+            </p>
+
+            <div class="bg-gray-100 border-2 border-gray-80 rounded-xl p-6 mb-4 font-mono text-sm">
+              <div class="text-cool-gray-40 mb-2"># server.properties - Optimized Settings</div>
+              <div class="space-y-1 text-cool-gray-20">
+                <div><span class="text-cyan-50">view-distance</span>=6  <span class="text-cool-gray-60"># Reduce from default 10</span></div>
+                <div><span class="text-cyan-50">simulation-distance</span>=4  <span class="text-cool-gray-60"># 1.18+ feature</span></div>
+                <div><span class="text-cyan-50">network-compression-threshold</span>=512</div>
+                <div><span class="text-cyan-50">max-tick-time</span>=60000  <span class="text-cool-gray-60"># Prevent watchdog crashes</span></div>
+                <div><span class="text-cyan-50">entity-broadcast-range-percentage</span>=75</div>
+              </div>
+            </div>
+
+            <p class="mb-4">
+              <strong class="text-white">Pro tip:</strong> View distance has the biggest performance impact. Each additional chunk multiplies the server load. Start at 6 and only increase if you have CPU headroom.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold text-white mb-4">3. Configure Paper/Purpur Settings</h2>
+            <p class="mb-4">
+              If you're using Paper or Purpur (which you should be), these config tweaks will dramatically improve performance:
+            </p>
+
+            <div class="space-y-4 mb-4">
+              <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-l-4 border-[#FF9C20] p-4">
+                <h4 class="font-bold text-white mb-2">paper-world-defaults.yml</h4>
+                <ul class="space-y-1 text-sm">
+                  <li><code class="text-cyan-50">max-auto-save-chunks-per-tick: 8</code> - Reduce lag spikes from autosave</li>
+                  <li><code class="text-cyan-50">optimize-explosions: true</code> - Faster TNT/creeper calculations</li>
+                  <li><code class="text-cyan-50">mob-spawner-tick-rate: 2</code> - Reduce spawner processing</li>
+                  <li><code class="text-cyan-50">disable-chest-cat-detection: true</code> - Minor optimization</li>
+                </ul>
+              </div>
+
+              <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-l-4 border-purple-50 p-4">
+                <h4 class="font-bold text-white mb-2">Per-World Optimization</h4>
+                <p class="text-sm">Different worlds need different settings. Reduce mob caps and view distance in resource worlds. Increase them in your main survival world where player experience matters most.</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold text-white mb-4">4. Java Startup Flags (Aikar's Flags)</h2>
+            <p class="mb-4">
+              Your Java garbage collection settings can make or break server performance. Use Aikar's famous flags for optimal performance:
+            </p>
+
+            <div class="bg-gray-100 border-2 border-gray-80 rounded-xl p-6 mb-4 font-mono text-xs overflow-x-auto">
+              <div class="text-cool-gray-40 mb-2"># For 10GB RAM allocation (adjust -Xmx and -Xms to your needs)</div>
+              <div class="text-cool-gray-20 whitespace-nowrap">
+                java -Xms10G -Xmx10G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar server.jar nogui
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-cyan-50 rounded-xl p-6">
+              <h4 class="text-lg font-bold text-white mb-3">💡 Memory Allocation Guidelines</h4>
+              <ul class="space-y-2 text-sm">
+                <li><strong class="text-white">Small (1-20 players):</strong> 4-6GB RAM</li>
+                <li><strong class="text-white">Medium (20-50 players):</strong> 6-10GB RAM</li>
+                <li><strong class="text-white">Large (50-100 players):</strong> 10-16GB RAM</li>
+                <li><strong class="text-white">Network (100+ players):</strong> 16GB+ RAM per server instance</li>
+              </ul>
+              <p class="text-sm mt-3 text-cool-gray-40">Note: -Xms and -Xmx should always be equal to prevent heap resizing.</p>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold text-white mb-4">5. Essential Performance Plugins</h2>
+            <p class="mb-4">
+              Even with perfect configuration, these plugins can provide additional optimization:
+            </p>
+
+            <div class="grid gap-4 mb-4">
+              <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+                <div class="flex items-start justify-between mb-3">
+                  <h4 class="text-lg font-bold text-white">Spark</h4>
+                  <span class="px-2 py-1 bg-green-50/20 text-green-50 text-xs rounded">ESSENTIAL</span>
+                </div>
+                <p class="text-sm mb-2">Performance profiler that shows exactly what's causing lag. Essential for troubleshooting.</p>
+                <a href="https://spark.lucko.me/" class="text-[#FF9C20] hover:text-[#FF8D00] text-sm">spark.lucko.me →</a>
+              </div>
+
+              <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+                <div class="flex items-start justify-between mb-3">
+                  <h4 class="text-lg font-bold text-white">Chunky (Pre-generation)</h4>
+                  <span class="px-2 py-1 bg-purple-50/20 text-purple-50 text-xs rounded">RECOMMENDED</span>
+                </div>
+                <p class="text-sm mb-2">Pre-generate your world to eliminate exploration lag. Run before opening to players.</p>
+                <div class="text-sm font-mono text-cool-gray-40">/chunky radius 5000 → /chunky start</div>
+              </div>
+
+              <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+                <h4 class="text-lg font-bold text-white mb-3">FarmControl / EntityTrackerFixer</h4>
+                <p class="text-sm">Limit entities per chunk and optimize mob farms. Prevents lag machines (intentional or not).</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold text-white mb-4">6. World Management Best Practices</h2>
+            <div class="space-y-4">
+              <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-l-4 border-[#FF9C20] p-4">
+                <h4 class="font-bold text-white mb-2">Set World Borders</h4>
+                <p class="text-sm mb-2">Prevent infinite world expansion:</p>
+                <div class="font-mono text-sm text-cool-gray-40">/worldborder set 10000</div>
+              </div>
+
+              <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-l-4 border-cyan-50 p-4">
+                <h4 class="font-bold text-white mb-2">Regular Maintenance</h4>
+                <ul class="text-sm space-y-1">
+                  <li>• Clear entities weekly: <code class="text-cool-gray-40">/minecraft:kill @e[type=!player]</code></li>
+                  <li>• Reset resource worlds monthly to prevent bloat</li>
+                  <li>• Monitor world file sizes - trim if over 10GB</li>
+                </ul>
+              </div>
+
+              <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-l-4 border-purple-50 p-4">
+                <h4 class="font-bold text-white mb-2">Disable Unused Dimensions</h4>
+                <p class="text-sm">If you don't use the Nether or End, disable them in bukkit.yml to save resources.</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold text-white mb-4">7. Hardware Considerations</h2>
+            <p class="mb-4">
+              Software optimization only goes so far. Hardware matters:
+            </p>
+
+            <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-8">
+              <h4 class="text-xl font-bold text-white mb-4">What Minecraft Needs Most</h4>
+              <div class="space-y-3 text-sm">
+                <div class="flex items-start gap-3">
+                  <span class="text-2xl">🏆</span>
+                  <div>
+                    <strong class="text-white">Single-Thread CPU Performance</strong>
+                    <p class="text-cool-gray-40">Minecraft is primarily single-threaded. A 4.5GHz quad-core beats a 3.0GHz 16-core for Minecraft.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="text-2xl">⚡</span>
+                  <div>
+                    <strong class="text-white">Fast Storage (NVMe SSD)</strong>
+                    <p class="text-cool-gray-40">Chunk loading, world saving, and plugin data all benefit from fast storage. NVMe Gen4 ideal.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="text-2xl">💾</span>
+                  <div>
+                    <strong class="text-white">Sufficient RAM</strong>
+                    <p class="text-cool-gray-40">More isn't always better. 16GB is the sweet spot for most servers. Use fast DDR4/DDR5.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-[#FF9C20] to-[#FF8D00] rounded-xl p-6 mt-6 text-black">
+              <h4 class="text-xl font-bold mb-2">✨ QuackHost Advantage</h4>
+              <p class="mb-3">Our servers use AMD Ryzen 9 7950X processors with industry-leading single-thread performance, DDR5 RAM, and NVMe Gen4 SSDs - purpose-built for Minecraft.</p>
+              <a href="/games#minecraft" class="inline-block px-6 py-3 bg-black text-white font-semibold rounded-lg hover:bg-gray-90 transition-all">
+                View Minecraft Plans →
+              </a>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold text-white mb-4">8. Monitoring and Troubleshooting</h2>
+            <p class="mb-4">
+              Optimization is ongoing. Here's how to monitor performance and diagnose issues:
+            </p>
+
+            <div class="space-y-4">
+              <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+                <h4 class="text-lg font-bold text-white mb-3">Daily Monitoring Commands</h4>
+                <ul class="space-y-2 text-sm font-mono">
+                  <li class="flex items-start gap-2">
+                    <span class="text-[#FF9C20]">•</span>
+                    <span><code class="text-cyan-50">/tps</code> - Check server tick rate</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-[#FF9C20]">•</span>
+                    <span><code class="text-cyan-50">/spark tps</code> - Detailed TPS report</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-[#FF9C20]">•</span>
+                    <span><code class="text-cyan-50">/spark profiler</code> - Start profiling session</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-[#FF9C20]">•</span>
+                    <span><code class="text-cyan-50">/minecraft:debug start</code> - Identify lag sources</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6">
+                <h4 class="text-lg font-bold text-white mb-3">Common Lag Sources</h4>
+                <ul class="space-y-2 text-sm">
+                  <li><strong class="text-white">Redstone clocks:</strong> Limit to 16 redstone updates per chunk</li>
+                  <li><strong class="text-white">Mob farms:</strong> Use FarmControl to limit entities per chunk (50-100 max)</li>
+                  <li><strong class="text-white">Hopper chains:</strong> Replace with water streams or use HopperOptimizer</li>
+                  <li><strong class="text-white">Large explosions:</strong> Enable optimize-explosions in Paper</li>
+                  <li><strong class="text-white">Poorly coded plugins:</strong> Profile with Spark to identify culprits</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold text-white mb-4">Optimization Checklist</h2>
+            <div class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-[#FF9C20] rounded-xl p-8">
+              <div class="grid md:grid-cols-2 gap-x-8 gap-y-2 text-sm">
+                <div class="flex items-start gap-2">
+                  <span class="text-green-50">✓</span>
+                  <span>Using Paper/Purpur server software</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-green-50">✓</span>
+                  <span>Aikar's flags configured correctly</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-green-50">✓</span>
+                  <span>View distance set to 6-8 chunks</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-green-50">✓</span>
+                  <span>Simulation distance at 4-6</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-green-50">✓</span>
+                  <span>World pre-generated with Chunky</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-green-50">✓</span>
+                  <span>World border set appropriately</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-green-50">✓</span>
+                  <span>Spark installed for monitoring</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-green-50">✓</span>
+                  <span>Entity limits configured</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-green-50">✓</span>
+                  <span>Paper optimizations enabled</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-green-50">✓</span>
+                  <span>Regular maintenance schedule</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold text-white mb-4">Conclusion</h2>
+            <p class="mb-4">
+              Server optimization isn't a one-time task - it's an ongoing process of monitoring, testing, and adjusting. Start with the basics (server software, view distance, startup flags), then fine-tune based on your specific needs and player count.
+            </p>
+            <p class="mb-4">
+              Remember: the goal isn't to squeeze every last bit of performance from your server, but to provide a smooth, enjoyable experience for your players. A well-optimized server running at 19.5 TPS with happy players beats a 20 TPS server that crashes every hour.
+            </p>
+            <p>
+              Need help optimizing your server? Our support team at QuackHost has helped thousands of server owners maximize performance. Check out our <a href="/support" class="text-[#FF9C20] hover:text-[#FF8D00]">Support Center</a> or join our <a href="/discord-flock" class="text-[#FF9C20] hover:text-[#FF8D00]">Discord community</a> for personalized advice.
+            </p>
+          </section>
+
+        </div>
+      </div>
+
+      <!-- Article Footer -->
+      <footer class="mt-12 pt-8 border-t border-gray-80">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <span class="text-cool-gray-40 text-sm">Share this article:</span>
+            <div class="flex gap-2">
+              <button class="p-2 bg-gray-90 hover:bg-gray-80 rounded-lg transition-colors text-cool-gray-20">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </button>
+              <button class="p-2 bg-gray-90 hover:bg-gray-80 rounded-lg transition-colors text-cool-gray-20">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <a href="/blog" class="text-[#FF9C20] hover:text-[#FF8D00] transition-colors text-sm font-semibold">
+            Read More Articles →
+          </a>
+        </div>
+      </footer>
+
+    </article>
+
+    <!-- Related Articles -->
+    <section class="mb-20">
+      <h3 class="text-2xl font-bold text-white mb-8">Related Articles</h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="/blog" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-[#FF9C20] transition-all group">
+          <span class="text-xs text-purple-50 font-bold">TUTORIAL</span>
+          <h4 class="text-xl font-bold text-white mt-2 mb-2 group-hover:text-[#FF9C20] transition-colors">Choosing the Perfect Data Center Location</h4>
+          <p class="text-cool-gray-40 text-sm">Learn how to select the optimal server location for your player base...</p>
+        </a>
+        <a href="/blog" class="bg-gradient-to-br from-gray-90 to-gray-100 border-2 border-gray-80 rounded-xl p-6 hover:border-[#FF9C20] transition-all group">
+          <span class="text-xs text-cyan-50 font-bold">GUIDE</span>
+          <h4 class="text-xl font-bold text-white mt-2 mb-2 group-hover:text-[#FF9C20] transition-colors">Getting Started with QuackPlane</h4>
+          <p class="text-cool-gray-40 text-sm">Master our intuitive control panel in under 10 minutes...</p>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</Layout>
