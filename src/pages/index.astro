@@ -104,7 +104,13 @@ import Layout from "../layouts/layout.astro";
   </div>
 
   <!-- Supported Games Section -->
-  <div class="mb-20 lg:mb-32">
+  <div
+    class="mb-20 lg:mb-32"
+    x-data="{ revealed: false }"
+    x-intersect:enter="revealed = true"
+    :class="revealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
+    class="transition-all duration-1000 ease-out"
+  >
     <div class="text-center mb-16">
       <h2 class="text-3xl lg:text-5xl font-bold mb-4">
         <span class="text-white">Host your favorite</span>
@@ -590,7 +596,17 @@ import Layout from "../layouts/layout.astro";
   </div>
 
   <!-- Testimonials Section -->
-  <div class="mb-20 lg:mb-32">
+  <div
+    class="mb-20 lg:mb-32 relative"
+    x-data="{ revealed: false }"
+    x-intersect:enter="revealed = true"
+    :class="revealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
+    class="transition-all duration-1000 ease-out"
+  >
+    <!-- Decorative Doodles -->
+    <img src="/index/doodles/star.svg" alt="" class="absolute -top-12 left-4 w-16 h-16 opacity-10 animate-float hidden md:block" style="animation-delay: 0s;" />
+    <img src="/index/doodles/heart.svg" alt="" class="absolute -top-8 right-8 w-14 h-14 opacity-10 animate-float hidden md:block" style="animation-delay: 1s;" />
+
     <div class="text-center mb-16">
       <h2 class="text-3xl lg:text-5xl font-bold mb-4">
         <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">Loved by gamers</span>
@@ -968,7 +984,13 @@ import Layout from "../layouts/layout.astro";
   </div>
 
   <!-- Why Switch Section -->
-  <div class="mb-20 lg:mb-32">
+  <div
+    class="mb-20 lg:mb-32"
+    x-data="{ revealed: false }"
+    x-intersect:enter="revealed = true"
+    :class="revealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
+    class="transition-all duration-1000 ease-out"
+  >
     <div class="text-center mb-16">
       <h2 class="text-3xl lg:text-5xl font-bold mb-4">
         <span class="text-white">Why switch to</span>

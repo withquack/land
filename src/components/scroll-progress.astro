@@ -1,0 +1,14 @@
+---
+
+---
+
+<div
+  x-data="{ scrollProgress: 0 }"
+  @scroll.window="scrollProgress = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100"
+  class="fixed top-0 left-0 right-0 z-50 h-1 bg-gray-80/50"
+>
+  <div
+    class="h-full bg-gradient-to-r from-[#FF9C20] via-purple-50 to-cyan-50 transition-all duration-150 ease-out shadow-lg shadow-[#FF9C20]/50"
+    :style="`width: ${scrollProgress}%`"
+  ></div>
+</div>
