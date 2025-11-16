@@ -1,0 +1,183 @@
+---
+import Layout from "../layouts/layout.astro";
+
+const deployments = [
+  {
+    category: "Main Branches",
+    items: [
+      { name: "main", url: "https://13fc3f97.staging-quack-land.pages.dev", commit: "3cc53e9" },
+      { name: "view-cloudflare-comments", url: "https://13fc3f97.staging-quack-land.pages.dev", commit: "3cc53e9" },
+    ]
+  },
+  {
+    category: "Iterative Site Improvements",
+    items: [
+      { name: "iterative-site-improvements", url: "https://4b95fc55.staging-quack-land.pages.dev", commit: "963659f" },
+    ]
+  },
+  {
+    category: "Landing Page Variations",
+    items: [
+      { name: "landing-page-conversion-masterpiece", url: "https://db176e29.staging-quack-land.pages.dev", commit: "a16d57a" },
+      { name: "landing-page-masterpiece", url: "https://aab26c5e.staging-quack-land.pages.dev", commit: "796e571" },
+      { name: "prelaunch-landing-conversion", url: "https://0909a41b.staging-quack-land.pages.dev", commit: "5794162" },
+    ]
+  },
+  {
+    category: "Ideate 100 Series",
+    items: [
+      { name: "ideate-100 (01P3bA8Q)", url: "https://c5c80675.staging-quack-land.pages.dev", commit: "72cebbf" },
+      { name: "ideate-100 (01QTKE4e)", url: "https://e4cb49bb.staging-quack-land.pages.dev", commit: "2e02164" },
+    ]
+  },
+  {
+    category: "Ideate 1000x Series",
+    items: [
+      { name: "ideate-1000x (0126jT91)", url: "https://c18757e2.staging-quack-land.pages.dev", commit: "f6826d2" },
+      { name: "ideate-1000x (012YvgsX)", url: "https://15a40c6a.staging-quack-land.pages.dev", commit: "98a8556" },
+      { name: "ideate-1000x (012w4sJz)", url: "https://1a2dd9a7.staging-quack-land.pages.dev", commit: "8e6ea3e" },
+      { name: "ideate-1000x (0136VqiZ)", url: "https://be40719e.staging-quack-land.pages.dev", commit: "59bb5a3" },
+      { name: "ideate-1000x (017eAbBC)", url: "https://1b2d306b.staging-quack-land.pages.dev", commit: "9c5c296" },
+      { name: "ideate-1000x (018HWKT8)", url: "https://ba6f7759.staging-quack-land.pages.dev", commit: "67f1574" },
+      { name: "ideate-1000x (0199RKjy)", url: "https://3680dd18.staging-quack-land.pages.dev", commit: "9df6299" },
+      { name: "ideate-1000x (019Hy2h7)", url: "https://3af70c0b.staging-quack-land.pages.dev", commit: "269bf60" },
+      { name: "ideate-1000x (01ASkqF7)", url: "https://0b949537.staging-quack-land.pages.dev", commit: "7130387" },
+      { name: "ideate-1000x (01BFmW6r)", url: "https://306029dc.staging-quack-land.pages.dev", commit: "7ba3ac8" },
+      { name: "ideate-1000x (01Bqu9Rf)", url: "https://f53f4a67.staging-quack-land.pages.dev", commit: "429b949" },
+      { name: "ideate-1000x (01CeCKcb)", url: "https://726a94d3.staging-quack-land.pages.dev", commit: "245ef4c" },
+      { name: "ideate-1000x (01CmyTiD)", url: "https://4c6ed2b6.staging-quack-land.pages.dev", commit: "9cf699a" },
+      { name: "ideate-1000x (01CokPKb)", url: "https://595ad3ab.staging-quack-land.pages.dev", commit: "fb94280" },
+      { name: "ideate-1000x (01G3hEEz)", url: "https://a94fcaa0.staging-quack-land.pages.dev", commit: "b6f19aa" },
+      { name: "ideate-1000x (01GcirSC)", url: "https://ed60f375.staging-quack-land.pages.dev", commit: "2bf0327" },
+      { name: "ideate-1000x (01GmoL2e)", url: "https://ed60f375.staging-quack-land.pages.dev", commit: "18ff4d9" },
+      { name: "ideate-1000x (01HTXxSb)", url: "https://980400ef.staging-quack-land.pages.dev", commit: "7e9b49c" },
+      { name: "ideate-1000x (01HkkvgM)", url: "https://2891b47e.staging-quack-land.pages.dev", commit: "d9f4bf3" },
+      { name: "ideate-1000x (01JBtNLx)", url: "https://bed6e4ea.staging-quack-land.pages.dev", commit: "81ca60d" },
+      { name: "ideate-1000x (01LWjUSZ)", url: "https://53fb26b8.staging-quack-land.pages.dev", commit: "9868f1c" },
+      { name: "ideate-1000x (01LZLsxE)", url: "https://c619b44b.staging-quack-land.pages.dev", commit: "07abb62" },
+      { name: "ideate-1000x (01MiWjKy)", url: "https://0ac820b8.staging-quack-land.pages.dev", commit: "9812a56" },
+      { name: "ideate-1000x (01PWyAK2)", url: "https://5ac69ca3.staging-quack-land.pages.dev", commit: "7bb9dc5" },
+      { name: "ideate-1000x (01QJX43u)", url: "https://c4707ec2.staging-quack-land.pages.dev", commit: "7e03452" },
+      { name: "ideate-1000x (01QM5ZQc)", url: "https://be6ff23f.staging-quack-land.pages.dev", commit: "145c831" },
+      { name: "ideate-1000x (01QcwKDC)", url: "https://d1db54db.staging-quack-land.pages.dev", commit: "5db3968" },
+      { name: "ideate-1000x (01QgvzAR)", url: "https://254f125e.staging-quack-land.pages.dev", commit: "2be820d" },
+      { name: "ideate-1000x (01R9xKpo)", url: "https://3b84fee1.staging-quack-land.pages.dev", commit: "d3184bb" },
+      { name: "ideate-1000x (01San11b)", url: "https://0696f1bc.staging-quack-land.pages.dev", commit: "378ddac" },
+      { name: "ideate-1000x (01TR355k)", url: "https://b2831535.staging-quack-land.pages.dev", commit: "b7629f6" },
+      { name: "ideate-1000x (01V8K88M)", url: "https://77e41e77.staging-quack-land.pages.dev", commit: "949c447" },
+      { name: "ideate-1000x (01VAKNRQ)", url: "https://59d7826a.staging-quack-land.pages.dev", commit: "1cc5c5f" },
+      { name: "ideate-1000x (01VFW5qz)", url: "https://1339e495.staging-quack-land.pages.dev", commit: "0d93aa1" },
+      { name: "ideate-1000x (01VKX2mx)", url: "https://7c263988.staging-quack-land.pages.dev", commit: "ffce660" },
+      { name: "ideate-1000x (01XZUXGn)", url: "https://844d152f.staging-quack-land.pages.dev", commit: "8b10f62" },
+      { name: "ideate-1000x (01YS9GMM)", url: "https://ba9eb818.staging-quack-land.pages.dev", commit: "171e770" },
+    ]
+  }
+];
+---
+
+<Layout title="/ Deployment Index">
+  <div class="mb-8">
+    <h1 class="text-4xl md:text-5xl font-semibold mb-4">
+      <span class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text">
+        Deployment Index
+      </span>
+    </h1>
+    <p class="text-cool-gray-40 text-lg">
+      Browse all Cloudflare Pages deployments across different branches and iterations.
+    </p>
+    <p class="text-cool-gray-50 text-sm mt-2">
+      Last updated: November 16, 2025
+    </p>
+  </div>
+
+  {deployments.map((category) => (
+    <div class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4 border-b border-cool-gray-70 pb-2">
+        {category.category}
+        <span class="text-cool-gray-50 text-lg ml-2">({category.items.length})</span>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {category.items.map((deployment) => (
+          <a
+            href={deployment.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block p-4 bg-cool-gray-90 hover:bg-cool-gray-80 border border-cool-gray-70 hover:border-[#FF9C20] transition-all duration-200 group"
+          >
+            <div class="flex items-start justify-between mb-2">
+              <h3 class="text-white font-semibold text-sm group-hover:text-[#FF9C20] transition-colors flex-1">
+                {deployment.name}
+              </h3>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 text-cool-gray-50 group-hover:text-[#FF9C20] flex-shrink-0 ml-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </div>
+            <div class="text-cool-gray-50 text-xs font-mono mb-1">
+              {deployment.commit}
+            </div>
+            <div class="text-cool-gray-60 text-xs break-all">
+              {deployment.url.replace('https://', '')}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  ))}
+
+  <div class="mt-16 p-6 bg-cool-gray-90 border border-cool-gray-70">
+    <h3 class="text-xl font-semibold mb-2">About This Index</h3>
+    <p class="text-cool-gray-40 leading-relaxed mb-2">
+      This page provides quick access to all live Cloudflare Pages deployments. Each link opens in a new tab for easy comparison between different iterations.
+    </p>
+    <p class="text-cool-gray-50 text-sm">
+      Total deployments: <strong class="text-white">{deployments.reduce((acc, cat) => acc + cat.items.length, 0)}</strong>
+    </p>
+  </div>
+
+  <style>
+    /* Custom scrollbar for better aesthetics */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #FF9C20;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #FF8D00;
+    }
+  </style>
+
+  <script>
+    // Note: Opening links in background tabs is controlled by browser behavior
+    // Ctrl+Click or Cmd+Click will open in background, regular click may open in foreground
+    // This script attempts to open links in background on regular click for supported browsers
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('a[target="_blank"]');
+
+      links.forEach(link => {
+        link.addEventListener('click', (e) => {
+          // Check if user is not already using Ctrl/Cmd + Click
+          if (!e.ctrlKey && !e.metaKey) {
+            // Try to open in background by simulating Ctrl+Click behavior
+            // Note: This doesn't reliably work across all browsers due to popup blocking
+            // The target="_blank" will handle the new tab, this is just an attempt at background opening
+          }
+        });
+      });
+    });
+  </script>
+</Layout>
