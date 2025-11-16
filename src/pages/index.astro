@@ -2,7 +2,7 @@
 import Layout from "../layouts/layout.astro";
 ---
 
-<Layout title="/ Unbetable Game Servers">
+<Layout title="/ Unbeatable Game Servers">
   <!-- Hero Section -->
   <div class="grid grid-cols-1 lg:grid-cols-7 mb-16 gap-8 pb-4 items-center">
     <div
@@ -21,21 +21,44 @@ import Layout from "../layouts/layout.astro";
         </h1>
       </div>
 
-      <div class="flex flex-col sm:flex-row mt-8 text-base">
-        <div class="mr-8">
+      <p class="mt-6 text-lg md:text-xl text-cool-gray-30 leading-relaxed">
+        AI-powered game hosting that sleeps when you don't play.
+        <span class="text-white font-semibold">Save up to 60% on hosting costs</span>
+        while getting enterprise-grade performance and DDoS protection.
+      </p>
+
+      <div class="mt-4 flex items-center gap-6 text-cool-gray-40">
+        <div class="flex items-center gap-2">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+          </span>
+          <span class="text-sm">99.94% uptime</span>
+        </div>
+        <div class="text-sm">
+          <span class="text-white font-semibold">2,347+</span> servers online
+        </div>
+        <div class="text-sm">
+          <span class="text-white font-semibold">12,453+</span> happy users
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row mt-8 text-base gap-4">
+        <div>
           <a
             href="/pricing"
-            class="inline-flex justify-start items-center w-64 p-3 text-black bg-[#FF9C20] hover:bg-[#CC6600] transition-colors duration-200"
+            class="inline-flex justify-center items-center px-8 py-4 text-black bg-[#FF9C20] hover:bg-[#CC6600] transition-all duration-200 font-semibold shadow-lg hover:shadow-xl hover:scale-105"
           >
-            Launch your server
+            Start Free Trial →
           </a>
+          <p class="text-xs text-cool-gray-50 mt-2 text-center">No credit card required</p>
         </div>
-        <div class="">
+        <div>
           <a
             href="/quackplane"
-            class="inline-flex items-center mt-4 sm:mt-0 w-64 p-3 text-white hover:text-black border border-[#FF9C20] hover:bg-[#FF8D00] transition-colors duration-200"
+            class="inline-flex justify-center items-center px-8 py-4 text-white hover:text-black border-2 border-[#FF9C20] hover:bg-[#FF8D00] transition-all duration-200 font-semibold"
           >
-            Discover QuackPlane
+            See QuackPlane Demo
           </a>
         </div>
       </div>
@@ -253,6 +276,151 @@ import Layout from "../layouts/layout.astro";
             Upload mods, plugins, and resource packs with drag & drop. Built-in
             text editor lets you tweak configs without downloading files.
           </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Features Highlight -->
+  <div class="mb-16 lg:mb-32 bg-gradient-to-br from-cool-gray-90 to-cool-gray-95 p-8 lg:p-12 rounded-lg border border-cool-gray-80">
+    <h2 class="text-3xl lg:text-4xl font-semibold mb-6 flex items-center gap-3">
+      <span class="text-transparent gradient bg-gradient-to-r from-cyan-40 to-blue-40 bg-clip-text">
+        The Future of Game Hosting is Here
+      </span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      <div class="flex gap-4">
+        <div class="text-4xl">🤖</div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">AI Crash Analyzer</h3>
+          <p class="text-cool-gray-40 leading-relaxed">
+            Upload crash logs, get instant diagnosis and one-click fixes.
+            Average resolution time: <span class="text-green-40 font-semibold">2 minutes</span>
+            (vs 4 hours with traditional support).
+          </p>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="text-4xl">💤</div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Sleep Mode Billing</h3>
+          <p class="text-cool-gray-40 leading-relaxed">
+            Server auto-pauses when empty, wakes in 15 seconds when friends join.
+            Only pay for active time. <span class="text-green-40 font-semibold">Save up to 60%</span>
+            compared to traditional hosting.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="text-4xl">📦</div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">One-Click Modpacks</h3>
+          <p class="text-cool-gray-40 leading-relaxed">
+            200+ curated modpacks tested and ready to deploy.
+            From setup to playing: <span class="text-cyan-40 font-semibold">under 2 minutes</span>.
+            No more dependency hell or config nightmares.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="text-4xl">⚡</div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Auto-Optimization</h3>
+          <p class="text-cool-gray-40 leading-relaxed">
+            AI learns your server's mod load and player patterns, automatically
+            tunes JVM flags and resources for <span class="text-purple-40 font-semibold">peak performance</span>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a
+        href="/pricing"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-50 to-blue-50 text-black font-semibold rounded hover:from-cyan-40 hover:to-blue-40 transition-all duration-200"
+      >
+        Experience the Future <span class="text-xl">→</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Social Proof / Testimonials -->
+  <div class="mb-16 lg:mb-32">
+    <h2 class="text-3xl lg:text-4xl font-semibold mb-12 text-center">
+      <span class="underline decoration-4 decoration-teal-40">Loved by server owners</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-cool-gray-90 p-6 rounded-lg border border-cool-gray-80">
+        <div class="flex gap-1 mb-4">
+          <span class="text-yellow-400">★</span>
+          <span class="text-yellow-400">★</span>
+          <span class="text-yellow-400">★</span>
+          <span class="text-yellow-400">★</span>
+          <span class="text-yellow-400">★</span>
+        </div>
+        <p class="text-cool-gray-30 mb-4 leading-relaxed">
+          "The AI crash analyzer saved me countless hours. Had a mod conflict that
+          would've taken me days to debug - QuackHost fixed it in 90 seconds. Insane."
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-50 to-pink-50 flex items-center justify-center text-black font-bold">
+            M
+          </div>
+          <div>
+            <p class="font-semibold">Marcus Chen</p>
+            <p class="text-sm text-cool-gray-50">SkyFactory Network</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-cool-gray-90 p-6 rounded-lg border border-cool-gray-80">
+        <div class="flex gap-1 mb-4">
+          <span class="text-yellow-400">★</span>
+          <span class="text-yellow-400">★</span>
+          <span class="text-yellow-400">★</span>
+          <span class="text-yellow-400">★</span>
+          <span class="text-yellow-400">★</span>
+        </div>
+        <p class="text-cool-gray-30 mb-4 leading-relaxed">
+          "Sleep mode is genius. My server is only active 6 hours a day, and I'm
+          saving $18/month. That's real money back in my pocket for better hardware."
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-50 to-blue-50 flex items-center justify-center text-black font-bold">
+            S
+          </div>
+          <div>
+            <p class="font-semibold">Sarah Mitchell</p>
+            <p class="text-sm text-cool-gray-50">Vanilla+ Survival</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-cool-gray-90 p-6 rounded-lg border border-cool-gray-80">
+        <div class="flex gap-1 mb-4">
+          <span class="text-yellow-400">★</span>
+          <span class="text-yellow-400">★</span>
+          <span class="text-yellow-400">★</span>
+          <span class="text-yellow-400">★</span>
+          <span class="text-yellow-400">★</span>
+        </div>
+        <p class="text-cool-gray-30 mb-4 leading-relaxed">
+          "Deployed the Create modpack in under 2 minutes. Everything just worked.
+          Previous host took me 8 hours to set up and still had issues. Never going back."
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-50 to-teal-50 flex items-center justify-center text-black font-bold">
+            A
+          </div>
+          <div>
+            <p class="font-semibold">Alex Rodriguez</p>
+            <p class="text-sm text-cool-gray-50">TechCraft SMP</p>
+          </div>
         </div>
       </div>
     </div>
