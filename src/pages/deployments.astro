@@ -161,23 +161,9 @@ const deployments = [
     }
   </style>
 
-  <script>
+  <script is:inline>
     // Note: Opening links in background tabs is controlled by browser behavior
     // Ctrl+Click or Cmd+Click will open in background, regular click may open in foreground
-    // This script attempts to open links in background on regular click for supported browsers
-    document.addEventListener('DOMContentLoaded', () => {
-      const links = document.querySelectorAll('a[target="_blank"]');
-
-      links.forEach(link => {
-        link.addEventListener('click', (e) => {
-          // Check if user is not already using Ctrl/Cmd + Click
-          if (!e.ctrlKey && !e.metaKey) {
-            // Try to open in background by simulating Ctrl+Click behavior
-            // Note: This doesn't reliably work across all browsers due to popup blocking
-            // The target="_blank" will handle the new tab, this is just an attempt at background opening
-          }
-        });
-      });
-    });
+    // Links open in new tabs via target="_blank"
   </script>
 </Layout>
