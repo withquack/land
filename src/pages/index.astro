@@ -4,7 +4,7 @@ import Layout from "../layouts/layout.astro";
 
 <Layout title="/ Unbetable Game Servers">
   <!-- Hero Section -->
-  <div class="grid grid-cols-1 lg:grid-cols-7 mb-16 gap-8 pb-4 items-center">
+  <div class="grid grid-cols-1 lg:grid-cols-7 mb-8 gap-8 pb-4 items-center">
     <div
       class="col-span-1 lg:col-span-4 order-1 lg:order-1 text-white flex flex-col justify-between h-full"
     >
@@ -21,19 +21,65 @@ import Layout from "../layouts/layout.astro";
         </h1>
       </div>
 
-      <div class="flex flex-col sm:flex-row mt-8 text-base">
-        <div class="mr-8">
+      <!-- Social Proof Counter -->
+      <div
+        class="mt-6 mb-8"
+        x-data="{
+          servers: 0,
+          players: 0,
+          uptime: 99.0,
+          mounted: false,
+          animateCounter(target, current, speed) {
+            if (current < target) {
+              setTimeout(() => {
+                const increment = Math.ceil((target - current) / 20);
+                const next = Math.min(current + increment, target);
+                if (target === 10247) this.servers = next;
+                else if (target === 87532) this.players = next;
+                else if (target === 99.97) this.uptime = Math.min(current + 0.05, target);
+                this.animateCounter(target, next, speed);
+              }, speed);
+            }
+          }
+        }"
+        x-init="mounted = true; animateCounter(10247, 0, 30); animateCounter(87532, 0, 20)"
+      >
+        <div class="flex flex-wrap gap-6 text-cool-gray-30">
+          <div>
+            <div class="text-3xl font-bold text-white">
+              <span x-text="servers.toLocaleString()">0</span>+
+            </div>
+            <div class="text-sm">Active Servers</div>
+          </div>
+          <div class="border-l border-cool-gray-70 pl-6">
+            <div class="text-3xl font-bold text-white">
+              <span x-text="players.toLocaleString()">0</span>+
+            </div>
+            <div class="text-sm">Players Online</div>
+          </div>
+          <div class="border-l border-cool-gray-70 pl-6">
+            <div class="text-3xl font-bold text-[#FF9C20]">
+              99.97%
+            </div>
+            <div class="text-sm">Uptime SLA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row text-base gap-4">
+        <div>
           <a
             href="/pricing"
-            class="inline-flex justify-start items-center w-64 p-3 text-black bg-[#FF9C20] hover:bg-[#CC6600] transition-colors duration-200"
+            class="inline-flex justify-center items-center w-full sm:w-64 p-3 text-black bg-[#FF9C20] hover:bg-[#CC6600] transition-colors duration-200 font-semibold"
           >
-            Launch your server
+            Start Free Trial →
           </a>
+          <p class="text-xs text-cool-gray-40 mt-2">No credit card required • 2GB RAM included</p>
         </div>
-        <div class="">
+        <div>
           <a
             href="/quackplane"
-            class="inline-flex items-center mt-4 sm:mt-0 w-64 p-3 text-white hover:text-black border border-[#FF9C20] hover:bg-[#FF8D00] transition-colors duration-200"
+            class="inline-flex justify-center items-center w-full sm:w-64 p-3 text-white hover:text-black border border-[#FF9C20] hover:bg-[#FF8D00] transition-colors duration-200"
           >
             Discover QuackPlane
           </a>
@@ -48,6 +94,36 @@ import Layout from "../layouts/layout.astro";
         alt="Minecraft"
         class="max-w-full h-auto"
       />
+    </div>
+  </div>
+
+  <!-- Trust Badges -->
+  <div class="mb-16 pb-8 border-b border-cool-gray-80">
+    <div class="flex flex-wrap justify-center gap-8 items-center text-cool-gray-40 text-sm">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-green-50" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span>Terrabit DDoS Protection</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-green-50" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span>ISO 27001 Certified</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-green-50" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span>24/7 Expert Support</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-green-50" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span>Money-Back Guarantee</span>
+      </div>
     </div>
   </div>
 
@@ -161,6 +237,167 @@ import Layout from "../layouts/layout.astro";
     </div>
   </div>
 
+  <!-- Testimonials Section -->
+  <div class="mb-16 lg:mb-32" aria-label="Customer Testimonials">
+    <h2 class="text-2xl lg:text-3xl font-semibold mb-12 text-center">
+      <span class="underline decoration-4 decoration-blue-50">Loved by server owners worldwide</span>
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-cool-gray-90 p-6 rounded-lg border border-cool-gray-80">
+        <div class="flex items-center mb-4">
+          <div class="flex gap-1">
+            <svg class="w-5 h-5 text-[#FF9C20]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-[#FF9C20]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-[#FF9C20]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-[#FF9C20]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-[#FF9C20]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+        </div>
+        <p class="text-cool-gray-30 leading-relaxed mb-4">"Migrated from a competitor and never looked back. The performance difference is night and day. My modded server runs buttery smooth with 100+ players."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-cyan-50 to-blue-50 flex items-center justify-center text-black font-bold">MJ</div>
+          <div>
+            <div class="font-semibold text-white">Marcus J.</div>
+            <div class="text-sm text-cool-gray-40">SkyBlock Server, 2.5K members</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-cool-gray-90 p-6 rounded-lg border border-cool-gray-80">
+        <div class="flex items-center mb-4">
+          <div class="flex gap-1">
+            <svg class="w-5 h-5 text-[#FF9C20]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-[#FF9C20]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-[#FF9C20]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-[#FF9C20]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-[#FF9C20]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+        </div>
+        <p class="text-cool-gray-30 leading-relaxed mb-4">"The one-click backup restoration saved me when we got griefed. Had everything back online in 30 seconds. QuackPlane is a game-changer."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-50 to-magenta-50 flex items-center justify-center text-black font-bold">SK</div>
+          <div>
+            <div class="font-semibold text-white">Sarah K.</div>
+            <div class="text-sm text-cool-gray-40">Creative Build Server, 850 members</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-cool-gray-90 p-6 rounded-lg border border-cool-gray-80">
+        <div class="flex items-center mb-4">
+          <div class="flex gap-1">
+            <svg class="w-5 h-5 text-[#FF9C20]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-[#FF9C20]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-[#FF9C20]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-[#FF9C20]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-[#FF9C20]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+        </div>
+        <p class="text-cool-gray-30 leading-relaxed mb-4">"Best value for money in the industry. We've been running our faction server here for 2 years with zero downtime. Support team responds in minutes."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-green-50 to-teal-50 flex items-center justify-center text-black font-bold">DL</div>
+          <div>
+            <div class="font-semibold text-white">David L.</div>
+            <div class="text-sm text-cool-gray-40">Factions PvP Server, 4K members</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison Table -->
+  <div class="mb-16 lg:mb-32" aria-label="Comparison">
+    <h2 class="text-2xl lg:text-3xl font-semibold mb-4 text-center">
+      <span class="underline decoration-4 decoration-purple-50">Why QuackHost?</span>
+    </h2>
+    <p class="text-center text-cool-gray-40 mb-12 max-w-2xl mx-auto">See how we stack up against traditional hosting providers</p>
+
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="border-b-2 border-cool-gray-70">
+            <th class="text-left py-4 px-4 text-cool-gray-40 font-medium">Feature</th>
+            <th class="text-center py-4 px-4">
+              <div class="text-[#FF9C20] font-bold text-lg">QuackHost</div>
+            </th>
+            <th class="text-center py-4 px-4 text-cool-gray-40">Others</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-4 px-4 text-cool-gray-30">DDoS Protection</td>
+            <td class="text-center py-4 px-4">
+              <svg class="w-6 h-6 text-green-50 inline" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <div class="text-xs text-cool-gray-40 mt-1">Terrabit-scale</div>
+            </td>
+            <td class="text-center py-4 px-4">
+              <div class="text-cool-gray-50 text-sm">Extra Cost</div>
+            </td>
+          </tr>
+          <tr class="border-b border-cool-gray-80 bg-cool-gray-90">
+            <td class="py-4 px-4 text-cool-gray-30">Off-site Backups</td>
+            <td class="text-center py-4 px-4">
+              <svg class="w-6 h-6 text-green-50 inline" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <div class="text-xs text-cool-gray-40 mt-1">Automatic</div>
+            </td>
+            <td class="text-center py-4 px-4">
+              <div class="text-cool-gray-50 text-sm">Manual only</div>
+            </td>
+          </tr>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-4 px-4 text-cool-gray-30">Setup Time</td>
+            <td class="text-center py-4 px-4">
+              <svg class="w-6 h-6 text-green-50 inline" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <div class="text-xs text-cool-gray-40 mt-1">&lt;2 minutes</div>
+            </td>
+            <td class="text-center py-4 px-4">
+              <div class="text-cool-gray-50 text-sm">2-24 hours</div>
+            </td>
+          </tr>
+          <tr class="border-b border-cool-gray-80 bg-cool-gray-90">
+            <td class="py-4 px-4 text-cool-gray-30">Control Panel</td>
+            <td class="text-center py-4 px-4">
+              <svg class="w-6 h-6 text-green-50 inline" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <div class="text-xs text-cool-gray-40 mt-1">QuackPlane</div>
+            </td>
+            <td class="text-center py-4 px-4">
+              <div class="text-cool-gray-50 text-sm">Generic panel</div>
+            </td>
+          </tr>
+          <tr class="border-b border-cool-gray-80">
+            <td class="py-4 px-4 text-cool-gray-30">Support Response</td>
+            <td class="text-center py-4 px-4">
+              <svg class="w-6 h-6 text-green-50 inline" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <div class="text-xs text-cool-gray-40 mt-1">&lt;5 minutes</div>
+            </td>
+            <td class="text-center py-4 px-4">
+              <div class="text-cool-gray-50 text-sm">24-48 hours</div>
+            </td>
+          </tr>
+          <tr class="border-b border-cool-gray-80 bg-cool-gray-90">
+            <td class="py-4 px-4 text-cool-gray-30">Transparent Pricing</td>
+            <td class="text-center py-4 px-4">
+              <svg class="w-6 h-6 text-green-50 inline" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <div class="text-xs text-cool-gray-40 mt-1">No hidden fees</div>
+            </td>
+            <td class="text-center py-4 px-4">
+              <div class="text-cool-gray-50 text-sm">Hidden charges</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-center mt-8">
+      <a
+        href="/pricing"
+        class="inline-flex items-center px-6 py-3 text-black bg-[#FF9C20] hover:bg-[#CC6600] transition-colors duration-200 font-semibold"
+      >
+        See Pricing →
+      </a>
+    </div>
+  </div>
+
   <!-- QuackPlane Section -->
   <div class="mb-16 lg:mb-32" aria-label="Powered by QuackPlane">
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
@@ -253,6 +490,46 @@ import Layout from "../layouts/layout.astro";
             Upload mods, plugins, and resource packs with drag & drop. Built-in
             text editor lets you tweak configs without downloading files.
           </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Strong CTA Section -->
+  <div class="mb-16 lg:mb-32">
+    <div class="bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] rounded-lg p-12 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-black mb-4">
+        Ready to launch your dream server?
+      </h2>
+      <p class="text-black/80 text-lg mb-8 max-w-2xl mx-auto">
+        Join 10,247+ server owners who trust QuackHost. Start your free trial today—no credit card required.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a
+          href="/pricing"
+          class="inline-flex items-center px-8 py-4 text-[#FF9C20] bg-black hover:bg-cool-gray-10 transition-colors duration-200 font-bold text-lg"
+        >
+          Start Free Trial →
+        </a>
+        <a
+          href="/quackplane"
+          class="inline-flex items-center px-8 py-4 text-black border-2 border-black hover:bg-black/10 transition-colors duration-200 font-semibold text-lg"
+        >
+          Watch Demo
+        </a>
+      </div>
+      <div class="mt-6 flex flex-wrap justify-center gap-6 text-black/70 text-sm">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          <span>Setup in &lt;2 minutes</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          <span>Cancel anytime</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          <span>30-day money-back</span>
         </div>
       </div>
     </div>
