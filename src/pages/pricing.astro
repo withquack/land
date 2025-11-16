@@ -3,9 +3,771 @@ import Layout from "../layouts/layout.astro";
 ---
 
 <Layout title="/ Pricing">
-  <div class="mb-32 mt-32">
-    <p class="text-2xl font-semibold xl:text-4xl">Pricing</p>
+  <!-- Hero Section -->
+  <div class="mb-16 mt-16">
+    <h1 class="text-4xl md:text-6xl font-semibold mb-4">
+      <span
+        class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"
+      >
+        Simple, transparent pricing
+      </span>
+    </h1>
+    <p class="text-xl text-cool-gray-40 max-w-3xl">
+      No hidden fees. No surprise charges. Start free, scale as you grow.
+    </p>
   </div>
 
-  <div class="h-96 rounded-md bg-gray-200"></div>
+  <!-- Pricing Cards -->
+  <div
+    class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24"
+    x-data="{ billingCycle: 'monthly' }"
+  >
+    <!-- Starter Plan -->
+    <div
+      class="bg-gray-90 border-2 border-gray-80 hover:border-cyan-50 transition-all duration-300 p-8 flex flex-col"
+    >
+      <div class="mb-6">
+        <h2 class="text-2xl font-semibold mb-2 flex items-center">
+          <span class="underline decoration-4 decoration-cyan-50">Starter</span>
+        </h2>
+        <p class="text-cool-gray-40 text-sm">Perfect for getting started</p>
+      </div>
+
+      <div class="mb-8">
+        <div class="flex items-baseline">
+          <span class="text-5xl font-semibold text-white">$5</span>
+          <span class="text-cool-gray-40 ml-2">/month</span>
+        </div>
+        <p class="text-cool-gray-50 text-sm mt-2">Or $50/year (save 17%)</p>
+      </div>
+
+      <ul class="mb-8 space-y-4 flex-grow">
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-cyan-50 mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30">1 game server</span>
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-cyan-50 mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30">2GB RAM</span>
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-cyan-50 mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30">10 player slots</span>
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-cyan-50 mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30">Basic DDoS protection</span>
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-cyan-50 mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30">Daily backups</span>
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-cyan-50 mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30">Community support</span>
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-cyan-50 mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30">QuackPlane access</span>
+        </li>
+      </ul>
+
+      <a
+        href="#"
+        class="w-full p-3 text-center border-2 border-cyan-50 text-cyan-50 hover:bg-cyan-50 hover:text-gray-100 transition-all duration-200 font-semibold"
+      >
+        Start Free Trial
+      </a>
+    </div>
+
+    <!-- Pro Plan (Most Popular) -->
+    <div
+      class="bg-gray-90 border-2 border-[#FF9C20] relative p-8 flex flex-col transform md:scale-105 shadow-2xl"
+    >
+      <div
+        class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black px-4 py-1 text-sm font-semibold"
+      >
+        MOST POPULAR
+      </div>
+
+      <div class="mb-6">
+        <h2 class="text-2xl font-semibold mb-2 flex items-center">
+          <span class="underline decoration-4 decoration-[#FF9C20]">Pro</span>
+        </h2>
+        <p class="text-cool-gray-40 text-sm">For serious server owners</p>
+      </div>
+
+      <div class="mb-8">
+        <div class="flex items-baseline">
+          <span class="text-5xl font-semibold text-white">$15</span>
+          <span class="text-cool-gray-40 ml-2">/month</span>
+        </div>
+        <p class="text-cool-gray-50 text-sm mt-2">Or $150/year (save 17%)</p>
+      </div>
+
+      <ul class="mb-8 space-y-4 flex-grow">
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-[#FF9C20] mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30"><strong>3 game servers</strong></span
+          >
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-[#FF9C20] mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30"><strong>8GB RAM</strong></span>
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-[#FF9C20] mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30"
+            ><strong>Unlimited players</strong></span
+          >
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-[#FF9C20] mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30">Advanced DDoS protection</span>
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-[#FF9C20] mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30">Hourly backups</span>
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-[#FF9C20] mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30"
+            ><strong>Priority support</strong> (24/7)</span
+          >
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-[#FF9C20] mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30"
+            ><strong>Plugin marketplace access</strong></span
+          >
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-[#FF9C20] mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30">Server templates</span>
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-[#FF9C20] mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30">Custom subdomain</span>
+        </li>
+      </ul>
+
+      <a
+        href="#"
+        class="w-full p-3 text-center bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] text-black hover:from-[#CC6600] hover:to-[#CC6600] transition-all duration-200 font-semibold"
+      >
+        Start Free Trial
+      </a>
+    </div>
+
+    <!-- Enterprise Plan -->
+    <div
+      class="bg-gray-90 border-2 border-gray-80 hover:border-blue-50 transition-all duration-300 p-8 flex flex-col"
+    >
+      <div class="mb-6">
+        <h2 class="text-2xl font-semibold mb-2 flex items-center">
+          <span class="underline decoration-4 decoration-blue-50"
+            >Enterprise</span
+          >
+        </h2>
+        <p class="text-cool-gray-40 text-sm">Custom solutions at scale</p>
+      </div>
+
+      <div class="mb-8">
+        <div class="flex items-baseline">
+          <span class="text-5xl font-semibold text-white">Custom</span>
+        </div>
+        <p class="text-cool-gray-50 text-sm mt-2">Volume discounts available</p>
+      </div>
+
+      <ul class="mb-8 space-y-4 flex-grow">
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-blue-50 mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30"
+            ><strong>Unlimited servers</strong></span
+          >
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-blue-50 mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30"><strong>Dedicated resources</strong></span
+          >
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-blue-50 mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30"
+            ><strong>White-label options</strong></span
+          >
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-blue-50 mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30">99.99% SLA guarantee</span>
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-blue-50 mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30">Dedicated account manager</span>
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-blue-50 mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30"
+            ><strong>24/7 phone support</strong></span
+          >
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-blue-50 mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30">Custom integrations</span>
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-blue-50 mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30">On-premise deployment option</span>
+        </li>
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-blue-50 mr-3 mt-0.5 flex-shrink-0"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-cool-gray-30">Training & onboarding</span>
+        </li>
+      </ul>
+
+      <a
+        href="#"
+        class="w-full p-3 text-center border-2 border-blue-50 text-blue-50 hover:bg-blue-50 hover:text-gray-100 transition-all duration-200 font-semibold"
+      >
+        Contact Sales
+      </a>
+    </div>
+  </div>
+
+  <!-- Feature Comparison Table -->
+  <div class="mb-24">
+    <h2 class="text-3xl font-semibold mb-8">
+      <span class="underline decoration-4 decoration-cyan-50"
+        >Compare plans</span
+      >
+    </h2>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="border-b-2 border-gray-80">
+            <th class="py-4 pr-4 text-cool-gray-40 font-semibold">Feature</th>
+            <th class="py-4 px-4 text-center font-semibold">Starter</th>
+            <th class="py-4 px-4 text-center font-semibold text-[#FF9C20]"
+              >Pro</th
+            >
+            <th class="py-4 px-4 text-center font-semibold">Enterprise</th>
+          </tr>
+        </thead>
+        <tbody class="text-cool-gray-30">
+          <tr class="border-b border-gray-80">
+            <td class="py-4 pr-4">Number of servers</td>
+            <td class="py-4 px-4 text-center">1</td>
+            <td class="py-4 px-4 text-center">3</td>
+            <td class="py-4 px-4 text-center">Unlimited</td>
+          </tr>
+          <tr class="border-b border-gray-80">
+            <td class="py-4 pr-4">RAM per server</td>
+            <td class="py-4 px-4 text-center">2GB</td>
+            <td class="py-4 px-4 text-center">8GB</td>
+            <td class="py-4 px-4 text-center">Custom</td>
+          </tr>
+          <tr class="border-b border-gray-80">
+            <td class="py-4 pr-4">Player slots</td>
+            <td class="py-4 px-4 text-center">10</td>
+            <td class="py-4 px-4 text-center">Unlimited</td>
+            <td class="py-4 px-4 text-center">Unlimited</td>
+          </tr>
+          <tr class="border-b border-gray-80">
+            <td class="py-4 pr-4">DDoS protection</td>
+            <td class="py-4 px-4 text-center">Basic</td>
+            <td class="py-4 px-4 text-center">Advanced</td>
+            <td class="py-4 px-4 text-center">Enterprise</td>
+          </tr>
+          <tr class="border-b border-gray-80">
+            <td class="py-4 pr-4">Backup frequency</td>
+            <td class="py-4 px-4 text-center">Daily</td>
+            <td class="py-4 px-4 text-center">Hourly</td>
+            <td class="py-4 px-4 text-center">Real-time</td>
+          </tr>
+          <tr class="border-b border-gray-80">
+            <td class="py-4 pr-4">Support</td>
+            <td class="py-4 px-4 text-center">Community</td>
+            <td class="py-4 px-4 text-center">Priority (24/7)</td>
+            <td class="py-4 px-4 text-center">Dedicated</td>
+          </tr>
+          <tr class="border-b border-gray-80">
+            <td class="py-4 pr-4">Plugin marketplace</td>
+            <td class="py-4 px-4 text-center">-</td>
+            <td class="py-4 px-4 text-center">✓</td>
+            <td class="py-4 px-4 text-center">✓</td>
+          </tr>
+          <tr class="border-b border-gray-80">
+            <td class="py-4 pr-4">Custom domain</td>
+            <td class="py-4 px-4 text-center">-</td>
+            <td class="py-4 px-4 text-center">Subdomain</td>
+            <td class="py-4 px-4 text-center">Full custom</td>
+          </tr>
+          <tr class="border-b border-gray-80">
+            <td class="py-4 pr-4">SLA</td>
+            <td class="py-4 px-4 text-center">99%</td>
+            <td class="py-4 px-4 text-center">99.9%</td>
+            <td class="py-4 px-4 text-center">99.99%</td>
+          </tr>
+          <tr class="border-b border-gray-80">
+            <td class="py-4 pr-4">White-label</td>
+            <td class="py-4 px-4 text-center">-</td>
+            <td class="py-4 px-4 text-center">-</td>
+            <td class="py-4 px-4 text-center">✓</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="mb-24" x-data="{ openFaq: null }">
+    <h2 class="text-3xl font-semibold mb-8">
+      <span class="underline decoration-4 decoration-[#FF9C20]"
+        >Pricing FAQ</span
+      >
+    </h2>
+
+    <div class="space-y-4 max-w-3xl">
+      <!-- FAQ Item 1 -->
+      <div class="border border-gray-80 bg-gray-90">
+        <button
+          @click="openFaq = openFaq === 1 ? null : 1"
+          class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-80 transition-colors"
+        >
+          <span class="font-semibold text-lg"
+            >Is there a free trial available?</span
+          >
+          <svg
+            class="w-5 h-5 transform transition-transform"
+            :class="{ 'rotate-180': openFaq === 1 }"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div x-show="openFaq === 1" x-collapse class="px-6 pb-4">
+          <p class="text-cool-gray-40">
+            Yes! All plans come with a 7-day free trial. No credit card
+            required to start. You can test all features and cancel anytime
+            before the trial ends.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="border border-gray-80 bg-gray-90">
+        <button
+          @click="openFaq = openFaq === 2 ? null : 2"
+          class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-80 transition-colors"
+        >
+          <span class="font-semibold text-lg">Can I upgrade or downgrade anytime?</span
+          >
+          <svg
+            class="w-5 h-5 transform transition-transform"
+            :class="{ 'rotate-180': openFaq === 2 }"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div x-show="openFaq === 2" x-collapse class="px-6 pb-4">
+          <p class="text-cool-gray-40">
+            Absolutely! You can upgrade, downgrade, or cancel your plan at any
+            time. Changes are prorated, so you only pay for what you use. No
+            long-term contracts or commitments.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="border border-gray-80 bg-gray-90">
+        <button
+          @click="openFaq = openFaq === 3 ? null : 3"
+          class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-80 transition-colors"
+        >
+          <span class="font-semibold text-lg"
+            >What payment methods do you accept?</span
+          >
+          <svg
+            class="w-5 h-5 transform transition-transform"
+            :class="{ 'rotate-180': openFaq === 3 }"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div x-show="openFaq === 3" x-collapse class="px-6 pb-4">
+          <p class="text-cool-gray-40">
+            We accept all major credit cards (Visa, Mastercard, American
+            Express), PayPal, and cryptocurrency (Bitcoin, Ethereum). Enterprise
+            customers can also pay via wire transfer or purchase order.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="border border-gray-80 bg-gray-90">
+        <button
+          @click="openFaq = openFaq === 4 ? null : 4"
+          class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-80 transition-colors"
+        >
+          <span class="font-semibold text-lg"
+            >What happens if I exceed my player limit?</span
+          >
+          <svg
+            class="w-5 h-5 transform transition-transform"
+            :class="{ 'rotate-180': openFaq === 4 }"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div x-show="openFaq === 4" x-collapse class="px-6 pb-4">
+          <p class="text-cool-gray-40">
+            On the Starter plan, the server will limit connections at 10
+            players. You'll receive a notification to upgrade to Pro for
+            unlimited players. There are no overage charges—you simply won't be
+            able to exceed the limit until you upgrade.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 5 -->
+      <div class="border border-gray-80 bg-gray-90">
+        <button
+          @click="openFaq = openFaq === 5 ? null : 5"
+          class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-80 transition-colors"
+        >
+          <span class="font-semibold text-lg"
+            >Do you offer discounts for educational institutions?</span
+          >
+          <svg
+            class="w-5 h-5 transform transition-transform"
+            :class="{ 'rotate-180': openFaq === 5 }"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div x-show="openFaq === 5" x-collapse class="px-6 pb-4">
+          <p class="text-cool-gray-40">
+            Yes! We offer 50% discounts for verified educational institutions,
+            teachers, and students. Contact our sales team with your .edu email
+            address to get started.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 6 -->
+      <div class="border border-gray-80 bg-gray-90">
+        <button
+          @click="openFaq = openFaq === 6 ? null : 6"
+          class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-80 transition-colors"
+        >
+          <span class="font-semibold text-lg"
+            >What's your refund policy?</span
+          >
+          <svg
+            class="w-5 h-5 transform transition-transform"
+            :class="{ 'rotate-180': openFaq === 6 }"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div x-show="openFaq === 6" x-collapse class="px-6 pb-4">
+          <p class="text-cool-gray-40">
+            We offer a 30-day money-back guarantee on all annual plans. If
+            you're not satisfied for any reason within the first 30 days, we'll
+            refund your payment in full—no questions asked. Monthly plans can be
+            canceled at any time with no refund (you keep access until the end
+            of the billing period).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="mb-32 text-center">
+    <h2 class="text-4xl font-semibold mb-4">
+      <span
+        class="text-transparent bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] bg-clip-text"
+      >
+        Ready to launch your server?
+      </span>
+    </h2>
+    <p class="text-xl text-cool-gray-40 mb-8 max-w-2xl mx-auto">
+      Join thousands of server owners who trust QuackHost. Start your free
+      trial today—no credit card required.
+    </p>
+    <a
+      href="#"
+      class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-black bg-gradient-to-r from-[#FF9C20] to-[#FF8D00] hover:from-[#CC6600] hover:to-[#CC6600] transition-all duration-200"
+    >
+      Start Free Trial →
+    </a>
+  </div>
 </Layout>
